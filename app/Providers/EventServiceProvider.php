@@ -16,6 +16,22 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
+        //Event when the booking has been made 
+         'App\Events\SendBookingMail' => [
+            'App\Listeners\SendBookingMailFired',
+        ],
+        //Event when the newsleter has been sent to the user for verification
+        'App\Events\SendNewsletterMail' => [
+            'App\Listeners\SendNewsletterMailFired',
+        ],
+        //Event when the Notification is made
+        'App\Events\NotificationEvent' => [
+            'App\Listeners\NotificationEventFired',
+        ],
+        //Event when the Booking has been made
+        'App\Events\BookinEvent' => [
+            'App\Listeners\BookingEventFired',
+        ],
     ];
 
     /**

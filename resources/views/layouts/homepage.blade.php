@@ -145,10 +145,10 @@
             <div class="wrap">
                 <h5>Newsletter</h5>
                 <p>We promise to only send you good things</p>
-                <form action="" class="subscribe-form">
-                    <input type="text" placeholder="Enter your email address">
-                    <submit class="button"><i class="fa fa-angle-right"></i></submit>
-                </form>
+                {!! Form::open(['action'=>'MailController@sendNewsletterMail','method'=>'post','class'=>'subscribe-form']) !!}
+                    {!! Form::email('email',old('email'),['placeholder'=>'Enter your email address']) !!}
+                    {!! Form::submit('<i class="fa fa-angle-right"></i>') !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

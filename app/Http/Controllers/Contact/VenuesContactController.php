@@ -27,8 +27,9 @@ class VenuesContactController extends Controller
      */
     public function index($slug)
     {
-        $galleries = Venue::where('slug',$slug)->with('galleries')->first();
-        return view('contacts.index',compact('galleries'));
+        $contact = Venue::where('slug',$slug)->with('contacts')->first();
+        $model = 'venue';
+        return view('contacts.index',compact('contact','model','slug'));
     }
 
     /**
@@ -46,10 +47,15 @@ class VenuesContactController extends Controller
 
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId= Venue::select('id')->where('slug',$slug)->first()->id;
+        $vehicleId = Venue::where('slug','=',$slug)->get()->first();
+        dd($vehicleId);
         if($this->contactService->make('venue',$vehicleId,$request)){
-            exit('done');
+            session()->flash('sucMsg','Hotel\'s Contact Created Sucessfully');
+            return redirect("venues/".$slug);
         }
+        session()->flash('errMsg','Contact Information couldn\'t be created' );
+        return redirect("venues/".$slug);
+
     }
 
     /**
@@ -60,9 +66,8 @@ class VenuesContactController extends Controller
      */
     public function show($slug,$id)
     {
-        $galleries = Venue::where('slug',$slug)->with('galleries')->first();
-        dd($galleries);
-        return view('contacts.show',compact('galleries'));
+        $contact = Venue::where('slug',$slug)->with('contact')->first();
+        return view('contacts.show',compact('contact'));
     }
 
     /**
@@ -71,9 +76,14 @@ class VenuesContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug,$id)
     {
-        //
+         $contact = Venue::where('slug','=',$slug)->with(['contacts'=>function($query) use ($id){
+            $query->find($id);
+        }])->first();
+        dd($contact);
+        $model = 'venue';
+        return view('contacts.edit',compact('contact','model','slug'));
     }
 
     /**

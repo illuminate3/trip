@@ -60,9 +60,11 @@ class VenuesController extends Controller
     public function store(Requests\PostVenueRequest $request)
     {
         if($this->venuesService->make($request)){
-            return session()->with('error','Venue Couldn\'t be created');
+            session()->flash('sucMsg','Venue created sucessfully');
+            return redirect('venues');
         }
-        return session()->with('success','Venue created Sucessfully :)');
+        session()->flash('errMsg','Venue couldn\'t be created');
+        return redirect('venues');
     }
 
     /**

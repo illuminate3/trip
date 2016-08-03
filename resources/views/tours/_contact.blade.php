@@ -1,25 +1,39 @@
-<h3>Contact Information</h3>
-
 <div class="row">
-    <p>Phone 1: <b>{{$tour->contacts->phone1}}</b></p>
-
-    <p>Phone 2: {{$tour->contacts->phone2}}</p>
-
-    <p>Fax: {{$tour->contacts->fax}}</p>
-
-    <p>Mobile: {{$tour->contacts->mobile}}</p>
-
-    <p>email: {{$tour->contacts->email}}</p>
-
-    <p>website: {{$tour->contacts->website}}</p>
-
-    <p>Address: {{$tour->contacts->address}}</p>
-
-    <p>Representative: {{$tour->contacts->representative}}</p>
-
-    <p>Role: {{$tour->contacts->role}}</p>
-
-    <p>facebook: {{$tour->contacts->facebook}}</p>
-    {!! Mapper::render() !!}
+    <div class="small-12 medium-6 columns">
+        <p>
+            <a href="">
+                <i class="fa fa-phone"></i> {{ $tour->contacts['phone1'] }}
+            </a>
+        </p>
+        <p>
+            <a href="">
+                <i class="fa fa-phone"></i> {{ $tour->contacts['phone2'] }}
+            </a>
+        </p>
+    </div>
+    <div class="small-12 medium-6 columns">
+        <p>
+            <a href="mailto:{{ $tour->contacts['email']}}">
+                <i class="fa fa-envelope"></i> {{ $tour->contacts['email']}}
+            </a>
+        </p>
+        <p>
+            <a href="">
+                <i class="fa fa-globe"></i> {{ $tour->contacts['website']}}
+            </a>
+        </p>  
+        <a href="" class="button extended">Book Now </a>
+    </div>
+    <div class="small-12 medium-12 columns">
+        <p>
+            <i class="fa fa-user"></i> {{ $tour->contacts['representative']}}
+            {{ $tour->contacts['role']}}
+            
+        </p>
+        <p>
+            <a href="https:\\facebook.com\{{ $tour->contacts['facebook']}}">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </p>  
+    </div>
 </div>
-

@@ -49,8 +49,11 @@ class VehiclesContactController extends Controller
     {
         $vehicleId= Vehicle::select('id')->where('slug',$slug)->first()->id;
         if($this->contactService->make('vehicle',$vehicleId,$request)){
-            exit('done');
+           session()->flash('sucMsg','Vehicle\'s contact created sucessfully');
+            return redirect("vehicles/".$slug);
         }
+        session()->flash('errMsg','Contact Information couldn\'t be created' );
+        return redirect("vehicles/".$slug);
     }
 
     /**

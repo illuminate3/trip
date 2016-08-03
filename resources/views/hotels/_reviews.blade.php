@@ -4,10 +4,14 @@
         <div class="row">
             <div class="medium-4 column">
                 <h4><div class="rateYo-{{ $review->id }}"></div></h4>
-                <p><i class="fa fa-user"></i>&nbsp;{{ App\User::find($review->user_id)->first()->name }}</p>
+                @if(! $review->user_id == '0')
+                    <p><i class="fa fa-user"></i>&nbsp;{{ App\User::find($review->user_id)->first()->name }}</p>
+                @else
+                    <p><i class="fa fa-user"></i>&nbsp;Anonymous </p>
+                @endif
             </div>
             <div class="medium-8 column">
-                <p style="background-color: #ccc">Rating: {{ $review->review }}</p>
+                <p style="background-color: #ccc">Rating: {{ $review->rating }}</p>
             </div>
         </div>
         @endforeach
@@ -23,7 +27,7 @@
     </div>
 </div>
 
-@section('scripts')
+@section('script')
 <script>
     @foreach($hotel->reviews as $review)
         $(".rateYo-"+{{ $review->id }}).rateYo({

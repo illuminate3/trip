@@ -5,7 +5,7 @@
         <h1>Edit Venues</h1>
     </div>
     <div class="row">
-        {!! Form::model($venue, ['action'=>'VenuesControleer@update','method'=>'PUT','files' => true]) !!}
+        {!! Form::model($venue, ['route'=>['venues.{venue}.edit',$venue->id],'method'=>'PUT','files' => true]) !!}
         @include('venues._form');
         {!! Form::close() !!}
     </div>

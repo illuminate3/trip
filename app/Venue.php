@@ -12,7 +12,9 @@ use App\Infinite\Contracts\ContactInterface;
 class Venue extends Model implements ContactInterface, GalleriesInterface, ReviewableInterface
 {
     protected $morphClass = "Venue";
+    
     protected $table = "venues";
+
     protected $fillable = ["name", "slug", "status",'logo','user_id'];
     protected $dates = ['created_at', 'updated_at'];
 

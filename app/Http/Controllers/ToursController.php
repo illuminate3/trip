@@ -64,10 +64,12 @@ class ToursController extends Controller
     public function show($slug)
     {
         $tour = Tour::where('slug','=',$slug)->with('contacts', 'galleries','reviews','packages')->first();
-        dd($tour);
         $tour->rating = $tour->reviews()->avg('rating');
-        \Mapper::map($tour->contacts->latitude, $tour->contacts->longitude);
-        return view('tours.show',compact('tour'));
+        $tours = Tour::orderBy('updated_at','DES')->take(10);
+        if($tour->contacts){
+           \Mapper::map($tour->contacts->latitude, $tour->contacts->longitude);
+        }
+        return view('tours.show',compact('tour','tours'));
     }
 
     /**

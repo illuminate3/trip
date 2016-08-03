@@ -27,7 +27,7 @@ class ToursContactController extends Controller
     public function index($slug)
     {
         $galleries = Tour::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.index',compact('galleries'));
+        return view('contacts.index',compact('galleries'));
     }
 
     /**
@@ -39,16 +39,19 @@ class ToursContactController extends Controller
     {
         $class = get_class($this);
         $model = 'venue';
-        return view('gallery.create',compact('class','model','slug'));
+        return view('contacts.create',compact('class','model','slug'));
     }
 
 
     public function store($slug, Requests\PostGalleryRequest $request)
     {
         $vehicleId= Tour::select('id')->where('slug',$slug)->first()->id;
-        if($this->galleryService->make('tour',$vehicleId,$request)){
-            exit('done');
+        if($this->contactsService->make('tour',$vehicleId,$request)){
+            session()->flash('sucMsg','Tour\'s contact created sucessfully');
+            return redirect("tours/".$slug);
         }
+        session()->flash('errMsg','Contact Information couldn\'t be created' );
+        return redirect("tours/".$slug);
     }
 
     /**
@@ -61,7 +64,7 @@ class ToursContactController extends Controller
     {
         $galleries = Tour::where('slug',$slug)->with('galleries')->first();
 
-        return view('gallery.show',compact('galleries'));
+        return view('contacts.show',compact('galleries'));
     }
 
     /**

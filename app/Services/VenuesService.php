@@ -29,7 +29,7 @@ class VenuesService
             'name' => $request->get('name'),
             'slug' => str_replace(" ", "-", strtolower($request->get('name'))),
             'description' => $request->get('description'),
-            'logo' => $this->fileUload($request)
+            'logo' => $this->fileUpload($request)
         ]);
     }
 
@@ -48,7 +48,7 @@ class VenuesService
      * @param PostVenueRequest $request
      * @return mixed
      */
-    public function fileUload(PostVenueRequest $request)
+    public function fileUpload(PostVenueRequest $request)
     {
         $file = $request->file('image');
         $fileName = $file->getClientOriginalName();

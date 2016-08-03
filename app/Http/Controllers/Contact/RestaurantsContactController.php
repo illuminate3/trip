@@ -41,8 +41,12 @@ class RestaurantsContactController extends Controller
     {
         $vehicleId= Restaurant::select('id')->where('slug',$slug)->first()->id;
         if($this->contactService->make('restaurant',$vehicleId,$request)){
-            exit('done');
+            session()->flash('sucMsg','Restaurant\'s contact created sucessfully');
+            return redirect("restaurants/".$slug);
         }
+        session()->flash('errMsg','Contact Information couldn\'t be created' );
+        return redirect("restaurants/".$slug);
+        
     }
 
 

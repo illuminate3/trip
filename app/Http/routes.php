@@ -31,7 +31,7 @@
         Route::resource('/restaurants/{slug}/gallery', Gallery\RestaurantsGalleryController::class);
         Route::resource('/restaurants/{slug}/contact', Contact\RestaurantsContactController::class);
     
-        //Tours Routesw
+        //Tours Routes
         Route::resource('/tours', ToursController::class);
         Route::resource('/tours/{slug}/gallery', Gallery\ToursGalleryController::class);
         Route::resource('/tours/{slug}/contact', Contact\ToursContactController::class);
@@ -90,7 +90,9 @@
         Route::get('/register/business','UserRegistrationController@business');
         Route::post('/register/business','UserRegistrationController@businessRegister');
         Route::get('/register/normal','UserRegistrationController@normal');
-            
+        
+        Route::get('/send-mail','MailController@sendBookingMail');
+        Route::post('/send-mail','MailController@sendNewsletterMail');
     }); // Web Middleware
  // Dashboard For SuperAdmin
         Route::group(['middleware' => ["web"],'before'=> 'auth'], function () {
@@ -100,7 +102,8 @@
             Route::controller('dash',AdminDashController::class);
             //Route::controller('dash')
 
-            /* Old Controllers
+            /* 
+            //Old Controllers
             Route::get('/restaurants','AdminDashController@getRestaurants');
             Route::get('/restaurants/create','AdminDashController@registerRestaurants');
     
@@ -115,7 +118,8 @@
     
             Route::get('/venues','AdminDashController@getVenues');
             Route::get('/venues/create','AdminDashController@registerVenue');
-            Route::resource('carousel',CarouselsController::class);*/
+            Route::resource('carousel',CarouselsController::class);
+            */
             Route::get('/approve/{model}/{id}','AdminDashController@approve');
             Route::get('/suspend/{model}/{id}','AdminDashController@suspend');
     

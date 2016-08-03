@@ -71,6 +71,7 @@ class HotelsController extends Controller
     {
 
         $hotel = Hotel::where('slug','=',$slug)->with('contacts','galleries','reviews')->first();
+        $hotel->rating = $hotel->reviews->avg('rating');
         $hotels = Hotel::with('contacts')->take(10);
         if($hotel->contacts){
           \Mapper::map($hotel->contacts->latitude, $hotel->contacts->longitude);

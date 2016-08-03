@@ -1,12 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.homepage')
+
+@section('title')
+    Restaurant Create
+@stop
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <h1>Restaurants</h1>
-    </div>
-    <div class="row">
+<section >
+	<div class="section-wrap row">
+        <div class="section-head">
+            <h3>Create a Restaurant</h3>
+        </div>
+		<div class="section-content">
+		<div class="row">
         {!! Form::open(['action' => 'RestaurantsController@store','files' => true]) !!}
-            @include('restaurants._form');
+            @include('restaurants._form')
         {!! Form::close() !!}
     </div>
 </div>

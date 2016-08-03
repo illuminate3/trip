@@ -29,7 +29,7 @@ class HotelsContactController extends Controller
     {
         $galleries = Hotel::where('slug',$slug)->with('contacts')->first();
         dd($galleries);
-        return view('contact.index',compact('galleries'));
+        return view('contacts.index',compact('galleries'));
     }
 
     /**
@@ -41,16 +41,19 @@ class HotelsContactController extends Controller
     {
         $class = get_class($this);
         $model = 'hotel';
-        return view('contact.create',compact('class','model','slug'));
+        return view('contacts.create',compact('class','model','slug'));
     }
 
 
     public function store($slug, Requests\PostContactRequest $request)
     {
         $vehicleId= Hotel::select('id')->where('slug',$slug)->first()->id;
-        if($this->contactService->make('hotels',$vehicleId,$request)){
-            exit('done');
+        if($this->contactService->make('hotel',$vehicleId,$request)){
+            session()->flash('sucMsg','Hotel\'s Contact Created Sucessfully');
+            return redirect("hotels/".$slug);
         }
+        session()->flash('errMsg','Contact Information couldn\'t be created' );
+        return redirect("hotels/".$slug);
     }
 
     /**
@@ -63,7 +66,7 @@ class HotelsContactController extends Controller
     {
         $galleries = Hotel::where('slug',$slug)->with('galleries')->first();
 
-        return view('contact.show',compact('galleries'));
+        return view('contacts.show',compact('galleries'));
     }
 
     /**

@@ -1,12 +1,20 @@
-@extends('layouts.app')
+
+@extends('layouts.homepage')
+
+@section('title')
+    Tour Create
+@stop
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <h1>Tours</h1>
-    </div>
-    <div class="row">
+<section >
+	<div class="section-wrap row">
+        <div class="section-head">
+            <h3>Create a Tour</h3>
+        </div>
+		<div class="section-content">
+		<div class="row">
         {!! Form::open(['files' => true,'action' => 'ToursController@store','method' => 'POST']) !!}
-            @include('tours._form');
+            @include('tours._form')
         {!! Form::close() !!}
     </div>
 </div>

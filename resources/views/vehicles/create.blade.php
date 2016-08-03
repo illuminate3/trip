@@ -1,10 +1,18 @@
-@extends('layouts.app')
+
+@extends('layouts.homepage')
+
+@section('title')
+    Vehicles Create
+@stop
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <h1>vehicles</h1>
-    </div>
-    <div class="row">
+<section >
+	<div class="section-wrap row">
+        <div class="section-head">
+            <h3>Create a Vehicle</h3>
+        </div>
+		<div class="section-content">
+		<div class="row">
         {!! Form::open(['action' => 'VehiclesController@store','files' => true]) !!}
             @include('vehicles._form');
         {!! Form::close() !!}

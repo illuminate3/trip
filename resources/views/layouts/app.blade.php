@@ -80,14 +80,14 @@ https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.1/bootstrap
             </div>
         </div>
     </nav>
-    {-- @if(count($errors) > 0)
+    {{-- @if(count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
               {{ var_dump($errors) }}
             </ul>
 
         </div>
-    @endif --}
+    @endif --}}
     @yield('content')
 
     <!-- JavaScripts -->

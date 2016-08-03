@@ -11,9 +11,9 @@ use App\Infinite\Contracts\ReviewableInterface;
 
 class Vehicle extends Model implements ContactInterface, GalleriesInterface, ReviewableInterface
 {
+    protected $morphClass = 'Vehicle';
     protected $table = 'vehicles';
 
-    protected $morphClass = 'App\Vehicle';
     protected $fillable = ["name", "slug", "status",'logo','user_id'];
     protected $dates = ['created_at', 'updated_at'];
 

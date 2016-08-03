@@ -1,12 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.homepage')
+
+@section('title')
+    Venue Create
+@stop
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <h1>Venues</h1>
-    </div>
-    <div class="row">
+<section >
+	<div class="section-wrap row">
+        <div class="section-head">
+            <h3>Create a Venue</h3>
+        </div>
+		<div class="section-content">
+		<div class="row">
         {!! Form::open(['files' => true, 'method' => 'POST', 'action' => 'VenuesController@store']) !!}
-            @include('venues._form');
+            @include('venues._form')
         {!! Form::close() !!}
     </div>
 </div>

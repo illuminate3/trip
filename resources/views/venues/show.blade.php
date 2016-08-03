@@ -36,7 +36,11 @@
         <div class="row">
             @include('venues._reviews')
         </div>
-        <script>
+        
+    </div>
+@stop
+@section('script')
+<script>
          $(".rateYo").rateYo({
             rating: {{ $venue->rating }},
             halfStar: true,
@@ -45,5 +49,4 @@
           });
 
     </script>
-    </div>
-@stop
+    @stop
