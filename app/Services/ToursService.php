@@ -1,0 +1,73 @@
+<?php
+
+
+namespace App\Services;
+
+use App\Http\Requests\PostTourRequest;
+use App\Tour;
+use Image;
+/**
+ * Class ToursService
+ * @package App\Services
+ */
+class ToursService
+{
+
+    /**
+     *
+     */
+    const IMAGE_LOCATION = '/public/uploads/images/tour/';
+
+    /**
+     * @param PostTourRequest $request
+     * @return mixed
+     */
+    public function make(PostTourRequest $request)
+    {
+        $tour = new Tour();
+        $tour->name = $request->get('name');
+        $tour->slug = str_replace(" ", "-", strtolower($request->get('name')));
+        $tour->description = $request->get('description');
+        $file = $this->fileUpload($request);
+        $tour->logo = $file;
+        return $tour->save();
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function approve($id)
+    {
+        $tour = Tour::findOrFail($id);
+        $tour->status = 1;
+        return $tour->save();
+    }
+
+    /**
+     * @param $id
+     * @param PostTourRequest $request
+     * @return mixed
+     */
+    public function update($id, PostTourRequest $request)
+    {
+        $tour = Tour::findOrFail($id);
+        $tour->name = $request->get('name');
+        $tour->slug = str_replace(" ", "-", strtolower($request->get('name')));
+        $tour->description = $request->get('description');
+        $file = $this->fileUpload($request);
+        $tour->logo = $file;
+        return $tour->save();
+    }
+
+    public function fileUpload($request)
+    {
+        $file = $request->file('image');
+        $fileName = $file->getClientOriginalName();
+        // open an image file
+        $img = Image::make($file)->resize(350, 200);;
+        // Saving the file to filesystem
+        $img->save( base_path().self::IMAGE_LOCATION . $fileName, 80);
+        return $fileName;
+    }
+}

@@ -1,0 +1,131 @@
+    <?php
+
+    Route::group(['middlewareGroups'=> ['web'] ],function(){ 
+        //Main site
+        Route::get('/', 'SiteController@getHome');
+        Route::get('/about','SiteController@getAbout');
+        Route::get('/faq','SiteController@getFaq');
+        Route::get('/profile','SiteController@getProfile');
+        Route::get('/blog','SiteController@getBlog');
+        Route::get('/contact','SiteController@getContact');
+        Route::resource('/posts', PostsController::class);
+                
+        
+        //Vehicle Routes
+        Route::resource('/vehicles', VehiclesController::class);
+        Route::resource('/vehicles/{slug}/gallery', Gallery\VehiclesGalleryController::class);
+        Route::resource('/vehicles/{slug}/contact', Contact\VehiclesContactController::class);
+    
+        //Hotels
+        Route::resource('/hotels', HotelsController::class);
+        Route::resource('/hotels/{slug}/room', RoomsController::class);
+        Route::resource('/hotels/{slug}/gallery',Gallery\HotelsGalleryController::class);
+        Route::resource('/hotels/{slug}/contact',Contact\HotelsContactController::class);
+    
+        Route::get('hotels/rooms/create','RoomsController@create');
+    
+    
+        //Restaurant Routes
+        Route::resource('/restaurants', RestaurantsController::class);
+        Route::resource('/restaurants/{slug}/rooms', RoomsController::class);
+        Route::resource('/restaurants/{slug}/gallery', Gallery\RestaurantsGalleryController::class);
+        Route::resource('/restaurants/{slug}/contact', Contact\RestaurantsContactController::class);
+    
+        //Tours Routesw
+        Route::resource('/tours', ToursController::class);
+        Route::resource('/tours/{slug}/gallery', Gallery\ToursGalleryController::class);
+        Route::resource('/tours/{slug}/contact', Contact\ToursContactController::class);
+        Route::resource('/tours/{slug}/package', PackageController::class);
+        Route::resource('/tours/{slug}/package/{packageSlug}/gallery', Gallery\PackagesGalleryController::class);
+    
+        //Route::resource('tours/packages', PackageController::class);
+        Route::post('/contact/create','ContactsController@store');
+    
+        //Venues Controllers
+    
+        Route::resource('/venues', VenuesController::class );
+        Route::resource('/venues/{slug}/gallery', Gallery\VenuesGalleryController::class);
+        Route::resource('/venues/{slug}/contact', Contact\VenuesContactController::class);
+    
+    
+    
+        //Laravel Social Login For Login Authentication
+        Route::get('/redirect', 'SocialAuthController@redirect');
+        Route::get('/callback', 'SocialAuthController@callback');
+    
+        Route::auth();
+        Route::get('/home', 'HomeController@index');
+    
+        Route::get('search',function(){
+           return view('search.index');
+        });
+    
+        Route::post('searchByName','SearchController@searchByName');
+    
+        /*Pusher Notification*/
+        Route::get('/bridge', function() {
+            $pusher = Illuminate\Support\Facades\App::make('pusher');
+    
+            $pusher->trigger( 'test-channel',
+                'test-event',
+                array('text' => 'Preparing the Pusher Laracon.eu workshop!'));
+    
+            return view('welcome');
+        });
+    
+        Route::get('/broadcast', function() {
+    
+            event(new \App\Events\TestEvent('Broadcasting in Laravel using Pusher!'));
+    
+            return view('welcome');
+        });
+        Route::controller('notifications', 'NotificationsController');
+    
+       
+    
+        Route::resource('/reviews', ReviewsController::class);
+    
+        //Registeration Handling
+        //Code Refactoration using Route::controller()
+        Route::get('/register/business','UserRegistrationController@business');
+        Route::post('/register/business','UserRegistrationController@businessRegister');
+        Route::get('/register/normal','UserRegistrationController@normal');
+            
+    }); // Web Middleware
+ // Dashboard For SuperAdmin
+        Route::group(['middleware' => ["web"],'before'=> 'auth'], function () {
+            Route::get('dash/',function(){
+               return view('dashboard.dash');
+            });
+            Route::controller('dash',AdminDashController::class);
+            //Route::controller('dash')
+
+            /* Old Controllers
+            Route::get('/restaurants','AdminDashController@getRestaurants');
+            Route::get('/restaurants/create','AdminDashController@registerRestaurants');
+    
+            Route::get('/hotels','AdminDashController@getHotels');
+            Route::get('/hotels/create','AdminDashController@registerHotel');
+    
+            Route::get('/vehicles','AdminDashController@getVehicles');
+            Route::get('/vehicles/create','AdminDashController@registerVehicles');
+    
+            Route::get('/tours','AdminDashController@getTours');
+            Route::get('/tours/create','AdminDashController@registerTour');
+    
+            Route::get('/venues','AdminDashController@getVenues');
+            Route::get('/venues/create','AdminDashController@registerVenue');
+            Route::resource('carousel',CarouselsController::class);*/
+            Route::get('/approve/{model}/{id}','AdminDashController@approve');
+            Route::get('/suspend/{model}/{id}','AdminDashController@suspend');
+    
+        });
+//API ROUTES
+Route::group(['prefix' => '/api/v1/','middleware'=> 'api'], function () {
+    Route::resource('users',Api\UsersController::class);
+    Route::resource('restaurants',Api\RestaurantsController::class);
+    Route::resource('vehicles',Api\VehiclesController::class);
+    Route::resource('tours',Api\ToursController::class);
+    Route::resource('hotels',Api\HotelsController::class);
+    Route::resource('venues',Api\VenuesController::class);
+});

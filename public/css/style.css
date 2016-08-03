@@ -1,0 +1,24 @@
+.panel-heading{
+	margin:0;
+}
+
+aside.col-md-4{
+	background: teal;
+	color: #fff;
+	padding:1rem 1.618rem;
+}
+#map-canvas-0{
+  height:250px !important;
+  width: 100%;
+}
+
+.box{
+	background: #ededed;
+	border: 1px solid #ccc;
+	margin:1rem;
+	padding:1rem 0;
+}
+
+.box p{
+	border-bottom: 1px solid #ccc;
+}

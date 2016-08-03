@@ -1,0 +1,128 @@
+////////// Theme Vars //////////
+	//Spacing//
+
+$container-width: 86%;
+
+$wrap-width: 80%;
+
+$li-space: 15px;
+
+
+	//background//
+
+$primary-color: #0F4174;
+
+$secondary-color: #FF2626;
+
+$alternate-color: #0E3754;
+
+$header-bg: #f7f7f7;
+
+$footer-bg: #f7f7f7;
+
+$bottom-footer-bg: #474747;
+
+
+
+	//Font-colors//
+$title-color: #0C3F6A;
+
+$subtitle-color: #575757;
+
+$body-color: #8C8C8C;
+
+$nav-color: #000;
+
+$nav-h-color: #436B93;
+
+	//Font-size//
+$h1: 72px;
+
+$h2: 26px;
+
+$h3: 24px;
+
+$h4: 18px;
+
+$h5: 16px;
+
+$flow: 20px;
+
+$nav: 14px;
+
+$small: 12px;
+
+
+
+
+	//fonts-family//
+@font-face {
+  font-family: 'NexaLight';
+  src: url('../fonts/NexaLight.eot');
+  src: url('../fonts/NexaLight.woff2') format('woff2'),
+       url('../fonts/NexaLight.woff') format('woff'),
+       url('../fonts/NexaLight.ttf') format('truetype'),
+       url('../fonts/NexaLight.svg#NexaLight') format('svg'),
+       url('../fonts/NexaLight.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NexaBold';
+  src: url('../fonts/NexaBold.eot');
+  src: url('../fonts/NexaBold.woff2') format('woff2'),
+       url('../fonts/NexaBold.woff') format('woff'),
+       url('../fonts/NexaBold.ttf') format('truetype'),
+       url('../fonts/NexaBold.svg#NexaBold') format('svg'),
+       url('../fonts/NexaBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+$title-font: 'NexaBold', sans-serif;
+
+$subtitle-font: 'NexaLight', sans-serif;
+
+$nav-font: 'Lato', sans-serif;
+
+$p-font: 'Open Sans', sans-serif;
+
+
+
+
+///////// Default Vars  //////////
+
+	//colors//
+$t: transparent;
+
+$t-b: rgba(47, 47, 47, 0.5);
+
+$t-w: rgba(255, 255, 255, 0.5);
+
+
+	//size//
+$space: 25px;
+
+$full-width: 100vw !important;
+$half-width: 50vw !important;
+$quater-width: 25vw !important;
+
+$full-height: 100vh;
+$half-height: 50vh;
+$header-height: 75px;
+$small-header-height: 75px;
+$banner-height: 410px;
+$section-header-height: 150px;
+$logo-height: 100px;
+$footer-height: 290px;
+
+
+
+
+// Properties
+// buttons
+$button-height: 25px;
+$button-width: 100px;
+$button-font: 'helvetica';
+$button-bg: #66ccff;
