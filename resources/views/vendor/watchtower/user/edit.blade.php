@@ -1,9 +1,8 @@
 @extends(config('watchtower.views.layouts.master'))
-
+@section('page-title')
+  Edit '{{ $resource->name }}'
+@stop
 @section('content')
-
-    <h1>Edit '{{ $resource->name }}'</h1>
-    <hr/>
 
     {!! Form::model($resource, ['method' => 'PATCH', 'route' => [ 'watchtower.user.update', $resource->id ], 'class' => 'form-horizontal']) !!}
 

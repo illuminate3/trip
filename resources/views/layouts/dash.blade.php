@@ -651,7 +651,86 @@
 
     <script type="text/javascript" src="{{ asset("assets/themes/admin/layout.js") }}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script>
+        /*!
+        * IE10 viewport hack for Surface/desktop Windows 8 bug
+        * Copyright 2014-2015 Twitter, Inc.
+        * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+        */
 
+        // See the Getting Started docs for more information:
+        // http://getbootstrap.com/getting-started/#support-ie10-width
+
+        (function () {
+            $('[data-toggle="popover"]').popover();
+
+            'use strict';
+
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement('style')
+                msViewportStyle.appendChild(
+                    document.createTextNode(
+                      '@-ms-viewport{width:auto!important}'
+                    )
+                )
+                document.querySelector('head').appendChild(msViewportStyle)
+                }
+        })();
+
+        /**
+         * To auto-hide all alerts, except danger
+         */
+        $('div.alert').not('div.alert-danger').delay(4000).slideUp();
+
+        /**
+         * To use the bootstrap tooltip popups.
+         */
+        $('[data-toggle="tooltip"]').tooltip({
+            container: 'body',
+            trigger:'click hover focus'
+        });
+
+        /*!
+         * For Delete Modal prompts
+         * 
+         */
+        $('button[type="submit"]').click(function(e) {
+            if ( $(this).hasClass('btn-danger') ) {
+                var currentForm = this.closest("form");
+                e.preventDefault();
+                swal({
+                   title: "Are you sure?",
+                   text: "You will not be able to recover this object.",
+                   type: "warning",
+                   showCancelButton: true,
+                   confirmButtonColor: "#DD6B55",
+                   confirmButtonText: "Yes, delete it!",
+                   cancelButtonText: "No, keep it.",
+                   closeOnConfirm: true,
+                   closeOnCancel: false
+                    },
+                    function(isConfirm){
+                        if (isConfirm) {
+                            currentForm.submit();
+                        } else {
+                             swal({
+                                title: "Cancelled!",
+                                text: 'Object not deleted. <br /> <em><small>(I will close in 2 seconds)</em></small>',
+                                timer: 2000,
+                                showConfirmButton: true,
+                                confirmButtonText: "Close now.",
+                                type: 'error',
+                                html: true
+                             });
+                        }
+                    }
+                );
+            }
+        });
+    </script>
+
+    @yield('footer_assets')
     @yield('script');
 
 </body>

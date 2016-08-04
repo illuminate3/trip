@@ -1,9 +1,10 @@
 @extends(config('watchtower.views.layouts.master'))
-
+@section('page-title')
+  '{{ $permission->name }}' Roles
+@stop
 @section('content')
 
-  <h1>'{{ $permission->name }}' Roles</h1>
-  <hr/>
+  
 
   {!! Form::model($permission, [ 'route' => [ config('watchtower.route.as') .'permission.role.update', $permission->id ], 'class' => 'form-horizontal']) !!}
 

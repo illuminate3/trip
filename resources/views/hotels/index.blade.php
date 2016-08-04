@@ -59,7 +59,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row" >
             <section class="accomodation three-col-slider-wrap archive-wrap">
                 <div class="section-wrap row">
                     <div class="section-head">
@@ -69,7 +69,7 @@
                             <li class="next-3"><i class="ti-angle-right"></i></li>
                         </ul>
                     </div>
-                    <div class="section-content">
+                    <div class="section-content" id="ajax-form">
                         <ul class="archive-list">
 
                             @foreach ($hotels as $hotel)

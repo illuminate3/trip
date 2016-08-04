@@ -1,14 +1,9 @@
 @extends(config('watchtower.views.layouts.master'))
+@section('page-title')
+    Configuration for users
+@stop
 
 @section('content')
-
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">{{ $title }} <small>Dashboard</small></h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
 
     @foreach ( array_chunk($dashboard, 4) as $chunk )
         <div class="row text-center">

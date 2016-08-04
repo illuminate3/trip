@@ -5,7 +5,11 @@
     <div class="user-account-btn dropdown">
         <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
             <img width="28" src="{{ asset("assets/image-resources/gravatar.jpg") }}" alt="Profile image">
-            <span>{{ Auth::user()->name }}</span>
+            @if(Auth::check())
+                <span>{{ Auth::user()->name }}</span>
+            @else
+                <span>Anonymous</span>
+            @endif
             <i class="glyph-icon icon-angle-down"></i>
         </a>
         <div class="dropdown-menu float-right">
@@ -18,7 +22,7 @@
                     <div class="user-info">
                             <span>
 
-                                <i>{{ Auth::user()->username }}</i>
+                               <i>{{-- Auth::user()->username --}}</i>
                             </span>
                         <a href="#" title="Edit profile">Edit profile</a>
                         <a href="#" title="View notifications">View notifications</a>
@@ -46,7 +50,7 @@
                     </li>
                 </ul>
                 <div class="button-pane button-pane-alt pad5L pad5R text-center">
-                    <a href="#" class="btn btn-flat display-block font-normal btn-danger">
+                    <a href="{{url('/logout') }}" class="btn btn-flat display-block font-normal btn-danger">
                         <i class="glyph-icon icon-power-off"></i>
                         Logout
                     </a>
@@ -77,11 +81,11 @@
         <div class="dropdown-menu float-left">
             <div class="box-sm">
                 <div class="pad5T pad5B pad10L pad10R dashboard-buttons clearfix">
-                    <a href="#" class="btn vertical-button hover-blue-alt" title="">
+                    <a href="{{ url('dash/watchtower') }}" class="btn vertical-button hover-blue-alt" title="">
                             <span class="glyph-icon icon-separator-vertical pad0A medium">
-                                <i class="glyph-icon icon-dashboard opacity-80 font-size-20"></i>
+                                <i class="glyph-icon icon-users opacity-80 font-size-20"></i>
                             </span>
-                        Dashboard
+                        Users
                     </a>
                     <a href="#" class="btn vertical-button hover-green" title="">
                             <span class="glyph-icon icon-separator-vertical pad0A medium">
@@ -244,98 +248,10 @@
         </a>
         <!-- <div class="dropdown-menu pad0A box-sm float-left" id="progress-dropdown"> -->
             <div class="scrollable-content scrollable-slim-box">
-                <ul class="no-border progress-box progress-box-links">
-                    <li>
-                        <a href="#" title="">
-                            <div class="progress-title">
-                                Finishing uploading files
-                                <b>23%</b>
-                            </div>
-                            <div class="progressbar-smaller progressbar" data-value="23">
-                                <div class="progressbar-value bg-blue-alt">
-                                    <div class="progressbar-overlay"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            <div class="progress-title">
-                                Roadmap progress
-                                <b>91%</b>
-                            </div>
-                            <div class="progressbar-smaller progressbar" data-value="91">
-                                <div class="progressbar-value bg-red">
-                                    <div class="progressbar-overlay"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            <div class="progress-title">
-                                Images upload
-                                <b>58%</b>
-                            </div>
-                            <div class="progressbar-smaller progressbar" data-value="58">
-                                <div class="progressbar-value bg-green"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            <div class="progress-title">
-                                WordPress migration
-                                <b>74%</b>
-                            </div>
-                            <div class="progressbar-smaller progressbar" data-value="74">
-                                <div class="progressbar-value bg-purple"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            <div class="progress-title">
-                                Agile development procedures
-                                <b>91%</b>
-                            </div>
-                            <div class="progressbar-smaller progressbar" data-value="91">
-                                <div class="progressbar-value bg-black">
-                                    <div class="progressbar-overlay"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            <div class="progress-title">
-                                Systems integration
-                                <b>58%</b>
-                            </div>
-                            <div class="progressbar-smaller progressbar" data-value="58">
-                                <div class="progressbar-value bg-azure"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="">
-                            <div class="progress-title">
-                                Code optimizations
-                                <b>97%</b>
-                            </div>
-                            <div class="progressbar-smaller progressbar" data-value="97">
-                                <div class="progressbar-value bg-yellow"></div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+            
             </div>
-            <div class="button-pane button-pane-alt pad5A text-center">
-                <a href="#" class="btn btn-flat display-block font-normal hover-green" title="View all notifications">
-                    View all notifications
-                </a>
-            </div>
-        </div>
+            
+        <!-- </div> -->
     </div>
     <div class="dropdown" id="cloud-btn">
         <a href="#" data-placement="bottom" class="tooltip-button sb-toggle-right" title="Statistics Sidebar">

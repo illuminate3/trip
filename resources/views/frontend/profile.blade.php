@@ -9,12 +9,12 @@
         <div class="row collapse">
             <div class="medium-2 columns">
                 <ul class="tabs vertical" id="business-profile" data-tabs>
-                    <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">Profile</a></li>
-                    <li class="tabs-title"><a href="#panel3v">Add a business</a></li>
-                    <li class="tabs-title"><a href="#panel4v">All Business</a></li>
-                    <li class="tabs-title"><a href="#panel2v">Booking History <span class="badge float-right">1</span></a></li>
-                    <li class="tabs-title"><a href="#panel5v">Profile Settings</a></li>
-                    <li class="tabs-title"><a href="#panel6v">Logout</a></li>
+                    <li class="tabs-title back-cat is-active"><a href="#panel1v" aria-selected="true">Profile</a></li>
+                    <li class="tabs-title back-cat"><a href="#panel3v">Add a business</a></li>
+                    <li class="tabs-title back-cat"><a href="#panel4v">All Business</a></li>
+                    <li class="tabs-title back-cat"><a href="#panel2v">Booking History <span class="badge float-right">1</span></a></li>
+                    <li class="tabs-title back-cat"><a href="#panel5v">Profile Settings</a></li>
+                    <li class="tabs-title back-cat"><a href="{{ url('/logout') }}">Logout</a></li>
                 </ul>
             </div>
             <div class="medium-10 columns">
@@ -54,100 +54,85 @@
                     </div>
                     <div class="tabs-panel" id="panel3v">
                         <div class="slider-wrap">
-                            <div class="input-slider">
+                            <div class="input-wizard">
                                 <div class="slide first">
                                     <h4>Select Your Business type</h4>
                                     <hr>
                                     <div class="row categories">
                                         <div class="cat">
-                                            <a id="cat-hotel"><p><i class="fa fa-hotel"></i></p><p>Hotel</p></a>
+                                            <a href="{{ url('hotels/create') }}"><p><i class="fa fa-hotel"></i></p><p>Hotel</p></a>
                                         </div>
                                         <div class="cat">
-                                            <a id="cat-venue"><p><i class="fa fa-map-o"></i></p><p>Venue</p></a>
+                                            <a href="{{ url('venues/create') }}"><p><i class="fa fa-map-o"></i></p><p>Venue</p></a>
                                         </div>
                                         <div class="cat">
-                                            <a id="cat-restrurant"><p><i class="fa fa-cutlery"></i></p><p>restrurant</p></a>
+                                            <a href="{{ url('restaurants/create') }}"><p><i class="fa fa-cutlery"></i></p><p>restrurant</p></a>
                                         </div>
                                         <div class="cat">
-                                            <a id="cat-tour"><p><i class="fa fa-plane"></i></p><p>Tour</p></a>
+                                            <a href="{{ url('tours/create') }}"><p><i class="fa fa-plane"></i></p><p>Tour</p></a>
                                         </div>
                                         <div class="cat">
-                                            <a id="cat-vehicle"><p><i class="fa fa-car"></i></p><p>vehicle</p></a>
+                                            <a href="{{ url('vehicles/create') }}"><p><i class="fa fa-car"></i></p><p>vehicle</p></a>
                                         </div>
                                     </div>                                    
                                 </div>
-                                <div class="slide cat-hotel" >
-                                    <h4>Enter Hotel Details</h4>
-                                    <hr>
-                                    <div class="form-wrap">
-                                        <form action="">
-                                            @include('hotels._frontendform')
-                                        </form>
-                                    </div>
-                                </div>          
-                                <div class="slide cat-venue" >
-                                    <h4>Enter Venue Details</h4>
-                                    <hr>
-                                    <div class="form-wrap">
-                                        <form action="">
-                                            @include('venues._form')
-                                        </form>
-                                    </div>
-                                </div>          
-                                <div class="slide cat-restrurant" >
-                                    <h4>Enter restrurant Details</h4>
-                                    <hr>
-                                    <div class="form-wrap">
-                                        <form action="">
-                                            @include('restaurants._form')
-                                        </form>
-                                    </div>
-                                </div>          
-                                <div class="slide cat-tour" >
-                                    <h4>Enter tour Details</h4>
-                                    <hr>
-                                    <div class="form-wrap">
-                                        <form action="">
-                                            @include('tours._form')
-                                        </form>
-                                    </div>
-                                </div>          
-                                <div class="slide cat-vehicle" >
-                                    <h4>Enter vehicles Details</h4>
-                                    <hr>
-                                    <div class="form-wrap">
-                                        <form action="">
-                                            @include('vehicles._form')
-                                        </form>
-                                    </div>
-                                </div>                                
+                                <div class="slide form-load" >
+                                    
+                                </div> 
                             </div>
                         </div>
                     </div>
                     <div class="tabs-panel" id="panel4v">
                         <ul class="collection-wrap">
 
-                            @foreach ($hotels as $hotel)
-
-                                <li>
-                                    <div class="wrap">
-                                        <div class="img-wrap">
-                                            <img src="{{ asset('uploads/images/hotel/'.$hotel->logo) }}" alt="">
+                            <div class="input-wizard">
+                                <div class="slide first">
+                                    <h4>Select Your Business type</h4>
+                                    <hr>
+                                    <div class="row categories">
+                                        <div class="cat">
+                                            <a href="{{ url('hotels/') }}"><p><i class="fa fa-hotel"></i></p><p>Hotel</p></a>
                                         </div>
-                                        <div class="long-desc">
-                                            <div class="row">
-                                                <h4 class="float-left">{{ $hotel->title }}</h4>
-                                                <div class="star float-right"></div>
-                                            </div>
-                                            <div class="row">
-                                                <p class="address">{{ $hotel->contacts['address'] }}</p>
-                                            </div>
-                                            <a href="{{ url('hotels/'.$hotel->slug)}}" class="button">Edit</a>
+                                        <div class="cat">
+                                            <a href="{{ url('venues/create') }}"><p><i class="fa fa-map-o"></i></p><p>Venue</p></a>
                                         </div>
-                                    </div>
-                                </li>
+                                        <div class="cat">
+                                            <a href="{{ url('restaurants/create') }}"><p><i class="fa fa-cutlery"></i></p><p>restrurant</p></a>
+                                        </div>
+                                        <div class="cat">
+                                            <a href="{{ url('tours/create') }}"><p><i class="fa fa-plane"></i></p><p>Tour</p></a>
+                                        </div>
+                                        <div class="cat">
+                                            <a href="{{ url('vehicles/create') }}"><p><i class="fa fa-car"></i></p><p>vehicle</p></a>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="slide form-load" >
+                                   {{--  @foreach ($hotels as $hotel)
 
-                            @endforeach
+                                        <li>
+                                            <div class="wrap">
+                                                <div class="img-wrap">
+                                                    <img src="{{ asset('uploads/images/hotel/'.$hotel->logo) }}" alt="">
+                                                </div>
+                                                <div class="long-desc">
+                                                    <div class="row">
+                                                        <h4 class="float-left">{{ $hotel->title }}</h4>
+                                                        <div class="star float-right"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <p class="address">{{ $hotel->contacts['address'] }}</p>
+                                                    </div>
+                                                    <a href="{{ url('hotels/'.$hotel->slug.'/edit')}}" class="button" id="edit-form">Edit</a>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    @endforeach --}}
+                                    
+                                </div> 
+                            </div>
+
                         </ul>
                     </div>
                     <div class="tabs-panel" id="panel5v">

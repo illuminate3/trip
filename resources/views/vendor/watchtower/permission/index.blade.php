@@ -1,9 +1,13 @@
 @extends(config('watchtower.views.layouts.master'))
 
-@section('content')
+@section('page-title')
+  Permissions
+ 
 
-    <h1>Permissions
-    <div class="btn-group pull-right" role="group" aria-label="...">    
+@stop
+@section('content')
+  
+   <div class="btn-group pull-right" role="group" aria-label="...">    
       @if ( Shinobi::can( config('watchtower.acl.role.viewmatrix', false) ) )
         <a href="{{ route('watchtower.role.matrix') }}">
         <button type="button" class="btn btn-default">
@@ -20,9 +24,7 @@
         </button></a>
       @endif
     </div>
-    </h1>
-
-    <!-- search bar -->
+       <!-- search bar -->
     @include( config('watchtower.views.layouts.search'), [ 'search_route' => config('watchtower.route.as') .'permission.index', 'items' => $permissions, 'acl' => 'permission' ] )
 
     <div class="table">

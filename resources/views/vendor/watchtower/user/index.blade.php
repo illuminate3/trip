@@ -1,22 +1,22 @@
 @extends(config('watchtower.views.layouts.master'))
-
+@section('page-title')
+  Users
+@stop
 @section('content')
+  <div class="btn-group pull-right" role="group" aria-label="...">    
+    <a href="{{ route('watchtower.user.matrix') }}">
+    <button type="button" class="btn btn-default">
+      <i class="fa fa-th fa-fw"></i> 
+      <span class="hidden-xs hidden-sm">User Matrix</span>
+    </button></a>
 
-    <h1>Users
-    <div class="btn-group pull-right" role="group" aria-label="...">    
-      <a href="{{ route('watchtower.user.matrix') }}">
-      <button type="button" class="btn btn-default">
-        <i class="fa fa-th fa-fw"></i> 
-        <span class="hidden-xs hidden-sm">User Matrix</span>
-      </button></a>
+    <a href="{{ route('watchtower.user.create') }}">
+    <button type="button" class="btn btn-info">
+      <i class="fa fa-plus fa-fw"></i> 
+      <span class="hidden-xs hidden-sm">Add New User</span>
+    </button></a>
+  </div>
 
-      <a href="{{ route('watchtower.user.create') }}">
-      <button type="button" class="btn btn-info">
-        <i class="fa fa-plus fa-fw"></i> 
-        <span class="hidden-xs hidden-sm">Add New User</span>
-      </button></a>
-    </div>
-    </h1>
 
     <!-- search bar -->
     @include(config('watchtower.views.layouts.search'), [ 'search_route' => 'watchtower.user.index', 'items' => $users, 'acl' => 'user' ] )

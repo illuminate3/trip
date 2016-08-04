@@ -26,7 +26,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('image','Image',['class' => 'control-label']) !!}
-    {!! Form::file('image',null,['class' => 'form-control']) !!}
+    {!! Form::file('image',['class' => 'form-control']) !!}
     @if(count($errors->get('image')) > 0)
             <div class="alert alert-danger">
                 <ul>

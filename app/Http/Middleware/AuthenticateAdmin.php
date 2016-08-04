@@ -8,7 +8,7 @@ use Closure;
 use Illuminate\Http\RedirectResponse;
 
 
-class AuthenticateBusiness 
+class AuthenticateAdmin 
 {
     /**
      * Handle an incoming request.
@@ -19,10 +19,10 @@ class AuthenticateBusiness
      */
     public function handle($request, Closure $next)
     {
-        if ( Shinobi::is('business') ||  Shinobi::is('admin') ) {
-            return $next($request);
+        if (! Shinobi::is('admin') ) {
+            session()->flash('errMsg','Freak me out');
+            return redirect('/profile')->with('errMsg');
         }
-        session()->flash('errMsg','Freak me out');
-        return redirect('/profile');
+        return $next($request);
     }
 }

@@ -17,19 +17,33 @@ $(window).load(function() {
 
 $(document).ready(function() {
 
-    var inputSlider = $('.input-slider .slide'),
-        cat = inputSlider.find('.cat');
+    var formLoad = $('.input-wizard .form-load');    
 
-    cat.on('click', function() {
-        var catId = $(this).find('a').attr('id');
-        inputSlider.fadeOut('slow');
-        $('.'+catId).fadeIn();
-        
-        
-        
 
+    $('.back-cat').on('click', function(e) {
+        e.preventDefault();
+        console.log('dada');
+        formLoad.fadeOut('slow');
+        $('.slide.first').fadeIn();       
+        
     });
 
+    $('.cat').on('click', 'a', function(e) {
+        e.preventDefault();
+        
+        $('.slide.first').fadeOut();       
+        formLoad.fadeIn('slow');
+
+        var $linkSlide = $(this).attr('href') + ' div#ajax-form';
+
+        formLoad.load($linkSlide);
+        $('.input-wizard').css('height' , formLoad.css('height'));
+
+    });
+    $('.form-next').on('click', function() {
+        var hreff = 'http://localhost:8000/profile';
+        formLoad.load(hreff);
+    });
 
         
 
@@ -87,6 +101,30 @@ $(document).ready(function() {
         }
     });
 // lightbox
+
+// gallery slider 
+     $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true
+    });
+
+    $('.slider-nav a').on('click', function(e) {
+        e.preventDefault();
+    });
+        
+// gallery slider 
+
 
 
 // for slider

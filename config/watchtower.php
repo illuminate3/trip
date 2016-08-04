@@ -124,7 +124,7 @@ return [
     */   
    'views' => [
         'layouts' => [
-            'master'        => 'watchtower::layouts.master',
+            'master'        => 'layouts.dash',
             'flash'         => 'watchtower::partials.flash',
             'modal'         => 'watchtower::partials.modal',
             'search'        => 'watchtower::partials.search',
@@ -178,21 +178,21 @@ return [
         'users' => [
             'name'  => "Users",            
             'route' => 'watchtower.user.index',
-            'icon'  => 'fa fa-user fa-5x',
+            'icon'  => 'glyph-icon icon-user fa-5x font-size-120',
             'colour'=> 'primary'
         ],
 
         'roles' => [
             'name'  => "Roles",
             'route' => 'watchtower.role.index',
-            'icon'  => 'fa fa-users fa-5x',
+            'icon'  => 'glyph-icon icon-users font-size-120',
             'colour'=> 'info'
         ],
 
         'permissions' => [
             'name'  => "Permissions",
             'route' => 'watchtower.permission.index',
-            'icon'  => 'fa fa-5x fa-key',
+            'icon'  => 'glyph-icon icon-key font-size-120',
             'colour'=> 'success'
         ],
     ],
@@ -245,7 +245,7 @@ return [
     |
     */
     'route' => [
-        'prefix'    => '',
+        'prefix'    => 'dash',
         'as'        => 'watchtower.',
         'middleware'=> ( str_contains( app()->version(), '5.2') ? ['web'] : ['auth'] )
     ]

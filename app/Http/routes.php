@@ -5,7 +5,6 @@
         Route::get('/', 'SiteController@getHome');
         Route::get('/about','SiteController@getAbout');
         Route::get('/faq','SiteController@getFaq');
-        Route::get('/profile','SiteController@getProfile');
         Route::get('/blog','SiteController@getBlog');
         Route::get('/contact','SiteController@getContact');
         Route::resource('/posts', PostsController::class);
@@ -50,8 +49,10 @@
     
     
         //Laravel Social Login For Login Authentication
-        Route::get('/redirect', 'SocialAuthController@redirect');
-        Route::get('/callback', 'SocialAuthController@callback');
+        /*Route::get('/redirect', 'SocialAuthController@redirect');
+        Route::get('/callback', 'SocialAuthController@callback');*/
+        Route::get('social/login/redirect/{provider}', ['uses' => 'SocialAuthController@redirectToProvider', 'as' => 'social.login']);
+        Route::get('social/login/{provider}', 'SocialAuthController@handleProviderCallback');
     
         Route::auth();
         Route::get('/home', 'HomeController@index');
@@ -95,35 +96,43 @@
         Route::post('/send-mail','MailController@sendNewsletterMail');
     }); // Web Middleware
  // Dashboard For SuperAdmin
-        Route::group(['middleware' => ["web"],'before'=> 'auth'], function () {
-            Route::get('dash/',function(){
-               return view('dashboard.dash');
-            });
-            Route::controller('dash',AdminDashController::class);
-            //Route::controller('dash')
-
-            /* 
-            //Old Controllers
-            Route::get('/restaurants','AdminDashController@getRestaurants');
-            Route::get('/restaurants/create','AdminDashController@registerRestaurants');
-    
-            Route::get('/hotels','AdminDashController@getHotels');
-            Route::get('/hotels/create','AdminDashController@registerHotel');
-    
-            Route::get('/vehicles','AdminDashController@getVehicles');
-            Route::get('/vehicles/create','AdminDashController@registerVehicles');
-    
-            Route::get('/tours','AdminDashController@getTours');
-            Route::get('/tours/create','AdminDashController@registerTour');
-    
-            Route::get('/venues','AdminDashController@getVenues');
-            Route::get('/venues/create','AdminDashController@registerVenue');
-            Route::resource('carousel',CarouselsController::class);
-            */
-            Route::get('/approve/{model}/{id}','AdminDashController@approve');
-            Route::get('/suspend/{model}/{id}','AdminDashController@suspend');
-    
+    Route::group(['middleware' => ['web',\App\Http\Middleware\AuthenticateAdmin::class],'before'=> 'business','prefix'=>'dash'], function () {
+        Route::get('/',function(){
+           return view('dashboard.dash');
         });
+        //Route::controller('dash',AdminDashController::class);
+        
+
+        
+        //Old Controllers
+        Route::get('/restaurants','AdminDashController@getRestaurants');
+        Route::get('/restaurants/create','AdminDashController@registerRestaurants');
+
+        Route::get('/hotels','AdminDashController@getHotels');
+        Route::get('/hotels/create','AdminDashController@registerHotel');
+
+        Route::get('/vehicles','AdminDashController@getVehicles');
+        Route::get('/vehicles/create','AdminDashController@registerVehicles');
+
+        Route::get('/tours','AdminDashController@getTours');
+        Route::get('/tours/create','AdminDashController@registerTour');
+
+        Route::get('/venues','AdminDashController@getVenues');
+        Route::get('/venues/create','AdminDashController@registerVenue');
+        
+        Route::resource('carousel',CarouselsController::class);
+        Route::get('/approve/{model}/{id}','AdminDashController@approve');
+        Route::get('/suspend/{model}/{id}','AdminDashController@suspend');
+
+
+    });
+//Business User Dashboard
+    Route::group(['middleware'=>['web',\App\Http\Middleware\AuthenticateBusiness::class], 'before' => 'auth'],function(){
+
+        Route::get('/profile','SiteController@getProfile');
+        Route::get('/profile/business','ProfileController@getBusiness');
+    });
+
 //API ROUTES
 Route::group(['prefix' => '/api/v1/','middleware'=> 'api'], function () {
     Route::resource('users',Api\UsersController::class);

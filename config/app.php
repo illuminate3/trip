@@ -218,7 +218,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Shinobi'  => Caffeinated\Shinobi\Facades\Shinobi::class, // For RBAC functions
-        //'Watchtower'=> Smarch\Watchtower\WatchtowerFacade::class, // not required, but available
+        'Watchtower'=> Smarch\Watchtower\WatchtowerFacade::class, // not required, but available
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
         'Image' => Intervention\Image\Facades\Image::class, // For Intervention Library,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class, // Social Login [Fb,twitter,Google +]

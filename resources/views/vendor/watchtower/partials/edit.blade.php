@@ -1,9 +1,11 @@
 @extends(config('watchtower.views.layouts.master'))
 
+@section('page-title')
+    {{ ( ($show == '0') ? 'Edit' : 'Viewing' ) }} '{{ $resource->name }}'
+@stop
 @section('content')
 
-    <h1>{{ ( ($show == '0') ? 'Edit' : 'Viewing' ) }} '{{ $resource->name }}'</h1>
-    <hr/>
+    
 
     {!! Form::model($resource, ['method' => 'PATCH', 'route' => [ config('watchtower.route.as') . $route .'.update', $resource->id ], 'class' => 'form-horizontal']) !!}
 

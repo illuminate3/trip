@@ -1,9 +1,8 @@
 @extends(config('watchtower.views.layouts.master'))
-
+@section('page-title')
+Role Matrix <small class="hidden-xs">Permissions that are on each role</small>
+@stop
 @section('content')
-
-    <h1>Role Matrix <small class="hidden-xs">Permissions that are on each role</small>
-    </h1>
 
     <div class="visible-xs alert alert-danger">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

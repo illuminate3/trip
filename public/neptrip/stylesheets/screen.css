@@ -1188,101 +1188,132 @@ ul.archive-list li {
 .business-profile {
   margin: 50px auto;
 }
-/* line 1065, ../sass/screen.scss */
+/* line 1064, ../sass/screen.scss */
+.business-profile .tabs .tabs-title {
+  border-bottom: 1px solid #dedede;
+}
+/* line 1066, ../sass/screen.scss */
 .business-profile .tabs .tabs-title a {
   font-size: 14px;
   color: #0F4174;
 }
-/* line 1072, ../sass/screen.scss */
+/* line 1070, ../sass/screen.scss */
+.business-profile .tabs .tabs-title span.badge {
+  padding: 0.2rem 0.3rem;
+  min-width: auto;
+}
+/* line 1077, ../sass/screen.scss */
 .business-profile .tabs-panel {
   padding: 0;
 }
-/* line 1075, ../sass/screen.scss */
+/* line 1080, ../sass/screen.scss */
 .business-profile .tabs-panel h4 {
   margin-top: 1.25rem;
 }
-/* line 1079, ../sass/screen.scss */
+/* line 1084, ../sass/screen.scss */
 .business-profile .tabs-panel p, .business-profile .tabs-panel h4 {
   width: 96%;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 1084, ../sass/screen.scss */
+/* line 1089, ../sass/screen.scss */
 .business-profile .tabs-panel .slider-wrap {
   height: 590px;
 }
-/* line 1089, ../sass/screen.scss */
-.business-profile .input-slider {
+/* line 1094, ../sass/screen.scss */
+.business-profile .input-wizard {
   position: relative;
 }
-/* line 1092, ../sass/screen.scss */
-.business-profile .input-slider .slide {
+/* line 1097, ../sass/screen.scss */
+.business-profile .input-wizard .slide {
   width: 100%;
   position: absolute;
-  display: none;
-}
-/* line 1097, ../sass/screen.scss */
-.business-profile .input-slider .slide h4 {
-  color: #0F4174;
 }
 /* line 1101, ../sass/screen.scss */
-.business-profile .input-slider .slide .form-wrap {
+.business-profile .input-wizard .slide .ajax-form {
+  padding: 0 30px;
+}
+/* line 1105, ../sass/screen.scss */
+.business-profile .input-wizard .slide h4 {
+  color: #0F4174;
+}
+/* line 1108, ../sass/screen.scss */
+.business-profile .input-wizard .slide h4 .ti-angle-left {
+  cursor: pointer;
+}
+/* line 1111, ../sass/screen.scss */
+.business-profile .input-wizard .slide h4 .ti-angle-left:hover {
+  color: #37699c;
+}
+/* line 1115, ../sass/screen.scss */
+.business-profile .input-wizard .slide h4 .back-cat {
+  margin-right: 20px;
+}
+/* line 1120, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap {
   width: 96%;
   margin: 0 auto;
 }
-/* line 1105, ../sass/screen.scss */
-.business-profile .input-slider .slide .form-wrap .form-group {
+/* line 1124, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap .form-group {
   width: 50%;
   float: left;
 }
-/* line 1109, ../sass/screen.scss */
-.business-profile .input-slider .slide .form-wrap .form-group input {
+/* line 1128, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap .form-group input {
   width: 90%;
   border: 1px solid #37699c;
 }
-/* line 1114, ../sass/screen.scss */
-.business-profile .input-slider .slide .form-wrap .form-group input[type="submit"] {
+/* line 1133, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap .form-group input[type="submit"] {
   width: auto !important;
 }
-/* line 1117, ../sass/screen.scss */
-.business-profile .input-slider .slide .form-wrap .form-group input.button, .business-profile .input-slider .slide .form-wrap .form-group label.button {
-  float: right;
+/* line 1136, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap .form-group input.button, .business-profile .input-wizard .slide .form-wrap .form-group label.button {
+  float: left;
   margin-right: 10%;
   background: #0F4174;
   margin-top: 30px;
   color: #fff !important;
+  width: 100% !important;
 }
-/* line 1124, ../sass/screen.scss */
-.business-profile .input-slider .slide .form-wrap .form-group textarea {
+/* line 1144, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap .form-group textarea {
   height: 140px;
   width: 90%;
   border: 1px solid #37699c;
 }
-/* line 1130, ../sass/screen.scss */
-.business-profile .input-slider .slide .form-wrap label {
+/* line 1150, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap .form-group.btn {
+  width: 20%;
+  margin-right: 5%;
+}
+/* line 1154, ../sass/screen.scss */
+.business-profile .input-wizard .slide .form-wrap label {
   color: #0F4174;
 }
-/* line 1135, ../sass/screen.scss */
-.business-profile .input-slider .slide.first {
+/* line 1159, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first {
   display: block;
 }
-/* line 1138, ../sass/screen.scss */
-.business-profile .input-slider .slide.first .categories {
+/* line 1162, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first .categories {
   margin: 4em 0;
 }
-/* line 1142, ../sass/screen.scss */
-.business-profile .input-slider .slide.first .categories .cat {
+/* line 1166, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first .categories .cat {
   display: block;
   float: left;
   width: 20%;
 }
-/* line 1146, ../sass/screen.scss */
-.business-profile .input-slider .slide.first .categories .cat a {
+/* line 1170, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first .categories .cat a {
   text-align: center;
   width: 100%;
 }
-/* line 1150, ../sass/screen.scss */
-.business-profile .input-slider .slide.first .categories .cat a p {
+/* line 1174, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first .categories .cat a p {
+  text-align: center;
   font-size: 20px;
   color: #575757;
   font-weight: bold;
@@ -1292,8 +1323,8 @@ ul.archive-list li {
   -o-transition: font-size 0.1s linear;
   transition: font-size 0.1s linear;
 }
-/* line 1156, ../sass/screen.scss */
-.business-profile .input-slider .slide.first .categories .cat a p i {
+/* line 1181, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first .categories .cat a p i {
   font-size: 32px;
   -webkit-transition: font-size 0.1s linear;
   -ms-transition: font-size 0.1s linear;
@@ -1301,32 +1332,32 @@ ul.archive-list li {
   -o-transition: font-size 0.1s linear;
   transition: font-size 0.1s linear;
 }
-/* line 1163, ../sass/screen.scss */
-.business-profile .input-slider .slide.first .categories .cat a:hover p {
+/* line 1188, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first .categories .cat a:hover p {
   color: #0F4174;
   font-size: 22px;
 }
-/* line 1167, ../sass/screen.scss */
-.business-profile .input-slider .slide.first .categories .cat a:hover p i {
+/* line 1192, ../sass/screen.scss */
+.business-profile .input-wizard .slide.first .categories .cat a:hover p i {
   font-size: 36px;
 }
-/* line 1181, ../sass/screen.scss */
+/* line 1206, ../sass/screen.scss */
 .business-profile ul.collection-wrap li {
   width: 25%;
   float: left;
   padding: 15px;
   position: relative;
 }
-/* line 1187, ../sass/screen.scss */
+/* line 1212, ../sass/screen.scss */
 .business-profile ul.collection-wrap li .wrap {
   border: 1px solid #ddd;
   height: 190px;
 }
-/* line 1191, ../sass/screen.scss */
+/* line 1216, ../sass/screen.scss */
 .business-profile ul.collection-wrap li .wrap .row {
   margin: 0;
 }
-/* line 1195, ../sass/screen.scss */
+/* line 1220, ../sass/screen.scss */
 .business-profile ul.collection-wrap li .wrap p.address {
   overflow: hidden;
   line-height: 20px;
@@ -1338,7 +1369,7 @@ ul.archive-list li {
   /* number of lines to show */
   -webkit-box-orient: vertical;
 }
-/* line 1204, ../sass/screen.scss */
+/* line 1229, ../sass/screen.scss */
 .business-profile ul.collection-wrap li .wrap a.button {
   position: absolute;
   bottom: 20px;
@@ -1347,94 +1378,160 @@ ul.archive-list li {
   background: #0F4174;
 }
 
-/* line 1222, ../sass/screen.scss */
+/* line 1247, ../sass/screen.scss */
 .about .page-title {
   padding: 30px 0;
 }
-/* line 1224, ../sass/screen.scss */
+/* line 1249, ../sass/screen.scss */
 .about .page-title h4 {
   font-family: "NexaBold", sans-serif;
   color: #0F4174;
   text-transform: capitalize;
 }
-/* line 1231, ../sass/screen.scss */
+/* line 1256, ../sass/screen.scss */
 .about .page-content p {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 1242, ../sass/screen.scss */
+/* line 1267, ../sass/screen.scss */
 .faq .accordion li a {
   font-size: 18px;
   color: #0F4174;
 }
-/* line 1246, ../sass/screen.scss */
+/* line 1271, ../sass/screen.scss */
 .faq .accordion li a i {
   margin-right: 10px;
 }
-/* line 1250, ../sass/screen.scss */
+/* line 1275, ../sass/screen.scss */
 .faq .accordion li .accordion-content {
   padding: 1rem 2rem;
 }
 
-/* line 1261, ../sass/screen.scss */
+/* line 1286, ../sass/screen.scss */
 .inside {
   margin-top: 25px;
 }
-/* line 1263, ../sass/screen.scss */
+/* line 1288, ../sass/screen.scss */
 .inside .section-title {
   margin-top: 50px;
 }
-/* line 1265, ../sass/screen.scss */
+/* line 1290, ../sass/screen.scss */
 .inside .section-title h3 {
   font-family: "NexaBold", sans-serif;
   color: #0F4174;
   font-size: 24px;
 }
-/* line 1271, ../sass/screen.scss */
+/* line 1296, ../sass/screen.scss */
 .inside .content-wrap {
   padding: 25px;
   background: #e8f4ff;
 }
-/* line 1276, ../sass/screen.scss */
+/* line 1301, ../sass/screen.scss */
 .inside .content-wrap .img-wrap img {
   width: 100%;
 }
-/* line 1281, ../sass/screen.scss */
+/* line 1306, ../sass/screen.scss */
 .inside .content-wrap p {
   color: #575757;
 }
-/* line 1283, ../sass/screen.scss */
+/* line 1308, ../sass/screen.scss */
 .inside .content-wrap p span {
   font-weight: bold;
   color: #FF2626;
 }
-/* line 1288, ../sass/screen.scss */
+/* line 1313, ../sass/screen.scss */
 .inside .content-wrap .row {
   margin: 0;
 }
-/* line 1291, ../sass/screen.scss */
+/* line 1316, ../sass/screen.scss */
 .inside .content-wrap a {
   color: #0F4174;
 }
-/* line 1293, ../sass/screen.scss */
+/* line 1318, ../sass/screen.scss */
 .inside .content-wrap a:hover {
   color: #FF2626;
 }
-/* line 1297, ../sass/screen.scss */
+/* line 1322, ../sass/screen.scss */
 .inside .content-wrap a.button {
   margin-top: 10px;
   background: #0F4174;
   color: #fff;
+  float: right;
 }
-/* line 1303, ../sass/screen.scss */
+/* line 1328, ../sass/screen.scss */
+.inside .content-wrap p.social {
+  float: left;
+  margin-top: 15px;
+}
+/* line 1332, ../sass/screen.scss */
+.inside .content-wrap p.social a {
+  padding: 5px;
+}
+/* line 1337, ../sass/screen.scss */
 .inside .popup-gallery {
   margin-top: 25px;
 }
-/* line 1306, ../sass/screen.scss */
+/* line 1340, ../sass/screen.scss */
 .inside .popup-gallery a {
   width: 13%;
 }
-/* line 1309, ../sass/screen.scss */
+/* line 1343, ../sass/screen.scss */
 .inside .popup-gallery a img {
   width: inherit;
+}
+
+/* line 1369, ../sass/screen.scss */
+body.email {
+  background: #f3f3f3 !important;
+}
+/* line 1372, ../sass/screen.scss */
+body.email .row {
+  max-width: 100%;
+}
+/* line 1376, ../sass/screen.scss */
+body.email .custom-head {
+  border-bottom: 1px solid #ccc;
+  padding: 25px 0;
+  margin-bottom: 20px;
+}
+/* line 1381, ../sass/screen.scss */
+body.email .custom-head img {
+  width: 160px;
+}
+/* line 1388, ../sass/screen.scss */
+body.email .custom h1, body.email .custom h4 {
+  color: #0F4174;
+  font-size: 22px;
+  font-family: "NexaBold", sans-serif;
+}
+/* line 1393, ../sass/screen.scss */
+body.email .custom p {
+  font-family: "Open Sans", sans-serif;
+}
+/* line 1396, ../sass/screen.scss */
+body.email .custom p b {
+  color: #0F4174;
+}
+/* line 1400, ../sass/screen.scss */
+body.email .custom p.code {
+  color: #0F4174;
+  font-size: 32px;
+}
+/* line 1406, ../sass/screen.scss */
+body.email .custom ul.social li {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 1409, ../sass/screen.scss */
+body.email .custom ul.social li a {
+  color: #0F4174;
+}
+/* line 1412, ../sass/screen.scss */
+body.email .custom ul.social li a:hover {
+  color: #575757;
+}
+
+/* line 1421, ../sass/screen.scss */
+#map-canvas-0 {
+  height: 10rem !important;
 }

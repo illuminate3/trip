@@ -12,11 +12,14 @@
     <link rel="stylesheet" href="{{ asset('neptrip/css/owl.theme.css') }}">
     <link rel="stylesheet" href="{{ asset('neptrip/css/owl.transitions.css') }}">
     <link rel="stylesheet" href="{{ asset('neptrip/css/lightbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('neptrip/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('neptrip/css/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('neptrip/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('neptrip/css/jquery.rateyo.min.css') }}">
     <link href="{{ asset('neptrip/stylesheets/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="{{ asset('neptrip/stylesheets/print.css') }}" media="print" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('neptrip/js/vendor/jquery.js') }}"></script>
+    
 </head>
 <body>
 <div class="page-wrap">
@@ -33,7 +36,7 @@
             <div class="small-12 large-4 columns float-right">
                 <h4>Log In With</h4>
                 <ul>
-                    <li><a href=""><img src="{{ asset('neptrip/images/fb-login.jpg') }}" alt=""></a></li>
+                    <li><a href="{{ route('social.login', ['facebook']) }}"><img src="{{ asset('neptrip/images/fb-login.jpg') }}" alt=""></a></li>
                     <li><a href=""><img src="{{ asset('neptrip/images/tw-login.jpg') }}" alt=""></a></li>
                     <li><a href=""><img src="{{ asset('neptrip/images/gp-login.jpg') }}" alt=""></a></li>
                 </ul>
@@ -41,17 +44,39 @@
             <div class="small-12 large-8 columns login-form">
                 <h4>log in</h4>
                 <!-- login-form -->
-                <form action="">
-                    <input type="text" placeholder="email">
-                    <input type="password" placeholder="password">
-                    <button class="button expanded">Login</button>
-                    <div class="small-6 columns remember">
-                        <input id="remember" type="checkbox"><label for="remember">Remember me</label>
-                    </div>
-                    <div class="small-6 columns forgot">
-                        <a href="">Forgot Password!</a>
-                    </div>
-                </form>
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                            {{ csrf_field() }}
+
+                                <input id="email" type="email"  name="email" value="{{ old('email') }}" placeholder="yourname@gmail.com">
+
+                                    @if ($errors->has('email'))
+                                        <span class="caption alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                           
+                                    <input id="password" type="password" class="form-control" name="password" placeholder="Enter your password">
+
+                                    @if ($errors->has('password'))
+                                        <span class="caption alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                    <div class="small-6 columns remember">
+                                        <input id="remember" type="checkbox"><label for="remember">Remember me</label>
+                                    </div>
+                        
+                                    <button type="submit" class="button expanded">
+                                        Login
+                                    </button>
+                                    <div class="small-6 columns forgot">
+                                        <a href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                    </div>
+                             
+                            
+                    </form>
+                  
+                
                 <div class="seperator">
                     <div class="wrap">
                         <div class="or">OR</div>
@@ -81,20 +106,28 @@
             </div>
             <div class="small-6 large-9 columns">
                 <ul class="top-header">
+                @if(Auth::check())
+                    @if(Shinobi::is('admin'))
+                        <li><a href="{{ url('/dash')}}">Dashboard</a></li>
+                    @elseif(Shinobi::is('business'))
+                        <li><a href="{{ url('/profile') }}">Profile</a></li>
+                    @endif
+                @else
                     <li><a data-toggle="login-modal">join</a></li>
                     <li><a data-toggle="login-modal">log in</a></li>
+                @endif
                 </ul>
                 <div class="nav-toggle">
                     <i class="fa fa-bars"></i>
                 </div>
                 <ul class="main-nav">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/about/">about us</a></li>
-                    <li><a href="/hotels/">hotel</a></li>
-                    <li><a href="/venues/">venue</a></li>
-                    <li><a href="/restaurants/">restrurant</a></li>
-                    <li><a href="/tours/">tour</a></li>
-                    <li><a href="/vehicles/">vehicle</a></li>
+                    <li><a href="/about/">About us</a></li>
+                    <li><a href="/hotels/">Hotel</a></li>
+                    <li><a href="/venues/">Venue</a></li>
+                    <li><a href="/restaurants/">Restaurant</a></li>
+                    <li><a href="/tours/">Tour</a></li>
+                    <li><a href="/vehicles/">Vehicle</a></li>
                     <li><a href="/contact/">Contact Us</a></li>
                     <li><a href="/blog/">Blogs</a></li>
                     <li><a class="search-btn"><i class="ti-search"></i></a></li>
@@ -155,13 +188,16 @@
     <div class="row bottom-footer">
         <p class="float-left">©neptrip.com. All rights reserved</p>
         <ul class="float-right">
-            <li><a href="">Home</a></li>
-            <li><a href="">Home</a></li>
-            <li><a href="">Home</a></li>
-            <li><a href="">Home</a></li>
-            <li><a href="">Home</a></li>
-            <li><a href="">Home</a></li>
-            <li><a href="">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/hotels/">Hotel</a></li>
+            <li><a href="/venues/">Venue</a></li>
+            <li><a href="/restaurants/">Restaurant</a></li>
+            <li><a href="/tours/">Tour</a></li>
+            <li><a href="/vehicles/">Vehicle</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+            <li><a href="/blog/">Blogs</a></li>
+            <li><a class="search-btn"><i class="ti-search"></i></a></li>
         </ul>
     </div>
 </footer>
@@ -169,7 +205,7 @@
 </div>
 
 
-<script src="{{ asset('neptrip/js/vendor/jquery.js') }}"></script>
+
 <script src="{{ asset('neptrip/js/vendor/what-input.js') }}"></script>
 <script src="{{ asset('neptrip/js/vendor/foundation.js') }}"></script>
 <script src="{{ asset('neptrip/js/slick.js') }}"></script>

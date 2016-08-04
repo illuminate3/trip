@@ -10,6 +10,7 @@ use App\Tour;
 use App\Vehicle;
 use App\Venue;
 use App\User;
+use Shinobi;
 use Illuminate\Http\Request;
 
 class AdminDashController extends Controller
@@ -23,8 +24,8 @@ class AdminDashController extends Controller
 
     public function getRestaurants()
     {
-        $restaurants = Restaurant::all();
-        return view('dashboard.restaurant', compact("restaurants"));
+        $restaurants = Restaurant::all(); 
+        return view('dashboard.restaurant', compact("restaurants") );
     }
 
     public function getRestaurantsCreate()

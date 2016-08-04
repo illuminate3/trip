@@ -19,6 +19,12 @@ class WatchtowerTableSeeder extends Seeder
                 'description'   => 'Have all access to all areas',
                 'special'       => 'all-access',
             ],
+            [ 
+                'name'          => 'Business',
+                'slug'          => 'business',
+                'description'   => 'Have all access to the business dashboard',
+                'special'       => 'business-access',
+            ],
 
             [
                 'name'          => 'Moderators',
@@ -198,6 +204,21 @@ class WatchtowerTableSeeder extends Seeder
                 'name'          => 'permission search',
                 'slug'          => 'search.permission',
                 'description'   => 'Able to search permissions'
+            ],
+            [ 
+                'name'          => 'business dashboard',
+                'slug'          => 'business.dash',
+                'description'   => 'Able to use business dashboard'
+            ],
+            [ 
+                'name'          => 'normal user dashboard',
+                'slug'          => 'user.dash',
+                'description'   => 'Able to use normal users'
+            ],
+            [ 
+                'name'          => 'Editor',
+                'slug'          => 'editor.dash',
+                'description'   => 'Able to manage posts for blog'
             ],
         ];
 

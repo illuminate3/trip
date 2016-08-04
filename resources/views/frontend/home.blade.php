@@ -220,9 +220,11 @@ Homepage
                                                     <h4 class="float-left">{{ $hotel->title }} hotel title</h4>
                                                     <div class="star float-right"><div class="rateYo"></div></div>
                                                 </div>
-                                                <div class="row">
-                                                    <p class="address">{{ $hotel->contacts['address'] }}</p>
-                                                </div>
+                                                @if($hotel->contacts)
+                                                    <div class="row">
+                                                        <p class="address">{{ $hotel->contacts['address'] }}</p>
+                                                    </div>
+                                                @endif
                                                 <hr>
                                                 <div class="row">
                                                     <div class="float-left">
@@ -282,9 +284,11 @@ Homepage
                                                     </h4>
                                                     <div class="star float-right"><div class="rateYo"></div></div>
                                                 </div>
+                                                @if($hotel->contacts)
                                                 <div class="row">
                                                     <p class="address">{{ $tour->contacts['address']}}</p>
                                                 </div>
+                                                @endif
                                                 <hr>
                                                 <div class="row">
                                                     <div class="float-left">
@@ -341,9 +345,11 @@ Homepage
                                                     <h4 class="float-left">We offer Premium Hotels</h4>
                                                     <div class="star float-right"><div class="rateYo"></div></div>
                                                 </div>
+                                                @if($hotel->contacts)
                                                 <div class="row">
                                                     <p class="address">{{ $room->hotels->contacts['address'] }}</p>
                                                 </div>
+                                                @endif
                                                 <hr>
                                                 <div class="row">
                                                     <div class="float-left">

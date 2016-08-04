@@ -1,12 +1,12 @@
 <div class="row">
     <div class="small-12 medium-6 columns">
         <p>
-            <a href="">
+            <a href="tel: {{ $hotel->contacts['phone1'] }}">
                 <i class="fa fa-phone"></i> {{ $hotel->contacts['phone1'] }}
             </a>
         </p>
         <p>
-            <a href="">
+            <a href="tel:{{ $hotel->contacts['phone2'] }}">
                 <i class="fa fa-phone"></i> {{ $hotel->contacts['phone2'] }}
             </a>
         </p>
@@ -18,19 +18,19 @@
             </a>
         </p>
         <p>
-            <a href="">
+            <a href="https://{{ $hotel->contacts['website']}}" target="_blank">
                 <i class="fa fa-globe"></i> {{ $hotel->contacts['website']}}
             </a>
         </p>  
-        <a href="" class="button extended">Book Now </a>
     </div>
     <div class="small-12 medium-12 columns">
-        <p>
+        <a href="" class="button extended">Book Now </a>
+        {{-- <p>
             <i class="fa fa-user"></i> {{ $hotel->contacts['representative']}}
             {{ $hotel->contacts['role']}}
             
-        </p>
-        <p>
+        </p> --}}
+        <p class="social">
             <a href="https:\\facebook.com\{{ $hotel->contacts['facebook']}}">
                 <i class="fa fa-facebook"></i>
             </a>

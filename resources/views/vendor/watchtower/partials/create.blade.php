@@ -1,9 +1,11 @@
 @extends(config('watchtower.views.layouts.master'))
 
-@section('content')
+@section('page-title')
+    Create New {{ $route }}
+@stop
 
-    <h1>Create New {{ $route }}</h1>
-    <hr/>
+@section('content')
+    
 
     {!! Form::open( ['route' => config('watchtower.route.as') . $route .'.store', 'class' => 'form-horizontal']) !!}
     

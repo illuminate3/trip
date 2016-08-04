@@ -11,9 +11,9 @@
             <h3>Create a Hotel</h3>
         </div>
 		<div class="section-content">
-		<div class="row">
+		<div class="row ajax-form" id="ajax-form">
         {!! Form::open(['action' => 'HotelsController@store','files' => true]) !!}
-                @include('hotels._form')
+                @include('hotels._frontendform')
         {!! Form::close() !!}
     </div>
 </div>

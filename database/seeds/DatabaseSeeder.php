@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         Model::unguard();
 
-        factory(App\Hotel::class, 50)->create();
+        //factory(App\Hotel::class, 50)->create();
         // factory(App\Gallery::class, 250)->create();
         // factory(App\Restaurant::class, 50)->create();
         // factory(App\Venue::class, 50)->create();
@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         // factory(App\Tour::class, 50)->create();
         // factory(App\Package::class, 250)->create();
         // factory(App\Post::class,50)->create();
-        factory(App\Room::class, 250)->create();
+        //factory(App\Room::class, 250)->create();
         // factory(App\Review::class, 250)->create();
         // $this->call(ContactsTableSeeder::class);
         // $this->call(WatchtowerTableSeeder::class);

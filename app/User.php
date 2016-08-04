@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Caffeinated\Shinobi\Traits\ShinobiTrait;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-
-use Caffeinated\Shinobi\Traits\ShinobiTrait;
 
 class User extends Model implements AuthenticatableContract,CanResetPasswordContract
 {
@@ -57,7 +56,10 @@ class User extends Model implements AuthenticatableContract,CanResetPasswordCont
     {
         return $this->has(Hotel::class, 'user_id');
     }
-
+    /*
+    *   
+    *
+    */
     public function tours()
     {
         return $this->has(Tour::class, 'user_id');

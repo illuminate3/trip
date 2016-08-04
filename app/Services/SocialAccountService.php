@@ -6,9 +6,9 @@ use App\User;
 use App\SocialAccount;
 class SocialAccountService
 {
-  public function createOrGetUser(ProviderUser $providerUser)
+  public function createOrGetUser($provider, ProviderUser $providerUser)
    {
-       $account = SocialAccount::whereProvider('facebook')
+       $account = SocialAccount::whereProvider($provider)
            ->whereProviderUserId($providerUser->getId())
            ->first();
 
@@ -18,7 +18,7 @@ class SocialAccountService
 
            $account = new SocialAccount([
                'provider_user_id' => $providerUser->getId(),
-               'provider' => 'facebook'
+               'provider' => $provider
            ]);
 
            $user = User::whereEmail($providerUser->getEmail())->first();

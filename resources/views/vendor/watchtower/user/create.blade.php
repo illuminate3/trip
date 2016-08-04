@@ -1,9 +1,9 @@
 @extends(config('watchtower.views.layouts.master'))
-
+@section('page-title')
+    Create New User
+@stop
 @section('content')
 
-    <h1>Create New User</h1>
-    <hr/>
 
     {!! Form::open( ['route' => 'watchtower.user.store', 'class' => 'form-horizontal']) !!}
     
