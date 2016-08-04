@@ -23,6 +23,6 @@ class AuthenticateBusiness
             return $next($request);
         }
         session()->flash('errMsg','Freak me out');
-        return redirect('/profile');
+        return redirect('/');
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace App\Services;
 
-use App\Hotel;
+use App\Post;
 use App\Http\Requests\PostHotelRequest;
 use Auth;
 use Image;
@@ -24,13 +24,13 @@ class PostsService
      */
     public function make(PostHotelRequest $request)
     {
-        $hotel = new Hotel();
-        $hotel->name = $request->get('name');
-        $hotel->slug = str_replace(" ", "-", strtolower($request->get('name')));
-        $hotel->description = $request->get('description');
-        $file = $this->fileUpload($request);
+        $hotel = Post::findOrFail($id);
+        $hotel->title = $request->get('title');
+        $hotel->content = $request->get('description');
+        if($request->get('image')){
+            $hotel->image = $this->fileUpload($request);
+        }
         $hotel->user_id = Auth::user()->id;
-        $hotel->logo = $file;
         return $hotel->save();
     }
 
@@ -42,13 +42,14 @@ class PostsService
      */
     public function update($request, $id)
     {
-        $hotel = Hotel::findOrFail($id);
-        $hotel->name = $request->get('name');
-        $hotel->slug = str_replace(" ", "-", strtolower($request->get('name')));
-        $hotel->description = $request->get('description');
-        $file = $this->fileUpload($request);
+        
+        $hotel = Post::findOrFail($id);
+        $hotel->title = $request->get('title');
+        $hotel->content = $request->get('description');
+        if($request->get('image')){
+            $hotel->image = $this->fileUpload($request);
+        }
         $hotel->user_id = Auth::user()->id;
-        $hotel->logo = $file;
         return $hotel->save();
     }
 

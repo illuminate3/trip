@@ -106,19 +106,19 @@
         
         //Old Controllers
         Route::get('/restaurants','AdminDashController@getRestaurants');
-        Route::get('/restaurants/create','AdminDashController@registerRestaurants');
+        Route::get('/restaurants/create','AdminDashController@getRestaurantsCreate');
 
         Route::get('/hotels','AdminDashController@getHotels');
-        Route::get('/hotels/create','AdminDashController@registerHotel');
+        Route::get('/hotels/create','AdminDashController@getHotelCreate');
 
         Route::get('/vehicles','AdminDashController@getVehicles');
-        Route::get('/vehicles/create','AdminDashController@registerVehicles');
+        Route::get('/vehicles/create','AdminDashController@getVehiclesCreate');
 
         Route::get('/tours','AdminDashController@getTours');
-        Route::get('/tours/create','AdminDashController@registerTour');
+        Route::get('/tours/create','AdminDashController@getTourCreate');
 
         Route::get('/venues','AdminDashController@getVenues');
-        Route::get('/venues/create','AdminDashController@registerVenue');
+        Route::get('/venues/create','AdminDashController@getVenueCreate');
         
         Route::resource('carousel',CarouselsController::class);
         Route::get('/approve/{model}/{id}','AdminDashController@approve');

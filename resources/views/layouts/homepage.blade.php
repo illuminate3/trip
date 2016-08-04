@@ -37,43 +37,16 @@
                 <h4>Log In With</h4>
                 <ul>
                     <li><a href="{{ route('social.login', ['facebook']) }}"><img src="{{ asset('neptrip/images/fb-login.jpg') }}" alt=""></a></li>
-                    <li><a href=""><img src="{{ asset('neptrip/images/tw-login.jpg') }}" alt=""></a></li>
-                    <li><a href=""><img src="{{ asset('neptrip/images/gp-login.jpg') }}" alt=""></a></li>
+                    <li><a href="{{ route('social.login', ['twitter']) }}"><img src="{{ asset('neptrip/images/tw-login.jpg') }}" alt=""></a></li>
+                    <li><a href="{{ route('social.login', ['google']) }}"><img src="{{ asset('neptrip/images/gp-login.jpg') }}" alt=""></a></li>
                 </ul>
             </div>
             <div class="small-12 large-8 columns login-form">
                 <h4>log in</h4>
                 <!-- login-form -->
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                            {{ csrf_field() }}
-
-                                <input id="email" type="email"  name="email" value="{{ old('email') }}" placeholder="yourname@gmail.com">
-
-                                    @if ($errors->has('email'))
-                                        <span class="caption alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                           
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="Enter your password">
-
-                                    @if ($errors->has('password'))
-                                        <span class="caption alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                    <div class="small-6 columns remember">
-                                        <input id="remember" type="checkbox"><label for="remember">Remember me</label>
-                                    </div>
-                        
-                                    <button type="submit" class="button expanded">
-                                        Login
-                                    </button>
-                                    <div class="small-6 columns forgot">
-                                        <a href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                                    </div>
-                             
-                            
+                       @include('layouts._loginForm')
+         
                     </form>
                   
                 
@@ -109,8 +82,10 @@
                 @if(Auth::check())
                     @if(Shinobi::is('admin'))
                         <li><a href="{{ url('/dash')}}">Dashboard</a></li>
+                        <li><a href="{{ url('/logout') }}">Logout</a></li>
                     @elseif(Shinobi::is('business'))
                         <li><a href="{{ url('/profile') }}">Profile</a></li>
+                        <li><a href="{{ url('/logout') }}">Logout</a></li>
                     @endif
                 @else
                     <li><a data-toggle="login-modal">join</a></li>
@@ -215,7 +190,8 @@
 <script src="{{ asset('neptrip/js/pace.js') }}"></script>
 <script src="{{ asset('neptrip/js/jquery.rateyo.min.js') }}"></script>
 <script src="{{ asset('neptrip/js/app.js') }}"></script>
-@yield('scripts')
+@yield('review-script')
 @yield('script')
+@yield('scripts')
 </body>
 </html>

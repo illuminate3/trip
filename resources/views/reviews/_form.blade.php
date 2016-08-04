@@ -1,6 +1,6 @@
 <div class="form-group">
-    {!! Form::label('rating', 'Rating' ) !!}
-    {!! Form::text('rating', old('rating')) !!}
+    <span class="review-rate"></span>
+    {!! Form::text('rating', old('rating'),['class' => 'show-for-sr','id'=>'rating']) !!}
     @if(count($errors->get('rating')) > 0)
         <div class="alert callout">
             <ul>
@@ -12,7 +12,7 @@
     @endif
 </div>
 <div class="form-group">
-    {!! Form::label('review', 'Review', ['class' => 'control-label']) !!}
+    {{--!! Form::label('review', 'Review', ['class' => 'control-label']) !!--}}
     {!! Form::textarea('review', old('review')  , ['class' => 'form-control' ,'placeholder'=>'Write your review']) !!}
     @if(count($errors->get('review')) > 0)
         <div class="alert callout">
@@ -34,3 +34,17 @@
     {!! Form::hiden('reviewable_type', $reviewableType ? $reviewableType : 'No reviewable Type') !!}--}}
     {!! Form::submit( 'Submit', ['class' => 'button']) !!}
 </div>
+@section('review-script')
+<script>
+       $(".review-rate").rateYo({
+        rating: 5,
+        halfStar: true,
+        starWidth: "50px",
+        starHeight: "50px"
+      }).on("rateyo.set", function (e, data) { 
+        $('#rating').attr('value',data.rating);
+      });
+    
+
+</script>
+@stop

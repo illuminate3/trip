@@ -19,7 +19,8 @@ class CreateRestaurantsTable extends Migration
             $table->string('slug')->unique();
             $table->text('description');
             $table->boolean('status');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->index();
+            $table->boolean('bookable');
             $table->timestamps();
         });
     }

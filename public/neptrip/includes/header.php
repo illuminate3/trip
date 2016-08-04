@@ -33,12 +33,12 @@
                     </ul> -->
                     <ul class="main-nav">
                         <li><a href="">Home</a></li>
-                        <li><a href="">about us</a></li>
-                        <li><a href="">hotel</a></li>
-                        <li><a href="">venue</a></li>
-                        <li><a href="">restrurant</a></li>
-                        <li><a href="">tour</a></li>
-                        <li><a href="">vechile</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Hotel</a></li>
+                        <li><a href="">Venue</a></li>
+                        <li><a href="">Restauant</a></li>
+                        <li><a href="">Tour</a></li>
+                        <li><a href="">Vechile</a></li>
                         <li><a href="">Contact Us</a></li>
                         <li><a href="">Blogs</a></li>
                     </ul>

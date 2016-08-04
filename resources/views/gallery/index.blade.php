@@ -1,16 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.homepage')
 
 @section('content')
     <div class="container">
         <div class="row">
-            @foreach($galleries->galleries as $gallery)
-                <div class="col-md-6">
-                    <a href="{{ url('/gallery/'.$gallery->id) }}">
-                      <h4>{{ $gallery->title }}</h4>
-                    </a>
-                    <img src="{{asset('uploads/images/gallery/'.$gallery->image)}}" alt="" class="img-responsive">
-                </div>
-            @endforeach
+            <h4>Gallery</h4>
+
+            <div class="popup-gallery">
+                @foreach($galleries->galleries as $gallery)                
+                      <a href="{{asset('uploads/images/gallery/'.$gallery->image)}}" title="{{ $gallery->title }}" description="{{$gallery->description}}"><img src="{{asset('uploads/images/gallery/th_'.$gallery->image)}}" width="150" height="150" ></a></li>
+                @endforeach
+            </div>
 
         </div>
     </div>

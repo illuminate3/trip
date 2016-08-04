@@ -16,7 +16,7 @@
             </h3>
 
             <div class="example-box-wrapper">
-                {!! Form::open(['action'=>'CarouselsController@store','class' => 'col-md-12']) !!}
+                {!! Form::open([ 'action'=>'CarouselsController@store','class' => 'col-md-12', 'method' => 'post','files'=> true ]) !!}
                     @include('carousel._form')
                 {!! Form::close() !!}
             </div>

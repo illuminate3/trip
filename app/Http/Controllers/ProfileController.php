@@ -20,6 +20,8 @@ class ProfileController extends Controller
     {
     	$userId = Auth::user()->id;
     	$businesses = $this->business->getBusinessUser($userId);
+
+    	/*dd($businesses);*/
     	return view('profile.business', compact('businesses'));
     	
     }

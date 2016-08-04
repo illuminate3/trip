@@ -79,4 +79,23 @@ class HotelsService
         $img->save( base_path().self::IMAGE_LOCATION . $fileName,80);
         return $fileName;
     }
+
+    public function getLatestHotels()
+    {
+        return Hotel::with('contacts','galleries')->orderBy('updated_at','DES')->get();
+    }
+    
+    public function getSlug($slug)
+    {
+        return Hotel::where('slug','=',$slug)->with('contacts','galleries','reviews')->first();
+    }
+
+    public function getSimilarHotels()
+    {
+        return Hotel::orderBy('updated_at','DSC')->with('contacts')->take(10);
+    }
+    public function findSlug($slug)
+    {
+        return Hotel::where('slug','=', $slug)->first();
+    }
 }

@@ -22,7 +22,8 @@
     <link rel="shortcut icon" href="{{ asset("assets/images/icons/favicon.png") }}">
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
+    <!-- Sweet alert -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <!-- HELPERS -->
 
     <link rel="stylesheet" type="text/css" href="{{ asset("assets/helpers/animate.css") }}">
@@ -651,6 +652,8 @@
 
     <script type="text/javascript" src="{{ asset("assets/themes/admin/layout.js") }}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script>
         /*!

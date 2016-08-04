@@ -20,6 +20,7 @@ class CreateVehiclesTable extends Migration
             $table->text('description');
             $table->unsignedInteger('user_id');
             $table->boolean('status');
+            $table->boolean('bookable');
             $table->timestamps();
         });
     }

@@ -23,16 +23,20 @@ class VenuesService
      * @param PostVenueRequest $request
      * @return mixed
      */
-    public function make(PostVenueRequest $request)
+    public function make(PostVenueRequest $request, $user_id = 0)
     {
         return Venue::create([
             'name' => $request->get('name'),
-            'slug' => str_replace(" ", "-", strtolower($request->get('name'))),
+            'slug' => str_replace(" ", "-", strtolower($request->get('slug'))),
             'description' => $request->get('description'),
-            'logo' => $this->fileUpload($request)
+            'logo' => $this->fileUpload($request),
+            'user_id' => $user_id
         ]);
     }
 
+    public function upload(PostVenueRequest $request,$id){
+        
+    }
     /**
      * @param $id
      * @return mixed

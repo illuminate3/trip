@@ -18,7 +18,7 @@ class CreateVenuesTable extends Migration
             $table->string('logo');
             $table->string('slug')->unique()->index();
             $table->text('description');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->index();
             $table->boolean('status');
             $table->timestamps();
         });

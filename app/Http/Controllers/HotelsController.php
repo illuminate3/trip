@@ -24,7 +24,7 @@ class HotelsController extends Controller
     {
         $this->hotelsService = $hotelsService;
         $this->middleware('auth', ['except' => [
-            'index', 'show'
+            'index', 'show','destroy'
         ]]);
     }
 
@@ -35,7 +35,7 @@ class HotelsController extends Controller
      */
     public function index()
     {
-        $hotels = Hotel::with('contacts','galleries')->orderBy('updated_at','DES')->get();
+        $hotels = $this->hotelsService->getLatestHotels();
 
         return view('hotels.index', compact('hotels'));
     }
@@ -70,9 +70,9 @@ class HotelsController extends Controller
     public function show($slug)
     {
 
-        $hotel = Hotel::where('slug','=',$slug)->with('contacts','galleries','reviews')->first();
+        $hotel = $this->hotelsService->getSlug($slug);
         $hotel->rating = $hotel->reviews->avg('rating');
-        $hotels = Hotel::with('contacts')->take(10);
+        $hotels = $this->hotelsService->getSimilarHotels();
         if($hotel->contacts){
           \Mapper::map($hotel->contacts->latitude, $hotel->contacts->longitude);
         }
@@ -87,7 +87,7 @@ class HotelsController extends Controller
      */
     public function edit($id)
     {
-        $hotel = Hotel::where('slug','=',$id)->first();
+        $hotel = $this->hotelsService->findSlug($id);
         return view('hotels.edit',compact('hotel'));
     }
 

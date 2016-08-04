@@ -35,9 +35,11 @@ class CarouselsController extends Controller
     public function store(PostCarouselRequest $request)
     {
       if($this->carousel->make($request)){
-        return redirect('dash/carousels')->with('success','Carousel created Sucessfully');
+        session()->with('sucMsg','Carousel created Sucessfully');
+        return redirect('dash/carousels');
       }
-      return redirect('dash/carousel/create')->with($request)->with('error','Carousel couldn\'t be created');
+      session()->flash('errMsg','Carousel couldn\'t be created');
+      return redirect('dash/carousel/create')->old($request);
     }
     public function update($id)
     {

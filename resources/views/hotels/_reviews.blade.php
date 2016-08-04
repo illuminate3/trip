@@ -11,7 +11,7 @@
                 @endif
             </div>
             <div class="medium-8 column">
-                <p style="background-color: #ccc">Rating: {{ $review->rating }}</p>
+                <p style="background-color: #ccc;padding:20px">Description: {{ $review->review }}</p>
             </div>
         </div>
         @endforeach

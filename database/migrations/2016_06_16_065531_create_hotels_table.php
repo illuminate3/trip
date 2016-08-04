@@ -18,8 +18,9 @@ class CreateHotelsTable extends Migration
             $table->string('logo');
             $table->string('slug')->unique();
             $table->text('description');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->index();
             $table->boolean('status');
+            $table->boolean('bookable');
             $table->timestamps();
         });
     }

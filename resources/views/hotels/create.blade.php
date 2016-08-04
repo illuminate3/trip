@@ -12,7 +12,7 @@
         </div>
 		<div class="section-content">
 		<div class="row ajax-form" id="ajax-form">
-        {!! Form::open(['action' => 'HotelsController@store','files' => true]) !!}
+        {!! Form::open(['action' => 'HotelsController@store','method'=>'post','files' => true]) !!}
                 @include('hotels._frontendform')
         {!! Form::close() !!}
     </div>

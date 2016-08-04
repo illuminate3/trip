@@ -22,7 +22,9 @@
                 <i class="fa fa-globe"></i> {{ $venue->contacts['website']}}
             </a>
         </p>  
+        @if($venue->bookable == '1')
         <a href="" class="button extended">Book Now </a>
+        @endif
     </div>
     <div class="small-12 medium-12 columns">
         <p>
