@@ -4,5 +4,6 @@
 Homestead.yaml
 Homestead.json
 /public/uploads/*
+site.env
 .env
 TODO
