@@ -46,8 +46,7 @@
         Route::resource('/venues/{slug}/gallery', Gallery\VenuesGalleryController::class);
         Route::resource('/venues/{slug}/contact', Contact\VenuesContactController::class);
     
-    
-    
+        Route::resource('/booking',BookingsController::class);
         //Laravel Social Login For Login Authentication
         /*Route::get('/redirect', 'SocialAuthController@redirect');
         Route::get('/callback', 'SocialAuthController@callback');*/

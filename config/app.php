@@ -222,6 +222,7 @@ return [
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
         'Image' => Intervention\Image\Facades\Image::class, // For Intervention Library,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class, // Social Login [Fb,twitter,Google +]
+
         // Morphing Classes Respective calls
         'Restaurant' => 'App\Restaurant',
         'Hotel' => 'App\Hotel',
@@ -229,6 +230,7 @@ return [
         'Vehicle' => 'App\Vehicle',
         'Tour' => 'App\Tour',
         'Package' => 'App\Package',
+        'Booking' => 'App\Booking',
 
 
     ],

@@ -14,11 +14,13 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('code');
             $table->string('bookee');//The bookers id
             $table->date('booked_on');
             $table->date('from');
             $table->date('to');
-            // $table->morphable('bookee');
+            $table->unsignedInteger('user_id');
+            $table->morphable('bookee');
             $table->timestamps();
         });
     }

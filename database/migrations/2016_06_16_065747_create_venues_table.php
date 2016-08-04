@@ -19,6 +19,7 @@ class CreateVenuesTable extends Migration
             $table->string('slug')->unique()->index();
             $table->text('description');
             $table->unsignedInteger('user_id')->index();
+            $table->boolean('bookable');
             $table->boolean('status');
             $table->timestamps();
         });

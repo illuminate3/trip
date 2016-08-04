@@ -24,7 +24,7 @@ class HotelsController extends Controller
     {
         $this->hotelsService = $hotelsService;
         $this->middleware('auth', ['except' => [
-            'index', 'show','destroy'
+            'index', 'show'
         ]]);
     }
 

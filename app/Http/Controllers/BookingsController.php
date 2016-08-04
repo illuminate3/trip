@@ -2,19 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use App\Services\BookingService;
 class BookingsController extends Controller
 {
+    public $bookingService;
+
+    public function __construct(BookingService $bookingService)
+    {
+        $this->bookingService = $bookingService;
+        //$this->middleware('auth');
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        Auth::loginUsingId(1);
+        $bookings =$this->bookingService->getBookingByUser(1);
+        return view('booking.index',compact('bookings'));
     }
 
     /**
