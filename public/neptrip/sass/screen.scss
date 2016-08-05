@@ -914,23 +914,27 @@ footer.page-footer  {
 		}
 	}
 
-	.subscribe-form {
-		input {
-			float: left;
-			width: 85%;
-			height: 35px;
-		}
-		submit.button {
-			width: 15% !important;
-			height: 35px;
-			padding: 0.2em 1em;
-			background: $secondary-color;
-			i {
-				font-size: 28px;
-				font-weight: bold;
+	.subscribe {
+		
+				.subscribe-form {
+					input {
+						float: left;
+						width: 85%;
+						height: 35px;
+					}
+					input[type='submit'] {
+						width: 15% !important;
+						height: 35px;
+						padding: 0.2em 1em;
+						background: $secondary-color;
+						i {
+							font-size: 28px;
+							font-weight: bold;
+						}
+					}
+				}
 			}
-		}
-	}
+
 
 	.bottom-footer {
 		padding: 0 0.9375em;
@@ -1415,6 +1419,7 @@ ul.archive-list {
 	    			}
 	    		}
 	    	}
+
         }
     }
 

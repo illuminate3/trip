@@ -150,7 +150,7 @@
             </div>
         </div>
         <div class="small-12 large-4 columns">
-            <div class="wrap">
+            <div class="wrap subscribe">
                 <h5>Newsletter</h5>
                 <p>We promise to only send you good things</p>
                 {!! Form::open(['action'=>'MailController@sendNewsletterMail','method'=>'post','class'=>'subscribe-form']) !!}
