@@ -11,6 +11,7 @@ use App\Http\Requests;
 class ToursContactController extends Controller
 {
     protected $contactService;
+    protected $model = 'tour';
 
     public function __construct(ContactService $contactService)
     {
@@ -26,8 +27,10 @@ class ToursContactController extends Controller
      */
     public function index($slug)
     {
-        $galleries = Tour::where('slug',$slug)->with('galleries')->first();
-        return view('contacts.index',compact('galleries'));
+        $contacts = Tour::where('slug',$slug)->with('galleries')->first();
+        $model = 'tour';
+        $contact= $contacts->contacts;
+        return view('contacts.index',compact('contact','model','slug'));
     }
 
     /**
@@ -73,12 +76,16 @@ class ToursContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug,$id)
+    public function edit($slug,$contact)
     {
-        $galleries = Tour::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.edit',compact('galleries'));
+        $model = $this->model;
+        $id = $contact;
+        $contact = Tour::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }])->first();
+        
+        return view('contacts.edit',compact('contact','slug','model','id'));
     }
-
     /**
      * Update the specified resource in storage.
      *

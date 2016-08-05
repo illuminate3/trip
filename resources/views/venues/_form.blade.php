@@ -22,18 +22,21 @@
             </ul>
         </div>
     @endif
-
-{!! Form::label('image',"Logo", ['class' => 'button']) !!}
-{!! Form::file('image',['class' => 'show-for-sr']) !!}
-{{-- Validation Errors --}}
-@if(count($errors->get('image')) > 0)
-    <div class="alert callout">
-        <ul>
-            @foreach($errors->get('image') as $error)
-                <li>{{ $error  }}</li>
-            @endforeach
-        </ul>
-    </div>
+@if(isset($venue) && $venue->logo)
+    <img src="{{ asset('/uploads/images/venue/'.$venue->logo ) }}" class="th img-thumbnail" alt="">
+@else
+    {!! Form::label('image',"Logo", ['class' => 'button']) !!}
+    {!! Form::file('image',['class' => 'show-for-sr']) !!}
+    {{-- Validation Errors --}}
+    @if(count($errors->get('image')) > 0)
+        <div class="alert callout">
+            <ul>
+                @foreach($errors->get('image') as $error)
+                    <li>{{ $error  }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 @endif
 
 

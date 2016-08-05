@@ -12,6 +12,7 @@ use App\Http\Requests;
 class RestaurantsGalleryController extends Controller
 {
     protected $galleryService;
+    protected $model = 'restaurant';
 
     /**
      * GalleriesController constructor.
@@ -29,7 +30,9 @@ class RestaurantsGalleryController extends Controller
     public function index($slug)
     {
         $galleries = Restaurant::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.index',compact('galleries'));
+        $model = $this->model;
+        return view('gallery.index',compact('galleries','model','slug'));
+
     }
 
 
@@ -57,11 +60,15 @@ class RestaurantsGalleryController extends Controller
         return view('gallery.show',compact('galleries'));
     }
 
-    public function edit($slug,$id)
+    public function edit($slug,$gallery)
     {
-        $class = get_class($this);
-        $model = 'restaurant';
-        return view('gallery.create',compact('class','model','slug'));
+        $model = $this->model;
+        $id = $gallery;
+        $gallery = Restaurant::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }])->first();
+        
+        return view('gallery.edit',compact('gallery','slug','model','id'));
     }
 
 

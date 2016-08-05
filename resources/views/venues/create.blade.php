@@ -1,10 +1,10 @@
-@extends('layouts.homepage')
+@extends('layouts.profile')
 
 @section('title')
     Venue Create
 @stop
 
-@section('content')
+@section('profile-content')
 <section >
 	<div class="section-wrap row">
         <div class="section-head">

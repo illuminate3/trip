@@ -21,17 +21,20 @@
         </ul>
     </div>
 @endif
-
-{!! Form::label('image',"Upload", ['class' => 'control-label button']) !!}
-{!! Form::file('image',['class' => 'show-for-sr']) !!}
-@if(count($errors->get('image')) > 0)
-    <div class="alert caption">
-        <ul>
-            @foreach($errors->get('image') as $error)
-                <li>{{ $error  }}</li>
-            @endforeach
-        </ul>
-    </div>
+@if(isset($tour) && $tour->logo)
+    <img src="{{ asset('/uploads/images/tour/'.$tour->logo ) }}" class="th img-thumbnail" alt="">
+@else
+    {!! Form::label('image',"Upload", ['class' => 'control-label button']) !!}
+    {!! Form::file('image',['class' => 'show-for-sr']) !!}
+    @if(count($errors->get('image')) > 0)
+        <div class="alert caption">
+            <ul>
+                @foreach($errors->get('image') as $error)
+                    <li>{{ $error  }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 @endif
 
 {!! Form::label('description',"Description", ['class' => 'control-label']) !!}

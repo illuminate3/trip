@@ -14,15 +14,21 @@ class ProfileController extends Controller
 	public function __construct(BusinessService $business)
 	{
 		$this->business = $business;		
+        $this->middleware('auth');
 	}
 
     public function getBusiness()
     {
-    	$userId = Auth::user()->id;
+        $userId = Auth::user()->id;
     	$businesses = $this->business->getBusinessUser($userId);
 
     	/*dd($businesses);*/
     	return view('profile.business', compact('businesses'));
     	
+    }
+
+    public function getAddBusiness()
+    {
+        return view('profile.addBusiness');
     }
 }

@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
          Collective\Html\HtmlServiceProvider::class,
         /* Laravel Debug bar */
-        //Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         // Google Map
         Cornford\Googlmapper\MapperServiceProvider::class,
         /**

@@ -8,10 +8,11 @@
     <div class="body-wrap inside">
         <div class="content-wrap row">
             <div class="img-wrap small-12 large-6 columns">
-                <img src="{{asset("uploads/images/hotel/".$hotel->logo)}}" alt="">
+                @include('hotels._gallery')
             </div>
             <div class="small-12 large-6 columns">
                 <div class="section-title row">
+                    {{-- <img src="{{asset("uploads/images/hotel/".$hotel->logo)}}" alt=""> --}}
                     <div class="float-left">
                         <h3>{{ $hotel->name }}</h3>
                         <p>{{ $hotel->contacts['address']}}</p>
@@ -25,7 +26,7 @@
             </div>
         </div>
         <div class="inside-gallery">
-          @include('hotels._gallery')
+          
         </div>
 
         <div class="row">

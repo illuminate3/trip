@@ -1,20 +1,22 @@
-@extends('layouts.homepage')
+@extends('layouts.profile')
 
 @section('title')
     Hotel Create
 @stop
 
-@section('content')
+@section('profile-content')
 <section >
 	<div class="section-wrap row">
         <div class="section-head">
             <h3>Create a Hotel</h3>
         </div>
 		<div class="section-content">
-		<div class="row ajax-form" id="ajax-form">
-        {!! Form::open(['action' => 'HotelsController@store','method'=>'post','files' => true]) !!}
-                @include('hotels._frontendform')
-        {!! Form::close() !!}
+    		<div class="row ajax-form" id="ajax-form">
+                {!! Form::open(['action' => 'HotelsController@store','method'=>'post','files' => true]) !!}
+                    @include('hotels._frontendform')
+                {!! Form::close() !!}
+            </div>
+        </div>
     </div>
-</div>
+</section>
 @stop

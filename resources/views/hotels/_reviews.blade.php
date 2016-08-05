@@ -32,7 +32,7 @@
     @foreach($hotel->reviews as $review)
         $(".rateYo-"+{{ $review->id }}).rateYo({
             rating: {{ $review->rating }},
-            halfStar: true,
+            fullStar: true,
             starWidth: "20px",
             starHeight: "20px"
           })

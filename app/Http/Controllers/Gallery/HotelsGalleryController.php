@@ -12,7 +12,7 @@ use App\Http\Requests;
 class HotelsGalleryController extends Controller
 {
     protected $galleryService;
-
+    protected $model = 'hotel';
     /**
      * GalleriesController constructor.
      *
@@ -33,7 +33,8 @@ class HotelsGalleryController extends Controller
     public function index($slug)
     {
         $galleries = Hotel::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.index',compact('galleries'));
+        $model = $this->model;
+        return view('gallery.index',compact('galleries','model','slug'));
     }
 
     /**
@@ -44,7 +45,7 @@ class HotelsGalleryController extends Controller
     public function create($slug)
     {
         $class = get_class($this);
-        $model = 'hotel';
+        $model = $this->model;
         return view('gallery.create',compact('class','model','slug'));
     }
 
@@ -79,9 +80,15 @@ class HotelsGalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug,$gallery)
     {
-        //
+        $model = $this->model;
+        $id = $gallery;
+        $gallery = Hotel::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }])->first();
+        
+        return view('gallery.edit',compact('gallery','slug','model','id'));
     }
 
     /**

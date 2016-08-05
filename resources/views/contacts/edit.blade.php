@@ -12,7 +12,7 @@
                     <h3>Contacts Edit</h3>
                 </div>
                 <div class="section-content">
-                    {!! Form::model($contact,['route'=> [$model.'s.{slug}.contact.update',$slug,$contact->id], 'method' => 'put']) !!}
+                    {!! Form::model($contact->contacts,['route'=> [$model.'s.{slug}.contact.update',$slug,$contact->id], 'method' => 'put']) !!}
                     @include('contacts._form')
                     {!! Form::close() !!}
                 </div>

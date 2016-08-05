@@ -24,7 +24,9 @@
         </p>  
     </div>
     <div class="small-12 medium-12 columns">
+    @if($hotel->bookable == 1)
         <a href="" class="button extended">Book Now </a>
+    @endif
         {{-- <p>
             <i class="fa fa-user"></i> {{ $hotel->contacts['representative']}}
             {{ $hotel->contacts['role']}}

@@ -17,7 +17,7 @@ $(window).load(function() {
 
 $(document).ready(function() {
 
-    var formLoad = $('.input-wizard .form-load');    
+    /*var formLoad = $('.input-wizard .form-load');    
 
 
     $('.back-cat').on('click', function(e) {
@@ -44,7 +44,7 @@ $(document).ready(function() {
         var hreff = 'http://localhost:8000/profile';
         formLoad.load(hreff);
     });
-
+*/
         
 
     $('.page-loader').fadeOut('400');

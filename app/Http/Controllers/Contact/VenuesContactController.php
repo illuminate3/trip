@@ -12,6 +12,7 @@ use App\Http\Requests;
 class VenuesContactController extends Controller
 {
     protected $contactService;
+    protected $model = 'venue';
 
     public function __construct(ContactService $contactService)
     {
@@ -27,8 +28,9 @@ class VenuesContactController extends Controller
      */
     public function index($slug)
     {
-        $contact = Venue::where('slug',$slug)->with('contacts')->first();
+        $contacts = Venue::where('slug',$slug)->with('contacts')->first();
         $model = 'venue';
+        $contact= $contacts->contacts;
         return view('contacts.index',compact('contact','model','slug'));
     }
 
@@ -76,16 +78,16 @@ class VenuesContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug,$id)
+    public function edit($slug,$contact)
     {
-         $contact = Venue::where('slug','=',$slug)->with(['contacts'=>function($query) use ($id){
-            $query->find($id);
+        $model = $this->model;
+        $id = $contact;
+        $contact = Venue::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
+            return $query->findOrFail($id);
         }])->first();
-        dd($contact);
-        $model = 'venue';
-        return view('contacts.edit',compact('contact','model','slug'));
+        
+        return view('contacts.edit',compact('contact','slug','model','id'));
     }
-
     /**
      * Update the specified resource in storage.
      *

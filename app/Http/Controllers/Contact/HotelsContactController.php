@@ -12,6 +12,7 @@ use App\Http\Requests;
 class HotelsContactController extends Controller
 {
      protected $contactService;
+     protected $model = 'hotel';
 
     public function __construct(ContactService $contactService)
     {
@@ -27,9 +28,10 @@ class HotelsContactController extends Controller
      */
     public function index($slug)
     {
-        $galleries = Hotel::where('slug',$slug)->with('contacts')->first();
-        dd($galleries);
-        return view('contacts.index',compact('galleries'));
+        $contact = Hotel::where('slug',$slug)->with('contacts')->first();
+        $model = $this->model;
+        $contact= $contact->contacts;
+        return view('contacts.index',compact('contact','model','slug'));
     }
 
     /**
@@ -40,7 +42,7 @@ class HotelsContactController extends Controller
     public function create($slug)
     {
         $class = get_class($this);
-        $model = 'hotel';
+        $model = $this->model;
         return view('contacts.create',compact('class','model','slug'));
     }
 
@@ -64,9 +66,9 @@ class HotelsContactController extends Controller
      */
     public function show($slug,$id)
     {
-        $galleries = Hotel::where('slug',$slug)->with('galleries')->first();
-
-        return view('contacts.show',compact('galleries'));
+        $contact = Hotel::where('slug',$slug)->with('contacts')->first();
+        $model = $this->model;
+        return view('contacts.show',compact('contact'));
     }
 
     /**
@@ -75,10 +77,17 @@ class HotelsContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug,$contact)
     {
-        //
+        $model = $this->model;
+        $id = $contact;
+        $contact = Hotel::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }])->first();
+        
+        return view('contacts.edit',compact('contact','slug','model','id'));
     }
+
 
     /**
      * Update the specified resource in storage.

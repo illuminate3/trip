@@ -12,6 +12,7 @@ use App\Http\Requests;
 class VehiclesContactController extends Controller
 {
     protected $contactService;
+    protected $model = 'vehicle';
 
     public function __construct(ContactService $contactService)
     {
@@ -27,8 +28,9 @@ class VehiclesContactController extends Controller
      */
     public function index($slug)
     {
-        $contact = Vehicle::where('slug',$slug)->with('contacts')->first()->contacts;
-        $model = 'vehicle';
+        $contacts = Vehicle::where('slug',$slug)->with('contacts')->first()->contacts;
+        $model = $this->model;
+        $contact= $contacts->contacts;
         return view('contacts.index',compact('contact','model','slug'));
     }
 
@@ -75,16 +77,16 @@ class VehiclesContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug,$id)
+   public function edit($slug,$contact)
     {
+        $model = $this->model;
+        $id = $contact;
         $contact = Vehicle::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
-            $query->find($id);
-        }])->first()->contacts;
+            return $query->findOrFail($id);
+        }])->first();
         
-        $model = 'vehicle';
-        return view('contacts.edit',compact('contact','model','slug'));
+        return view('contacts.edit',compact('contact','slug','model','id'));
     }
-
     /**
      * Update the specified resource in storage.
      *

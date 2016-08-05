@@ -20,17 +20,20 @@
         </ul>
     </div>
 @endif
-
-{!! Form::label('image',"Logo", ['class' => 'button']) !!}
-{!! Form::file('image',['class' => 'show-for-sr']) !!}
-@if(count($errors->get('image')) > 0)
-    <div class="alert caption">
-        <ul>
-            @foreach($errors->get('image') as $error)
-                <li>{{ $error  }}</li>
-            @endforeach
-        </ul>
-    </div>
+@if(isset($hotel) && $hotel->logo) 
+    <img src="{{ asset('uploads/images/hotel/'.$hotel->logo )}}" alt="">
+@else
+    {!! Form::label('image',"Logo", ['class' => 'button']) !!}
+    {!! Form::file('image',['class' => 'show-for-sr']) !!}
+    @if(count($errors->get('image')) > 0)
+        <div class="alert caption">
+            <ul>
+                @foreach($errors->get('image') as $error)
+                    <li>{{ $error  }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 @endif
 
 {!! Form::label('description',"Description", ['class' => 'control-label']) !!}

@@ -32,7 +32,9 @@ class ToursGalleryController extends Controller
     public function index($slug)
     {
         $galleries = Tour::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.index',compact('galleries'));
+        $model = $this->model;
+        return view('gallery.index',compact('galleries','model','slug'));
+
     }
 
     /**
@@ -75,10 +77,15 @@ class ToursGalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug,$id)
+    public function edit($slug,$gallery)
     {
-        $galleries = Tour::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.edit',compact('galleries'));
+        $model = $this->model;
+        $id = $gallery;
+        $gallery = Tour::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }])->first();
+        
+        return view('gallery.edit',compact('gallery','slug','model','id'));
     }
 
     /**

@@ -12,6 +12,7 @@ use App\Http\Requests;
 class RestaurantsContactController extends Controller
 {
     protected $contactService;
+    protected $model = 'restaurant';
 
     public function __construct(ContactService $contactService)
     {
@@ -23,9 +24,10 @@ class RestaurantsContactController extends Controller
 
     public function index($slug)
     {
-        $galleries = Restaurant::where('slug',$slug)->with('contacts')->first();
-        dd($galleries->contacts);
-        return view('contacts.index',compact('galleries'));
+        $contacts = Restaurant::where('slug',$slug)->with('contacts')->first();
+        $model = 'hotel';
+        $contact= $contact->contacts;
+        return view('contacts.index',compact('contact','model','slug'));
     }
 
 
@@ -57,11 +59,15 @@ class RestaurantsContactController extends Controller
         return view('contact.show',compact('galleries'));
     }
 
-    public function edit($slug,$id)
+    public function edit($slug,$contact)
     {
-        $class = get_class($this);
-        $model = 'restaurant';
-        return view('contact.create',compact('class','model','slug'));
+        $model = $this->model;
+        $id = $contact;
+        $contact = Restaurant::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }])->first();
+        
+        return view('contacts.edit',compact('contact','slug','model','id'));
     }
 
 

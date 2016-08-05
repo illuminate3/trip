@@ -11,6 +11,9 @@
         </div>
     @endif
 </div>
+@if(isset($gallery) && $gallery->galleries[0]->image)
+    <img src="{{ asset('uploads/images/gallery/th_'.$gallery->galleries[0]->image) }}" alt="">
+@else
 <div class="form-group">
     {!! Form::label('image','Image', ['class' => 'button']) !!}
     {!! Form::file('image',['class' => 'show-for-sr'])  !!}
@@ -24,6 +27,7 @@
         </div>
     @endif
 </div>
+@endif
 <div class="form-group">
     {!! Form::label('description', 'Description', ['class' => 'control-label'])  !!}
     {!! Form::textarea('description', null,['class' => 'form-control']) !!}

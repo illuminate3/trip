@@ -12,6 +12,7 @@ use App\Http\Requests;
 class VenuesGalleryController extends Controller
 {
     protected $galleryService;
+    protected $model = 'venue';
 
     /**
      * GalleriesController constructor.
@@ -33,7 +34,9 @@ class VenuesGalleryController extends Controller
     public function index($slug)
     {
         $galleries = Venue::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.index',compact('galleries'));
+        $model = $this->model;
+        return view('gallery.index',compact('galleries','model','slug'));
+
     }
 
     /**
@@ -76,9 +79,15 @@ class VenuesGalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug,$gallery)
     {
-        //
+        $model = $this->model;
+        $id = $gallery;
+        $gallery = Venue::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }])->first();
+        
+        return view('gallery.edit',compact('gallery','slug','model','id'));
     }
 
     /**

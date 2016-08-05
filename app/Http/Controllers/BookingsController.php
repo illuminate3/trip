@@ -35,7 +35,7 @@ class BookingsController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

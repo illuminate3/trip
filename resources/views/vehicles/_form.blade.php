@@ -27,9 +27,13 @@
     @endif
 </div>
 
+@if(isset($vehicle) && $vehicle->logo)
+    <img src="{{ asset('/uploads/images/vehicle/'.$vehicle->logo ) }}" class="th img-thumbnail" alt="">
+@else
+
 <div class="form-group">
-    {!! Form::label('image',"Upload", ['class' => 'control-label']) !!}
-    {!! Form::file('image',['class' => 'form-control']) !!}
+    {!! Form::label('image',"Upload", ['class' => 'button']) !!}
+    {!! Form::file('image',['class' => 'show-for-sr']) !!}
     @if(count($errors->get('image')) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -39,10 +43,9 @@
             </ul>
         </div>
     @endif
-    @if(isset($vehicle))
-        <img src="{{ asset('/uploads/images/vehicle/'.$vehicle->logo ) }}" class="th img-thumbnail"alt="">
-    @endif
+    
 </div>
+@endif
 <div class="form-group">
     {!! Form::label('description',"Description", ['class' => 'control-label']) !!}
     {!! Form::textarea('description', old('description'),['class' => 'form-control']) !!}
@@ -57,5 +60,5 @@
         @endif
 </div>
 <div class="form-group">
-    {!! Form::submit('Submit', ['class' => 'form-control btn btn-primary']) !!}
+    {!! Form::submit('Submit', ['class' => 'button']) !!}
 </div>

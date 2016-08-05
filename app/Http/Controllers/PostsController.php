@@ -62,7 +62,7 @@ class PostsController extends Controller
     {
         if($this->postService->update($request,$id)){
             session()->flash('sucMsg','Post Updated Sucessfully');
-            return redirect('posts/'$id);
+            return redirect('posts/'.$id);
         }
         session()->flash('errMsg','Post couldn\'t be updated');
         return redirect('posts/'.$id.'/edit');
