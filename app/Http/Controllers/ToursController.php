@@ -6,7 +6,7 @@ use App\Services\ToursService;
 use App\Tour;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Http\Requests\Request\VenuePostRequest;
+use App\Http\Requests\Request\PutTour;
 
 class ToursController extends Controller
 {
@@ -49,12 +49,13 @@ class ToursController extends Controller
 
     public function store(Requests\PostTourRequest $request)
     {
+        $slug = $this->tourService->generateSlug($request->get('slug'));
         if(!$this->tourService->make($request)){
             session()->flash('errMsg','Tour Couldn\'t be created');
             return redirect('tours/create')->withInput();
         }
         session()->flash('sucMsg','Tour created Sucessfully :)');
-        return redirect('tours/'.$request->get('slug').'/contact/create');
+        return redirect('tours/'.$slug.'/contact/create');
     }
 
     /**
@@ -93,12 +94,13 @@ class ToursController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\PostTourRequest $request, $id)
+    public function update(Requests\PutTourRequest $request, $id)
     {
+        $slug = $this->tourService->generateSlug($request->get('slug'));
         $tour = $this->tourService->update($request->id);
         if(!$tour){
             session()->flash('errMsg','Tour Couldn\'t be updated');
-            return redirect('/tours/'.$request->get('slug').'/edit')->withInput();
+            return redirect('/tours/'.$slug.'/edit')->withInput();
         }
         session()->flash('sucMsg','Tour updated Sucessfully :)');
         return redirect('/profile/business');

@@ -11,6 +11,19 @@
         </div>
     @endif
 </div>
+<div class="form-group float-right">
+    {!! Form::label('description',"Description", ['class' => 'control-label']) !!}
+    {!! Form::textarea('description',old('description') ,['class' => 'form-control']) !!}
+    @if(count($errors->get('description')) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->get('description') as $error)
+                    <li>{{ $error  }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+</div>
 <div class="form-group">
     {!! Form::label('slug',"Slug", ['class' => 'control-label']) !!}
     {!! Form::text('slug',old('slug') ,['class' => 'form-control']) !!}
@@ -28,8 +41,8 @@
     @if(isset($restaurant) && $restaurant->logo)
         <img src="{{ asset('/uploads/images/restaurant/'.$restaurant->logo ) }}" class="th img-thumbnail" alt="">
     @else
-        {!! Form::label('image',"Logo", ['class' => 'control-label']) !!}
-        {!! Form::file('image',null,['class' => 'form-control']) !!}
+        {!! Form::label('image',"Logo", ['class' => 'button']) !!}
+        {!! Form::file('image',['class' => 'show-for-sr']) !!}
         @if(count($errors->get('image')) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -42,18 +55,5 @@
     @endif
 </div>
 <div class="form-group">
-    {!! Form::label('description',"Description", ['class' => 'control-label']) !!}
-    {!! Form::textarea('description',old('description') ,['class' => 'form-control']) !!}
-    @if(count($errors->get('description')) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->get('description') as $error)
-                    <li>{{ $error  }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-</div>
-<div class="form-group">
-    {!! Form::submit('Submit', ['class' => 'form-control btn btn-primary']) !!}
+    {!! Form::submit('Submit', ['class' => 'form-control btn button btn-primary']) !!}
 </div>

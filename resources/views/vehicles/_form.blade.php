@@ -12,6 +12,19 @@
         </div>
     @endif
 </div>
+<div class="form-group float-right">
+    {!! Form::label('description',"Description", ['class' => 'control-label']) !!}
+    {!! Form::textarea('description', old('description'),['class' => 'form-control']) !!}
+    @if(count($errors->get('desctiption')) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->get('desctiption') as $error)
+                        <li>{{ $error  }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+</div>
 <div class="form-group">
 
     {!! Form::label('slug',"Slug", ['class' => 'control-label']) !!}
@@ -44,19 +57,6 @@
         @endif{{--Error --}}
         
     @endif
-</div>
-<div class="form-group">
-    {!! Form::label('description',"Description", ['class' => 'control-label']) !!}
-    {!! Form::textarea('description', old('description'),['class' => 'form-control']) !!}
-    @if(count($errors->get('desctiption')) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->get('desctiption') as $error)
-                        <li>{{ $error  }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
 </div>
 <div class="form-group">
     {!! Form::submit('Submit', ['class' => 'button']) !!}

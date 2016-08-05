@@ -8,8 +8,8 @@
     </div>
     <div class="row">
     	<div class="small-12 large-9 columns">
-	        {!! Form::model($venue, ['route'=>['venues.{venue}.edit',$venue->id],'method'=>'PUT','files' => true]) !!}
-        		@include('venues._form');
+	        {!! Form::model($venue, ['action'=> ['VenuesController@edit',$venue->slug] ,'method'=>'PUT','files' => true]) !!}
+        		@include('venues._form')
         	{!! Form::close() !!}
 	    	<div class="small-12 large-3 columns">
 	    		<ul>

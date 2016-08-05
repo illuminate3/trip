@@ -25,6 +25,7 @@ class PostVenueRequest extends Request
     {
         return [
             'name' =>'required|min:2|string',
+            'slug' => 'required|unique:venues|min:5|max:255|string',
             'image' => 'mimes:jpeg,bmp,png',
             'description' => 'required',
         ];

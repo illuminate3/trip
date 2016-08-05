@@ -15,7 +15,7 @@
 		<div class="section-content">
 		<div class="row">
         {!! Form::open(['action' => 'VehiclesController@store','files' => true]) !!}
-            @include('vehicles._form');
+            @include('vehicles._form')
         {!! Form::close() !!}
     </div>
 </div>

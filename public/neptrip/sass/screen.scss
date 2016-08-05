@@ -1129,6 +1129,17 @@ ul.archive-list {
 			section.container {
 				width: 100%;
 			}
+
+			form {
+				.form-group {
+					width: 50%;
+					float: left;
+
+					input, textarea, label {
+						width: 90%;
+					}
+				}
+			}
 		}
 
 		.add-business {

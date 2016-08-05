@@ -15,7 +15,7 @@ class RestaurantsService
     /**
      *
      */
-    const IMAGE_LOCATION = '/public/uploads/images/restaurant';
+    const IMAGE_LOCATION = '/public/uploads/images/restaurant/';
 
     /**
      * @param PostRestaurantRequest $request
@@ -23,12 +23,14 @@ class RestaurantsService
      */
     public function make(PostRestaurantRequest $request)
     {
-        return Restaurant::create([
-            'name' => $request->get('name'),
-            'slug' => str_replace(" ", "-", strtolower($request->get('name'))),
-            'description' => $request->get('description'),
-            'logo' => $this->fileUpload($request),
-            ]);
+        $hotel = new Restaurant();
+        $hotel->name = $request->get('name');
+        $hotel->slug = $this->generateSlug($request->get('slug'));
+        $hotel->description = $request->get('description');
+        $file = $this->fileUpload($request);
+        $hotel->user_id = Auth::user()->id;
+        $hotel->logo = $file;
+        return $hotel->save();
         
     }
 
@@ -52,11 +54,11 @@ class RestaurantsService
      * @param $id
      * @return mixed
      */
-    public function update(PostRestaurantRequest $request,$id)
+    public function update($request,$id)
     {
         $restaurant = Restaurant::findOrFail($id);
         $restaurant->name = $request->get('name');
-        $restaurant->slug = str_replace(" ", "-", strtolower($request->get('slug')));
+        $restaurant->slug = $this->genrateSlug($request->get('slug'));
         $restaurant->description = $request->get('description');
         if($request->file('image')){
             $file1 = $this->fileUpload($request);
@@ -64,6 +66,7 @@ class RestaurantsService
         }
         return $restaurant->save();
     }
+    
 
    /**
      * @param  $request
@@ -79,6 +82,10 @@ class RestaurantsService
         // Saving the file to filesystem
         $img->save( base_path().self::IMAGE_LOCATION . $fileName,80);
         return $fileName;
+    }
+    public function generateSlug($data)
+    {
+        return str_replace(" ", "-", strtolower($data));
     }
 
 }

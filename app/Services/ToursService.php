@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use App\Http\Requests\PostTourRequest;
+use App\Http\Requests\PutTourRequest;
 use App\Tour;
 use Image;
 /**
@@ -26,7 +27,7 @@ class ToursService
     {
         $tour = new Tour();
         $tour->name = $request->get('name');
-        $tour->slug = str_replace(" ", "-", strtolower($request->get('name')));
+        $tour->slug = str_replace(" ", "-", strtolower($request->get('slug')));
         $tour->description = $request->get('description');
         $file = $this->fileUpload($request);
         $tour->logo = $file;
@@ -49,11 +50,11 @@ class ToursService
      * @param PostTourRequest $request
      * @return mixed
      */
-    public function update( PostTourRequest $request,$id)
+    public function update( PutTourRequest $request,$id)
     {
         $tour = Tour::findOrFail($id);
         $tour->name = $request->get('name');
-        $tour->slug = str_replace(" ", "-", strtolower($request->get('name')));
+        $tour->slug = str_replace(" ", "-", strtolower($request->get('slug')));
         $tour->description = $request->get('description');
         if($request->file('image')){
             $file = $this->fileUpload($request);
@@ -61,6 +62,7 @@ class ToursService
         }
         return $tour->save();
     }
+
 
     public function fileUpload($request)
     {

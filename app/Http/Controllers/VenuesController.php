@@ -59,12 +59,13 @@ class VenuesController extends Controller
      */
     public function store(Requests\PostVenueRequest $request)
     {
-        if($this->venuesService->make($request)){
+        $slug = $this->venuesService->generateSlug($request->get('slug'));
+        if($this->venuesService->make($request,Auth::user()->id)){
             session()->flash('sucMsg','Venue created sucessfully');
-            return redirect('profile/business');
+            return redirect('venues/'.$slug.'/contact/create');
         }
         session()->flash('errMsg','Venue couldn\'t be created');
-        return redirect('venues/create');->withInput();
+        return redirect('venues/create')->withInput();
     }
 
     /**
@@ -105,12 +106,13 @@ class VenuesController extends Controller
      *
      * @return mixed
      */
-    public function update(Requests\PostVenueRequest $request, $id)
+    public function update(Requests\PutVenueRequest $request, $id)
     {
-        $venue = Venue::create($request->all);
+        $slug = $this->venuesService->generateSlug($request->get('slug'));
+        $venue = $this->venuesService->update($request,$id);
         if(!$venue){
             session()->flash('errMsg','Venue Couldn\'t be updated');
-            return redirect('venues/create')->withInput();
+            return redirect('venues/'.$slug.'/contact/create')->withInput();
         }
         session()->flash('sucMsg','Venue updated Sucessfully :)');
         return redirect('/profile/business');

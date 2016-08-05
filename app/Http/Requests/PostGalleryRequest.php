@@ -25,7 +25,9 @@ class PostGalleryRequest extends Request
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:5|max:255',
+            'image' => 'required|image',
+            'description' => 'required|min:10'
         ];
     }
 }

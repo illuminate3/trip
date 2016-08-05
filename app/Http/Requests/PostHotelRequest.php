@@ -25,6 +25,7 @@ class PostHotelRequest extends Request
     {
         return [
             'name' => 'required|min:5|max:255|string',
+            'slug' => 'required|unique:restaurants|min:5|max:255|string',
             'image' => 'required|mimes:jpeg,jpg,png',
             'description' => 'required|min:1'
         ];

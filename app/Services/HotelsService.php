@@ -26,7 +26,7 @@ class HotelsService
     {
         $hotel = new Hotel();
         $hotel->name = $request->get('name');
-        $hotel->slug = str_replace(" ", "-", strtolower($request->get('name')));
+        $hotel->slug = $this->generateSlug($request->get('slug'));
         $hotel->description = $request->get('description');
         $file = $this->fileUpload($request);
         $hotel->user_id = Auth::user()->id;
@@ -44,13 +44,12 @@ class HotelsService
     {
         $hotel = Hotel::findOrFail($id);
         $hotel->name = $request->get('name');
-        $hotel->slug = str_replace(" ", "-", strtolower($request->get('name')));
+        $hotel->slug = $this->generateSlug($request->get('slug'));
         $hotel->description = $request->get('description');
         if($request->file('image')){
             $file = $this->fileUpload($request);
             $hotel->logo = $file;
         }
-        $hotel->user_id = Auth::user()->id;
         return $hotel->save();
     }
 
@@ -101,4 +100,8 @@ class HotelsService
         return Hotel::where('slug','=', $slug)->first();
     }
     
+    public function generateSlug($data)
+    {
+        return str_replace(" ", "-", strtolower($data));
+    }
 }

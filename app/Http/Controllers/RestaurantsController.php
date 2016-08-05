@@ -49,9 +49,10 @@ class RestaurantsController extends Controller
 
     public function store(Requests\PostRestaurantRequest $request)
     {
+        $slug = $this->restaurantService->generateSlug($request->get('slug'));
         if( $this->restaurantService->make($request) ){
             session()->flash('sucMsg','Restaurant created Sucessfully :)');
-            return redirect('/restaurants/'.$request->get('slug').'/contact/create');
+            return redirect('/restaurants/'.$slug.'/contact/create');
         }
         session()->flash('errMsg','Restaurant Couldn\'t be created');
         return back()->withInput();
@@ -95,10 +96,11 @@ class RestaurantsController extends Controller
      */
     public function update(Requests\PostRestaurantRequest $request, $id)
     {
-        $restaurant = $this->restaurantService->update($request, $id)
+        $slug = $this->restaurantService->generateSlug($request->get('slug'));
+        $restaurant = $this->restaurantService->update($request, $id);
         if(!$restaurant){
             session()->flash('errMsg','Restaurant Couldn\'t be updated');
-            return redirect('/restaurants/'.$request->get('slug').'/edit')->withInput();
+            return redirect('/restaurants/'.$slug.'/edit')->withInput();
         }
         session()->flash('sucMsg','Restaurant updated Sucessfully :)');
         return redirect('profile/business');

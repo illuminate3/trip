@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use App\Http\Requests\PostVenueRequest;
+use App\Http\Requests\PutVenueRequest;
 use App\Venue;
 use Auth;
 use Image;
@@ -25,17 +26,27 @@ class VenuesService
      */
     public function make(PostVenueRequest $request, $user_id = 0)
     {
-        return Venue::create([
-            'name' => $request->get('name'),
-            'slug' => str_replace(" ", "-", strtolower($request->get('slug'))),
-            'description' => $request->get('description'),
-            'logo' => $this->fileUpload($request),
-            'user_id' => $user_id
-        ]);
+        $hotel = new Venue();
+        $hotel->name = $request->get('name');
+        $hotel->slug = $this->generateSlug($request->get('slug'));
+        $hotel->description = $request->get('description');
+        $file = $this->fileUpload($request);
+        $hotel->user_id = Auth::user()->id;
+        $hotel->logo = $file;
+        return $hotel->save();
     }
 
-    public function upload(PostVenueRequest $request,$id){
-        
+   public function update(PutVenueRequest $request,$id)
+    {
+        $restaurant = Restaurant::findOrFail($id);
+        $restaurant->name = $request->get('name');
+        $restaurant->slug = $this->generateSlug($request->get('slug'));
+        $restaurant->description = $request->get('description');
+        if($request->file('image')){
+            $file1 = $this->fileUpload($request);
+            $restaurant->image = $file1;
+        }
+        return $restaurant->save();
     }
     /**
      * @param $id
@@ -52,7 +63,7 @@ class VenuesService
      * @param PostVenueRequest $request
      * @return mixed
      */
-    public function fileUpload(PostVenueRequest $request)
+    public function fileUpload($request)
     {
         $file = $request->file('image');
         $fileName = $file->getClientOriginalName();
@@ -64,4 +75,9 @@ class VenuesService
         $img->save(base_path().self::IMAGE_LOCATION . $fileName);
         return $fileName;
     }
+    public function generateSlug($data)
+    {
+        return str_replace(" ", "-", strtolower($data));
+    }
+
 }

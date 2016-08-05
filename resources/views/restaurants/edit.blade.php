@@ -9,8 +9,8 @@
     <div class="row">
     	<div class="small-12 large-9 columns">
     		
-	        {{!! Form::model($restaurant, ['route'=>'restaurants.update','method'=>'PUT','files' => true]) !!}
-		        @include('restaurants._form');
+	        {!! Form::model($restaurant, ['action'=>['RestaurantsController@update',$restaurant->slug],'method'=>'PUT','files' => true]) !!}
+		        @include('restaurants._form')
 	        {!! Form::close() !!}
         </div>
     	<div class="small-12 large-3 columns">

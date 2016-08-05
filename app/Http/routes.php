@@ -37,9 +37,7 @@
         Route::resource('/tours/{slug}/package', PackageController::class);
         Route::resource('/tours/{slug}/package/{packageSlug}/gallery', Gallery\PackagesGalleryController::class);
     
-        //Route::resource('tours/packages', PackageController::class);
-        Route::post('/contact/create','ContactsController@store');
-    
+           
         //Venues Controllers
     
         Route::resource('/venues', VenuesController::class );

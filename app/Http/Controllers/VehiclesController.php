@@ -49,12 +49,13 @@ class VehiclesController extends Controller
 
     public function store(Requests\PostVehicleRequest $request)
     {
-        if ($this->vehicleService->make($request)) {
+        $slug = $this->vehicleService($request->get('slug'));
+        if (!$this->vehicleService->make($request)) {
             session()->with('errMsg', 'Vehicle Couldn\'t be created');
             return redirect('/vehicles/create')->withInput();    
         }
         session()->with('sucMsg', 'Vehicle created Sucessfully :)');
-        return redirect('/vehicles');
+        return redirect('/vehicles/'.$slug.'/contact/create');
     }
 
     /**
@@ -87,8 +88,9 @@ class VehiclesController extends Controller
     }
 
 
-    public function update(Requests\PostVenueRequest $request, $id)
+    public function update(Requests\PutVenueRequest $request, $id)
     {
+        $slug = $this->vehicleService($request->get('slug'));
         if($this->vehicleService->update($id, $request)){
             session()->with('error','Vehicle couldn\'t be updated');
             return redirect('vehicles/'.$request->get('slug').'/edit')->withInput();

@@ -54,13 +54,14 @@ class HotelsController extends Controller
 
     public function store(Requests\PostHotelRequest $request)
     {
+        $slug = $this->hotelService->generateSlug($request->get('slug'));
         $hotel = $this->hotelsService->make($request);
         if(!$hotel){
             session()->with('errMsg','Hotel Couldn\'t be created');
             return redirect('hotels/create')->withInput();
         }
         session()->with('sucMsg','Hotel created Sucessfully');
-        return redirect('hotels/'.$request->get('slug').'/contact/create');
+        return redirect('hotels/'.$slug.'/contact/create');
     }
 
     /**
@@ -102,9 +103,10 @@ class HotelsController extends Controller
     public function update(Requests\PutHotelsRequest $request, $id)
     {
         $hotel = $this->hotelsService->update($request,$id);
+        $slug = $this->hotelsService->generateSlug($request->get('slug'));
         if(!$hotel){
             session()->flash('errMsg','Hotel Couldn\'t be updated');
-            return redirect('hotels/'.$request->get('slug').'/edit');
+            return redirect('hotels/'.$slug.'/edit');
         }
         session()->flash('sucMsg','Hotel updated Sucessfully :)');
         return redirect('profile/business');

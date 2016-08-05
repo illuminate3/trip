@@ -11,7 +11,7 @@
     <div class="row">
     	<div class="small-12 large-9 columns">
     		
-	        {!! Form::model($tour, ['action'=>'ToursController@update','method'=>'PUT','files' => true]) !!}
+	        {!! Form::model($tour, ['action'=>['ToursController@update',$tour->slug],'method'=>'PUT','files' => true]) !!}
 		    	    @include('tours._form');
 	        {!! Form::close() !!}
     	</div>

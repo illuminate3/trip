@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use App\Http\Requests\PostVehicleRequest;
+use App\Http\Requests\PutVehicleRequest;
 
 use App\Vehicle;
 use Auth;
@@ -22,26 +23,28 @@ class VehiclesService
      */
     public function make(PostVehicleRequest $request)
     {
-        return Vehicle::create([
-            'name' => $request->get('name'),
-            'slug' => str_replace(" ", "-", strtolower($request->get('name'))),
-            'description' => $request->get('description'),
-            'logo' => $this->fileUpload($request),
-            'user_id' => Auth::userId(),
-        ]);
+        $tour = new Vehicle();
+        $tour->name = $request->get('name');
+        $tour->slug = str_replace(" ", "-", strtolower($request->get('slug')));
+        $tour->description = $request->get('description');
+        $file = $this->fileUpload($request);
+        $tour->logo = $file;
+        return $tour->save();
+        
     }
-    public function update($id, PostVehicleRequest $request)
+    public function update(PutVehicleRequest $request,$id)
     {
-        $vehicle = Vehicle::findOrFail('id',$id);
-        $vehicle->update([
-            'name' => $request->get('name'),
-            'slug' => str_replace(" ", "-", strtolower($request->get('name'))),
-            'description' => $request->get('description'),
-            'logo' => $this->fileUpload($request),
-        ]);
-        return $vehicle->save();
+        $restaurant = Vehicle::findOrFail($id);
+        $restaurant->name = $request->get('name');
+        $restaurant->slug = str_replace(" ", "-", strtolower($request->get('slug')));
+        $restaurant->description = $request->get('description');
+        if($request->file('image')){
+            $file1 = $this->fileUpload($request);
+            $restaurant->image = $file1;
+        }
+        return $restaurant->save();
     }
-
+  
     /**
      * @param $id
      * @return mixed
@@ -63,4 +66,9 @@ class VehiclesService
         $img->save( base_path().self::IMAGE_LOCATION . $fileName, 80);
         return $fileName;
     }
+    public function generateSlug($data)
+    {
+        return str_replace(" ", "-", strtolower($data));
+    }
+
 }

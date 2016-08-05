@@ -25,7 +25,10 @@ class PostTourRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:5|max:255',
+            'slug' => 'required|unique:tours|min:5|max:255|string',
+            'image' => 'required|image',
+            'description' => 'required|min:10|max:255'
         ];
     }
 }
