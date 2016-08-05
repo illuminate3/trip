@@ -4,6 +4,7 @@
 Homestead.yaml
 Homestead.json
 /public/uploads/*
+/public/neptrip/.sass-cache/*
 site.env
 .env
 TODO
