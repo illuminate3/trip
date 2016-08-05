@@ -17,34 +17,7 @@ $(window).load(function() {
 
 $(document).ready(function() {
 
-    /*var formLoad = $('.input-wizard .form-load');    
 
-
-    $('.back-cat').on('click', function(e) {
-        e.preventDefault();
-        console.log('dada');
-        formLoad.fadeOut('slow');
-        $('.slide.first').fadeIn();       
-        
-    });
-
-    $('.cat').on('click', 'a', function(e) {
-        e.preventDefault();
-        
-        $('.slide.first').fadeOut();       
-        formLoad.fadeIn('slow');
-
-        var $linkSlide = $(this).attr('href') + ' div#ajax-form';
-
-        formLoad.load($linkSlide);
-        $('.input-wizard').css('height' , formLoad.css('height'));
-
-    });
-    $('.form-next').on('click', function() {
-        var hreff = 'http://localhost:8000/profile';
-        formLoad.load(hreff);
-    });
-*/
         
 
     $('.page-loader').fadeOut('400');

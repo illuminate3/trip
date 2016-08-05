@@ -492,8 +492,7 @@ section.search-box {
 
 .owl-carousel {
 	margin: 0;
-}
-
+}	
 section {
 	.section-wrap {
 		// overflow: hidden;
@@ -518,11 +517,19 @@ section {
 			ul.slider-nav {
 				float: right;
 
+				.slick-list {
+					padding: 0 !important;
+
+					.slick-track {
+						width: 40px !important;
+					}
+				}
+
 				li {
 					display: inline-block;
 					border-radius: 2px;
-					height: 20px;
-					width: 20px;
+					height: 20px !important;
+					width: 20px !important;
 					text-align: center;
 					position: relative;
 
@@ -914,26 +921,28 @@ footer.page-footer  {
 		}
 	}
 
-	.subscribe {
+	.wrap.subscribe {
 		
-				.subscribe-form {
-					input {
-						float: left;
-						width: 85%;
-						height: 35px;
-					}
-					input[type='submit'] {
-						width: 15% !important;
-						height: 35px;
-						padding: 0.2em 1em;
-						background: $secondary-color;
-						i {
-							font-size: 28px;
-							font-weight: bold;
-						}
-					}
+		.subscribe-form {
+			// display: none;
+
+			input {
+				float: left;
+				width: 85%;
+				height: 35px;
+			}
+			button {
+				width: 15% !important;
+				height: 35px;
+				padding: 0.2em 1em;
+				background: $secondary-color;
+				i {
+					font-size: 28px;
+					font-weight: bold;
 				}
 			}
+		}
+	}
 
 
 	.bottom-footer {
@@ -1061,108 +1070,45 @@ ul.archive-list {
 
 // Business profile: ;
 
-.business-profile {
-	margin: 50px auto;
 
-	.tabs {
-		.tabs-title {
-			border-bottom: 1px solid #dedede;
-			a {
-				font-size: 14px;
-				color: $primary-color;
-			}
-			span.badge {
-				padding: 0.2rem 0.3rem;
-				min-width: auto;
-			}
-		}
-	}
-
-	.tabs-panel {
-		padding: 0;
-
-		h4 {
-			margin-top: 1.25rem;
-		}
-
-		p, h4 {
-			width: 96%;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		.slider-wrap {
-			height: 590px;
-		}
-	}
-
-	.input-wizard {
-		position: relative;
-
-		.slide {
-			width: 100%;
-			position: absolute;
-
-			.ajax-form {
-				padding: 0 30px;
-			}
-
-			h4 {
-				color: $primary-color;
-
-				.ti-angle-left {
-					cursor: pointer;
-
-					&:hover {
-						color: $primary-color + 40;
-					}
-				}
-				.back-cat {
-					margin-right: 20px;
-				}
-			}
-
-			.form-wrap {
-				width: 96%;
-				margin: 0 auto;
-
-				.form-group {
-					width: 50%;
-					float: left;
-
-					input {
-						width: 90%;
-						border: 1px solid $primary-color + 40;
-					}
-
-					input[type="submit"] {
-						width: auto !important;
-					}
-					input.button, label.button {
-						float: left;
-						margin-right: 10%;
-						background: $primary-color;
-						margin-top: 30px;
-						color: #fff !important;
-						width: 100% !important;
-					}
-					textarea {
-						height: 140px;
-						width: 90%;
-						border: 1px solid $primary-color + 40;
-					}
-				}
-				.form-group.btn {
-					width: 20%;
-    				margin-right: 5%;
-				}
-				label {
+	.business-profile {
+		margin: 50px 0;
+		.sideNav {
+			border: 1px solid #ddd;
+			border-bottom: none;
+			li {
+				padding: 10px 0;
+				border-bottom: 1px solid #ddd;
+				a {
 					color: $primary-color;
+					display: block;
+					padding: 5px 20px;
+					font-size: 16px;
+				}
+
+				&:hover {
+					background: #dedede;
 				}
 			}
 		}
-		.slide.first {
-			display: block;
 
+		
+		.section-head {
+			padding: 0;
+			// height: auto;
+			h3 {
+				width: 100%;
+				font-family: $title-font;
+				color: $primary-color;
+				font-size: 22px;
+			}
+		}
+
+		.profile-content {
+			padding: 0px 4% !important;
+		}
+
+		.add-business {
 			.categories {
 
 				margin: 4em 0;
@@ -1202,48 +1148,41 @@ ul.archive-list {
 				}
 			}
 		}
+		.all-business {
+			.img-wrap {
+				position: relative;
 
-
-	}
-
-	ul.collection-wrap {
-		li {
-			width: 25%;
-			float: left;
-			padding: 15px;
-			position: relative;
-
-			.wrap {
-				border: 1px solid #ddd;
-				height: 190px;
-
-				.row {
-					margin: 0;
-				}
-
-				p.address {
-					overflow: hidden;
-					line-height: 20px;
-					text-overflow: ellipsis;
-					display: -webkit-box;
-					max-height: 50px;      /* fallback */
-					-webkit-line-clamp: 2; /* number of lines to show */
-					-webkit-box-orient: vertical;
-				}
-				a.button {
+				.img-overlay {
 					position: absolute;
-					bottom: 20px;
-					left: 50%;
-					transform: translateX(-50%);
-					background: $primary-color;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					background: rgba(black, 0.5);
+					opacity: 0;
+					margin-bottom: 10px;
 
+					i {
+						font-size: 32px;
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						color: #fff;
+					}
+
+					&:hover {
+						opacity: 1;
+					}
 				}
+			}
+			p {
+				text-align: center;
+				color: $primary-color;
+				text-transform: capitalize;
 			}
 		}
 	}
-
-}
-
 
 
 // for about pages

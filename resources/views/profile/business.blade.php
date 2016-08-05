@@ -1,8 +1,7 @@
 @extends('layouts.profile')
 
 @section('profile-content')
-    <div class="body-wrap " id="ajax-form">
-        <div class="row collapse">
+        <div class="row all-business">
              @foreach($businesses as $key => $business)
              @if($business)
              {{--This $key generates name of the folder --}}
@@ -21,7 +20,7 @@
                                 <i class="fa fa-edit"></i>
                             </div>
                         </li>
-                        <li>{{$value['name'] }}</li>
+                        <li><p>{{$value['name'] }}</p></li>
                     </a>
                 </div>
                 
@@ -29,6 +28,4 @@
              </div>
              @endforeach
         </div> 
-
-    </div>
 @stop
