@@ -6,7 +6,7 @@ use App\Services\VehiclesService;
 use App\Vehicle;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use Auth;
 
 class VehiclesController extends Controller
 {

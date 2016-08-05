@@ -6,8 +6,7 @@ use App\Hotel;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Services\HotelsService;
-
-
+use Auth;
 /**
  * Class HotelsController
  * @package App\Http\Controllers
@@ -54,7 +53,7 @@ class HotelsController extends Controller
 
     public function store(Requests\PostHotelRequest $request)
     {
-        $slug = $this->hotelService->generateSlug($request->get('slug'));
+        $slug = $this->hotelsService->generateSlug($request->get('slug'));
         $hotel = $this->hotelsService->make($request);
         if(!$hotel){
             session()->with('errMsg','Hotel Couldn\'t be created');

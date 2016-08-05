@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use App\Http\Requests\PostGalleryRequest;
+use App\Http\Requests\PutGalleryRequest;
 use App\Gallery;
 use App\Restaurant;
 use App\Hotel;

@@ -6,8 +6,7 @@ use App\Services\VenuesService;
 use App\Venue;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
-
+use Auth;
 /**
  * Class VenuesController
  * @package App\Http\Controllers

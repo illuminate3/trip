@@ -7,6 +7,7 @@ use App\Http\Requests\PostTourRequest;
 use App\Http\Requests\PutTourRequest;
 use App\Tour;
 use Image;
+use Auth;
 /**
  * Class ToursService
  * @package App\Services

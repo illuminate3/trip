@@ -1,6 +1,6 @@
 <?php 
 namespace App\Services;
-
+use Auth;
 use App\Vehicle;
 use App\Venue;
 use App\Tour;

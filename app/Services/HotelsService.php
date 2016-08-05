@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Hotel;
 use App\Http\Requests\PostHotelRequest;
+use App\Http\Requests\PutHotelRequest;
 use Auth;
 use Image;
 

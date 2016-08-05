@@ -5,7 +5,9 @@ namespace App\Services;
 
 use App\Restaurant;
 use App\Http\Requests\PostRestaurantRequest;
+use App\Http\Requests\PutRestaurantRequest;
 use Image;
+use Auth;
 /**
  * Class RestaurantsService
  * @package App\Services

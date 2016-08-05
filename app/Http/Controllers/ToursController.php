@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Services\ToursService;
 use App\Tour;
 use App\Http\Requests;
