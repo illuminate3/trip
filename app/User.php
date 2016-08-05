@@ -56,13 +56,14 @@ class User extends Model implements AuthenticatableContract,CanResetPasswordCont
     {
         return $this->has(Hotel::class, 'user_id');
     }
-    /*
-    *   
-    *
-    */
+    
     public function tours()
     {
         return $this->has(Tour::class, 'user_id');
+    }
+    public function notifications()
+    {
+        return $this->has(Notification::class, 'user_id');
     }
 
 }

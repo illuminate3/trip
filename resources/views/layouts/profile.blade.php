@@ -16,7 +16,7 @@
                     <li><a href="{{url('/logout')}}">Logout</a></li>
                 </ul>
             </div>
-            <div class="medium-10 columns">
+            <div class="medium-10 profile-content columns">
                 @yield('profile-content')                
           </div>
         </div> 
