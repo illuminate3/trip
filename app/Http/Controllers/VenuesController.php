@@ -59,7 +59,7 @@ class VenuesController extends Controller
     public function store(Requests\PostVenueRequest $request)
     {
         $slug = $this->venuesService->generateSlug($request->get('slug'));
-        if($this->venuesService->make($request,Auth::user()->id)){
+        if($this->venuesService->make($request)){
             session()->flash('sucMsg','Venue created sucessfully');
             return redirect('venues/'.$slug.'/contact/create');
         }

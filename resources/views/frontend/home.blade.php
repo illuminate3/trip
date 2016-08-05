@@ -40,116 +40,16 @@ Homepage
                         </ul>
                         <div class="tabs-content" data-tabs-content="search-tabs">
                             <div class="tabs-panel is-active" id="hotel">
-                                <form action="" class="search-form row small-up-1 medium-up-2 large-up-4">                                   
-                                    <div class="column">
-                                        <input type="text" placeholder="enter city">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check in">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check out">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="room-type">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="adults">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="children">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="rooms">
-                                    </div>
-                                    <div class="column">
-                                        <submit class="button expanded">Search</submit>
-                                    </div>
-                                </form>
+                                @include('homepage._searchform')
                             </div>
                             <div class="tabs-panel" id="venue">
-                                <form action="" class="search-form row small-up-1 medium-up-2 large-up-4">                                   
-                                    <div class="column">
-                                        <input type="text" placeholder="enter city">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check in">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check out">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="room-type">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="adults">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="children">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="rooms">
-                                    </div>
-                                    <div class="column">
-                                        <submit class="button expanded">Search</submit>
-                                    </div>
-                                </form>
+                                @include('homepage._searchform')
                             </div>
                              <div class="tabs-panel" id="vehicle">
-                                <form action="" class="search-form row small-up-1 medium-up-2 large-up-4">                                   
-                                    <div class="column">
-                                        <input type="text" placeholder="enter city">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check in">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check out">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="room-type">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="adults">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="children">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="rooms">
-                                    </div>
-                                    <div class="column">
-                                        <submit class="button expanded">Search</submit>
-                                    </div>
-                                </form>
+                                @include('homepage._searchform')
                             </div>
                              <div class="tabs-panel" id="tours">
-                                <form action="" class="search-form row small-up-1 medium-up-2 large-up-4">                                   
-                                    <div class="column">
-                                        <input type="text" placeholder="enter city">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check in">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="check out">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="room-type">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="adults">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="children">
-                                    </div>
-                                    <div class="column">
-                                        <input type="text" placeholder="rooms">
-                                    </div>
-                                    <div class="column">
-                                        <submit class="button expanded">Search</submit>
-                                    </div>
-                                </form>
+                                @include('homepage._searchform')
                             </div>
                         </div>
                     </div>
