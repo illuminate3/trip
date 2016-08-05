@@ -68,7 +68,9 @@ class RestaurantsController extends Controller
     {
         $restaurant = Restaurant::where('slug','=',$slug)->with('contacts','reviews', 'galleries')->first();
         $restaurants = Restaurant::take(10);
-        $restaurant->rating = $restaurant->reviews()->avg('rating');
+        if($restaurant->reviews){
+            $restaurant->rating = $restaurant->reviews->avg('rating');
+        }
         if($restaurant->contacts){
             \Mapper::map($restaurant->contacts->latitude, $restaurant->contacts->longitude);
         }

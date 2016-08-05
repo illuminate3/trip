@@ -79,7 +79,10 @@ class VenuesController extends Controller
         
         //Similar Venues
         $venues = Venue::take(10);
-        $venue->rating = $venue->reviews->avg('rating');
+        if($venues->reviews)
+        {
+            $venue->rating = $venue->reviews->avg('rating');
+        }
         if($venue->contacts){
             \Mapper::map($venue->contacts->latitude, $venue->contacts->longitude);
         }

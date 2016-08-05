@@ -73,7 +73,9 @@ class HotelsController extends Controller
     {
 
         $hotel = $this->hotelsService->getSlug($slug);
-        $hotel->rating = $hotel->reviews->avg('rating');
+        if($hotel->reviews){
+            $hotel->rating = $hotel->reviews->avg('rating');
+        }
         $hotels = $this->hotelsService->getSimilarHotels();
         if($hotel->contacts){
           \Mapper::map($hotel->contacts->latitude, $hotel->contacts->longitude);
