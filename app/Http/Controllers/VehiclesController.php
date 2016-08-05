@@ -49,7 +49,7 @@ class VehiclesController extends Controller
 
     public function store(Requests\PostVehicleRequest $request)
     {
-        $slug = $this->vehicleService($request->get('slug'));
+        $slug = $this->vehicleService->generateSlug($request->get('slug'));
         if (!$this->vehicleService->make($request)) {
             session()->with('errMsg', 'Vehicle Couldn\'t be created');
             return redirect('/vehicles/create')->withInput();    
@@ -90,15 +90,15 @@ class VehiclesController extends Controller
     }
 
 
-    public function update(Requests\PutVenueRequest $request, $id)
+    public function update(Requests\PutVehicleRequest $request, $id)
     {
-        $slug = $this->vehicleService($request->get('slug'));
+        $slug = $this->vehicleService->generateSlug($request->get('slug'));
         if($this->vehicleService->update($id, $request)){
-            session()->with('error','Vehicle couldn\'t be updated');
-            return redirect('vehicles/'.$request->get('slug').'/edit')->withInput();
+            session()->flash('errMsg','Vehicle couldn\'t be updated');
+            return redirect('vehicles/'.$slug.'/edit')->withInput();
 
         }
-        session()->with('success','Vehicle updated Sucessfully :)');
+        session()->flash('sucMsg','Vehicle updated Sucessfully :)');
         return redirect('/vehicles');
     }
 
@@ -112,10 +112,10 @@ class VehiclesController extends Controller
     {
         $vehicle = Vehicle::destroy($id);
         if (!$vehicle) {
-            session()->with('error', 'Vehicle Cannot be Deleted');
+            session()->flash('errMsg', 'Vehicle Cannot be Deleted');
             return redirect('/profile/business');
         }
-        session()->with('success', 'Vehicle Deleted Sucessfully :)');
+        session()->flash('sucMsg', 'Vehicle Deleted Sucessfully :)');
         return redirect('/profile/business');
     }
 }

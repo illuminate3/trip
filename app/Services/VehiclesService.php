@@ -28,6 +28,7 @@ class VehiclesService
         $tour->slug = str_replace(" ", "-", strtolower($request->get('slug')));
         $tour->description = $request->get('description');
         $file = $this->fileUpload($request);
+        $tour->user_id = Auth::user()->id;
         $tour->logo = $file;
         return $tour->save();
         
