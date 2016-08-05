@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-
+use Auth;
 class PostRoomRequest extends Request
 {
     /**
@@ -13,7 +13,7 @@ class PostRoomRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return Auth::check();
     }
 
     /**

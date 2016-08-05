@@ -27,7 +27,7 @@ class RoomsController extends Controller
      */
     public function index($slug)
     {
-        $hotel = Hotel::where('slug',$slug)->with('rooms')->first();
+        $hotel = $this->room->getRoomFirst($slug);
         return view('rooms/index',compact('hotel','slug'));
     }
 
@@ -41,23 +41,20 @@ class RoomsController extends Controller
 
     public function store($slug,Requests\PostRoomRequest $request)
     {
-        $id = Hotel::select('id')->where('slug',$slug)->first()->id;
+        $id = $this->room->getHotelId($slug);
         if($this->room->make($id,$request)){
-         return redirect('/hotels/'.$slug)->with(['success'=>'Room Created Sucessfully']);
+            session()->flash('sucMsg','Room Created Sucessfully');
+            return redirect('/hotels/'.$slug.'/room');
         }
-        return redirect('/hotels/'.$slug)->with(['error'=>'Room couldn\'t be created ']);
+        session()->flash('errMsg','Room couldn\'t be created ');
+        return redirect('/hotels/'.$slug.'/room/create')->withInput();
     }
 
 
     public function show($slug,$id)
     {
-      $hotel = Hotel::where('slug',$slug)->with(['rooms'=> function($query) use($id){
-                $query->where('id', $id);
-      }])->first();
-
+      $hotel = $this->room->getFirstRoom($slug,$id);
       return view('rooms.show',compact('hotel','slug'));
-
-
     }
 
     /**
@@ -68,9 +65,7 @@ class RoomsController extends Controller
      */
     public function edit($slug, $id)
     {
-        $rooms = Hotel::where('slug',$slug)->with(['rooms'=> function($query) use($id){
-            $query->where('id', $id);
-        }])->first();
+        $rooms = $this->room->getFirstRoom($slug,$id);
         $room = $rooms->rooms->first();
         return view('rooms.edit',compact('room','slug','id'));
     }
@@ -82,7 +77,7 @@ class RoomsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$slug, $id)
     {
         //
     }

@@ -61,10 +61,10 @@ class VenuesController extends Controller
     {
         if($this->venuesService->make($request)){
             session()->flash('sucMsg','Venue created sucessfully');
-            return redirect('venues');
+            return redirect('profile/business');
         }
         session()->flash('errMsg','Venue couldn\'t be created');
-        return redirect('venues');
+        return redirect('venues/create');->withInput();
     }
 
     /**
@@ -109,9 +109,11 @@ class VenuesController extends Controller
     {
         $venue = Venue::create($request->all);
         if(!$venue){
-            return session()->with('error','Venue Couldn\'t be updated');
+            session()->flash('errMsg','Venue Couldn\'t be updated');
+            return redirect('venues/create')->withInput();
         }
-        return session()->with('success','Venue updated Sucessfully :)');
+        session()->flash('sucMsg','Venue updated Sucessfully :)');
+        return redirect('/profile/business');
     }
 
     /**
@@ -125,8 +127,10 @@ class VenuesController extends Controller
         $venue = Venue::destroy($id);
 
         if(!$venue){
-            return session()->with('error','Venue Cannot be Deleted');
+            session()->flash('errMsg','Venue Cannot be Deleted');
+            return redirect('/profile/business');
         }
-        return session()->with('success','Venue Deleted Sucessfully :)');
+        session()->flash('sucMsg','Venue Deleted Sucessfully :)');
+        return redirect('/profile/business');
     }
 }

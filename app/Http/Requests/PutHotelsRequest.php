@@ -25,7 +25,7 @@ class PutHotelsRequest extends Request
     {
       return [
           'name' => 'required|min:5|max:255|string',
-          'image' => 'required|image',
+          'slug' =>'required|unique:hotels|string',
           'description' => 'required|min:1'
       ];
     }

@@ -41,7 +41,7 @@ class AdminDashController extends Controller
 
     public function getHotelCreate()
     {
-        return "HOTEL";
+        return redirect('/hotels/create');
     }
 
     public function getTours()
@@ -52,7 +52,7 @@ class AdminDashController extends Controller
 
     public function getTourCreate()
     {
-        return "Register Tour";
+        return redirect('/tours/create');
     }
 
     public function getVenues()
@@ -63,7 +63,8 @@ class AdminDashController extends Controller
 
     public function getVenueCreate()
     {
-        return "Reig";
+        return redirect('/venues/create');
+        
     }
 
     public function getVehicles()
@@ -74,7 +75,7 @@ class AdminDashController extends Controller
 
     public function getVehicleCreate()
     {
-        return 'Register Vehicles';
+        return redirect('/vehicles/create');
     }
     public function getUsers(){
         $users = User::orderBy('updated_at','DES')->get();
@@ -85,17 +86,25 @@ class AdminDashController extends Controller
     public function approve($model, $id)
     {
         if ($this->adminService->approveBusiness($id, $model)) {
-            return redirect()->back()->with('success', 'Business Approved Sucessfully');
+            session()->flash('sucMsg', 'Business Approved Sucessfully');
+            return back();
         }
-        return redirect()->back()->with('error', 'Couldn\'t approve business');
+        session()->flash('errMsg', 'Couldn\'t approve business');
+        return back();
     }
 
     public function suspend($model, $id)
     {
         if ($this->adminService->suspendBusiness($id, $model)) {
-            return redirect()->back()->with('success', 'Business Suspended Sucessfully');
+            session()->with('sucMsg', 'Business Suspended Sucessfully');
+            return back();
         }
-        return redirect()->back()->with('error', 'Couldn\'t suspend business');
+        session()->with('errMsg', 'Couldn\'t suspend business');
+        return back();
+    }
+    public function getProfile()
+    {
+
     }
 
 }

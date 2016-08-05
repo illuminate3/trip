@@ -1,13 +1,13 @@
 @if (Session::has('errMsg'))
        <div class="callout alert " data-closeable>
-            <button type="button" close-button" data-close>&times;</button>
+            <button type="button" class="close-button" data-close>&times;</button>
 
             {!! Session::get('errMsg') !!}
         </div>
     
 @endif
 @if (Session::has('sucMsg'))
-       <div class="callout alert " data-closeable>
+       <div class="callout success" data-closeable>
             <button type="button" class="close-button" data-close">&times;</button>
 
             {!! Session::get('sucMsg') !!}

@@ -46,9 +46,11 @@ class HotelsService
         $hotel->name = $request->get('name');
         $hotel->slug = str_replace(" ", "-", strtolower($request->get('name')));
         $hotel->description = $request->get('description');
-        $file = $this->fileUpload($request);
+        if($request->file('image')){
+            $file = $this->fileUpload($request);
+            $hotel->logo = $file;
+        }
         $hotel->user_id = Auth::user()->id;
-        $hotel->logo = $file;
         return $hotel->save();
     }
 
@@ -98,4 +100,5 @@ class HotelsService
     {
         return Hotel::where('slug','=', $slug)->first();
     }
+    
 }

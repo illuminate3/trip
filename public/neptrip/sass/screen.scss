@@ -1072,7 +1072,12 @@ ul.archive-list {
 
 
 	.business-profile {
-		margin: 50px 0;
+		margin: 50px 0 0;
+
+		.row {
+			// margin: 0;
+		}
+
 		.sideNav {
 			border: 1px solid #ddd;
 			border-bottom: none;
@@ -1084,11 +1089,21 @@ ul.archive-list {
 					display: block;
 					padding: 5px 20px;
 					font-size: 16px;
+
+					.badge {
+						position: absolute;
+    					margin-left: 10px;
+					}
 				}
 
 				&:hover {
 					background: #dedede;
 				}
+			}
+		}
+		.section-wrap {
+			.section-head {
+				padding: 0;
 			}
 		}
 
@@ -1106,6 +1121,14 @@ ul.archive-list {
 
 		.profile-content {
 			padding: 0px 4% !important;
+
+			.row {
+				margin: 0;
+			}
+
+			section.container {
+				width: 100%;
+			}
 		}
 
 		.add-business {
@@ -1148,9 +1171,11 @@ ul.archive-list {
 				}
 			}
 		}
+
 		.all-business {
 			.img-wrap {
 				position: relative;
+				margin-bottom: 10px;
 
 				.img-overlay {
 					position: absolute;
@@ -1160,7 +1185,6 @@ ul.archive-list {
 					bottom: 0;
 					background: rgba(black, 0.5);
 					opacity: 0;
-					margin-bottom: 10px;
 
 					i {
 						font-size: 32px;
@@ -1180,6 +1204,14 @@ ul.archive-list {
 				text-align: center;
 				color: $primary-color;
 				text-transform: capitalize;
+			}
+		}
+
+		form {
+			input, label {
+			}
+			.button {
+				background: $primary-color;
 			}
 		}
 	}

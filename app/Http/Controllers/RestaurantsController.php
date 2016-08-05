@@ -50,9 +50,11 @@ class RestaurantsController extends Controller
     public function store(Requests\PostRestaurantRequest $request)
     {
         if( $this->restaurantService->make($request) ){
-            return session()->with('error','Restaurant Couldn\'t be created');
+            session()->flash('sucMsg','Restaurant created Sucessfully :)');
+            return redirect('/restaurants/'.$request->get('slug').'/contact/create');
         }
-        return session()->with('success','Restaurant created Sucessfully :)');
+        session()->flash('errMsg','Restaurant Couldn\'t be created');
+        return back()->withInput();
     }
 
     /**
@@ -91,13 +93,15 @@ class RestaurantsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(VenuePostRequest $request, $id)
+    public function update(Requests\PostRestaurantRequest $request, $id)
     {
-        $restaurant = Restaurant::create($request->all);
+        $restaurant = $this->restaurantService->update($request, $id)
         if(!$restaurant){
-            return session()->with('error','Restaurant Couldn\'t be updated');
+            session()->flash('errMsg','Restaurant Couldn\'t be updated');
+            return redirect('/restaurants/'.$request->get('slug').'/edit')->withInput();
         }
-        return session()->with('success','Restaurant updated Sucessfully :)');
+        session()->flash('sucMsg','Restaurant updated Sucessfully :)');
+        return redirect('profile/business');
     }
 
     /**
@@ -111,8 +115,10 @@ class RestaurantsController extends Controller
         $restaurant = Restaurant::destroy($id);
 
         if(!$restaurant){
-            return session()->with('error','Restaurant Cannot be Deleted');
+            session()->flash('errMsg','Restaurant Cannot be Deleted');
+            return redirect('profile/business');
         }
-        return session()->with('success','Restaurant Deleted Sucessfully :)');
+        session()->flash('sucMsg','Restaurant Deleted Sucessfully :)');
+        return redirect('profile/business');
     }
 }

@@ -3,9 +3,9 @@
 
 namespace App\Services;
 
-use App\Http\Requests\PostRestaurantsRequest;
+use App\Http\Requests\PostHotelsRequest;
 use App\Http\Requests\PostRoomRequest;
-use App\Restaurant;
+use App\Hotel;
 
 /**
  * Class RoomService
@@ -18,16 +18,16 @@ class RoomService
 
     public function make($id,PostRoomRequest $request)
     {
-        $restaurant = Restaurant::findOrFail($id);
+        $restaurant = Hotel::findOrFail($id);
         $restaurant->rooms->create($this->data($request));
         return $restaurant->save();
 
 
     }
 
-    public function update($id,PostRestaurantRequest $request)
+    public function update($id,PostHotelRequest $request)
     {
-        $restaurant = Restaurant::findOrFail($id);
+        $restaurant = Hotel::findOrFail($id);
         $restaurant->rooms->update($id,$this->data($request));
         return $restaurant->save();
 
@@ -45,10 +45,10 @@ class RoomService
     }
 
     /**
-     * @param PostRestaurantRequest $request
+     * @param PostHotelRequest $request
      * @return array
      */
-    protected function data(PostRestaurantRequest $request)
+    protected function data(PostHotelRequest $request)
     {
         return [
             'name' => $request->get('name'),
@@ -59,5 +59,20 @@ class RoomService
             'number_of_rooms' => $request->get('number_of_rooms'),
             'available_rooms' => $request->get('available_rooms')
         ];
+    }
+
+    public function getRoomFirst($slug)
+    {
+        return Hotel::where('slug',$slug)->with('rooms')->first();
+    }
+    public function getHotelId($slug)
+    {
+        return Hotel::select('id')->where('slug',$slug)->first()->id;
+    }
+    public function getFirstRoom($hotelSlug,$id)
+    {
+        return Hotel::where('slug',$slug)->with(['rooms'=> function($query) use($id){
+                $query->where('id', $id);
+      }])->first();
     }
 }

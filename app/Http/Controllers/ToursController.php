@@ -50,9 +50,11 @@ class ToursController extends Controller
     public function store(Requests\PostTourRequest $request)
     {
         if(!$this->tourService->make($request)){
-            return session()->with('error','Tour Couldn\'t be created');
+            session()->flash('errMsg','Tour Couldn\'t be created');
+            return redirect('tours/create')->withInput();
         }
-        return session()->with('success','Tour created Sucessfully :)');
+        session()->flash('sucMsg','Tour created Sucessfully :)');
+        return redirect('tours/'.$request->get('slug').'/contact/create');
     }
 
     /**
@@ -93,11 +95,13 @@ class ToursController extends Controller
      */
     public function update(Requests\PostTourRequest $request, $id)
     {
-        $tour = Tour::create($request->all);
+        $tour = $this->tourService->update($request->id);
         if(!$tour){
-            return session()->with('error','Tour Couldn\'t be updated');
+            session()->flash('errMsg','Tour Couldn\'t be updated');
+            return redirect('/tours/'.$request->get('slug').'/edit')->withInput();
         }
-        return session()->with('success','Tour updated Sucessfully :)');
+        session()->flash('sucMsg','Tour updated Sucessfully :)');
+        return redirect('/profile/business');
     }
 
     /**
@@ -111,8 +115,10 @@ class ToursController extends Controller
         $tour = Tour::destroy($id);
 
         if(!$tour){
-            return session()->with('error','Tour Cannot be Deleted');
+            session()->flash('errMsg','Tour Cannot be Deleted');
+            return redirect('profile/business');
         }
-        return session()->with('success','Tour Deleted Sucessfully :)');
+        session()->flash('sucMsg','Tour Deleted Sucessfully :)');
+        return redirect('profile/business');
     }
 }

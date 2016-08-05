@@ -13,7 +13,7 @@
         </div>
 		<div class="section-content">
 		<div class="row">
-        {!! Form::open(['action' => 'RestaurantsController@store','files' => true]) !!}
+        {!! Form::open(['action' => 'RestaurantsController@store','method'=>'post','files' => true]) !!}
             @include('restaurants._form')
         {!! Form::close() !!}
     </div>

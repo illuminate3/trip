@@ -48,12 +48,12 @@
     
         Route::resource('profile/booking',BookingsController::class);
         //Laravel Social Login For Login Authentication
-        /*Route::get('/redirect', 'SocialAuthController@redirect');
-        Route::get('/callback', 'SocialAuthController@callback');*/
+        
         Route::get('social/login/redirect/{provider}', ['uses' => 'SocialAuthController@redirectToProvider', 'as' => 'social.login']);
         Route::get('social/login/{provider}', 'SocialAuthController@handleProviderCallback');
     
         Route::auth();
+        
         Route::get('/home', 'HomeController@index');
     
         Route::get('search',function(){
@@ -85,14 +85,11 @@
     
         Route::resource('/reviews', ReviewsController::class);
     
-        //Registeration Handling
-        //Code Refactoration using Route::controller()
-        Route::get('/register/business','UserRegistrationController@business');
-        Route::post('/register/business','UserRegistrationController@businessRegister');
-        Route::get('/register/normal','UserRegistrationController@normal');
-        
-        Route::get('/send-mail','MailController@sendBookingMail');
-        Route::post('/send-mail','MailController@sendNewsletterMail');
+
+
+    //Test Mail Sending Newsletter and booking        
+    Route::get('/send-mail','MailController@sendBookingMail');
+    Route::post('/send-mail','MailController@sendNewsletterMail');
     }); // Web Middleware
  // Dashboard For SuperAdmin
     Route::group(['middleware' => ['web',\App\Http\Middleware\AuthenticateAdmin::class],'before'=> 'business','prefix'=>'dash'], function () {

@@ -27,25 +27,24 @@
     @endif
 </div>
 
-@if(isset($vehicle) && $vehicle->logo)
-    <img src="{{ asset('/uploads/images/vehicle/'.$vehicle->logo ) }}" class="th img-thumbnail" alt="">
-@else
-
 <div class="form-group">
-    {!! Form::label('image',"Upload", ['class' => 'button']) !!}
-    {!! Form::file('image',['class' => 'show-for-sr']) !!}
-    @if(count($errors->get('image')) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->get('image') as $error)
-                    <li>{{ $error  }}</li>
-                @endforeach
-            </ul>
-        </div>
+    @if(isset($vehicle) && $vehicle->logo)
+        <img src="{{ asset('/uploads/images/vehicle/'.$vehicle->logo ) }}" class="th img-thumbnail" alt="">
+    @else
+        {!! Form::label('image',"Upload", ['class' => 'button']) !!}
+        {!! Form::file('image',['class' => 'show-for-sr']) !!}
+        @if(count($errors->get('image')) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->get('image') as $error)
+                        <li>{{ $error  }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif{{--Error --}}
+        
     @endif
-    
 </div>
-@endif
 <div class="form-group">
     {!! Form::label('description',"Description", ['class' => 'control-label']) !!}
     {!! Form::textarea('description', old('description'),['class' => 'form-control']) !!}

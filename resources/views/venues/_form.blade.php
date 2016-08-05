@@ -1,5 +1,6 @@
-{!! Form::label('name',"Name", ['class' => 'control-label']) !!}
-{!! Form::text('name', old('name'),['class' => 'form-control']) !!}
+<div class="form-group">
+    {!! Form::label('name',"Name", ['class' => 'control-label']) !!}
+    {!! Form::text('name', old('name'),['class' => 'form-control']) !!}
     @if(count($errors->get('name')) > 0)
         <div class="alert callout">
             <ul>
@@ -9,10 +10,11 @@
             </ul>
         </div>
     @endif
-
-{!! Form::label('slug',"Slug", ['class' => 'control-label']) !!}
-{!! Form::text('slug',old('slug'),['class' => 'form-control']) !!}
-{{-- Validation rule error  --}}
+</div>
+<div class="form-group">
+    {!! Form::label('slug',"Slug", ['class' => 'control-label']) !!}
+    {!! Form::text('slug',old('slug'),['class' => 'form-control']) !!}
+    {{-- Validation rule error  --}}
     @if(count($errors->get('slug')) > 0)
         <div class="alert callout">
             <ul>
@@ -22,6 +24,9 @@
             </ul>
         </div>
     @endif
+</div>
+<div class="form-group">
+    
 @if(isset($venue) && $venue->logo)
     <img src="{{ asset('/uploads/images/venue/'.$venue->logo ) }}" class="th img-thumbnail" alt="">
 @else
@@ -38,19 +43,22 @@
         </div>
     @endif
 @endif
+</div>
 
+<div class="form-group">
+    {!! Form::label('description',"Description", ['class' => 'control-label']) !!}
+    {!! Form::textarea('description',old('description'),['class' => 'form-control']) !!}
+    @if(count($errors->get('description')) > 0)
+        <div class="alert callout">
+            <ul>
+                @foreach($errors->get('description') as $error)
+                    <li>{{ $error  }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-{!! Form::label('description',"Description", ['class' => 'control-label']) !!}
-{!! Form::textarea('description',old('description'),['class' => 'form-control']) !!}
-@if(count($errors->get('description')) > 0)
-    <div class="alert callout">
-        <ul>
-            @foreach($errors->get('description') as $error)
-                <li>{{ $error  }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-
-{!! Form::submit('Submit', ['class' => 'button']) !!}
+</div>
+<div class="form-group">
+    {!! Form::submit('Submit', ['class' => 'button']) !!}
+</div>

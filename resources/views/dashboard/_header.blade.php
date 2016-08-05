@@ -81,23 +81,23 @@
         <div class="dropdown-menu float-left">
             <div class="box-sm">
                 <div class="pad5T pad5B pad10L pad10R dashboard-buttons clearfix">
-                    <a href="{{ url('dash/watchtower') }}" class="btn vertical-button hover-blue-alt" title="">
+                    <a href="{{ url('dash/watchtower/user') }}" class="btn vertical-button hover-blue-alt" title="">
                             <span class="glyph-icon icon-separator-vertical pad0A medium">
                                 <i class="glyph-icon icon-users opacity-80 font-size-20"></i>
                             </span>
                         Users
                     </a>
-                    <a href="#" class="btn vertical-button hover-green" title="">
+                    <a href="{{ url('dash/watchtower/permission') }}" class="btn vertical-button hover-green" title="">
                             <span class="glyph-icon icon-separator-vertical pad0A medium">
                                 <i class="glyph-icon icon-tags opacity-80 font-size-20"></i>
                             </span>
-                        Widgets
+                        Permission
                     </a>
-                    <a href="#" class="btn vertical-button hover-orange" title="">
+                    <a href="{{ url('dash/watchtower/role') }}" class="btn vertical-button hover-orange" title="">
                             <span class="glyph-icon icon-separator-vertical pad0A medium">
                                 <i class="glyph-icon icon-fire opacity-80 font-size-20"></i>
                             </span>
-                        Tables
+                        Roles
                     </a>
                     <a href="#" class="btn vertical-button hover-orange" title="">
                             <span class="glyph-icon icon-separator-vertical pad0A medium">

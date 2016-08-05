@@ -16,6 +16,7 @@
     	<div class="small-12 large-3 columns">
     		<ul>
     			<li><a href="{{ url('hotels/'.$hotel->slug.'/gallery')}}" class="button expanded">Gallery</a></li>
+                <li><a href="{{ url('hotels/'.$hotel->slug.'/room')}}" class="button expanded">Add Rooms</a></li>
     			<li><a href="{{ url('hotels/'.$hotel->slug.'/contact')}}" class="button expanded">Contacts</a></li>
     		</ul>
     	</div>

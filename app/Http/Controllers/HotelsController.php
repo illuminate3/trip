@@ -54,11 +54,13 @@ class HotelsController extends Controller
 
     public function store(Requests\PostHotelRequest $request)
     {
-         $hotel = $this->hotelsService->make($request);
-         if(!$hotel){
-            return redirect('hotels')->with('error','Hotel Couldn\'t be created');
+        $hotel = $this->hotelsService->make($request);
+        if(!$hotel){
+            session()->with('errMsg','Hotel Couldn\'t be created');
+            return redirect('hotels/create')->withInput();
         }
-        return redirect('hotels')->with('success','Hotel created Sucessfully :)');
+        session()->with('sucMsg','Hotel created Sucessfully');
+        return redirect('hotels/'.$request->get('slug').'/contact/create');
     }
 
     /**
@@ -101,9 +103,11 @@ class HotelsController extends Controller
     {
         $hotel = $this->hotelsService->update($request,$id);
         if(!$hotel){
-            return redirect('hotels')->with('error','Hotel Couldn\'t be updated');
+            session()->flash('errMsg','Hotel Couldn\'t be updated');
+            return redirect('hotels/'.$request->get('slug').'/edit');
         }
-        return redirect('hotels')->with('success','Hotel updated Sucessfully :)');
+        session()->flash('sucMsg','Hotel updated Sucessfully :)');
+        return redirect('profile/business');
     }
 
     /**
@@ -115,10 +119,11 @@ class HotelsController extends Controller
     public function destroy($id)
     {
         $hotel = Hotel::destroy($id);
-
         if(!$hotel){
-            return redirect('hotels')->with(['error' => 'Hotel Cannot be Deleted']);
+            session()->flash('errMsg', 'Hotel Cannot be Deleted');
+            return redirect('profile/business');
         }
-        return redirect('hotels')->with(['success' => 'Hotel Deleted Sucessfully :)']);
+        session()->flash('sucMsg', 'Hotel Deleted Sucessfully :)');
+        return redirect('profile/business');
     }
 }

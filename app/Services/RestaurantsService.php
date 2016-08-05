@@ -48,18 +48,20 @@ class RestaurantsService
     }
 
     /**
-     * @param $id
      * @param PostRestaurantRequest $request
+     * @param $id
      * @return mixed
      */
-    public function update($id, PostRestaurantRequest $request)
+    public function update(PostRestaurantRequest $request,$id)
     {
         $restaurant = Restaurant::findOrFail($id);
         $restaurant->name = $request->get('name');
-        $restaurant->slug = str_replace(" ", "-", strtolower($request->get('name')));
+        $restaurant->slug = str_replace(" ", "-", strtolower($request->get('slug')));
         $restaurant->description = $request->get('description');
-        $file1 = $this->fileUpload($request);
-        $restaurant->image = $file1;
+        if($request->file('image')){
+            $file1 = $this->fileUpload($request);
+            $restaurant->image = $file1;
+        }
         return $restaurant->save();
     }
 

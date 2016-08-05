@@ -12,7 +12,7 @@
                         <h3>Rooms Create</h3>
                     </div>
                     <div class="section-content">
-                       {!! Form::open(['route'=> ['hotels.{slug}.room.create',$slug],'method' => 'POST', 'files'=>true]) !!}
+                       {!! Form::open(['route'=> ['hotels.{slug}.room.store',$slug],'method' => 'POST', 'files'=>true]) !!}
                             @include('rooms._form')
                         {!! Form::close() !!}
                     </div>
