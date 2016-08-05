@@ -41,7 +41,7 @@ class ToursContactController extends Controller
     public function create($slug)
     {
         $class = get_class($this);
-        $model = 'venue';
+        $model = $this->model;
         return view('contacts.create',compact('class','model','slug'));
     }
 
