@@ -155,7 +155,7 @@
                 <p>We promise to only send you good things</p>
                 {!! Form::open(['action'=>'MailController@sendNewsletterMail','method'=>'post','class'=>'subscribe-form']) !!}
                     {!! Form::email('email',old('email'),['placeholder'=>'Enter your email address']) !!}
-                    {!! Form::submit('<i class="fa fa-angle-right"></i>') !!}
+                    {!! Form::button('<i class="fa fa-angle-right"></i>',['class'=>'button','type'=>'button']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

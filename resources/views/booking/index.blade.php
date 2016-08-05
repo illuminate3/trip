@@ -8,7 +8,7 @@
     <div class="body-wrap inside">
         <div class="content-wrap row">
         @foreach($bookings as $booking)
-            <div class="columns medium-6">
+            <div class="columns medium-4">
                 Bookee: {{ $booking->bookee}}
                 <hr>
                 Created At : {{ $booking->created_at->diffForHumans() }}
