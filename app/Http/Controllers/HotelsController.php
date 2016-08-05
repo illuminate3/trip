@@ -73,7 +73,7 @@ class HotelsController extends Controller
     {
 
         $hotel = $this->hotelsService->getSlug($slug);
-        if($hotel->reviews){
+        if(isset($hotel->reviews)){
             $hotel->rating = $hotel->reviews->avg('rating');
         }
         $hotels = $this->hotelsService->getSimilarHotels();

@@ -79,7 +79,7 @@ class VenuesController extends Controller
         
         //Similar Venues
         $venues = Venue::take(10);
-        if($venues->reviews)
+        if(isset($venues->reviews))
         {
             $venue->rating = $venue->reviews->avg('rating');
         }

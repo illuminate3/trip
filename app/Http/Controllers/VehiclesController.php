@@ -68,7 +68,7 @@ class VehiclesController extends Controller
     {
         $vehicle = Vehicle::where('slug', '=', $slug)->with('contacts', 'reviews', 'galleries')->first();
         $vehicles = Vehicle::take(10);
-        if($vehicle->reviews){
+        if(isset($vehicle->reviews)){
             $vehicle->rating = $vehicle->reviews->avg('rating');
         }
         if($vehicle->contacts){
