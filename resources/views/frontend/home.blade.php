@@ -40,16 +40,16 @@ Homepage
                         </ul>
                         <div class="tabs-content" data-tabs-content="search-tabs">
                             <div class="tabs-panel is-active" id="hotel">
-                                @include('homepage._searchform')
+                                @include('frontend._searchform')
                             </div>
                             <div class="tabs-panel" id="venue">
-                                @include('homepage._searchform')
+                                @include('frontend._searchform')
                             </div>
                              <div class="tabs-panel" id="vehicle">
-                                @include('homepage._searchform')
+                                @include('frontend._searchform')
                             </div>
                              <div class="tabs-panel" id="tours">
-                                @include('homepage._searchform')
+                                @include('frontend._searchform')
                             </div>
                         </div>
                     </div>

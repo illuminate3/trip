@@ -75,6 +75,7 @@ class ToursService
         $img->save( base_path().self::IMAGE_LOCATION . $fileName, 80);
         return $fileName;
     }
+
     public function generateSlug($data)
     {
         return str_replace(" ", "-", strtolower($data));
