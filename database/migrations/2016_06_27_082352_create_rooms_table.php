@@ -16,11 +16,13 @@ class CreateRoomsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('image');
-            $table->string('type');
-            $table->integer('price');
+            $table->integer('min-price');
             $table->text('description');
             $table->integer('number_of_rooms');
+            $table->string('facilities');
             $table->integer('available_rooms');
+            $table->integer('available_from');
+            $table->string('packed');
             $table->unsignedInteger('hotel_id');
             $table->timestamps();
         });

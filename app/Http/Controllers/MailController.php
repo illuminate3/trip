@@ -16,7 +16,12 @@ class MailController extends Controller
     public function sendBookingMail(){
     	$id = Auth::user()->id;
 		Event::fire(new SendBookingMail($id));
-    }    
+    }
+    public function newNewsletterSubscribed()
+    {
+        return 'Newsletter Subscribed'; 
+    }
+
     public function sendNewsletterMail(Request $request){
     	if(Event::fire(new SendNewsletterMail($request->get('email'),'General '))){
     	   	session()->flash('sucMsg','Newsletter Subscribed Sucessfully');

@@ -17,4 +17,5 @@ class BookingService
     {
     	return Booking::where('user_id',$id)->orderBy('created_at','DESC')->get();
     }
+    
 }

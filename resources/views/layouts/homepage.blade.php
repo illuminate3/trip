@@ -42,7 +42,7 @@
                 </ul>
             </div>
             <div class="small-12 large-8 columns login-form">
-                <h4>log in</h4>
+                <h4>Log in</h4>
                 <!-- login-form -->
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                        @include('layouts._loginForm')
@@ -66,7 +66,19 @@
     <!-- for header -->
     <div class="search-bar">
         <div class="wrap">
-            <input type="text" placeholder="Search here">
+            {!! Form::open(['action' => 'SearchController@searchByName','class' =>'','method' => 'GET','style'=>'position:absolute']) !!}
+                <?php $type = [
+                        'restaurant' => 'Restaurants',
+                        'venue' => 'Venues',
+                        'vehicle' => 'Vehicles',
+                        'tour' => 'Tours',
+                        'hotel' => 'Hotels'
+                ];
+                ?>
+                {!! Form::select('type',$type, old('type') , ['class' => 'form-control medium-3',]) !!}
+                {!! Form::text('name',null,['class' => 'form-control medium-7' ]) !!}
+                <button type="submit"><i class="ti-search"></i></button>                        
+            {!! Form::close() !!}
             <div class="close-btn"><i class="ti-close"></i></div>
         </div>
     </div>
@@ -85,6 +97,9 @@
                         <li><a href="{{ url('/logout') }}">Logout</a></li>
                     @elseif(Shinobi::is('business'))
                         <li><a href="{{ url('/profile') }}">Profile</a></li>
+                        <li><a href="{{ url('/logout') }}">Logout</a></li>
+                    @else
+                        <li><a href="{{ url('/bookings') }}">My Bookings</a></li>
                         <li><a href="{{ url('/logout') }}">Logout</a></li>
                     @endif
                 @else

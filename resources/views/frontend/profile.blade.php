@@ -5,11 +5,15 @@
     <section>
         <div class="section-wrap">
             <div class="section-head">
-                <h3>Welcome Users!</h3>
+                <h3>Welcome {{ $user->name }}</h3>
                 
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iste officia iure quisquam optio eaque sequi quis, corporis, nihil mollitia molestias consectetur perferendis delectus doloribus?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda iste officia iure quisquam optio eaque sequi quis, corporis, nihil mollitia molestias consectetur perferendis delectus doloribus?</p>
+            @if(Shinobi::is('business'))
+            <p>Welcome to neptrip. You are currently registered as a business user. You can add your business here.</p>
+            @endif
+            @if(Shinobi::is('admin'))
+            <p>Welcome Admin on this page you can add or remove businesses</p>
+            @endif
         </div>
     </section>
                     

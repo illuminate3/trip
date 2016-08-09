@@ -95,12 +95,9 @@ class SearchController extends Controller
     public function searchByName(Request $request)
     {
         if ($request->all()) {
+            $type = $request->get('type');
             $search = $this->typeChecker($request->get('type'), $request->get('name'));
-            echo "<h1>Search Results for ".$request->get('name')  ."</h1>";
-            foreach($search as $s){
-                echo $s->name."<br>";
-                echo "<img src='$s->logo' class='img-thumbnail img-responsive'><hr>";
-            }
+            return view('search.hotelSearch',compact('search','type'));
         }
     }
 }

@@ -35,4 +35,10 @@ class NotificationService
     {
       return Notification::destroy($id);
     }
+    
+    public function sendUserNotification($message,$userId,$type)
+    {
+        $pusher = Illuminate\Support\Facades\App::make('pusher');
+        return $pusher->trigger( 'notification','get-user-notification', array('text' => $message,'userId'=> $userId,'type' => $type));
+    }
 }

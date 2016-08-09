@@ -2,31 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Services\BookingService;
-class BookingsController extends Controller
+
+use App\Http\Requests;
+
+class SettingsController extends Controller
 {
-    public $bookingService;
-
-    public function __construct(BookingService $bookingService)
-    {
-
-        $this->bookingService = $bookingService;
-        //$this->middleware('auth');
-
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        Auth::loginUsingId(1);
-        $bookings =$this->bookingService->getBookingByUser(1);
-        return view('booking.index',compact('bookings'));
+    {
+        //
     }
 
     /**
@@ -36,35 +25,24 @@ class BookingsController extends Controller
      */
     public function create()
     {
-        $hotels = Hotels::all()->toArray();
-        return view('booking.create',compact('hotels'));
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $pusher = Illuminate\Support\Facades\App::make('pusher');
-        $date = new DateTime();
-        $pusher->trigger( 'notification',
-            'get-booking-notification',
-             array(
-                'text' => 'A new Booking has been made',
-                'userId'=>'1',
-                'type' => 'success',
-                'created_at' => $date->format('d M Y')
-                ));
-        
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,7 +53,7 @@ class BookingsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -86,8 +64,8 @@ class BookingsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -98,7 +76,7 @@ class BookingsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

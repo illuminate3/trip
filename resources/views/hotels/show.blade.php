@@ -28,7 +28,9 @@
         <div class="inside-gallery">
           
         </div>
-
+        <div class="row">
+            @include('hotels._room')
+        </div>
         <div class="row">
             <div class="more-items">
                @include('hotels._similar')

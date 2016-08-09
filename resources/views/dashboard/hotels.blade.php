@@ -12,7 +12,7 @@
     <div class="panel">
         <div class="panel-body">
             <h3 class="title-hero">
-                Datatables export buttons
+                 All registered hotels are listed below. You can click on approve to show on your app and suspend to hide from other users.
             </h3>
 
             <div class="example-box-wrapper">
@@ -22,7 +22,7 @@
                     <tr>
                         <th>Name</th>
 
-                        <th>status</th>
+                        <th>Status</th>
                         <th>Image</th>
                         <th>Updated At</th>
                         <th>Options</th>
@@ -45,8 +45,8 @@
                         <tr>
                             <td>{{ $hotel->name }}</td>
 
-                            <td>{{ $hotel->status }}</td>
-                            <td><img src="{{ asset('uploads/'.$hotel->logo) }}" alt="" class="img-thumbnail img-responsive"/></td>
+                            <td>{{ ($hotel->status == '1') ? 'Approved' : 'Suspended' }}</td>
+                            <td><img src="{{ asset('uploads/images/hotel/'.$hotel->logo) }}" alt="" class="img-thumbnail img-responsive"/></td>
 
                             <td>{{ $hotel->updated_at }}</td>
                             <td>

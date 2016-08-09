@@ -1,5 +1,9 @@
 @extends('layouts.homepage')
 
+@section('title')
+    Log In
+@stop
+
 @section('content')
 <div class="container">
     <div class="row">

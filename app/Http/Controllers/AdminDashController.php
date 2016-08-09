@@ -107,4 +107,9 @@ class AdminDashController extends Controller
 
     }
 
+    public function getSettings()
+    {
+        return view('dashboard.settings');
+    }
+
 }

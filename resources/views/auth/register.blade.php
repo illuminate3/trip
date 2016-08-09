@@ -1,11 +1,15 @@
 @extends('layouts.homepage')
 
+@section('title')
+    Register
+@stop
+
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="medium-8 medium-offset-2 column">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <h4 class="panel-heading">Register</h4>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
@@ -68,7 +72,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn button btn-primary">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
                             </div>

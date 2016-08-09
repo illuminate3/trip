@@ -12,7 +12,7 @@
     <div class="panel">
         <div class="panel-body">
             <h3 class="title-hero">
-                Datatables export buttons
+                All registered tours are listed below. To approve a tour you can click on approve and suspend
             </h3>
 
             <div class="example-box-wrapper">
@@ -45,13 +45,13 @@
                         <tr>
                             <td>{{ $tour->name }}</td>
 
-                            <td>{{ $tour->status }}</td>
-                            <td><img src="{{ $tour->logo }}" alt="" class="img-thumbnail img-responsive"/></td>
+                            <td>{{ ($tour->status =='1')? 'Approved' : 'Suspended' }}</td>
+                            <td><img src="{{ asset('uploads/images/tour/'.$tour->logo) }}" alt="" class="img-thumbnail img-responsive"/></td>
 
-                            <td>{{ $tour->updated_at }}</td>
+                            <td>{{ $tour->updated_at->format('d-M-Y') }}</td>
                             <td>
-                                <a href="{{ url('approve/tour/'.$tour->id )}}" class="btn btn-primary">Approve</a>
-                                <a href="{{url('suspend/tour/'.$tour->id)}}" class="btn btn-primary">Suspend</a>
+                                <a href="{{ url('dash/approve/tour/'.$tour->id )}}" class="btn btn-primary">Approve</a>
+                                <a href="{{url('dash/suspend/tour/'.$tour->id)}}" class="btn btn-primary">Suspend</a>
                             </td>
                         </tr>
                     @endforeach

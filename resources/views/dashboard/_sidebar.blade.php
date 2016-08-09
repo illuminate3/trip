@@ -20,6 +20,21 @@
                 <span>Admin dashboard</span>
             </a>
         </li>
+       <li>
+            <a href="javascript:void(0);" title="Bookings">
+                <i class="glyph-icon icon-linecons-diamond"></i>
+                <span>Bookings</span>
+            </a>
+            <div class="sidebar-submenu">
+
+                <ul>
+                  <li><a href="{{ url('dash/hotels')}}" title="Buttons"><span>All Bookings</span></a></li>
+                  <li><a href="{{ url('dash/hotels/create')}}" title="Buttons"><span>Show recent bookings</span></a></li>
+                  <li><a href="{{ url('dash/hotels/create')}}" title="Buttons"><span>Ban Bookees</span></a></li>
+                </ul>
+
+            </div><!-- .sidebar-submenu -->
+        </li>
         <li class="header"><span>Business</span></li>
         <li>
             <a href="javascript:void(0);" title="Restaurants">
@@ -90,6 +105,7 @@
 
             </div><!-- .sidebar-submenu -->
         </li>
+        <li class="header"><span>Site</span></li>
         <li>
             <a href="javascript:void(0);" title="Carousels">
                 <i class="glyph-icon icon-linecons-eye"></i>
@@ -99,6 +115,20 @@
 
                 <ul>
                     <li><a href="{{ url('dash/carousel') }}" title="All Carousels"><span>All Carousels</span></a></li>
+                    <li><a href="{{ url('dash/carousel/create') }}" title="Add New Carousel"><span>Add New</span></a></li>
+                </ul>
+
+            </div><!-- .sidebar-submenu -->
+        </li>
+        <li>
+            <a href="javascript:void(0);" title="Carousels">
+                <i class="glyph-icon icon-linecons-eye"></i>
+                <span>Faq</span>
+            </a>
+            <div class="sidebar-submenu">
+
+                <ul>
+                    <li><a href="{{ url('dash/carousel') }}" title="All Carousels"><span>All Faq</span></a></li>
                     <li><a href="{{ url('dash/carousel/create') }}" title="Add New Carousel"><span>Add New</span></a></li>
                 </ul>
 

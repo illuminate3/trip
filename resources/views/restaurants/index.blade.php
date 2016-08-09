@@ -58,11 +58,11 @@
                                 <li>
                                     <div class="wrap">
                                         <div class="img-wrap">
-                                            <img src="{{ asset('uploads/images/restaurant'.$restaurant->logo) }}" alt="">
+                                            <img src="{{ asset('uploads/images/restaurant/'.$restaurant->logo) }}" alt="">
                                         </div>
                                         <div class="long-desc">
                                             <div class="row">
-                                                <h4 class="float-left">{{ $restaurant->title }}</h4>
+                                                <h4 class="float-left">{{ $restaurant->name }}</h4>
                                                 <div class="star float-right"></div>
                                             </div>
                                             <div class="row">

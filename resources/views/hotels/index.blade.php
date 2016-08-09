@@ -42,20 +42,20 @@
         <div class="row">
           <input id="pac-input" class="controls" type="text"
         placeholder="Enter a location">
-    <div id="type-selector" class="controls">
-      <input type="radio" name="type" id="changetype-all" checked="checked">
-      <label for="changetype-all">All</label>
+        <div id="type-selector" class="controls">
+          <input type="radio" name="type" id="changetype-all" checked="checked">
+          <label for="changetype-all">All</label>
 
-      <input type="radio" name="type" id="changetype-establishment">
-      <label for="changetype-establishment">Establishments</label>
+          <input type="radio" name="type" id="changetype-establishment">
+          <label for="changetype-establishment">Establishments</label>
 
-      <input type="radio" name="type" id="changetype-address">
-      <label for="changetype-address">Addresses</label>
+          <input type="radio" name="type" id="changetype-address">
+          <label for="changetype-address">Addresses</label>
 
-      <input type="radio" name="type" id="changetype-geocode">
-      <label for="changetype-geocode">Geocodes</label>
-    </div>
-    <div id="map"></div>
+          <input type="radio" name="type" id="changetype-geocode">
+          <label for="changetype-geocode">Geocodes</label>
+        </div>
+        <div id="map"></div>
 
         </div>
 
@@ -106,9 +106,7 @@
                                         </div>
                                     </div>
                                 </li>
-
                             @endforeach
-
                         </ul>
                     </div>
                 </div>

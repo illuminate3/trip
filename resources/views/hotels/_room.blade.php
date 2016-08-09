@@ -1,14 +1,3 @@
-<h1>Rooms</h1>
-@foreach($hotel->rooms as $room)
-	<div class="col-md-6">
-		<p>Room Type: {{ $room->type }} </p>
-		<p>Name: {{ $room->name }} </p>
-		<p>Price: {{ $room->price }} </p>
-		<p>Number Of Rooms: {{ $room->number_of_rooms }}</p>
-		<p>Available Rooms: {{ $room->available_rooms }}</p>
-		<p>Description: {{ str_limit($room->description, 50, '...') }}</p>
-	</div>
-@endforeach
 <section class="accomodation three-col-slider-wrap archive-wrap">
     <div class="section-wrap row">
         <div class="section-head">

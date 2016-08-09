@@ -12,7 +12,7 @@
     <div class="panel">
         <div class="panel-body">
             <h3 class="title-hero">
-                Datatables export buttons
+                 All registered restaurants are listed below. You can click on approve to show on your app and suspend to hide from other users.
             </h3>
 
             <div class="example-box-wrapper">
@@ -21,8 +21,7 @@
                     <thead>
                     <tr>
                         <th>Name</th>
-
-                        <th>status</th>
+                        <th>Status</th>
                         <th>Image</th>
                         <th>Updated At</th>
                         <th>Options</th>
@@ -32,11 +31,10 @@
                     <tfoot>
                     <tr>
                         <th>Name</th>
-
-                        <th>status</th>
+                        <th>Status</th>
                         <th>Image</th>
                         <th>Updated At</th>
-                        <th> Options</th>
+                        <th>Options</th>
                     </tr>
                     </tfoot>
 
@@ -45,13 +43,13 @@
                         <tr>
                             <td>{{ $restaurant->name }}</td>
 
-                            <td>{{ $restaurant->status }}</td>
-                            <td><img src="{{ $restaurant->logo }}" alt="" class="img-thumbnail img-responsive"/></td>
+                            <td>{{ ($restaurant->status == '1') ? 'Approved' : 'Suspended'}}</td>
+                            <td><img src="{{ asset('uploads/images/restaurant/'.$restaurant->logo) }}" alt="" class="img-thumbnail img-responsive"/></td>
 
                             <td>{{ $restaurant->updated_at }}</td>
                             <td>
-                                <a href="{{ url('approve/restaurant/'.$restaurant->id )}}" class="btn btn-primary">Approve</a>
-                                <a href="{{ url('approve/restaurant/'.$restaurant->id )}}" class="btn btn-primary">Suspend</a>
+                                <a href="{{ url('dash/approve/restaurant/'.$restaurant->id )}}" class="btn btn-primary">Approve</a>
+                                <a href="{{ url('dash/approve/restaurant/'.$restaurant->id )}}" class="btn btn-primary">Suspend</a>
                             </td>
                         </tr>
                     @endforeach

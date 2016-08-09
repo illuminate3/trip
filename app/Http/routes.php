@@ -1,14 +1,34 @@
     <?php
+    /*
+    Search User's Booking
+    Search Hotel
+    Search Tour
+    Search Vehicle
+    Search Venue => "size",""
+    Search 
+
+    -----------------------------------------------------------------
+    Login As Pro ==> Send Request for pro account [ Adding Business ]
+    Admin -> confirm . [ --  --]
+
+    */
 
     Route::group(['middlewareGroups'=> ['web'] ],function(){ 
         //Main site
         Route::get('/', 'SiteController@getHome');
         Route::get('/about','SiteController@getAbout');
         Route::get('/faq','SiteController@getFaq');
+        //Payment Options Page ===> LEFT
+        Route::get('/payment-options','SiteController@getPaymentOptions');
+
         Route::get('/blog','SiteController@getBlog');
         Route::get('/contact','SiteController@getContact');
         Route::resource('/posts', PostsController::class);
-                
+        
+        // =====> Design Left
+        Route::get('my-bookings',"ProfileController@getUserBooking");
+
+        Route::get('booking/room', 'SiteController@getHotelBooking');
         
         //Vehicle Routes
         Route::resource('/vehicles', VehiclesController::class);
@@ -23,7 +43,6 @@
     
         Route::get('hotels/rooms/create','RoomsController@create');
     
-    
         //Restaurant Routes
         Route::resource('/restaurants', RestaurantsController::class);
         Route::resource('/restaurants/{slug}/rooms', RoomsController::class);
@@ -36,69 +55,90 @@
         Route::resource('/tours/{slug}/contact', Contact\ToursContactController::class);
         Route::resource('/tours/{slug}/package', PackageController::class);
         Route::resource('/tours/{slug}/package/{packageSlug}/gallery', Gallery\PackagesGalleryController::class);
-    
-           
+       
         //Venues Controllers
     
         Route::resource('/venues', VenuesController::class );
         Route::resource('/venues/{slug}/gallery', Gallery\VenuesGalleryController::class);
         Route::resource('/venues/{slug}/contact', Contact\VenuesContactController::class);
-    
-        Route::resource('profile/booking',BookingsController::class);
+        //Authentication 
+        Route::auth();
         //Laravel Social Login For Login Authentication
-        
         Route::get('social/login/redirect/{provider}', ['uses' => 'SocialAuthController@redirectToProvider', 'as' => 'social.login']);
         Route::get('social/login/{provider}', 'SocialAuthController@handleProviderCallback');
-    
-        Route::auth();
         
         Route::get('/home', 'HomeController@index');
     
-        Route::get('search',function(){
-           return view('search.index');
-        });
-    
-        Route::post('searchByName','SearchController@searchByName');
+        Route::get('search-results','SearchController@searchByName');
     
         /*Pusher Notification*/
         Route::get('/bridge', function() {
             $pusher = Illuminate\Support\Facades\App::make('pusher');
-    
-            $pusher->trigger( 'test-channel',
-                'test-event',
-                array('text' => 'Preparing the Pusher Laracon.eu workshop!'));
-    
+            $date = new DateTime();
+            $pusher->trigger( 'notification',
+                'get-user-notification',
+                array(
+                    'text' => 'A new Business has been made',
+                    'userId'=>'1',
+                    'type' => 'success',
+                    'created_at' => $date->format('d M Y')
+                    ));
             return view('welcome');
         });
-    
+        Route::get('/bridge/booking', function() {
+            $pusher = Illuminate\Support\Facades\App::make('pusher');
+            $date = new DateTime();
+            $pusher->trigger( 'notification',
+                'get-booking-notification',
+                 array(
+                    'text' => 'A new Booking has been made',
+                    'userId'=>'1',
+                    'type' => 'success',
+                    'created_at' => $date->format('d M Y')
+                    ));
+            return view('welcome');
+        });
+    Route::get('/bridge/booking/error', function() {
+            $pusher = Illuminate\Support\Facades\App::make('pusher');
+            $date = new DateTime();
+            $pusher->trigger( 'notification',
+                'get-booking-notification',
+                 array(
+                    'text' => 'An Error Occured while booking',
+                    'userId'=>'1',
+                    'type' => 'alert',
+                    'created_at' => $date->format('d M Y')
+                    ));
+            return view('welcome');
+        });
+        //Pusher Notification broadcast
         Route::get('/broadcast', function() {
     
-            event(new \App\Events\TestEvent('Broadcasting in Laravel using Pusher!'));
+            event(new \App\Events\TestEvent('Show !',1));
     
             return view('welcome');
         });
-        Route::controller('notifications', 'NotificationsController');
-    
-       
-    
+        Route::controller('notifications', NotificationsController::class);
         Route::resource('/reviews', ReviewsController::class);
     
+        //Test Mail Sending Newsletter and booking        
+        Route::get('/send-mail','MailController@sendBookingMail');
+        Route::post('/send-mail','MailController@sendNewsletterMail');
 
-
-    //Test Mail Sending Newsletter and booking        
-    Route::get('/send-mail','MailController@sendBookingMail');
-    Route::post('/send-mail','MailController@sendNewsletterMail');
+        Route::resource('profile/booking',BookingsController::class);
+        
     }); // Web Middleware
- // Dashboard For SuperAdmin
+    // Dashboard For SuperAdmin
     Route::group(['middleware' => ['web',\App\Http\Middleware\AuthenticateAdmin::class],'before'=> 'business','prefix'=>'dash'], function () {
         Route::get('/',function(){
            return view('dashboard.dash');
         });
+        Route::get('settings','AdminDashController@getSettings');
+        //
         //Route::controller('dash',AdminDashController::class);
-        
-
-        
+       
         //Old Controllers
+        //
         Route::get('/restaurants','AdminDashController@getRestaurants');
         Route::get('/restaurants/create','AdminDashController@getRestaurantsCreate');
 
@@ -115,17 +155,17 @@
         Route::get('/venues/create','AdminDashController@getVenueCreate');
         
         Route::resource('carousel',CarouselsController::class);
+        Route::resource('faq', FaqController::class);
+
         Route::get('/approve/{model}/{id}','AdminDashController@approve');
         Route::get('/suspend/{model}/{id}','AdminDashController@suspend');
-
-
     });
-//Business User Dashboard
-    Route::group(['middleware'=>['web',\App\Http\Middleware\AuthenticateBusiness::class], 'before' => 'auth'],function(){
-
-        Route::get('/profile','SiteController@getProfile');
-        Route::get('/profile/business','ProfileController@getBusiness');
-        Route::get('/profile/add','ProfileController@getAddBusiness');
+    //Business User Dashboard
+    Route::group(['middleware'=>['web',\App\Http\Middleware\AuthenticateBusiness::class], 'before' => 'auth','prefix' => 'profile'],function(){
+        Route::get('/','ProfileController@getProfile');
+        Route::get('business','ProfileController@getBusiness');
+        Route::get('add','ProfileController@getAddBusiness');
+        
     });
 
 //API ROUTES

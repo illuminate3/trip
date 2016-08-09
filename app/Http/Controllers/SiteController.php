@@ -43,17 +43,23 @@ class SiteController extends Controller
         $hotels = Hotel::orderBy('updated_at','DES')->with('contacts')->take(5)->get();
         return view('frontend.faq', compact('hotels'));
     }
-
-    public function getProfile()
+    public function getPaymentOptions()
     {
         $hotels = Hotel::orderBy('updated_at','DES')->with('contacts')->take(5)->get();
-        return view('frontend.profile', compact('hotels'));
+        return view('frontend.paymentOptions', compact('hotels'));
     }
+
+    
 
     public function getContact()
     {
         $hotels = Hotel::with('contacts')->take(5)->get();
         return view('frontend.contact', compact('hotels'));
+    }
+
+    public function getHotelBooking()
+    {
+        return view('frontend.roomBooking');
     }
 
 }

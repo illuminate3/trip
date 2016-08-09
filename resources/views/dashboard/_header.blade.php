@@ -1,5 +1,5 @@
 <div id="header-nav-left">
-    <a class="header-btn" id="loogout-btn" href="lockscreen-3.html" title="Lockscreen page example">
+    <a class="header-btn" id="loogout-btn" href="{{ url('/logout') }}" title="Log Out">
         <i class="glyph-icon icon-linecons-lock"></i>
     </a>
     <div class="user-account-btn dropdown">
@@ -24,30 +24,19 @@
 
                                <i>{{-- Auth::user()->username --}}</i>
                             </span>
-                        <a href="#" title="Edit profile">Edit profile</a>
+                        <a href="#" title="Change your app config here">Settings</a>
                         <a href="#" title="View notifications">View notifications</a>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <ul class="reset-ul mrg5B">
                     <li>
-                        <a href="#">
+                        <a href="{{ url('dash/settings')}}">
+                            <i class="glyph-icon float-right icon-caret-right"></i>
                             Settings
-                            <i class="glyph-icon float-right icon-caret-right"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            View lockscreen example
-                            <i class="glyph-icon float-right icon-caret-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            View account details
-                            <i class="glyph-icon float-right icon-caret-right"></i>
-                        </a>
-                    </li>
+
                 </ul>
                 <div class="button-pane button-pane-alt pad5L pad5R text-center">
                     <a href="{{url('/logout') }}" class="btn btn-flat display-block font-normal btn-danger">
@@ -126,9 +115,7 @@
     <a href="#" class="hdr-btn" id="fullscreen-btn" title="Fullscreen">
         <i class="glyph-icon icon-arrows-alt"></i>
     </a>
-    <a href="#" class="hdr-btn sb-toggle-left" id="chatbox-btn" title="Chat sidebar">
-        <i class="glyph-icon icon-linecons-paper-plane"></i>
-    </a>
+    
     <div class="dropdown" id="notifications-btn">
         <a data-toggle="dropdown" href="#" title="">
             <span class="small-badge bg-yellow"></span>
