@@ -16,7 +16,7 @@
             </h3>
 
             <div class="example-box-wrapper">
-                {!! Form::model($carousel,['class' => '']) !!}
+                {!! Form::model($carousel,['route'=>['dash.carousel.update',$carousel->id ], 'method'=>'put','files'=>true]) !!}
                 @include('carousel._form')
                 {!! Form::close() !!}
             </div>

@@ -39,26 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-          <input id="pac-input" class="controls" type="text"
-        placeholder="Enter a location">
-    <div id="type-selector" class="controls">
-      <input type="radio" name="type" id="changetype-all" checked="checked">
-      <label for="changetype-all">All</label>
-
-      <input type="radio" name="type" id="changetype-establishment">
-      <label for="changetype-establishment">Establishments</label>
-
-      <input type="radio" name="type" id="changetype-address">
-      <label for="changetype-address">Addresses</label>
-
-      <input type="radio" name="type" id="changetype-geocode">
-      <label for="changetype-geocode">Geocodes</label>
-    </div>
-    <div id="map"></div>
-
-        </div>
-
+        
         <div class="row">
             <section class="accomodation three-col-slider-wrap archive-wrap">
                 <div class="section-wrap row">
@@ -77,7 +58,7 @@
                             <li>
                                     <div class="wrap">
                                         <div class="img-wrap">
-                                            <img src="{{ asset('uploads/images/hotel/'.$room->image) }}" alt="">
+                                            <img src="{{ asset('uploads/images/hotel/rooms/'.$room->image) }}" alt="">
                                         </div>
                                         <div class="long-desc">
                                             <div class="row">

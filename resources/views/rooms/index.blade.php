@@ -1,14 +1,14 @@
 @extends('layouts.homepage')
 
 @section('title')
-    Hotels
+    {{$hotel->name}} | Rooms
 @stop
 
 @section('content')
     <div class="body-wrap archive">
         <div class="archive-banner">
             <div class="content row">
-                <h3>Search Hotels</h3>
+                <h3>Search Room</h3>
                 <div class="tabs-content">
                     <form action="" class="search-form row small-up-1 medium-up-2 large-up-4">
                         <div class="column">
@@ -39,31 +39,13 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-          <input id="pac-input" class="controls" type="text"
-        placeholder="Enter a location">
-    <div id="type-selector" class="controls">
-      <input type="radio" name="type" id="changetype-all" checked="checked">
-      <label for="changetype-all">All</label>
-
-      <input type="radio" name="type" id="changetype-establishment">
-      <label for="changetype-establishment">Establishments</label>
-
-      <input type="radio" name="type" id="changetype-address">
-      <label for="changetype-address">Addresses</label>
-
-      <input type="radio" name="type" id="changetype-geocode">
-      <label for="changetype-geocode">Geocodes</label>
-    </div>
-    <div id="map"></div>
-
-        </div>
+      
 
         <div class="row">
             <section class="accomodation three-col-slider-wrap archive-wrap">
                 <div class="section-wrap row">
                     <div class="section-head">
-                        <h3>Explore our latest Hotels</h3>
+                        <h3>Explore our latest Rooms</h3>
                         <ul class="slider-nav">
                             <li class="prev-3"><i class="ti-angle-left"></i></li>
                             <li class="next-3"><i class="ti-angle-right"></i></li>
@@ -71,13 +53,12 @@
                     </div>
                     <div class="section-content">
                         <ul class="archive-list">
-
                             @foreach ($hotel->rooms as $room)
 
                             <li>
                                     <div class="wrap">
                                         <div class="img-wrap">
-                                            <img src="{{ asset('uploads/images/hotel/'.$room->image) }}" alt="">
+                                            <img src="{{ asset('uploads/images/hotel/rooms/'.$room->image) }}" alt="">
                                         </div>
                                         <div class="long-desc">
                                             <div class="row">

@@ -19,6 +19,8 @@
     <link href="{{ asset('neptrip/stylesheets/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="{{ asset('neptrip/stylesheets/print.css') }}" media="print" rel="stylesheet" type="text/css" />
     <script src="{{ asset('neptrip/js/vendor/jquery.js') }}"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
 </head>
 <body>
@@ -94,6 +96,7 @@
                 @if(Auth::check())
                     @if(Shinobi::is('admin'))
                         <li><a href="{{ url('/dash')}}">Dashboard</a></li>
+                        <li><a href="{{ url('/profile')}}">Profile</a></li>
                         <li><a href="{{ url('/logout') }}">Logout</a></li>
                     @elseif(Shinobi::is('business'))
                         <li><a href="{{ url('/profile') }}">Profile</a></li>
@@ -111,15 +114,15 @@
                     <i class="fa fa-bars"></i>
                 </div>
                 <ul class="main-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about/">About us</a></li>
-                    <li><a href="/hotels/">Hotel</a></li>
-                    <li><a href="/venues/">Venue</a></li>
-                    <li><a href="/restaurants/">Restaurant</a></li>
-                    <li><a href="/tours/">Tour</a></li>
-                    <li><a href="/vehicles/">Vehicle</a></li>
-                    <li><a href="/contact/">Contact Us</a></li>
-                    <li><a href="/blog/">Blogs</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/about/') }}">About us</a></li>
+                    <li><a href="{{ url('/hotels/') }}">Hotel</a></li>
+                    <li><a href="{{ url('/venues/') }}">Venue</a></li>
+                    <li><a href="{{ url('/restaurants/') }}">Restaurant</a></li>
+                    <li><a href="{{ url('/tours/') }}">Tour</a></li>
+                    <li><a href="{{ url('/vehicles/') }}">Vehicle</a></li>
+                    <li><a href="{{ url('/contact/') }}">Contact Us</a></li>
+                    <li><a href="{{ url('/blog/') }}">Blogs</a></li>
                     <li><a class="search-btn"><i class="ti-search"></i></a></li>
                     <div class="responsive-lists">
                         <li><a data-toggle="login-modal">join</a></li>

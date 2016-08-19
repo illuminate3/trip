@@ -15,12 +15,14 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code');
-            $table->string('bookee');//The bookers id
+            $table->string('bookee'); //The bookers id or name
             $table->date('booked_on');
             $table->date('from');
             $table->date('to');
+            $table->boolean('read'); // Is the booking read by the business
+            $table->boolean('confirm'); // Is it confirmed
+            $table->morphable('bookee'); // Which type of business has been booked
             $table->unsignedInteger('user_id');
-            $table->morphable('bookee');
             $table->timestamps();
         });
     }

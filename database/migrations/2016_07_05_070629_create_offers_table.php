@@ -15,7 +15,12 @@ class CreateOffersTable extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            
+            $table->string('image');
+            $table->string('price_before');
+            $table->string('price_after');
+            $table->date('from');
+            $table->date('to');
+            $table->morphable('offer');
             $table->timestamps();
         });
     }

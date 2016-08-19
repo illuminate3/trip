@@ -14,18 +14,18 @@ use Image;
 class RoomService
 {
     
-    const IMAGE_LOCATION = '/public/uploads/images/rooms/';
+    const IMAGE_LOCATION = '/public/uploads/images/hotel/rooms/';
 
     public function make($id,PostRoomRequest $request)
     {
         $restaurant = Hotel::findOrFail($id);
-        return $restaurant->rooms->create($this->data($request));
+        return $restaurant->rooms()->create($this->data($request,$id));
     }
 
-    public function update($id,PostHotelRequest $request)
+    public function update($hotelId,$roomId,PostRoomRequest $request)
     {
-        $restaurant = Hotel::findOrFail($id);
-        return $restaurant->rooms->update($id,$this->data($request));
+        $restaurant = Hotel::findOrFail($hotelId);
+        return $restaurant->rooms()->update($roomId,$this->data($request));
     }
 
     public function fileUpload($request)
@@ -39,8 +39,20 @@ class RoomService
         return $fileName;
     }
 
-    public function data($request)
+    public function data($request, $hotel_id = 0)
     {
+        if($hotel_id != 0){
+            return [
+                'name' => $request->get('name'),
+                'image' => $this->fileUpload($request),
+                'description' => $request->get('description'),
+                'type' => $request->get('type'),
+                'price' => $request->get('price'),
+                'number_of_rooms' => $request->get('number_of_rooms'),
+                'available_rooms' => $request->get('available_rooms'),
+                'hotel_id' => $hotel_id
+            ];
+        }
         return [
             'name' => $request->get('name'),
             'image' => $this->fileUpload($request),
@@ -48,8 +60,8 @@ class RoomService
             'type' => $request->get('type'),
             'price' => $request->get('price'),
             'number_of_rooms' => $request->get('number_of_rooms'),
-            'available_rooms' => $request->get('available_rooms')
-        ];
+            'available_rooms' => $request->get('available_rooms'),
+         ];
     }
 
     public function getRoomFirst($slug)
@@ -62,7 +74,7 @@ class RoomService
     }
     public function getFirstRoom($hotelSlug,$id)
     {
-        return Hotel::where('slug',$slug)->with(['rooms'=> function($query) use($id){
+        return Hotel::where('slug',$hotelSlug)->with(['rooms'=> function($query) use($id){
                 $query->where('id', $id);
       }])->first();
     }

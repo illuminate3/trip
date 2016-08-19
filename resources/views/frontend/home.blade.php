@@ -12,13 +12,13 @@ Homepage
                         <div class="content">
                             <h3>Neptrip Business Listing</h3>
                             <div class="row">
-                                <?php foreach(range(0, 2) as $key) :?>
+                                <?php foreach($carousels as $carousel) :?>
 
                                     <div class="medium-4 small-12 columns">
                                         <div class="content-item">
-                                            <img src="{{ asset('neptrip/images/online-icon.png') }}" alt="">
-                                            <h4>Online Services</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, dolor repellendus voluptatem accusamus eius animi. Alias nulla, consequuntur molestias doloremque hic sint, reiciendis possimus exercitationem?</p>   
+                                            <img src="{{ asset('uploads/carousel/'.$carousel->image) }}" alt="{{ $carousel->title }}" >
+                                            <h4>{{ $carousel->title }}</h4>
+                                            <p>{{ $carousel->description }}</p>   
                                         </div>
                                     </div>
 
@@ -49,7 +49,7 @@ Homepage
                                 @include('frontend._searchform')
                             </div>
                              <div class="tabs-panel" id="tours">
-                                @include('frontend._searchform')
+                                 {!! QrCode::size(100)->generate('Neptrip'); !!}
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@ Homepage
                                 
                             </ul>
                         </div>
-                        <a href="/hotels/" class="view-more">View More >>></a>
+                        <a href="{{ url('/hotels/'.$hotel->slug) }}" class="view-more">View More >>></a>
                     </div>                   
                 </section>
                 <!-- accomodation -->
@@ -245,11 +245,11 @@ Homepage
                                                     <h4 class="float-left">We offer Premium Hotels</h4>
                                                     <div class="star float-right"><div class="rateYo"></div></div>
                                                 </div>
-                                                @if($hotel->contacts)
+                                                {{--@if($hotel->contacts)
                                                 <div class="row">
                                                     <p class="address">{{ $room->hotels->contacts['address'] }}</p>
                                                 </div>
-                                                @endif
+                                                @endif--}}
                                                 <hr>
                                                 <div class="row">
                                                     <div class="float-left">

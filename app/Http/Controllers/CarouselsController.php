@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Carousel;
-use App\Http\Requests;
-use Illuminate\Http\Request;
-use App\Services\CarouselService;
 use App\Http\Requests\PostCarouselRequest;
+use App\Http\Requests\PutCarouselRequest;
+use App\Services\CarouselService;
 
 class CarouselsController extends Controller
 {
     protected $carousel;
+
     public function __construct(CarouselService $carousel)
     {
         $this->carousel = $carousel;
     }
+
     public function index()
     {
         $carousels = Carousel::all();
@@ -28,23 +29,31 @@ class CarouselsController extends Controller
 
     public function edit($id)
     {
-        $carousel = Carousel::findOrFail($id)->first();
+        $carousel = Carousel::findOrFail($id);
+
         return view('carousel.edit', compact('carousel'));
     }
 
     public function store(PostCarouselRequest $request)
     {
-      if($this->carousel->make($request)){
-        session()->with('sucMsg','Carousel created Sucessfully');
-        return redirect('dash/carousels');
-      }
-      session()->flash('errMsg','Carousel couldn\'t be created');
-      return redirect('dash/carousel/create')->old($request);
+        if ($this->carousel->make($request)) {
+            session()->flash('sucMsg', 'Carousel created Sucessfully');
+            return redirect('dash/carousel');
+        }
+        session()->flash('errMsg', 'Carousel couldn\'t be created');
+        return redirect('dash/carousel/create')->withInput($request->toArray());
     }
-    public function update($id)
+
+    public function update($id,PutCarouselRequest $request)
     {
-        $carousel = Carousel::findOrFail($id);
-        dd($carousel);
+        if($this->carousel->update($id,$request))
+        {
+            session()->flash('sucMsg','Carousel Updated Sucessfully');
+            return redirect('/dash/carousel');
+        }
+        session()->flash('errMsg','Carousel couldn\'t be updated. Try again');
+        return redirect('/dash/carousel/'.$id.'/edit')->withInput($request->toArray());
+        
     }
 
     public function show($id)
@@ -55,6 +64,12 @@ class CarouselsController extends Controller
 
     public function destroy($id)
     {
-        $carousel = Carousel::delete($id);
+        if($this->carousel->destroyWithResource($id))
+        {
+            session()->flash('sucMsg','Carousel deleted sucessfully');
+            return route('dash.carousel.index');
+        }
+        session()->flash('errMsg','Carousel couldn\'t be deleted');
+        return route('dash.carousel.index');
     }
 }

@@ -2,7 +2,7 @@ $(document).foundation();
 
 
 $(window).load(function() {
-
+    
 
 // for nav responsive
 

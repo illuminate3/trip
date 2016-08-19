@@ -1,13 +1,13 @@
 <?php
 namespace App\Services;
 
-use Auth;
-use App\Tour;
 use App\Hotel;
-use App\Venue;
-use App\Vehicle;
-use App\Restaurant;
 use App\Http\Request;
+use App\Restaurant;
+use App\Tour;
+use App\Vehicle;
+use App\Venue;
+use Auth;
 
 /**
  * Class AdminService

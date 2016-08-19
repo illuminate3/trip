@@ -139,8 +139,9 @@
                             <span class="glyph-icon icon-clock-o"></span>
                         </div>
                     </li>
-                    
+
                 </ul>
+                @include('dashboard._flash')
             </div>
             <div class="button-pane button-pane-alt pad5T pad5L pad5R text-center">
                 <a href="#" class="btn btn-flat btn-primary" title="View all notifications">

@@ -27,7 +27,7 @@ class HotelsService
     {
         $hotel = new Hotel();
         $hotel->name = $request->get('name');
-        $hotel->slug = $this->generateSlug($request->get('slug'));
+        $hotel->slug = str_slug($request->get('slug'));
         $hotel->description = $request->get('description');
         $file = $this->fileUpload($request);
         $hotel->user_id = Auth::user()->id;
@@ -45,7 +45,7 @@ class HotelsService
     {
         $hotel = Hotel::findOrFail($id);
         $hotel->name = $request->get('name');
-        $hotel->slug = $this->generateSlug($request->get('slug'));
+        $hotel->slug = str_slug($request->get('slug'));
         $hotel->description = $request->get('description');
         if($request->file('image')){
             $file = $this->fileUpload($request);
@@ -91,18 +91,45 @@ class HotelsService
     {
         return Hotel::where('slug','=',$slug)->with('contacts','galleries','reviews')->first();
     }
+    public function getIdBySlug($slug)
+    {
+        return Hotel::select('id')->where('slug',$slug)->first()->id;
+    }
 
     public function getSimilarHotels()
     {
         return Hotel::orderBy('updated_at','DSC')->with('contacts')->take(10);
     }
+
     public function findSlug($slug)
     {
         return Hotel::where('slug','=', $slug)->first();
     }
-    
-    public function generateSlug($data)
+
+    public function getSlugContacts($slug)
     {
-        return str_replace(" ", "-", strtolower($data));
+        return Hotel::where('slug','=',$slug)->with('contacts');
     }
+
+    public function findByAddress($address)
+    {
+        return Hotel::whereHas('contacts', function($query) use ($address){
+            return $query->where('address','LIKE','%'.$address.'%');
+        })->get();
+    }
+    
+  
+    public function findByName($name)
+    {
+        return Hotel::where('name', 'LIKE', '%' . $name . '%')->get();
+    }
+    public function getContactById($slug,$contactId)
+    {
+        return Hotel::where('slug','=',$slug)->with([
+            'contacts' => function($query) use ($contactId){
+                return $query->findOrFail($contactId);
+            }
+        ]);
+    }
+
 }

@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Services\HotelsService;
 use Auth;
+use JsValidator;
 /**
  * Class HotelsController
  * @package App\Http\Controllers
@@ -53,13 +54,13 @@ class HotelsController extends Controller
 
     public function store(Requests\PostHotelRequest $request)
     {
-        $slug = $this->hotelsService->generateSlug($request->get('slug'));
+        $slug = str_slug($request->get('slug'));
         $hotel = $this->hotelsService->make($request);
         if(!$hotel){
-            session()->with('errMsg','Hotel Couldn\'t be created');
+            session()->flash('errMsg','Hotel Couldn\'t be created');
             return redirect('hotels/create')->withInput();
         }
-        session()->with('sucMsg','Hotel created Sucessfully');
+        session()->flash('sucMsg','Hotel created Sucessfully');
         return redirect('hotels/'.$slug.'/contact/create');
     }
 
@@ -73,10 +74,12 @@ class HotelsController extends Controller
     {
 
         $hotel = $this->hotelsService->getSlug($slug);
+        $hotel->rating = 3;
         if(isset($hotel->reviews)){
             $hotel->rating = $hotel->reviews->avg('rating');
         }
-        $hotels = $this->hotelsService->getSimilarHotels();
+        $hotels = $this->hotelsService->getSimilarHotels()->get();
+
         if($hotel->contacts){
           \Mapper::map($hotel->contacts->latitude, $hotel->contacts->longitude);
         }
@@ -104,7 +107,7 @@ class HotelsController extends Controller
     public function update(Requests\PutHotelsRequest $request, $id)
     {
         $hotel = $this->hotelsService->update($request,$id);
-        $slug = $this->hotelsService->generateSlug($request->get('slug'));
+        $slug = str_slug($request->get('slug'));
         if(!$hotel){
             session()->flash('errMsg','Hotel Couldn\'t be updated');
             return redirect('hotels/'.$slug.'/edit');

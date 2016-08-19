@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
+use Auth;
 use App\Http\Requests\Request;
-
 class PostCarouselRequest extends Request
 {
     /**
@@ -13,7 +13,7 @@ class PostCarouselRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        return Auth::check();
     }
 
     /**
@@ -24,11 +24,11 @@ class PostCarouselRequest extends Request
     public function rules()
     {
         return [
-          'title' => 'required',
-          'description' => 'required',
-          'image' => 'required|image',
-          'position' => 'required',
-          'status' => 'required'
+          'title' => 'required|min:5',
+          'description' => 'required|min:5',
+          'image' => 'required|mimes:jpeg,bmp,png',
+          'position' => 'required|integer',
+          'status' => 'required|bool'
         ];
     }
 }

@@ -24,7 +24,15 @@ class PostContactRequest extends Request
     public function rules()
     {
         return [
-            //
+            'zone' => 'required|min:4',
+            'district' => 'required|min:4',
+            "representative" => 'required',
+            'role' => 'required|min:3',
+            'address' => 'required|min:3',
+            'phone1' =>'required|min:6',
+            'email' => 'required|email|min:5',
+            'latitude' => 'required',
+            'longitude' => 'required'
         ];
     }
 }

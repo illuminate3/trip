@@ -1,10 +1,10 @@
-@extends('layouts.homepage')
+@extends('layouts.profile')
 
 @section('title')
     Rooms
 @stop
 
-@section('content')
+@section('profile-content')
     <div class="row">
         <section class="accomodation three-col-slider-wrap archive-wrap">
             <div class="section-wrap row">

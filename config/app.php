@@ -156,19 +156,18 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
          Collective\Html\HtmlServiceProvider::class,
-        /* Laravel Debug bar */
-        //Barryvdh\Debugbar\ServiceProvider::class,
-        // Google Map
-        Cornford\Googlmapper\MapperServiceProvider::class,
-        /**
-        *For Roles Based Permissions
-        **/
+        
+        //Barryvdh\Debugbar\ServiceProvider::class, // LaravelDebugBar
+        Cornford\Googlmapper\MapperServiceProvider::class, // Google Map
         Caffeinated\Shinobi\ShinobiServiceProvider::class, // For RBAC
         Collective\Html\HtmlServiceProvider::class, // For Watchtower Forms to function
         Smarch\Watchtower\WatchtowerServiceProvider::class, // For Watchtower
         Intervention\Image\ImageServiceProvider::class, //Intervention Image Processing Library
         Laravel\Socialite\SocialiteServiceProvider::class, // Login via facebook,google+,twitter
         Vinkla\Pusher\PusherServiceProvider::class, // Pusher For Notification
+        Proengsoft\JsValidation\JsValidationServiceProvider::class, //JavaScript validation
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class, //QR Code Generator
+
 
     ],
 
@@ -222,6 +221,9 @@ return [
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
         'Image' => Intervention\Image\Facades\Image::class, // For Intervention Library,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class, // Social Login [Fb,twitter,Google +]
+        'JsValidator' => Proengsoft\JsValidation\Facades\JsValidatorFacade::class, // JavaScript Validation
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+
 
         // Morphing Classes Respective calls
         'Restaurant' => 'App\Restaurant',

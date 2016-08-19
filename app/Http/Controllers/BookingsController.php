@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Http\Requests;
-use Illuminate\Http\Request;
 use App\Services\BookingService;
+use Auth;
+use Illuminate\Http\Request;
+
 class BookingsController extends Controller
 {
     public $bookingService;
@@ -14,19 +14,20 @@ class BookingsController extends Controller
     {
 
         $this->bookingService = $bookingService;
-        //$this->middleware('auth');
+        $this->middleware('auth');
 
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         Auth::loginUsingId(1);
-        $bookings =$this->bookingService->getBookingByUser(1);
-        return view('booking.index',compact('bookings'));
+        $bookings = $this->bookingService->getBookingByUser(1);
+        return view('booking.index', compact('bookings'));
     }
 
     /**
@@ -37,45 +38,51 @@ class BookingsController extends Controller
     public function create()
     {
         $hotels = Hotels::all()->toArray();
-        return view('booking.create',compact('hotels'));
+        return view('booking.create', compact('hotels'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+    if($this->bookingService->make($request)){
         $pusher = Illuminate\Support\Facades\App::make('pusher');
         $date = new DateTime();
-        $pusher->trigger( 'notification',
+        $pusher->trigger('notification',
             'get-booking-notification',
-             array(
+            array(
                 'text' => 'A new Booking has been made',
-                'userId'=>'1',
+                'userId' => '1',
                 'type' => 'success',
                 'created_at' => $date->format('d M Y')
-                ));
-        
+            ));
+    }
+
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $booking = Booking::findOrFail($id)->first();
+        return view('booking.show',compact('booking'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -88,6 +95,7 @@ class BookingsController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -99,6 +107,7 @@ class BookingsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

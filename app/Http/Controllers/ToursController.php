@@ -49,7 +49,7 @@ class ToursController extends Controller
 
     public function store(Requests\PostTourRequest $request)
     {
-        $slug = $this->tourService->generateSlug($request->get('slug'));
+        $slug = str_slug($request->get('slug'));
         if(!$this->tourService->make($request)){
             session()->flash('errMsg','Tour Couldn\'t be created');
             return redirect('tours/create')->withInput();
@@ -98,7 +98,7 @@ class ToursController extends Controller
      */
     public function update(Requests\PutTourRequest $request, $id)
     {
-        $slug = $this->tourService->generateSlug($request->get('slug'));
+        $slug = str_slug($request->get('slug'));
         $tour = $this->tourService->update($request->id);
         if(!$tour){
             session()->flash('errMsg','Tour Couldn\'t be updated');

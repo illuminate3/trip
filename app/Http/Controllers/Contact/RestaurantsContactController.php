@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers\Contact;
 
-use App\Http\Controllers\Controller;
 use App\Restaurant;
-use App\Services\ContactService;
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Services\ContactService;
+use App\Services\RestaurantService;
+use App\Http\Controllers\Controller;
 
 class RestaurantsContactController extends Controller
 {
     protected $contactService;
+    protected $restaurantService;
     protected $model = 'restaurant';
 
-    public function __construct(ContactService $contactService)
+    public function __construct(ContactService $contactService, RestaurantService $restaurantService)
     {
         $this->contactService = $contactService;
+        $this->restaurantService = $restaurantService;
         $this->middleware('auth', ['except' => [
             'index', 'show'
         ]]);
@@ -24,25 +26,27 @@ class RestaurantsContactController extends Controller
 
     public function index($slug)
     {
-        $contacts = Restaurant::where('slug',$slug)->with('contacts')->first();
-        $model = 'hotel';
-        $contact= $contact->contacts;
-        return view('contacts.index',compact('contact','model','slug'));
+        return view('contacts.index',compact('slug'))->with([
+            'model' => $this->model,
+            'contact' => $this->restaurantService->getSlugWithContact($slug)->first()
+            ]);
     }
 
 
     public function create($slug)
     {
-        $class = get_class($this);
-        $model = 'restaurant';
-        return view('contacts.create',compact('class','model','slug'));
+        return view('contacts.create')->with([
+            'model' => $this->model,
+            'class' => get_class($this)
+            ]);
     }
 
 
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId= Restaurant::select('id')->where('slug',$slug)->first()->id;
-        if($this->contactService->make('restaurant',$vehicleId,$request)){
+        $vehicleId= $this->restaurantService->getIdBySlug($slug);
+        if($this->contactService->make($this->model,$vehicleId,$request)){
+            
             session()->flash('sucMsg','Restaurant\'s contact created sucessfully');
             return redirect("restaurants/".$slug);
         }
@@ -73,7 +77,12 @@ class RestaurantsContactController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        if($this->contactService->update($id,$request)){
+            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+            return back();
+        }
+        session()->flash('errMsg','Contact information couldn\'t be updated');
+        return back();
     }
 
     /**

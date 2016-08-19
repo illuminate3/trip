@@ -19,6 +19,7 @@ class ReviewsService
 {
     /**
      * @param PostReviewRequest $request
+     *
      * @return mixed
      */
     public function make(PostReviewRequest $request)
@@ -36,6 +37,7 @@ class ReviewsService
 
     /**
      * @param PostReviewRequest $request
+     *
      * @return mixed
      */
     public function update(PostReviewRequest $request)
@@ -56,6 +58,7 @@ class ReviewsService
     /**
      * @param PostReviewRequest $request
      * @param Array $reviews
+     *
      * @return mixed
      */
     public function checkModel(PostReviewRequest $request, $reviews)
@@ -79,7 +82,7 @@ class ReviewsService
                 break;
             case "Vehicle":
                 $review = Vehicle::find($request->get('review_id'));
-                $review->reviews()->create($reviews);
+                return $review->reviews()->create($reviews);
                 break;
             default:
                 return back()->with(['error' => 'No correct model can be found to insert ']);

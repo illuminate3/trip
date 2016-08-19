@@ -1,8 +1,8 @@
 <?php
 namespace App\Services;
 
-use App\Post;
 use App\Http\Requests\PostHotelRequest;
+use App\Post;
 use Auth;
 use Image;
 
@@ -27,7 +27,7 @@ class PostsService
         $hotel = Post::findOrFail($id);
         $hotel->title = $request->get('title');
         $hotel->content = $request->get('description');
-        if($request->get('image')){
+        if ($request->get('image')) {
             $hotel->image = $this->fileUpload($request);
         }
         $hotel->user_id = Auth::user()->id;
@@ -42,11 +42,11 @@ class PostsService
      */
     public function update($request, $id)
     {
-        
+
         $hotel = Post::findOrFail($id);
         $hotel->title = $request->get('title');
         $hotel->content = $request->get('description');
-        if($request->get('image')){
+        if ($request->get('image')) {
             $hotel->image = $this->fileUpload($request);
         }
         $hotel->user_id = Auth::user()->id;
@@ -77,7 +77,7 @@ class PostsService
         // open an image file
         $img = Image::make($file)->resize(350, 200);;
         // Saving the file to filesystem
-        $img->save( base_path().self::IMAGE_LOCATION . $fileName,80);
+        $img->save(base_path() . self::IMAGE_LOCATION . $fileName, 80);
         return $fileName;
     }
 }

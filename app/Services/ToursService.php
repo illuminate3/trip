@@ -28,7 +28,7 @@ class ToursService
     {
         $tour = new Tour();
         $tour->name = $request->get('name');
-        $tour->slug = str_replace(" ", "-", strtolower($request->get('slug')));
+        $tour->slug = str_slug($request->get('slug'));
         $tour->description = $request->get('description');
         $file = $this->fileUpload($request);
         $tour->logo = $file;
@@ -76,8 +76,14 @@ class ToursService
         return $fileName;
     }
 
-    public function generateSlug($data)
+    public function findByName($name)
     {
-        return str_replace(" ", "-", strtolower($data));
+        return Tour::where('name', 'LIKE', '%' . $name . '%')->get();
+    }
+    public function findByAddress($address)
+    {
+        return Tour::whereHas('contacts', function($query) use ($address){
+            return $query->where('address','LIKE','%'.$address.'%');
+        })->get();
     }
 }

@@ -39,7 +39,7 @@ class RestaurantsGalleryController extends Controller
     public function create($slug)
     {
         $class = get_class($this);
-        $model = 'restaurant';
+        $model = $this->model;
         return view('gallery.create',compact('class','model','slug'));
     }
 
@@ -56,19 +56,17 @@ class RestaurantsGalleryController extends Controller
     public function show($slug,$id)
     {
         $galleries = Restaurant::where('slug',$slug)->with('galleries')->first();
-        dd($galleries);
         return view('gallery.show',compact('galleries'));
     }
 
     public function edit($slug,$gallery)
     {
-        $model = $this->model;
         $id = $gallery;
         $gallery = Restaurant::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
             return $query->findOrFail($id);
         }])->first();
         
-        return view('gallery.edit',compact('gallery','slug','model','id'));
+        return view('gallery.edit',compact('gallery','slug','id'))->with(['model'=>$this->model]);
     }
 
 

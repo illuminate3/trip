@@ -1,13 +1,12 @@
 <?php
 
-
 namespace App\Services;
 
-use App\Http\Requests\PostVenueRequest;
-use App\Http\Requests\PutVenueRequest;
-use App\Venue;
 use Auth;
 use Image;
+use App\Venue;
+use App\Http\Requests\PostVenueRequest;
+use App\Http\Requests\PutVenueRequest;
 
 /**
  * Class VenuesService
@@ -22,13 +21,14 @@ class VenuesService
 
     /**
      * @param PostVenueRequest $request
+     *
      * @return mixed
      */
     public function make(PostVenueRequest $request, $user_id = 0)
     {
         $hotel = new Venue();
         $hotel->name = $request->get('name');
-        $hotel->slug = $this->generateSlug($request->get('slug'));
+        $hotel->slug = str_slug($request->get('slug'));
         $hotel->description = $request->get('description');
         $file = $this->fileUpload($request);
         $hotel->user_id = Auth::user()->id;
@@ -36,20 +36,22 @@ class VenuesService
         return $hotel->save();
     }
 
-   public function update(PutVenueRequest $request,$id)
+    public function update(PutVenueRequest $request, $id)
     {
         $restaurant = Restaurant::findOrFail($id);
         $restaurant->name = $request->get('name');
-        $restaurant->slug = $this->generateSlug($request->get('slug'));
+        $restaurant->slug = str_slug($request->get('slug'));
         $restaurant->description = $request->get('description');
-        if($request->file('image')){
+        if ($request->file('image')) {
             $file1 = $this->fileUpload($request);
             $restaurant->image = $file1;
         }
         return $restaurant->save();
     }
+
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function approve($id)
@@ -61,6 +63,7 @@ class VenuesService
 
     /**
      * @param PostVenueRequest $request
+     *
      * @return mixed
      */
     public function fileUpload($request)
@@ -72,12 +75,29 @@ class VenuesService
         $img->resize(350, 200);
 
         // Saving the file to filesystem
-        $img->save(base_path().self::IMAGE_LOCATION . $fileName);
+        $img->save(base_path() . self::IMAGE_LOCATION . $fileName);
         return $fileName;
     }
-    public function generateSlug($data)
+
+
+    public function findByName($name)
     {
-        return str_replace(" ", "-", strtolower($data));
+        return Venue::where('name', 'LIKE', '%' . $name . '%')->get();
+    }
+
+    public function findByAddress($address)
+    {
+        return Venue::whereHas('contacts', function ($query) use ($address) {
+            return $query->where('address', 'LIKE', '%' . $address . '%');
+        })->get();
+    }
+
+    public function findByLatLong($latitude, $longitude)
+    {
+        return Venue::whereHas('contacts', function ($query) use ($latitude, $longitude) {
+            return $query->where('latitude', 'LIKE', '%' . $latitude . '%')
+                ->where('longitude', 'LIKE', '%' . $longitude . '%');
+        })->get();
     }
 
 }

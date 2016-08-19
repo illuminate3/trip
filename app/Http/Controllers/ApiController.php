@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Routing\Controller as BaseController;
 
 class ApiController extends BaseController
@@ -20,6 +21,7 @@ class ApiController extends BaseController
 
     /**
      * @param mixed $statusCode
+     *
      * @return $this
      */
     public function setStatusCode($statusCode)
@@ -30,6 +32,7 @@ class ApiController extends BaseController
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondNotFound($message = 'Not found')
@@ -39,24 +42,28 @@ class ApiController extends BaseController
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondInternalError($message = 'Internal Error')
     {
         return $this->setStatusCode(500)->respondWithError($message);
     }
+
     /**
      * @param $data
      * @param array $headers
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respond($data, $headers = [])
     {
-        return  response()->json($data , $this->getStatusCode(), $headers);
+        return response()->json($data, $this->getStatusCode(), $headers);
     }
 
     /**
      * @param $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondWithError($message)

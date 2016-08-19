@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carousel extends Model
 {
-    //
+ 	protected $table = "carousels";
+
+ 	protected $fillable = [ "title", "description", "image", "position", "status" ];
 }

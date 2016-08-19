@@ -21,6 +21,10 @@ class Restaurant extends Model implements ContactInterface, GalleriesInterface, 
         return $this->morphOne(Contact::class, 'contactable');
     }
 
+    public function offers()
+    {
+        return $this->morphMany(Offer::class, 'offerable');
+    }
     public function galleries()
     {
         return $this->morphMany(Gallery::class, 'imageable');

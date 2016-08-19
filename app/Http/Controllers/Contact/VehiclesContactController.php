@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
 use App\Services\ContactService;
+use App\Services\VehiclesService;
 use App\Vehicle;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,10 @@ class VehiclesContactController extends Controller
     protected $contactService;
     protected $model = 'vehicle';
 
-    public function __construct(ContactService $contactService)
+    public function __construct(ContactService $contactService, VehiclesService $vehicleService)
     {
         $this->contactService = $contactService;
+        $this->vehicleService = $vehicleService;
         $this->middleware('auth', ['except' => [
             'index', 'show'
         ]]);
@@ -28,10 +30,8 @@ class VehiclesContactController extends Controller
      */
     public function index($slug)
     {
-        $contacts = Vehicle::where('slug',$slug)->with('contacts')->first()->contacts;
-        $model = $this->model;
-        $contact= $contacts->contacts;
-        return view('contacts.index',compact('contact','model','slug'));
+        $contact = Vehicle::where('slug',$slug)->with('contacts')->first()->contacts;
+        return view('contacts.index',compact('contact','slug'))->with(['model' => $this->model]);
     }
 
     /**
@@ -41,21 +41,19 @@ class VehiclesContactController extends Controller
      */
     public function create($slug)
     {
-        $class = get_class($this);
-        $model = 'vehicle';
-        return view('contacts.create',compact('class','model','slug'));
+        return view('contacts.create',compact('slug'))->with(['model' => $this->model, 'class' => get_class($this)]);
     }
 
 
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId= Vehicle::select('id')->where('slug',$slug)->first()->id;
-        if($this->contactService->make('vehicle',$vehicleId,$request)){
+        $vehicleId= $this->vehicleService->getIdBySlug($slug);
+        if($this->contactService->make($this->model ,$vehicleId,$request)){
            session()->flash('sucMsg','Vehicle\'s contact created sucessfully');
             return redirect("vehicles/".$slug);
         }
         session()->flash('errMsg','Contact Information couldn\'t be created' );
-        return redirect("vehicles/".$slug);
+        return redirect("vehicles/".$slug."/contact/create")->withInput($request->toArray());
     }
 
     /**
@@ -66,9 +64,8 @@ class VehiclesContactController extends Controller
      */
     public function show($slug,$id)
     {
-        $galleries = Vehicle::where('slug',$slug)->with('galleries')->first();
-        dd($galleries);
-        return views('contacts.show',compact('galleries'));
+        $galleries = Vehicle::where('slug',$slug)->with('contacts')->first();
+        return views('contacts.show',compact('contacts'));
     }
 
     /**
@@ -96,7 +93,12 @@ class VehiclesContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($this->contactService->update($id,$request)){
+            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+            return back();
+        }
+        session()->flash('errMsg','Contact information couldn\'t be updated');
+        return back();
     }
 
     /**

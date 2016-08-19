@@ -24,7 +24,9 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- Sweet alert -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-    <!-- HELPERS -->
+    <!-- HELPERS -->    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
 
     <link rel="stylesheet" type="text/css" href="{{ asset("assets/helpers/animate.css") }}">
     <link rel="stylesheet" type="text/css" href="{{ asset("assets/helpers/boilerplate.css") }}">

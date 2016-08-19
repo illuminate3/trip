@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Restaurant;
 use App\Http\Requests;
-use App\Services\RestaurantsService;
-use Illuminate\Http\Request;
 use App\Http\Requests\Request\VenuePostRequest;
+use App\Restaurant;
+use App\Services\RestaurantsService;
 
 class RestaurantsController extends Controller
 {
@@ -49,80 +48,84 @@ class RestaurantsController extends Controller
 
     public function store(Requests\PostRestaurantRequest $request)
     {
-        $slug = $this->restaurantService->generateSlug($request->get('slug'));
-        if( $this->restaurantService->make($request) ){
-            session()->flash('sucMsg','Restaurant created Sucessfully :)');
-            return redirect('/restaurants/'.$slug.'/contact/create');
+        $slug = str_slug($request->get('slug'));
+        if ($this->restaurantService->make($request)) {
+            session()->flash('sucMsg', 'Restaurant created Sucessfully :)');
+            return redirect('/restaurants/' . $slug . '/contact/create');
         }
-        session()->flash('errMsg','Restaurant Couldn\'t be created');
+        session()->flash('errMsg', 'Restaurant Couldn\'t be created');
         return back()->withInput();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
+     * @param  string $slug
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
     {
-        $restaurant = Restaurant::where('slug','=',$slug)->with('contacts','reviews', 'galleries')->first();
+        $restaurant = Restaurant::where('slug', '=', $slug)->with('contacts', 'reviews', 'galleries')->first();
         $restaurants = Restaurant::take(10);
-        if(isset($restaurant->reviews)){
+        if (isset($restaurant->reviews)) {
             $restaurant->rating = $restaurant->reviews->avg('rating');
         }
-        if($restaurant->contacts){
+        if ($restaurant->contacts) {
             \Mapper::map($restaurant->contacts->latitude, $restaurant->contacts->longitude);
         }
-        return view('restaurants.show',compact('restaurant','restaurants'));
+        return view('restaurants.show', compact('restaurant', 'restaurants'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $restaurant = restaurant::where('slug','=',$id)->first();
-        return view('restaurants.edit',compact('restaurant'));
+        $restaurant = restaurant::where('slug', '=', $id)->first();
+        return view('restaurants.edit', compact('restaurant'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Requests\PostRestaurantRequest $request, $id)
     {
-        $slug = $this->restaurantService->generateSlug($request->get('slug'));
+        $slug = str_slug($request->get('slug'));
         $restaurant = $this->restaurantService->update($request, $id);
-        if(!$restaurant){
-            session()->flash('errMsg','Restaurant Couldn\'t be updated');
-            return redirect('/restaurants/'.$slug.'/edit')->withInput();
+        if (!$restaurant) {
+            session()->flash('errMsg', 'Restaurant Couldn\'t be updated');
+            return redirect('/restaurants/' . $slug . '/edit')->withInput();
         }
-        session()->flash('sucMsg','Restaurant updated Sucessfully :)');
+        session()->flash('sucMsg', 'Restaurant updated Sucessfully :)');
         return redirect('profile/business');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $restaurant = Restaurant::destroy($id);
 
-        if(!$restaurant){
-            session()->flash('errMsg','Restaurant Cannot be Deleted');
+        if (!$restaurant) {
+            session()->flash('errMsg', 'Restaurant Cannot be Deleted');
             return redirect('profile/business');
         }
-        session()->flash('sucMsg','Restaurant Deleted Sucessfully :)');
+        session()->flash('sucMsg', 'Restaurant Deleted Sucessfully :)');
         return redirect('profile/business');
     }
 }

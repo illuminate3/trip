@@ -2,27 +2,28 @@
 
 
 namespace App\Services;
+
+use App\Hotel;
 use App\Http\Requests\PostContactRequest;
 use App\Restaurant;
-use App\Hotel;
 use App\Tour;
 use App\Vehicle;
 use App\Venue;
+use App\Contact;
 
 class ContactService
 {
 
 
-
-    public function make($model,$id,PostContactRequest $request)
+    public function make($model, $id, PostContactRequest $request)
     {
-        return $this->createContact($model,$id,$this->data($request));
+        return $this->createContact($model, $id, $this->data($request));
     }
 
-    public function update($id,PostContactRequest $request)
+    public function update($id, PostContactRequest $request)
     {
-        $gallery = Gallery::findOrFail($id);
-        $gallery->rooms->update($id,$this->data($request));
+        $gallery = Contact::findOrFail($id);
+        $gallery->update($this->data($request));
         return $gallery->save();
 
 
@@ -31,7 +32,7 @@ class ContactService
 
     protected function data($request)
     {
-        return   [
+        return [
             'zone' => $request->get('zone'),
             'district' => $request->get('district'),
             'representative' => $request->get('representative'),
@@ -48,7 +49,8 @@ class ContactService
             'longitude' => $request->get('longitude'),
         ];
     }
-    public function createContact($model,$id,$data)
+
+    public function createContact($model, $id, $data)
     {
         switch ($model) {
             case "restaurant":
@@ -56,19 +58,19 @@ class ContactService
                 return $gallery->contacts()->create($data);
                 break;
             case "hotel":
-                $gallery= Hotel::findorFail($id);
+                $gallery = Hotel::findorFail($id);
                 return $gallery->contacts()->create($data);
                 break;
             case "venue":
-                $gallery= Venue::findOrFail($id);
+                $gallery = Venue::findOrFail($id);
                 return $gallery->contacts()->create($data);
                 break;
             case "tour":
-                $gallery= Tour::findOrFail($id);
+                $gallery = Tour::findOrFail($id);
                 return $gallery->contacts()->create($data);
                 break;
             case "vehicle":
-                $gallery= Vehicle::findOrFail($id);
+                $gallery = Vehicle::findOrFail($id);
                 return $gallery->contacts()->create($data);
                 break;
             default:

@@ -1,10 +1,10 @@
-@extends('layouts.homepage')
+@extends('layouts.profile')
 
 @section('title')
     Contact
 @stop
 
-@section('content')
+@section('profile-content')
     <div class="body-wrap archive">
         <div class="archive-banner">
 

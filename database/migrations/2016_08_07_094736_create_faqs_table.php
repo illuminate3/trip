@@ -16,8 +16,9 @@ class CreateFaqsTable extends Migration
             $table->increments('id');
             $table->string('question');
             $table->text('answer');
-            $table->boolean('create');
+            $table->integer('order');
             $table->boolean('status');
+            $table->timestamps();
         });
     }
 

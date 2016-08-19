@@ -27,10 +27,8 @@ class ToursContactController extends Controller
      */
     public function index($slug)
     {
-        $contacts = Tour::where('slug',$slug)->with('galleries')->first();
-        $model = 'tour';
-        $contact= $contacts->contacts;
-        return view('contacts.index',compact('contact','model','slug'));
+        $contact = Tour::where('slug',$slug)->with('contacts')->first();
+        return view('contacts.index',compact('slug'))->with(['model'=> $this->model,'contact' => $contact->contacts ]);
     }
 
     /**
@@ -41,15 +39,14 @@ class ToursContactController extends Controller
     public function create($slug)
     {
         $class = get_class($this);
-        $model = $this->model;
-        return view('contacts.create',compact('class','model','slug'));
+        return view('contacts.create',compact('class','slug'))->with(['model'=>$this->model]);
     }
 
 
-    public function store($slug, Requests\PostGalleryRequest $request)
+    public function store($slug, Requests\PostContactRequest $request)
     {
         $vehicleId= Tour::select('id')->where('slug',$slug)->first()->id;
-        if($this->contactsService->make('tour',$vehicleId,$request)){
+        if($this->contactService->make($this->model,$vehicleId,$request)){
             session()->flash('sucMsg','Tour\'s contact created sucessfully');
             return redirect("tours/".$slug);
         }
@@ -65,9 +62,8 @@ class ToursContactController extends Controller
      */
     public function show($slug,$id)
     {
-        $galleries = Tour::where('slug',$slug)->with('galleries')->first();
-
-        return view('contacts.show',compact('galleries'));
+        $contact = Tour::where('slug',$slug)->with('contacts')->first();
+        return view('contacts.show',compact('contact'));
     }
 
     /**
@@ -95,7 +91,12 @@ class ToursContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($this->contactService->update($id,$request)){
+            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+            return back();
+        }
+        session()->flash('errMsg','Contact information couldn\'t be updated');
+        return back();
     }
 
     /**

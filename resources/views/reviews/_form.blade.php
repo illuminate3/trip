@@ -38,9 +38,9 @@
 <script>
        $(".review-rate").rateYo({
         rating: 5,
-        halfStar: false,
-        starWidth: "50px",
-        starHeight: "50px"
+        fullStar: true,
+        starWidth: "30px",
+        starHeight: "30px"
       }).on("rateyo.set", function (e, data) { 
         $('#rating').attr('value',data.rating);
       });

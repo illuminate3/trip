@@ -6,6 +6,7 @@ namespace App\Services;
 use App\Http\Requests\PostPackageRequest;
 use App\Tour;
 use Image;
+
 /**
  * Class PackageService
  * @package App\Services
@@ -61,7 +62,7 @@ class PackageService
         // open an image file
         $img = Image::make($file)->resize(350, 200);;
         // Saving the file to filesystem
-        $img->save( base_path().self::IMAGE_LOCATION . $fileName,80);
+        $img->save(base_path() . self::IMAGE_LOCATION . $fileName, 80);
 
         return $fileName;
     }

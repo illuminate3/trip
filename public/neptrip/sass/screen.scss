@@ -162,32 +162,68 @@ body {
 
 	.wrap {
 		position: relative;
-	}
 
-	input {
-		height: $header-height;
-		text-indent: 3em;
-		font-size: 30px;
-		color: $subtitle-color;
-	}
-
-	.close-btn {
-		position: absolute;
-		right: 7em;
-		top: 30px;
-
-		i {
-			color: $subtitle-color;
-		}
-
-		&:hover {
-			i {
-				color: $secondary-color;
-				cursor: pointer;
+		form {
+			width: 100%;
+			position: static;
+			height: $header-height;
+			background: #fff;
+			input, select, button {
+				float: left;
 			}
-		}
 
+			select {
+				height: $header-height;
+				text-indent: 3em;
+			}
+			input {
+				height: $header-height;
+				width: 60%;
+				font-size: 30px;
+				color: $subtitle-color;
+				border: none;
+				box-shadow: none;
+				text-indent: 1em;
+			}
+			button {
+				height: $header-height;
+				width: 60px;
+				i {
+					font-weight: bold;
+					color: #6b6b6b;
+				}
+
+				&:hover {
+					i {
+						color: $primary-color;
+					}
+				}
+			}
+
+			
+		}
+		.close-btn {
+			position: absolute;
+			right: 4em;
+			padding: 25px;
+
+			i {
+				color: #6b6b6b;
+				font-weight: bold;
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				i {
+					color: $secondary-color;
+				}
+			}
+
+		}
 	}
+
+	
 
 }
 .search-bar.show-it {
@@ -1330,6 +1366,24 @@ ul.archive-list {
 				width: inherit;
 			}
 		}
+	}
+
+	.review-div {
+		.row {
+			margin: 0;
+		}
+		.float-left {
+			font-size: 20px;
+			text-transform: capitalize;
+			margin-bottom: 0;
+			font-family: $title-font;
+			color: $primary-color;
+
+		}
+			i {
+				font-size: 62px;
+				margin-right: 10px;
+			}
 	}
 
 }

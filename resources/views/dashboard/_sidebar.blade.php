@@ -128,8 +128,8 @@
             <div class="sidebar-submenu">
 
                 <ul>
-                    <li><a href="{{ url('dash/carousel') }}" title="All Carousels"><span>All Faq</span></a></li>
-                    <li><a href="{{ url('dash/carousel/create') }}" title="Add New Carousel"><span>Add New</span></a></li>
+                    <li><a href="{{ url('dash/faq') }}" title="All Faqs"><span>All Faq</span></a></li>
+                    <li><a href="{{ url('dash/faq/create') }}" title="Add New Faq"><span>Add New</span></a></li>
                 </ul>
 
             </div><!-- .sidebar-submenu -->

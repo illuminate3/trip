@@ -10,6 +10,7 @@ use App\User;
 use Event;
 use App\Events\SendBookingMail;
 use App\Events\SendNewsletterMail;
+
 class MailController extends Controller
 {
 

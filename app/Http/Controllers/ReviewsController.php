@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use App\Review;
-
 use App\Services\ReviewsService;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class ReviewsController extends Controller
 {
@@ -15,6 +13,7 @@ class ReviewsController extends Controller
 
     /**
      * ReviewsController constructor.
+     *
      * @param $createReviews
      */
     public function __construct(ReviewsService $createReviews)
@@ -41,13 +40,14 @@ class ReviewsController extends Controller
     {
         if ($this->createReviews->make($request)) {
             return back()->with(['success' => 'Congratulations!']);
-       }
+        }
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public
@@ -60,6 +60,7 @@ class ReviewsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public
@@ -73,6 +74,7 @@ class ReviewsController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public
@@ -85,6 +87,7 @@ class ReviewsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public

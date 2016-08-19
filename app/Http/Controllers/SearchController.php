@@ -9,6 +9,11 @@ use App\Tour;
 use App\Restaurant;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Services\HotelsService;
+use App\Services\VehiclesService;
+use App\Services\VenuesService;
+use App\Services\RestaurantsService;
+use App\Services\ToursService;
 
 /**
  * Class SearchController
@@ -16,73 +21,69 @@ use Illuminate\Http\Request;
  */
 class SearchController extends Controller
 {
-    /**
-     * @param $name
-     * @return mixed
-     */
-    protected function searchHotelByName($name)
-    {
-        return Hotel::where('name', 'LIKE', '%' . $name . '%')->get();
-    }
 
-    /**
-     * @param $name
-     * @return mixed
-     */
-    private function searchVehicleByName($name)
+    protected $hotelService;
+    protected $tourService;
+    protected $vehicleService;
+    protected $venueService;
+    protected $restaurantService;
+    
+    public function __construct(HotelsService $hotelsService, VehiclesService $vehiclesService, RestaurantsService $restaurantsService, ToursService $toursService, VenuesService $venuesService)
     {
-        return Vehicle::where('name', 'LIKE', '%' . $name . '%')->get();
+        $this->hotelService = $hotelsService;
+        $this->restaurantService = $restaurantsService;
+        $this->venueService = $venuesService;
+        $this->vehicleService = $vehiclesService;
+        $this->tourService = $toursService;
     }
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    private function searchVenueByName($name)
-    {
-        return Venue::where('name', 'LIKE', '%' . $name . '%')->get();
-    }
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    private function searchTourByName($name)
-    {
-        return Tour::where('name', 'LIKE', '%' . $name . '%')->get();
-    }
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    private function searchRestaurantByName($name)
-    {
-        return Restaurant::where('name', 'LIKE', '%' . $name . '%')->get();
-    }
+    
 
     /**
      * @param $type
      * @param $name
      * @return mixed
      */
-    private function typeChecker($type, $name)
+    private function typeCheckerByName($type, $name)
     {
         switch ($type) {
             case 'hotel':
-                return $this->searchHotelByName($name);
+                return $this->hotelService->findByName($name);
                 break;
             case 'restaurant':
-                return $this->searchRestaurantByName($name);
+                return $this->restaurantService->findByName($name);
                 break;
             case 'venue':
-                return $this->searchVenueByName($name);
+                return $this->venueService->findByName($name);
                 break;
             case 'vehicle':
-                return $this->searchVehicleByName($name);
+                return $this->vehicleService->findByName($name);
                 break;
             case 'tour':
-                return $this->searchTourByName($name);
+                return $this->tourService->findByName($name);
+                break;
+            default:
+                abort(404);
+                break;
+        }
+        return $type;
+    }
+    private function typeCheckerByAddress($type, $address)
+    {
+        switch ($type) {
+            case 'hotel':
+                return $this->hotelService->findByAddress($address);
+                break;
+            case 'restaurant':
+                return $this->restaurantService->findByAddress($address);
+                break;
+            case 'venue':
+                return $this->venueService->findByAddress($address);
+                break;
+            case 'vehicle':
+                return $this->vehicleService->findByAddress($address);
+                break;
+            case 'tour':
+                return $this->tourService->findByAddress($address);
                 break;
             default:
                 abort(404);
@@ -96,8 +97,16 @@ class SearchController extends Controller
     {
         if ($request->all()) {
             $type = $request->get('type');
-            $search = $this->typeChecker($request->get('type'), $request->get('name'));
+            $search = $this->typeCheckerByName($request->get('type'), $request->get('name'));
             return view('search.hotelSearch',compact('search','type'));
         }
     }
+    public function searchByAddress(Request $request){
+        if($request->all()){
+            $address = $request->get('address');
+            $type = $request->get('type');
+            $search = $this->typeCheckerByAddress($type,$address);
+            return view('search.hotelSearch',compact('search','type'));
+        }//If request->all
+    }//Search by address
 }

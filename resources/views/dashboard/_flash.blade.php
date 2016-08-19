@@ -9,3 +9,21 @@
         </div>
     @endif
 @endif
+
+@if (Session::has('sucMsg'))
+       <div class="lead alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+			<script>toastr.success('{{ Session::get('sucMsg') }}')</script>
+            {!! Session::get('sucMsg') !!}
+        </div>
+@endif
+
+@if (Session::has('errMsg'))
+       <div class="lead alert alert-error">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<script>toastr.warning('{{ Session::get('errMsg') }}')</script>
+
+            {!! Session::get('errMsg') !!}
+        </div>
+@endif

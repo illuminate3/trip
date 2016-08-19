@@ -43,7 +43,11 @@
                     <tbody>
                     @foreach($hotels as $hotel)
                         <tr>
-                            <td>{{ $hotel->name }}</td>
+                            <td>
+                            <a href="#modal-hotel-{{ $hotel->id }}" class="modal-open" data-toggle="modal" data-target="#modal-hotel-{{ $hotel->id }}">
+                                {{ $hotel->name }}
+                            </a>
+                            </td>
 
                             <td>{{ ($hotel->status == '1') ? 'Approved' : 'Suspended' }}</td>
                             <td><img src="{{ asset('uploads/images/hotel/'.$hotel->logo) }}" alt="" class="img-thumbnail img-responsive"/></td>
@@ -54,13 +58,37 @@
                                 <a href="{{ url('suspend/hotel/'.$hotel->id )}}" class="btn btn-primary">Suspend</a>
                             </td>
                         </tr>
+
                     @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    @foreach($hotels as $hotel)
+      <div class="modal fade" id="modal-hotel-{{$hotel->id}}" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">{{ $hotel->name }}</h4>
+              </div>
+              <div class="modal-body">
+                {{ $hotel->description }}
+              </div>
+              <div class="modal-footer">
+                @if($hotel->contact)
+                    {{ $hotel->contact->district }}
+                @endif
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
+    @endforeach
+    
 @stop
 
 @section('script')
@@ -70,6 +98,8 @@
         /* Datatables export */
 
         $(document).ready(function () {
+
+
             var table = $('#datatable-tabletools').DataTable();
             var tt = new $.fn.dataTable.TableTools(table);
 

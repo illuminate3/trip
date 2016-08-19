@@ -24,19 +24,23 @@
             </div>
         @endif
 </div>
-<div class="form-group">
-    {!! Form::label('image','Image',['class' => 'control-label']) !!}
-    {!! Form::file('image',['class' => 'form-control']) !!}
-    @if(count($errors->get('image')) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->get('image') as $error)
-                        <li>{{ $error  }}</li>
-                    @endforeach
-                </ul>
-            </div>
+    <div class="form-group">
+        @if(isset($carousel->image) && strlen($carousel->image) > 2 )
+            <img src="{{ asset('uploads/carousel/'.$carousel->image)}}" alt="">
+        @else
+            {!! Form::label('image','Image',['class' => 'control-label']) !!}
+            {!! Form::file('image',['class' => 'form-control']) !!}
+            @if(count($errors->get('image')) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->get('image') as $error)
+                                <li>{{ $error  }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
         @endif
-</div>
+    </div>
 <div class="form-group">
     {!! Form::label('position','Position',['class' => 'control-label']) !!}
     {!! Form::text('position',old('position'),['class' => 'form-control']) !!}

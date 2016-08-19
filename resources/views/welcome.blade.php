@@ -11,11 +11,8 @@
 
                 <div class="panel-body">
                     <h1>Your Notifications</h1>
-                    <div id="notification">
-                        
-                    </div>
+                    <div id="notification"></div>
                     <div id="bookings">
-                        
                     </div>
                 </div>
             </div>
@@ -29,16 +26,22 @@
     Pusher.log = function(msg) {
       console.log(msg);
     };
-   var pusher = new Pusher("{{env("PUSHER_KEY")}}");
+    var pusher = new Pusher("{{env("PUSHER_KEY")}}");
     var channel = pusher.subscribe('notification');
     channel.bind('get-user-notification', function(data) {
         if(data.userId == {{ Auth::user()->id }}){
             $('#notification').append("<div class='callout row "+data.type +"'><div class='columns medium-8'>"+data.text+"</div><div class='medium-4 columns'>"+data.created_at+"</div></div>");
+            if(data.type == 'success'){
+                toastr.info(data.text);
+            } else {
+                toastr.error(data.text);
+            }
         }
     });
     channel.bind('get-booking-notification', function(data) {
         if(data.userId == {{ Auth::user()->id }}){
             $('#bookings').append("<div class='callout row "+data.type +"'><div class='columns medium-8'>"+data.text+"</div><div class='medium-4 columns'>"+data.created_at+"</div></div>");
+            toastr.info(data.text);
         }
     });
 </script>

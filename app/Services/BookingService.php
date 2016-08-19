@@ -15,7 +15,7 @@ class BookingService
 
     public function getBookingByUser($id)
     {
-    	return Booking::where('user_id',$id)->orderBy('created_at','DESC')->get();
+        return Booking::where('user_id', $id)->orderBy('created_at', 'DESC')->get();
     }
-    
+
 }

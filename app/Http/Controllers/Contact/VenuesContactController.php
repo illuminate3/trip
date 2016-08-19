@@ -29,9 +29,10 @@ class VenuesContactController extends Controller
     public function index($slug)
     {
         $contacts = Venue::where('slug',$slug)->with('contacts')->first();
-        $model = 'venue';
-        $contact= $contacts->contacts;
-        return view('contacts.index',compact('contact','model','slug'));
+        return view('contacts.index',compact('slug'))->with([
+            'model' => $this->model,
+            'contact' => $contacts->contacts
+            ]);
     }
 
     /**
@@ -41,17 +42,19 @@ class VenuesContactController extends Controller
      */
     public function create($slug)
     {
-        $class = get_class($this);
-        $model = 'venue';
-        return view('contacts.create',compact('class','model','slug'));
+        
+        
+        return view('contacts.create',compact('slug'))->with([
+            'class' => get_class($this),
+            'model' => $this->model
+            ]);
     }
 
 
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId = Venue::where('slug','=',$slug)->get()->first();
-        dd($vehicleId);
-        if($this->contactService->make('venue',$vehicleId,$request)){
+        $vehicleId = $this->vehicleService->getIdBySlug($slug);
+        if($this->contactService->make($this->model,$vehicleId,$request)){
             session()->flash('sucMsg','Hotel\'s Contact Created Sucessfully');
             return redirect("venues/".$slug);
         }
@@ -80,13 +83,15 @@ class VenuesContactController extends Controller
      */
     public function edit($slug,$contact)
     {
-        $model = $this->model;
-        $id = $contact;
-        $contact = Venue::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
-            return $query->findOrFail($id);
+        $venues = Venue::where('slug',$slug)->with(['contacts'=>function($query) use ($contact){
+            return $query->findOrFail($contact);
         }])->first();
         
-        return view('contacts.edit',compact('contact','slug','model','id'));
+        return view('contacts.edit')->with([
+            'contact' => $venues,
+            'id' => $contact,
+            'model' => $this->model
+            ]);
     }
     /**
      * Update the specified resource in storage.
@@ -97,7 +102,12 @@ class VenuesContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($this->contactService->update($id,$request)){
+            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+            return back();
+        }
+        session()->flash('errMsg','Contact information couldn\'t be updated');
+        return back();
     }
 
     /**

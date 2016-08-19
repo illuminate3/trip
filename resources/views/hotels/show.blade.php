@@ -47,6 +47,7 @@
      $(".rateYo").rateYo({
         rating: {{ $hotel->rating }},
         halfStar: true,
+        readOnly: true,
         starWidth: "20px",
         starHeight: "20px"
       });

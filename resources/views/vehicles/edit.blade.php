@@ -17,6 +17,7 @@
     		<ul>
     			<li><a href="{{ url('vehicles/'.$vehicle->slug.'/gallery')}}" class="button expanded">Gallery</a></li>
     			<li><a href="{{ url('vehicles/'.$vehicle->slug.'/contact')}}" class="button expanded">Contacts</a></li>
+    			<li><a href="{{ url('vehicles/'.$vehicle->slug.'/list/create')}}" class="button expanded">Add new Transport</a></li>
     		</ul>
     	</div>
     

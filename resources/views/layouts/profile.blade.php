@@ -11,6 +11,8 @@
                 <ul class="sideNav">
                     <li><a href="{{url('/profile')}}">Profile</a></li>
                     <li><a href="{{url('/profile/add')}}">Add a Business</a></li>
+                    <li><a href="{{url('/profile/offer')}}">Offers</a></li>
+                    <li><a href="{{url('/profile/offer/create')}}">Add an Offer</a></li>
                     <li><a href="{{url('/profile/business')}}">All Business</a></li>
                     <li><a href="{{url('/profile/booking')}}">Booking History  <span class="badge float-right">1</span></a></a></li>
                     <li><a href="{{url('/logout')}}">Logout</a></li>

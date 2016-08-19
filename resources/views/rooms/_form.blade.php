@@ -11,6 +11,9 @@
             </div>
         @endif
 </div>
+@if(isset($room->image))
+        <img src="{{ asset('uploads/images/hotel/rooms/'.$room->image)}}" alt="">
+    @endif
 <div class="form-group">
     {!! Form::label('image','Upload',['class' => 'button']) !!}
     {!! Form::file('image',['class' => 'show-for-sr']) !!}
@@ -23,9 +26,10 @@
                 </ul>
             </div>
         @endif
+    
 </div>
 <div class="form-group">
-    {!! Form::label('type','type',['class' => 'control-label']) !!}
+    {!! Form::label('type','Type',['class' => 'control-label']) !!}
     {!! Form::text('type',old('type'),['class' => 'form-control']) !!}
     @if(count($errors->get('type')) > 0)
             <div class="alert caption">

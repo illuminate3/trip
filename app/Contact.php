@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Infinite\Contracts\ContactsInterface;
+use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model implements ContactsInterface
 {

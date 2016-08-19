@@ -6,8 +6,6 @@ use App\Post;
 use App\Services\PostsService;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-
 class PostsController extends Controller
 {
     protected $postService;
@@ -20,7 +18,7 @@ class PostsController extends Controller
     public function __construct(PostsService $postService)
     {
         $this->postService = $postService;
-        $this->middleware('auth')->except(['index','show']);
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     public function index(Post $post)
@@ -60,12 +58,12 @@ class PostsController extends Controller
 
     public function update(Request $request, $id)
     {
-        if($this->postService->update($request,$id)){
-            session()->flash('sucMsg','Post Updated Sucessfully');
-            return redirect('posts/'.$id);
+        if ($this->postService->update($request, $id)) {
+            session()->flash('sucMsg', 'Post Updated Sucessfully');
+            return redirect('posts/' . $id);
         }
-        session()->flash('errMsg','Post couldn\'t be updated');
-        return redirect('posts/'.$id.'/edit');
+        session()->flash('errMsg', 'Post couldn\'t be updated');
+        return redirect('posts/' . $id . '/edit');
     }
 
 

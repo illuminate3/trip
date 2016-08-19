@@ -12,13 +12,13 @@
                 <a href="{{ url('venues/create') }}"><p><i class="fa fa-map-o"></i></p><p>Venue</p></a>
             </div>
             <div class="cat">
-                <a href="{{ url('restaurants/create') }}"><p><i class="fa fa-cutlery"></i></p><p>restrurant</p></a>
+                <a href="{{ url('restaurants/create') }}"><p><i class="fa fa-cutlery"></i></p><p>Restaurant</p></a>
             </div>
             <div class="cat">
                 <a href="{{ url('tours/create') }}"><p><i class="fa fa-plane"></i></p><p>Tour</p></a>
             </div>
             <div class="cat">
-                <a href="{{ url('vehicles/create') }}"><p><i class="fa fa-car"></i></p><p>vehicle</p></a>
+                <a href="{{ url('vehicles/create') }}"><p><i class="fa fa-car"></i></p><p>Vehicle</p></a>
             </div>
         </div>                                    
     </div>

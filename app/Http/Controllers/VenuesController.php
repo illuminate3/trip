@@ -58,7 +58,7 @@ class VenuesController extends Controller
      */
     public function store(Requests\PostVenueRequest $request)
     {
-        $slug = $this->venuesService->generateSlug($request->get('slug'));
+        $slug = str_slug($request->get('slug'));
         if($this->venuesService->make($request)){
             session()->flash('sucMsg','Venue created sucessfully');
             return redirect('venues/'.$slug.'/contact/create');
@@ -75,7 +75,7 @@ class VenuesController extends Controller
      */
     public function show($slug)
     {
-        $venue = Venue::where('slug','=',$slug)->with('contacts','galleries','reviews')->get()->first();
+        $venue = Venue::where('slug','=',$slug)->with('contacts','galleries','reviews')->first();
         
         //Similar Venues
         $venues = Venue::take(10);
@@ -110,7 +110,7 @@ class VenuesController extends Controller
      */
     public function update(Requests\PutVenueRequest $request, $id)
     {
-        $slug = $this->venuesService->generateSlug($request->get('slug'));
+        $slug = str_slug($request->get('slug'));
         $venue = $this->venuesService->update($request,$id);
         if(!$venue){
             session()->flash('errMsg','Venue Couldn\'t be updated');

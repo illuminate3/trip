@@ -54,6 +54,6 @@ class Hotel extends Model implements ContactInterface, GalleriesInterface, Revie
      */
     public function rooms()
     {
-        return $this->hasMany(Room::class);
+        return $this->hasMany(Room::class,'hotel_id');
     }
 }

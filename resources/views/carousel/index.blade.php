@@ -9,6 +9,7 @@
 @stop
 
 @section('content')
+
     <div class="panel">
         <div class="panel-body">
             <h3 class="title-hero">
@@ -22,9 +23,10 @@
                     <tr>
                         <th>Name</th>
 
-                        <th>status</th>
+                        <th>Status</th>
+                        <th>Position</th>
                         <th>Image</th>
-                        <th>Updated At</th>
+                        <th>Last Changed</th>
                         <th>Options</th>
                     </tr>
                     </thead>
@@ -32,10 +34,10 @@
                     <tfoot>
                     <tr>
                         <th>Name</th>
-
-                        <th>status</th>
+                        <th>Status</th>
+                        <th>Position</th>
                         <th>Image</th>
-                        <th>Updated At</th>
+                        <th>Last Changed</th>
                         <th> Options</th>
                     </tr>
                     </tfoot>
@@ -43,15 +45,26 @@
                     <tbody>
                     @foreach($carousels as $vehicle)
                         <tr>
-                            <td>{{ $vehicle->name }}</td>
+                            <td>{{ $vehicle->title }}</td>
 
                             <td>{{ $vehicle->status }}</td>
-                            <td><img src="{{ $vehicle->logo }}" alt="" class="img-thumbnail img-responsive"/></td>
+                            <td>{{ $vehicle->position }}</td>
 
-                            <td>{{ $vehicle->updated_at }}</td>
                             <td>
-                                <a href="" class="btn btn-primary">Approve</a>
-                                <a href="#" class="btn btn-primary">Suspend</a>
+                                @if(strlen($vehicle->image) > 0)
+                                    <img src="{{ asset('uploads/carousel/'.$vehicle->image) }}" alt="" class="img-thumbnail img-responsive"/>
+                                @else
+                                    <p>No Image Available</p>
+                                @endif
+                            </td>
+
+                            <td>{{ $vehicle->updated_at->diffForHumans() }}</td>
+                            <td>
+                                <a href="{{ route('dash.carousel.edit',[$vehicle->id])}}" class="btn btn-primary">Edit</a>
+                                {{ Form::open(['route'=>['dash.carousel.destroy',$vehicle->id],"method"=>'DELETE']) }}
+                                
+                                    {!! Form::submit('Delete',['class'=>'btn btn-primary']) !!}
+                                {{ Form::close() }}
                             </td>
                         </tr>
                     @endforeach

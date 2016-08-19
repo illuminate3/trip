@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Hotel;
-use App\Http\Requests;
 use App\Restaurant;
 use App\Services\AdminService;
 use App\Tour;
+use App\User;
 use App\Vehicle;
 use App\Venue;
-use App\User;
 use Shinobi;
-use Illuminate\Http\Request;
 
 class AdminDashController extends Controller
 {
@@ -24,8 +22,8 @@ class AdminDashController extends Controller
 
     public function getRestaurants()
     {
-        $restaurants = Restaurant::all(); 
-        return view('dashboard.restaurant', compact("restaurants") );
+        $restaurants = Restaurant::all();
+        return view('dashboard.restaurant', compact("restaurants"));
     }
 
     public function getRestaurantsCreate()
@@ -41,7 +39,7 @@ class AdminDashController extends Controller
 
     public function getHotelCreate()
     {
-        return redirect('/hotels/create');
+         return view('hotels.adminCreate');
     }
 
     public function getTours()
@@ -64,7 +62,7 @@ class AdminDashController extends Controller
     public function getVenueCreate()
     {
         return redirect('/venues/create');
-        
+
     }
 
     public function getVehicles()
@@ -77,8 +75,10 @@ class AdminDashController extends Controller
     {
         return redirect('/vehicles/create');
     }
-    public function getUsers(){
-        $users = User::orderBy('updated_at','DES')->get();
+
+    public function getUsers()
+    {
+        $users = User::orderBy('updated_at', 'DES')->get();
         dd($users);
 
     }
@@ -102,6 +102,7 @@ class AdminDashController extends Controller
         session()->with('errMsg', 'Couldn\'t suspend business');
         return back();
     }
+
     public function getProfile()
     {
 
