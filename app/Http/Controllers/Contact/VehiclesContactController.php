@@ -97,7 +97,8 @@ class VehiclesContactController extends Controller
      */
     public function show($slug, $id)
     {
-        return redirect()->route('vehicles.{slug}.contact.index', [$slug])->withInput();
+
+        return redirect()->route('vehicles.{slug}.contact.index', [$slug])->with(['id' => $id]);
     }
 
     /**

@@ -100,8 +100,10 @@ class VenuesContactController extends Controller
      */
     public function show($slug, $id)
     {
-        $contact = Venue::where('slug', $slug)->with('contact')->first();
-        return view('contacts.show', compact('contact'));
+        return view('contacts.show')->with([
+            'contact' => $this->venueService->getSlugWithContact($slug)->first(),
+            'id' => $id
+        ]);
     }
 
     /**

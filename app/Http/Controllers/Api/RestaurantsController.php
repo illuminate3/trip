@@ -23,11 +23,11 @@ class RestaurantsController extends ApiController
 
     /**
      * RestaurantsController constructor.
-     * @param RestaurantTransformer $restaurantTransformer
+     * @param RestaurantTransformer $restTransformer
      */
-    public function __construct(RestaurantTransformer $restaurantTransformer)
+    public function __construct(RestaurantTransformer $restTransformer)
     {
-        return $this->restaurantsTransformer = $restaurantTransformer;
+        return $this->restaurantsTransformer = $restTransformer;
     }
 
 

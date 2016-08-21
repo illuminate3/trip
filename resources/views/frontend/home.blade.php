@@ -238,7 +238,7 @@ Homepage
                                     <li>
                                         <div class="wrap">
                                             <div class="img-wrap">
-                                                <img src="{{ $room->image }}" alt="">
+                                                <img src="{{ asset('/uploads/images/hotel/rooms/'.$room->image ) }}" alt="">
                                             </div>
                                             <div class="long-desc">
                                                 <div class="row">

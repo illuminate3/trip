@@ -23,6 +23,6 @@
         </div>
     </div>
     @if(Shinobi::is('admin'))
-        <a href="{{ route($models.'s.{slug}.gallery.create',[$slug]) }}" class="button">Add a new item for gallery</a>
+        <a href="{{ route($model.'s.{slug}.gallery.create',[$slug]) }}" class="button">Add a new item for gallery</a>
     @endif
 @stop

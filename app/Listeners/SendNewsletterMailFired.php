@@ -16,7 +16,7 @@ class SendNewsletterMailFired
     /**
      * SendNewsletterMailFired constructor.
      *
-     * @param $mail
+     * @param Mail $mail
      */
     public function __construct(Mail $mail)
     {
@@ -31,7 +31,7 @@ class SendNewsletterMailFired
      */
     public function handle(SendNewsletterMail $event)
     {
-        $this->mail->send('email.newsletter', [ 'event' => $event ], function ($m) use ($event) {
+        Mail::send('email.newsletter', [ 'event' => $event ], function ($m) use ($event) {
             $m->to($event->email, $event->name)->subject('Your Newsletter!');
         });
     }
