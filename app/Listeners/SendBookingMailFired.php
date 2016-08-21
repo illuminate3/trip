@@ -4,7 +4,7 @@ namespace App\Listeners;
 
 use App\User;
 use App\Events\SendBookingMail;
-use Illuminate\Support\Facades\Mail;
+use Mail;
 
 
 class SendBookingMailFired

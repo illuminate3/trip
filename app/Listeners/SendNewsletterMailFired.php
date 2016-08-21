@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Events\SendNewsletterMail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\Mail;
+use Mail;
 
 
 class SendNewsletterMailFired
