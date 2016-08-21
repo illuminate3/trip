@@ -24,7 +24,7 @@ class PostsService
      */
     public function make(PostHotelRequest $request)
     {
-        $hotel = Post::findOrFail($id);
+        $hotel = new Post();
         $hotel->title = $request->get('title');
         $hotel->content = $request->get('description');
         if ($request->get('image')) {

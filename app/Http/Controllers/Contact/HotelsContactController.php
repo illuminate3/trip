@@ -111,10 +111,10 @@ class HotelsContactController extends Controller
     {
         if($this->contactService->update($id,$request)){
             session()->flash('sucMsg','Contact information Updated Sucessfuly');
-            return back();
+            return redirect($this->model.'s/'.$slug.'/contact');
         }
         session()->flash('errMsg','Contact information couldn\'t be updated');
-        return back();
+        return redirect($this->model.'s/'.$slug.'/contact/'.$id.'/edit')->withInput($request->toArray());
     }
 
 
