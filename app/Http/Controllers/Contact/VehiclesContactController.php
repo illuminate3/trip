@@ -141,5 +141,5 @@ class VehiclesContactController extends Controller
         return redirect()->back();
     }
 
-    
+
 }
