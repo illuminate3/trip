@@ -26,11 +26,12 @@ class HotelsContactController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
     public function index($slug)
     {
-        return view('contacts.index',compact('contact','slug'))->with([
+        return view('contacts.index')->with([
             'model' => $this->model,
             'contact' => $this->hotelService->getSlugWithContacts($slug)->first()->contacts,
             'slug' => $slug
@@ -40,6 +41,7 @@ class HotelsContactController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
     public function create($slug)
@@ -115,14 +117,5 @@ class HotelsContactController extends Controller
         return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        
-    }
+
 }
