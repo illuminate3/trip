@@ -11,13 +11,30 @@ class NotificationEvent extends Event
     use SerializesModels;
 
     /**
-     * Create a new event instance.
-     *
-     * @return void
+     * @var string $message Message Send by the notification
      */
-    public function __construct()
+    public $message;
+    /**
+     * @var string $type Type of notification success or failure
+     */
+    public $type;
+    /**
+     * @var string $userId For which user is the notification
+     */
+    public $userId;
+
+    /**
+     * NotificationEvent constructor.
+     *
+     * @param $message
+     * @param $userId
+     * @param $type
+     */
+    public function __construct($message, $userId, $type)
     {
-        //
+        $this->message = $message;
+        $this->type = $type;
+        $this->userId = $userId;
     }
 
     /**
@@ -27,6 +44,6 @@ class NotificationEvent extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['notification-channel'];
     }
 }

@@ -5,10 +5,24 @@ namespace App\Listeners;
 use App\Events\SendNewsletterMail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Mail;
+use Illuminate\Support\Facades\Mail;
+
 
 class SendNewsletterMailFired
 {
+
+    protected $mail;
+
+    /**
+     * SendNewsletterMailFired constructor.
+     *
+     * @param $mail
+     */
+    public function __construct(Mail $mail)
+    {
+        $this->mail = $mail;
+    }
+
     /**
      * Handle the event.
      *
@@ -17,7 +31,7 @@ class SendNewsletterMailFired
      */
     public function handle(SendNewsletterMail $event)
     {
-        Mail::send('email.newsletter', [ 'event' => $event ], function ($m) use ($event) {
+        $this->mail->send('email.newsletter', [ 'event' => $event ], function ($m) use ($event) {
             $m->to($event->email, $event->name)->subject('Your Newsletter!');
         });
     }

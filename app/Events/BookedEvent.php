@@ -9,16 +9,27 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class BookedEvent extends Event
 {
     use SerializesModels;
+    protected $message;
+    protected $bookingId;
+    protected $userId;
+    protected $type;
 
     /**
-     * Create a new event instance.
+     * BookedEvent constructor.
      *
-     * @return void
+     * @param $message
+     * @param $bookingId
+     * @param $userId
+     * @param $type
      */
-    public function __construct()
+    public function __construct($message, $bookingId, $userId, $type)
     {
-        //
+        $this->message = $message;
+        $this->bookingId = $bookingId;
+        $this->userId = $userId;
+        $this->type = $type;
     }
+
 
     /**
      * Get the channels the event should be broadcast on.
@@ -27,6 +38,6 @@ class BookedEvent extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['booking-accept-channel'];
     }
 }

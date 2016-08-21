@@ -31,6 +31,6 @@ class SendNewsletterMail extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['newsletter-mail'];
     }
 }

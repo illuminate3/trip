@@ -28,6 +28,6 @@ class SendBookingMail extends Event
      */
     public function broadcastOn()
     {
-        return [];
+        return ['booking-mail'];
     }
 }

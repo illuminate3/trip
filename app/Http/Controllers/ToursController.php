@@ -99,13 +99,13 @@ class ToursController extends Controller
     public function update(Requests\PutTourRequest $request, $id)
     {
         $slug = str_slug($request->get('slug'));
-        $tour = $this->tourService->update($request->id);
-        if(!$tour){
-            session()->flash('errMsg','Tour Couldn\'t be updated');
-            return redirect('/tours/'.$slug.'/edit')->withInput();
+
+        if($this->tourService->update($request, $id)){
+            session()->flash('sucMsg','Tour Updated');
+            return redirect('/profile/business');
         }
-        session()->flash('sucMsg','Tour updated Sucessfully :)');
-        return redirect('/profile/business');
+        session()->flash('errMsg','Tour couldn\'t be updated');
+        return redirect('/tours/'.$slug.'/edit')->withInput();
     }
 
     /**
@@ -116,9 +116,8 @@ class ToursController extends Controller
      */
     public function destroy($id)
     {
-        $tour = Tour::destroy($id);
-
-        if(!$tour){
+        $tour = Tour::findOrFail($id);
+        if(!$tour->destroy()){
             session()->flash('errMsg','Tour Cannot be Deleted');
             return redirect('profile/business');
         }
