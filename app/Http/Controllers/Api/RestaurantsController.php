@@ -18,7 +18,7 @@ class RestaurantsController extends ApiController
     /**
      * @var RestaurantTransformer
      */
-    protected $restaurantsTransformer;
+    protected $restTransformer;
 
 
     /**
@@ -27,7 +27,7 @@ class RestaurantsController extends ApiController
      */
     public function __construct(RestaurantTransformer $restTransformer)
     {
-        return $this->restaurantsTransformer = $restTransformer;
+        return $this->restTransformer = $restTransformer;
     }
 
 
@@ -38,7 +38,7 @@ class RestaurantsController extends ApiController
     {
         $restaurants = Restaurant::with('contacts','galleries','reviews')->get();
         return $this->respond([
-            'data' => $this->restaurantsTransformer->transformCollection($restaurants->toArray()),
+            'data' => $this->restTransformer->transformCollection($restaurants->toArray()),
             'meta-data' => str_random(0,1)
         ]);
     }
@@ -57,7 +57,7 @@ class RestaurantsController extends ApiController
             return $this->respondNotFound('Restaurant Does not exist');
         }
         return $this->respond([
-            'data' => $this->restaurantsTransformer->transform($restaurant),
+            'data' => $this->restTransformer->transform($restaurant),
             'meta-data' => 'Here is some metadata'
         ]);
     }
