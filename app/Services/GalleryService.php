@@ -5,13 +5,13 @@ namespace App\Services;
 
 use App\Gallery;
 use App\Hotel;
-use App\Http\Requests\PostGalleryRequest;
-use App\Http\Requests\PutGalleryRequest;
 use App\Restaurant;
 use App\Tour;
 use App\Vehicle;
 use App\Venue;
 use Image;
+use App\Http\Requests\PutGalleryRequest;
+use App\Http\Requests\PostGalleryRequest;
 
 /**
  * Class RoomService
@@ -21,31 +21,39 @@ class GalleryService
 {
     const IMAGE_LOCATION = '/public/uploads/images/gallery/';
 
-
+    protected function fileCheck($request){
+        return ($request->hasFile('image')) ? 1:0;
+    }
     public function make($model, $id, PostGalleryRequest $request)
     {
-        return $this->createGallery($model, $id, $this->data($request));
+        return $this->createGallery($model, $id, $this->data($request),$this->fileCheck($request));
     }
 
-    public function update($id, PostGalleryRequest $request)
+    public function update($id, PutGalleryRequest $request)
     {
         $gallery = Gallery::findOrFail($id);
-        $gallery->rooms->update($id, $this->data($request));
+        $gallery->update( $this->data($request, $this->fileCheck($request) ) );
         return $gallery->save();
-
 
     }
 
     /**
-     * @param PostGalleryRequest $request
-     *
+     * @param \App\Http\Requests\PostGalleryRequest $request
+     * @param int $file Check if the file exists
      * @return array
      */
-    protected function data(PostGalleryRequest $request)
+    protected function data(PostGalleryRequest $request,$file = 0)
     {
+        if($file == 1)
+        {
+            return [
+                'title' => $request->get('title'),
+                'image' => $this->fileUpload($request),
+                'description' => $request->get('description'),
+            ];
+        }
         return [
             'title' => $request->get('title'),
-            'image' => $this->fileUpload($request),
             'description' => $request->get('description'),
         ];
     }
@@ -103,6 +111,12 @@ class GalleryService
 
         //session()->flash('gallery.upload','Image Uploaded Sucessfully');
         return $fileName;
+
+    }
+    public function destroy($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+        return $gallery->delete();
 
     }
 

@@ -2,107 +2,146 @@
 
 namespace App\Http\Controllers\Contact;
 
-use App\Http\Controllers\Controller;
-use App\Tour;
-use App\Services\ContactService;
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Services\ToursService;
+use App\Services\ContactService;
+use App\Http\Controllers\Controller;
 
+
+/**
+ * Class ToursContactController
+ * @package App\Http\Controllers\Contact
+ */
 class ToursContactController extends Controller
 {
+    /**
+     * @var ContactService
+     */
     protected $contactService;
+    /**
+     * @var ToursService
+     */
+    protected $tourService;
+    /**
+     * @var string
+     */
     protected $model = 'tour';
 
-    public function __construct(ContactService $contactService)
+    /**
+     * ToursContactController constructor.
+     *
+     * @param ContactService $contactService
+     * @param ToursService $toursService
+     */
+    public function __construct(ContactService $contactService, ToursService $toursService)
     {
         $this->contactService = $contactService;
+        $this->tourService = $toursService;
         $this->middleware('auth', ['except' => [
             'index', 'show'
         ]]);
     }
+
     /**
      * Display a listing of the resource.
-     *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
     public function index($slug)
     {
-        $contact = Tour::where('slug',$slug)->with('contacts')->first();
-        return view('contacts.index',compact('slug'))->with(['model'=> $this->model,'contact' => $contact->contacts ]);
+        return view('contacts.index')->with([
+            'model' => $this->model,
+            'contact' => $this->tourService->getSlugWithContact($slug)->first()->contacts,
+            'slug' => $slug
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
     public function create($slug)
     {
-        $class = get_class($this);
-        return view('contacts.create',compact('class','slug'))->with(['model'=>$this->model]);
+        return view('contacts.create')->with([
+            'model' => $this->model,
+            'class' => get_class($this),
+            'slug' => $slug
+        ]);
     }
 
 
+    /**
+     * @param $slug
+     * @param Requests\PostContactRequest $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId= Tour::select('id')->where('slug',$slug)->first()->id;
-        if($this->contactService->make($this->model,$vehicleId,$request)){
-            session()->flash('sucMsg','Tour\'s contact created sucessfully');
-            return redirect("tours/".$slug);
+        $id = $this->tourService->getIdBySlug($slug);
+        if ($this->contactService->make($this->model, $id, $request)) {
+            session()->flash('sucMsg', 'Tour\'s contact created sucessfully');
+            return redirect("tours/" . $slug);
         }
-        session()->flash('errMsg','Contact Information couldn\'t be created' );
-        return redirect("tours/".$slug);
+        session()->flash('errMsg', 'Contact Information couldn\'t be created');
+        return redirect("tours/" . $slug);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show($slug,$id)
+    public function show($slug, $id)
     {
-        $contact = Tour::where('slug',$slug)->with('contacts')->first();
-        return view('contacts.show',compact('contact'));
+        return view('contacts.show')->with([
+            'contact' => $this->tourService->getContactById($slug,$id)->first()
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param string $slug The slug of tour
+     * @param  int $contact
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug,$contact)
+    public function edit($slug, $contact)
     {
-        $model = $this->model;
-        $id = $contact;
-        $contact = Tour::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
-            return $query->findOrFail($id);
-        }])->first();
-        
-        return view('contacts.edit',compact('contact','slug','model','id'));
+        return view('contacts.edit')->with([
+            'model' => $this->model,
+            'id' => $contact,
+            'contact' => $this->tourService->getContactById($slug, $id)->first()
+        ]);
     }
+
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\PostContactRequest $request
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\PostContactRequest $request, $id)
     {
-        if($this->contactService->update($id,$request)){
-            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+        if ($this->contactService->update($id, $request)) {
+            session()->flash('sucMsg', 'Contact information Updated Sucessfuly');
             return back();
         }
-        session()->flash('errMsg','Contact information couldn\'t be updated');
+        session()->flash('errMsg', 'Contact information couldn\'t be updated');
         return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

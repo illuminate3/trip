@@ -129,6 +129,16 @@ class VehiclesService
         ];
     }
 
+    public function getGallerybyId($slug,$id)
+    {
+        return Vehicle::where('slug', $slug)->with(['galleries' => function ($query) use ($id) {
+            return $query->findOrFail($id);
+        }]);
+    }
+    public function getSlugWithGalleries($slug)
+    {
+        return Vehicle::where('slug',$slug)->with('galleries');
+    }
     public function getIdFromSlug($slug)
     {
         return Vehicle::select('id')->where('slug',$slug)->first()->id;
@@ -137,6 +147,18 @@ class VehiclesService
     public function getTransportsFromVehicles($slug)
     {
         return Vehicle::where('slug',$slug)->with('descriptions')->first();
+    }
+
+    public function getSlugWithContacts($slug)
+    {
+        return Vehicle::where('slug',$slug)->with('contacts');
+    }
+
+    public function getContactBySlugId($slug,$id)
+    {
+        return Vehicle::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
     }
 
     public function makeDescription(Request $request, $id)

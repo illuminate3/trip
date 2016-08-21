@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use Auth;
-use Image;
-use App\Venue;
 use App\Http\Requests\PostVenueRequest;
 use App\Http\Requests\PutVenueRequest;
+use App\Venue;
+use Auth;
+use Image;
 
 /**
  * Class VenuesService
@@ -100,4 +100,32 @@ class VenuesService
         })->get();
     }
 
+    public function getIdBySlug($slug)
+    {
+        return Venue::select('id')->where('slug', $slug)->first()->id;
+    }
+
+    public function getSlugAndContactId($slug, $id)
+    {
+        return Venue::where('slug', $slug)->with(['contacts' => function ($query) use ($id) {
+            return $query->findOrFail($id);
+        }]);
+    }
+
+    public function getSlugWithContact($slug)
+    {
+        return Venue::where('slug', $slug)->with('contacts');
+    }
+
+    public function getGalleryById($slug,$id)
+    {
+        return Venue::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
+    }
+
+    public function getGalleriesBySlug($slug)
+    {
+        return Venue::where('slug',$slug)->with('galleries');
+    }
 }

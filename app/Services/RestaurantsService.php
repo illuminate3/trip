@@ -102,6 +102,12 @@ class RestaurantsService
         })->get();
     }
 
+    public function getSlugAndContactId($slug,$id)
+    {
+        return Restaurant::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
+    }
     public function getSlugWithContact($slug)
     {
         return Restaurant::where('slug',$slug)->with('contacts');
@@ -110,5 +116,17 @@ class RestaurantsService
     public function getIdBySlug($slug)
     {
         return Restaurant::select('id')->where('slug',$slug)->first()->id;
+    }
+
+    public function getWithGalleries($slug)
+    {
+        return Restaurant::where('slug',$slug)->with('galleries');
+    }
+
+    public function getGalleryById($slug,$id)
+    {
+        return Restaurant::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
     }
 }

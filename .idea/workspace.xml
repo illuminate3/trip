@@ -2,238 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dcfa545-d94f-4088-9aa7-ba25906638f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/profile/transport.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/_form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/._.DS_Store" afterPath="$PROJECT_DIR$/public/neptrip/._.DS_Store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/._css" afterPath="$PROJECT_DIR$/public/neptrip/._css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/._js" afterPath="$PROJECT_DIR$/public/neptrip/._js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/173006f5843cbd0d87cd5c92be9fe67e72db9bcf/_mixins.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/173006f5843cbd0d87cd5c92be9fe67e72db9bcf/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/173006f5843cbd0d87cd5c92be9fe67e72db9bcf/_var.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/173006f5843cbd0d87cd5c92be9fe67e72db9bcf/_var.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/3d32dc848caba7c599decb1370470e8765be1dcb/_mixins.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/3d32dc848caba7c599decb1370470e8765be1dcb/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/3d32dc848caba7c599decb1370470e8765be1dcb/_var.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/3d32dc848caba7c599decb1370470e8765be1dcb/_var.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/3de5c16643aed5cc3bb05fba6b5ac2ac80e89f49/ie.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/3de5c16643aed5cc3bb05fba6b5ac2ac80e89f49/ie.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/3de5c16643aed5cc3bb05fba6b5ac2ac80e89f49/print.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/3de5c16643aed5cc3bb05fba6b5ac2ac80e89f49/print.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/3de5c16643aed5cc3bb05fba6b5ac2ac80e89f49/screen.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/3de5c16643aed5cc3bb05fba6b5ac2ac80e89f49/screen.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/47fba53fe48c42cf73f135c6aed113206985841a/ie.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/47fba53fe48c42cf73f135c6aed113206985841a/ie.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/47fba53fe48c42cf73f135c6aed113206985841a/print.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/47fba53fe48c42cf73f135c6aed113206985841a/print.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/47fba53fe48c42cf73f135c6aed113206985841a/screen.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/47fba53fe48c42cf73f135c6aed113206985841a/screen.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/5dfb8acbbb2787f64899a33f9e9e165198fb16e9/ie.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/5dfb8acbbb2787f64899a33f9e9e165198fb16e9/ie.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/5dfb8acbbb2787f64899a33f9e9e165198fb16e9/print.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/5dfb8acbbb2787f64899a33f9e9e165198fb16e9/print.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/5dfb8acbbb2787f64899a33f9e9e165198fb16e9/screen.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/5dfb8acbbb2787f64899a33f9e9e165198fb16e9/screen.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/65e4c30c131f260ea88c3e4f2e16dfc2ba547e74/_utilities.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/65e4c30c131f260ea88c3e4f2e16dfc2ba547e74/_utilities.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Users/kapilparajuli/Desktop/htdocs/neptrip/sass/includes/_mixins.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Users/kapilparajuli/Desktop/htdocs/neptrip/sass/includes/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Users/kapilparajuli/Desktop/htdocs/neptrip/sass/includes/_var.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Users/kapilparajuli/Desktop/htdocs/neptrip/sass/includes/_var.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/www/html/trip/public/neptrip/sass/includes/_mixins.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/www/html/trip/public/neptrip/sass/includes/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/www/html/trip/public/neptrip/sass/includes/_var.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/var/www/html/trip/public/neptrip/sass/includes/_var.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/af1a5722249b61fe97c5776f7a26e0902a00f406/_reset.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/af1a5722249b61fe97c5776f7a26e0902a00f406/_reset.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/e3efaf3d0c973d0e3a012ca9f40a717cc7acd07b/ie.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/e3efaf3d0c973d0e3a012ca9f40a717cc7acd07b/ie.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/e3efaf3d0c973d0e3a012ca9f40a717cc7acd07b/print.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/e3efaf3d0c973d0e3a012ca9f40a717cc7acd07b/print.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/e3efaf3d0c973d0e3a012ca9f40a717cc7acd07b/screen.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/e3efaf3d0c973d0e3a012ca9f40a717cc7acd07b/screen.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/e4b1aa6cc97667aeba8761fe0afb400d0f1fdfe2/_mixins.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/e4b1aa6cc97667aeba8761fe0afb400d0f1fdfe2/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/e4b1aa6cc97667aeba8761fe0afb400d0f1fdfe2/_var.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/e4b1aa6cc97667aeba8761fe0afb400d0f1fdfe2/_var.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/ee0cabe788bfb3c4564d88f27d5c9fbaf1656955/_mixins.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/ee0cabe788bfb3c4564d88f27d5c9fbaf1656955/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/.sass-cache/ee0cabe788bfb3c4564d88f27d5c9fbaf1656955/_var.scssc" afterPath="$PROJECT_DIR$/public/neptrip/.sass-cache/ee0cabe788bfb3c4564d88f27d5c9fbaf1656955/_var.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/ajax-loader.gif" afterPath="$PROJECT_DIR$/public/neptrip/css/ajax-loader.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.eot" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.ttf" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.woff" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.eot" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.ttf" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.woff" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Bold.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Light.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Medium.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Regular.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.woff2" afterPath="$PROJECT_DIR$/public/neptrip/fonts/roboto/Roboto-Thin.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/slick.eot" afterPath="$PROJECT_DIR$/public/neptrip/fonts/slick.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/slick.ttf" afterPath="$PROJECT_DIR$/public/neptrip/fonts/slick.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/slick.woff" afterPath="$PROJECT_DIR$/public/neptrip/fonts/slick.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/._banner.png" afterPath="$PROJECT_DIR$/public/neptrip/images/._banner.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/._call-icno.png" afterPath="$PROJECT_DIR$/public/neptrip/images/._call-icno.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/._car.png" afterPath="$PROJECT_DIR$/public/neptrip/images/._car.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/._footer-bg.png" afterPath="$PROJECT_DIR$/public/neptrip/images/._footer-bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/._logo.png" afterPath="$PROJECT_DIR$/public/neptrip/images/._logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/._mobile-icon.png" afterPath="$PROJECT_DIR$/public/neptrip/images/._mobile-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/._online-icon.png" afterPath="$PROJECT_DIR$/public/neptrip/images/._online-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/banner.png" afterPath="$PROJECT_DIR$/public/neptrip/images/banner.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/call-icno.png" afterPath="$PROJECT_DIR$/public/neptrip/images/call-icno.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/car.png" afterPath="$PROJECT_DIR$/public/neptrip/images/car.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/fb-login.jpg" afterPath="$PROJECT_DIR$/public/neptrip/images/fb-login.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/footer-bg.png" afterPath="$PROJECT_DIR$/public/neptrip/images/footer-bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/gp-login.jpg" afterPath="$PROJECT_DIR$/public/neptrip/images/gp-login.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/logo.png" afterPath="$PROJECT_DIR$/public/neptrip/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/mobile-icon.png" afterPath="$PROJECT_DIR$/public/neptrip/images/mobile-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/online-icon.png" afterPath="$PROJECT_DIR$/public/neptrip/images/online-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/images/tw-login.jpg" afterPath="$PROJECT_DIR$/public/neptrip/images/tw-login.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/._vendor" afterPath="$PROJECT_DIR$/public/neptrip/js/._vendor" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/._.DS_Store" afterPath="$PROJECT_DIR$/public/neptrip/sass/._.DS_Store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/includes/._.DS_Store" afterPath="$PROJECT_DIR$/public/neptrip/sass/includes/._.DS_Store" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Booking.php" afterPath="$PROJECT_DIR$/app/Booking.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Contact.php" afterPath="$PROJECT_DIR$/app/Contact.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Hotel.php" afterPath="$PROJECT_DIR$/app/Hotel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminDashController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminDashController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CarouselsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarouselsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HotelsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HotelsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/NewslettersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewslettersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PackageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PackageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RestaurantsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RestaurantsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/VehicleDescriptionsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleDescriptionsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Offer.php" afterPath="$PROJECT_DIR$/app/Offer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Restaurant.php" afterPath="$PROJECT_DIR$/app/Restaurant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/AdminService.php" afterPath="$PROJECT_DIR$/app/Services/AdminService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/BookingService.php" afterPath="$PROJECT_DIR$/app/Services/BookingService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/BusinessService.php" afterPath="$PROJECT_DIR$/app/Services/BusinessService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/CarouselService.php" afterPath="$PROJECT_DIR$/app/Services/CarouselService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/ContactService.php" afterPath="$PROJECT_DIR$/app/Services/ContactService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VehiclesGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VehiclesGalleryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/PutGalleryRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/PutGalleryRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/GalleryService.php" afterPath="$PROJECT_DIR$/app/Services/GalleryService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/HotelsService.php" afterPath="$PROJECT_DIR$/app/Services/HotelsService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/NotificationService.php" afterPath="$PROJECT_DIR$/app/Services/NotificationService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/PackageService.php" afterPath="$PROJECT_DIR$/app/Services/PackageService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/PostsService.php" afterPath="$PROJECT_DIR$/app/Services/PostsService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/RestaurantsService.php" afterPath="$PROJECT_DIR$/app/Services/RestaurantsService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/ReviewsService.php" afterPath="$PROJECT_DIR$/app/Services/ReviewsService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/RoomService.php" afterPath="$PROJECT_DIR$/app/Services/RoomService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/SocialAccountService.php" afterPath="$PROJECT_DIR$/app/Services/SocialAccountService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/ToursService.php" afterPath="$PROJECT_DIR$/app/Services/ToursService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/UserRegistrationService.php" afterPath="$PROJECT_DIR$/app/Services/UserRegistrationService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/VehiclesService.php" afterPath="$PROJECT_DIR$/app/Services/VehiclesService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/VenuesService.php" afterPath="$PROJECT_DIR$/app/Services/VenuesService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tour.php" afterPath="$PROJECT_DIR$/app/Tour.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Vehicle.php" afterPath="$PROJECT_DIR$/app/Vehicle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/VehicleDescription.php" afterPath="$PROJECT_DIR$/app/VehicleDescription.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Venue.php" afterPath="$PROJECT_DIR$/app/Venue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_05_070629_create_offers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_05_070629_create_offers_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_18_104942_create_bookings_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_18_104942_create_bookings_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/._index-1.html" afterPath="$PROJECT_DIR$/public/neptrip/._index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/config.rb" afterPath="$PROJECT_DIR$/public/neptrip/config.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/._app.css" afterPath="$PROJECT_DIR$/public/neptrip/css/._app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/._foundation.css" afterPath="$PROJECT_DIR$/public/neptrip/css/._foundation.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/._foundation.min.css" afterPath="$PROJECT_DIR$/public/neptrip/css/._foundation.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/._owl.carousel.css" afterPath="$PROJECT_DIR$/public/neptrip/css/._owl.carousel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/._owl.carousel.js" afterPath="$PROJECT_DIR$/public/neptrip/css/._owl.carousel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/._owl.theme.css" afterPath="$PROJECT_DIR$/public/neptrip/css/._owl.theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/._owl.transitions.css" afterPath="$PROJECT_DIR$/public/neptrip/css/._owl.transitions.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/animate.css" afterPath="$PROJECT_DIR$/public/neptrip/css/animate.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/app.css" afterPath="$PROJECT_DIR$/public/neptrip/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/font-awesome.css" afterPath="$PROJECT_DIR$/public/neptrip/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/public/neptrip/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.svg" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/slick.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.svg" afterPath="$PROJECT_DIR$/public/neptrip/css/fonts/themify.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/foundation-emails.css" afterPath="$PROJECT_DIR$/public/neptrip/css/foundation-emails.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/foundation.css" afterPath="$PROJECT_DIR$/public/neptrip/css/foundation.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/foundation.min.css" afterPath="$PROJECT_DIR$/public/neptrip/css/foundation.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/jquery.rateyo.min.css" afterPath="$PROJECT_DIR$/public/neptrip/css/jquery.rateyo.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/lightbox.css" afterPath="$PROJECT_DIR$/public/neptrip/css/lightbox.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/owl.carousel.css" afterPath="$PROJECT_DIR$/public/neptrip/css/owl.carousel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/owl.carousel.js" afterPath="$PROJECT_DIR$/public/neptrip/css/owl.carousel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/owl.theme.css" afterPath="$PROJECT_DIR$/public/neptrip/css/owl.theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/owl.transitions.css" afterPath="$PROJECT_DIR$/public/neptrip/css/owl.transitions.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/slick-theme.css" afterPath="$PROJECT_DIR$/public/neptrip/css/slick-theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/slick.css" afterPath="$PROJECT_DIR$/public/neptrip/css/slick.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/css/themify-icons.css" afterPath="$PROJECT_DIR$/public/neptrip/css/themify-icons.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.svg" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaBold.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.svg" afterPath="$PROJECT_DIR$/public/neptrip/fonts/NexaLight.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/font.css" afterPath="$PROJECT_DIR$/public/neptrip/fonts/font.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/neptrip/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/LICENSE.txt" afterPath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.svg" afterPath="$PROJECT_DIR$/public/neptrip/fonts/material-design-icons/Material-Design-Icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/fonts/slick.svg" afterPath="$PROJECT_DIR$/public/neptrip/fonts/slick.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/includes/footer.php" afterPath="$PROJECT_DIR$/public/neptrip/includes/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/includes/header.php" afterPath="$PROJECT_DIR$/public/neptrip/includes/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/index-1.html" afterPath="$PROJECT_DIR$/public/neptrip/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/index.php" afterPath="$PROJECT_DIR$/public/neptrip/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/._app.js" afterPath="$PROJECT_DIR$/public/neptrip/js/._app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/._owl.carousel.js" afterPath="$PROJECT_DIR$/public/neptrip/js/._owl.carousel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/app.js" afterPath="$PROJECT_DIR$/public/neptrip/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/jquery.rateyo.min.js" afterPath="$PROJECT_DIR$/public/neptrip/js/jquery.rateyo.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/lightbox.js" afterPath="$PROJECT_DIR$/public/neptrip/js/lightbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/materialize.min.js" afterPath="$PROJECT_DIR$/public/neptrip/js/materialize.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/owl.carousel.js" afterPath="$PROJECT_DIR$/public/neptrip/js/owl.carousel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/pace.js" afterPath="$PROJECT_DIR$/public/neptrip/js/pace.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/slick.js" afterPath="$PROJECT_DIR$/public/neptrip/js/slick.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/._foundation.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/._foundation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/._foundation.min.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/._foundation.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/._jquery.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/._jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/._what-input.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/._what-input.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/foundation.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/foundation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/foundation.min.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/foundation.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/jquery.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/vendor/what-input.js" afterPath="$PROJECT_DIR$/public/neptrip/js/vendor/what-input.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/js/wow.min.js" afterPath="$PROJECT_DIR$/public/neptrip/js/wow.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/ie.scss" afterPath="$PROJECT_DIR$/public/neptrip/sass/ie.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/includes/_mixins.scss" afterPath="$PROJECT_DIR$/public/neptrip/sass/includes/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/includes/_var.scss" afterPath="$PROJECT_DIR$/public/neptrip/sass/includes/_var.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/print.scss" afterPath="$PROJECT_DIR$/public/neptrip/sass/print.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/screen.scss" afterPath="$PROJECT_DIR$/public/neptrip/sass/screen.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/sass/screesn.scss" afterPath="$PROJECT_DIR$/public/neptrip/sass/screesn.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/stylesheets/ie.css" afterPath="$PROJECT_DIR$/public/neptrip/stylesheets/ie.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/stylesheets/print.css" afterPath="$PROJECT_DIR$/public/neptrip/stylesheets/print.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/stylesheets/screen.css" afterPath="$PROJECT_DIR$/public/neptrip/stylesheets/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/neptrip/stylesheets/screesn.css" afterPath="$PROJECT_DIR$/public/neptrip/stylesheets/screesn.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/profile.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hotels/_form.blade.php" afterPath="$PROJECT_DIR$/resources/views/hotels/_form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hotels/_reviews.blade.php" afterPath="$PROJECT_DIR$/resources/views/hotels/_reviews.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hotels/_room.blade.php" afterPath="$PROJECT_DIR$/resources/views/hotels/_room.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hotels/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/hotels/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hotels/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/hotels/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hotels/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/hotels/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/hotels/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/hotels/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/homepage.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/homepage.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reviews/_form.blade.php" afterPath="$PROJECT_DIR$/resources/views/reviews/_form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/vehicles/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/vehicles/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/gallery/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/gallery/index.blade.php" />
     </list>
     <ignored path="tripnep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -254,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SettingsController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
+      <file leaf-file-name="GalleriesController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/GalleriesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="-1248">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -272,24 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Services/NotificationService.php" />
-        <option value="$PROJECT_DIR$/app/Services/PackageService.php" />
-        <option value="$PROJECT_DIR$/app/Services/PostsService.php" />
-        <option value="$PROJECT_DIR$/app/Services/RestaurantsService.php" />
-        <option value="$PROJECT_DIR$/app/Services/ReviewsService.php" />
-        <option value="$PROJECT_DIR$/app/Services/SocialAccountService.php" />
-        <option value="$PROJECT_DIR$/app/Services/UserRegistrationService.php" />
-        <option value="$PROJECT_DIR$/app/Services/VenuesService.php" />
-        <option value="$PROJECT_DIR$/app/Services/BookingService.php" />
-        <option value="$PROJECT_DIR$/app/Services/BusinessService.php" />
-        <option value="$PROJECT_DIR$/app/Services/CarouselService.php" />
-        <option value="$PROJECT_DIR$/app/Services/ContactService.php" />
-        <option value="$PROJECT_DIR$/app/Services/GalleryService.php" />
-        <option value="$PROJECT_DIR$/app/Services/AdminService.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BookingsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminDashController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CarouselsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FaqController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewslettersController.php" />
@@ -300,7 +70,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoomsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
         <option value="$PROJECT_DIR$/app/Booking.php" />
         <option value="$PROJECT_DIR$/app/Contact.php" />
@@ -319,10 +88,29 @@
         <option value="$PROJECT_DIR$/resources/views/vehicleDescription/_form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/transport.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vehicleDescription/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Services/VehiclesService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/VehicleDescriptionsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OffersController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/contacts/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" />
+        <option value="$PROJECT_DIR$/app/Services/HotelsService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/PutGalleryRequest.php" />
+        <option value="$PROJECT_DIR$/app/Services/GalleryService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/gallery/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Services/RestaurantsService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php" />
+        <option value="$PROJECT_DIR$/app/Services/ToursService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php" />
+        <option value="$PROJECT_DIR$/app/Services/VehiclesService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/VehiclesGalleryController.php" />
+        <option value="$PROJECT_DIR$/app/Services/VenuesService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" />
       </list>
     </option>
   </component>
@@ -344,6 +132,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1366" />
     <option name="y" value="24" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
@@ -373,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -389,110 +179,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicleDescription" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -568,35 +254,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gallery" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -604,7 +263,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;veh&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehic&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;v&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehiclede/ed&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/edit.blade.php&#10;vehi&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;ve&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;vehicle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicleser&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicleD&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/VehicleDescription.php&#10;transpor&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/profile/transport.blade.php&#10;vehicleDes&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;vehicle/_fo&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/_form.blade.php&#10;hotel/edit&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/edit.blade.php&#10;vehicle/edi&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicles/edit.blade.php&#10;cre&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/create.blade.php&#10;_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/_form.blade.php&#10;vehc&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;vehicl&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;vehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;postVehi&#9;null&#9;null&#10;rooms&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/RoomService.php&#10;roomser&#9;null&#9;null&#10;roomc&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/RoomsController.php&#10;vehicle_d&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_094042_create_vehicle_description_table.php&#10;vehic_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_094042_create_vehicle_description_table.php&#10;Vehic&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/VehicleDescription.php&#10;vehicleServ&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicle_des&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_094042_create_vehicle_description_table.php&#10;vehicle/&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription&#10;vehicleDe&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;vehicleService&#9;null&#9;null&#10;routes.ph&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;SERV&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/RestaurantsService.php&#10;AdminDa&#9;null&#9;null&#10;tours.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/dashboard/tours.blade.php&#10;restaurant.blade&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/dashboard/restaurant.blade.php&#10;dash/h&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/dashboard/hotels.blade.php&#10;restaurant/sh&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;restaurantser&#9;null&#9;null&#10;welcome.blade&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/welcome.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;venueS&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VenuesService.php&#10;venues&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VenuesService.php&#10;vehi&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicl&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;tour&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;tourSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;vehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;restau&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/RestaurantsService.php&#10;gallery/in&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/gallery/index.blade.php&#10;RestaurantSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/RestaurantsService.php&#10;hotelS&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/HotelsService.php&#10;gallerySer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;hotelserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/HotelsService.php&#10;hotelser&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/HotelsService.php&#10;t&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;Hotel&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;Ho&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/HotelsService.php&#10;HotelSer&#9;null&#9;null&#10;venue&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;restaurantSe&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/RestaurantsService.php&#10;restaura&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;venueServic&#9;null&#9;null&#10;contactServ&#9;null&#9;null&#10;contact/sho&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/contacts/show.blade.php&#10;vehicle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;restaurantSer&#9;null&#9;null&#10;RestaurantsConta&#9;null&#9;null&#10;RestaurantContact&#9;null&#9;null&#10;veh&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehic&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;v&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehiclede/ed&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/edit.blade.php&#10;ve&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;vehicleser&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicleD&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/VehicleDescription.php&#10;transpor&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/profile/transport.blade.php&#10;vehicleDes&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;vehicle/_fo&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/_form.blade.php&#10;hotel/edit&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/edit.blade.php&#10;vehicle/edi&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicles/edit.blade.php&#10;cre&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/create.blade.php&#10;_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicleDescription/_form.blade.php&#10;vehc&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;postVehi&#9;null&#9;null&#10;rooms&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/RoomService.php&#10;roomser&#9;null&#9;null&#10;roomc&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/RoomsController.php&#10;vehicle_d&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_094042_create_vehicle_description_table.php&#10;vehic_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_094042_create_vehicle_description_table.php" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/v0.10.40/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -676,18 +335,23 @@
       <workItem from="1470548346542" duration="5248000" />
       <workItem from="1470901052321" duration="13231000" />
       <workItem from="1471156017650" duration="978000" />
+      <workItem from="1471594545020" duration="1032000" />
+      <workItem from="1471596131884" duration="2177000" />
+      <workItem from="1471600322007" duration="6614000" />
+      <workItem from="1471678006248" duration="1185000" />
+      <workItem from="1471761900967" duration="4339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19457000" />
+    <option name="totallyTimeSpent" value="34804000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="1366" y="24" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20131771" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -703,7 +367,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -725,7 +389,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/SiteController.php</url>
-          <line>15</line>
+          <line>36</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -733,179 +397,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Services/ContactService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/GalleryService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/AdminService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HotelsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminDashController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarouselsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FaqController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewslettersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PackageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RestaurantsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-557">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <marker date="1470901975397" expanded="true" signature="44:99" ph="..." />
-            <marker date="1470901975397" expanded="true" signature="140:1829" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="172:625" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="657:816" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="847:1005" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="1038:1168" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="1198:1355" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="1396:1564" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="1599:1730" ph="{...}" />
-            <marker date="1470901975397" expanded="true" signature="1769:1826" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/GalleriesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-845">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1613">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SocialAuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1074,73 +565,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/VehiclesService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="162" column="42" selection-start-line="162" selection-start-column="42" selection-end-line="162" selection-end-column="42" />
-          <folding>
-            <marker date="1470915740770" expanded="true" signature="37:182" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="205:4622" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="215:228" ph=" ..." />
-            <marker date="1470915740770" expanded="true" signature="375:417" ph=" VehiclesService constructor. ..." />
-            <marker date="1470915740770" expanded="true" signature="453:465" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="474:550" ph=" @param PostVehicleRequest $request ..." />
-            <marker date="1470915740770" expanded="true" signature="606:981" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="1042:1480" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="1337:1437" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="1489:1541" ph=" @param $id ..." />
-            <marker date="1470915740770" expanded="true" signature="1576:1696" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="1738:2066" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="2107:2176" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="2215:2300" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="2330:2407" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="2457:2633" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="2522:2618" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="2563:2617" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="2678:2882" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="2736:2867" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="2782:2866" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="2921:2979" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="3039:3241" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="3104:3201" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="3105:3200" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="3152:3199" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="3302:3771" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="3325:3763" ph="..." />
-            <marker date="1470915740770" expanded="true" signature="3813:3897" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="3951:4039" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="4099:4245" ph="{...}" />
-            <marker date="1470915740770" expanded="true" signature="4254:4366" ph=" @param Request $request ..." />
-            <marker date="1470915740770" expanded="true" signature="4445:4619" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VehicleDescriptionsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="715">
           <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="71" />
-          <folding>
-            <marker date="1470915786810" expanded="true" signature="44:125" ph="..." />
-            <marker date="1470915786810" expanded="true" signature="181:3179" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="223:316" ph=" VehicleDescriptionsController constructor. ..." />
-            <marker date="1470915786810" expanded="true" signature="383:505" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="515:611" ph=" Display a listing of the resource. ..." />
-            <marker date="1470915786810" expanded="true" signature="646:804" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="813:917" ph=" Show the form for creating a new resource. ..." />
-            <marker date="1470915786810" expanded="true" signature="953:1032" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="1110:1554" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="1244:1378" ph="..." />
-            <marker date="1470915786810" expanded="true" signature="1563:1686" ph=" Display the specified resource. ..." />
-            <marker date="1470915786810" expanded="true" signature="1725:1877" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="1886:2027" ph=" Show the form for editing the specified resource. ..." />
-            <marker date="1470915786810" expanded="true" signature="2066:2235" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="2244:2426" ph=" Update the specified resource in storage. ..." />
-            <marker date="1470915786810" expanded="true" signature="2485:2975" ph="{...}" />
-            <marker date="1470915786810" expanded="true" signature="2638:2786" ph="..." />
-            <marker date="1470915786810" expanded="true" signature="2984:3119" ph=" Remove the specified resource from storage. ..." />
-            <marker date="1470915786810" expanded="true" signature="3154:3177" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,23 +576,486 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1471156219121" expanded="true" signature="81:386" ph="{...}" />
-            <marker date="1471156219121" expanded="true" signature="111:124" ph="{...}" />
-            <marker date="1471156219121" expanded="true" signature="155:168" ph="{...}" />
-            <marker date="1471156219121" expanded="true" signature="199:212" ph="{...}" />
-            <marker date="1471156219121" expanded="true" signature="241:254" ph="{...}" />
-            <marker date="1471156219121" expanded="true" signature="284:297" ph="{...}" />
-            <marker date="1471156219121" expanded="true" signature="327:340" ph="{...}" />
-            <marker date="1471156219121" expanded="true" signature="371:384" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/contacts/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="59" column="39" selection-start-line="29" selection-start-column="46" selection-end-line="59" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/ContactService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/App/Http/Controllers/Contact/VehiclesContactControllerSpec.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/PostGalleryRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/PutGalleryRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/HotelsService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/GalleryService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1147">
+          <caret line="118" column="15" selection-start-line="118" selection-start-column="15" selection-end-line="118" selection-end-column="15" />
+          <folding>
+            <marker date="1471604293282" expanded="true" signature="37:224" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="229:277" ph=" Class RoomService ..." />
+            <marker date="1471604293282" expanded="true" signature="300:3529" ph="{...}" />
+            <marker date="1471604293282" expanded="true" signature="409:465" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="533:645" ph="{...}" />
+            <marker date="1471604293282" expanded="true" signature="706:877" ph="{...}" />
+            <marker date="1471604293282" expanded="true" signature="886:1023" ph=" @param \App\Http\Requests\PostGalleryRequest $request ..." />
+            <marker date="1471604293282" expanded="true" signature="1092:1487" ph="{...}" />
+            <marker date="1471604293282" expanded="true" signature="1121:1347" ph="{...}" />
+            <marker date="1471604293282" expanded="true" signature="1152:1335" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="1364:1479" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="1542:2746" ph="{...}" />
+            <marker date="1471604293282" expanded="true" signature="1574:2739" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="1605:1745" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="1771:1906" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="1932:2067" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="2092:2226" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="2254:2391" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="2419:2556" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="2577:2729" ph="..." />
+            <marker date="1471604293282" expanded="true" signature="2755:2813" ph=" @param  $request ..." />
+            <marker date="1471604293282" expanded="true" signature="2856:3400" ph="{...}" />
+            <marker date="1471604293282" expanded="true" signature="3433:3526" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/gallery/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="18" column="84" selection-start-line="18" selection-start-column="84" selection-end-line="18" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/RestaurantsService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="129" column="12" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/ToursService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="115" column="60" selection-start-line="115" selection-start-column="60" selection-end-line="115" selection-end-column="60" />
+          <folding>
+            <marker date="1471770649776" expanded="false" signature="37:144" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="148:197" ph=" Class ToursService ..." />
+            <marker date="1471770649776" expanded="true" signature="218:2958" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="229:242" ph=" ..." />
+            <marker date="1471770649776" expanded="true" signature="312:378" ph=" @param PostTourRequest $request ..." />
+            <marker date="1471770649776" expanded="true" signature="431:734" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="743:788" ph=" @param $id ..." />
+            <marker date="1471770649776" expanded="true" signature="823:931" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="940:1024" ph=" @param $id ..." />
+            <marker date="1471770649776" expanded="true" signature="1083:1477" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="1349:1440" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="1520:1847" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="1886:1968" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="2012:2187" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="2049:2172" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2093:2171" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2234:2306" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="2346:2427" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="2474:2631" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="2528:2623" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2529:2622" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2568:2621" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2678:2836" ph="{...}" />
+            <marker date="1471770649776" expanded="true" signature="2732:2828" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2733:2827" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2773:2826" ph="..." />
+            <marker date="1471770649776" expanded="true" signature="2883:2956" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/VehiclesService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="135" column="12" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+          <folding>
+            <marker date="1471771019806" expanded="false" signature="37:182" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="205:5200" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="215:228" ph=" ..." />
+            <marker date="1471771019806" expanded="true" signature="380:456" ph=" @param PostVehicleRequest $request ..." />
+            <marker date="1471771019806" expanded="true" signature="512:862" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="923:1336" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="1193:1293" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="1345:1397" ph=" @param $id ..." />
+            <marker date="1471771019806" expanded="true" signature="1432:1552" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="1594:1922" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="1964:2049" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="2089:2173" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="2202:2279" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="2329:2505" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="2394:2490" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="2435:2489" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="2550:2754" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="2608:2739" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="2654:2738" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="2793:2851" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="2911:3113" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="2976:3073" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="2977:3072" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="3024:3071" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="3174:3679" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="3197:3671" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="3726:3892" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="3784:3884" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="3785:3883" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="3829:3882" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="3940:4016" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="4057:4141" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="4195:4283" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="4331:4406" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="4457:4617" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="4514:4609" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="4515:4608" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="4554:4607" ph="..." />
+            <marker date="1471771019806" expanded="true" signature="4677:4823" ph="{...}" />
+            <marker date="1471771019806" expanded="true" signature="4832:4944" ph=" @param Request $request ..." />
+            <marker date="1471771019806" expanded="true" signature="5023:5197" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/VenuesService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
+          <folding>
+            <marker date="1471771270097" expanded="false" signature="36:146" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="151:201" ph=" Class VenuesService ..." />
+            <marker date="1471771270097" expanded="true" signature="223:3421" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="233:246" ph=" ..." />
+            <marker date="1471771270097" expanded="true" signature="317:391" ph=" @param PostVenueRequest $request ..." />
+            <marker date="1471771270097" expanded="true" signature="459:813" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="872:1288" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="1145:1245" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="1297:1349" ph=" @param $id ..." />
+            <marker date="1471771270097" expanded="true" signature="1384:1496" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="1505:1579" ph=" @param PostVenueRequest $request ..." />
+            <marker date="1471771270097" expanded="true" signature="1622:1954" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="1994:2077" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="2122:2306" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="2160:2291" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="2206:2290" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="2364:2632" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="2402:2617" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="2461:2616" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="2562:2605" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="2672:2755" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="2808:2971" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="2864:2963" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="2865:2962" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="2908:2961" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="3018:3092" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="3139:3298" ph="{...}" />
+            <marker date="1471771270097" expanded="true" signature="3194:3290" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="3195:3289" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="3235:3288" ph="..." />
+            <marker date="1471771270097" expanded="true" signature="3345:3419" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2904">
+          <caret line="127" column="8" selection-start-line="127" selection-start-column="8" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <marker date="1471606872349" expanded="false" signature="52:217" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="267:3959" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="369:481" ph=" GalleriesController constructor. ..." />
+            <marker date="1471606872349" expanded="true" signature="576:773" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="704:765" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="713:764" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="726:763" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="781:897" ph=" Display a listing of the resource. ..." />
+            <marker date="1471606872349" expanded="true" signature="932:1150" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="982:1142" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="983:1141" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="1159:1283" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471606872349" expanded="true" signature="1319:1495" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="1370:1487" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="1371:1486" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="1568:1948" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="1696:1828" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="1957:2103" ph=" Display the specified resource. ..." />
+            <marker date="1471606872349" expanded="true" signature="2141:2292" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="2190:2284" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="2191:2283" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="2301:2470" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471606872349" expanded="true" signature="2513:2763" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="2562:2755" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="2563:2754" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="2772:2961" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471606872349" expanded="true" signature="3038:3424" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="3099:3240" ph="..." />
+            <marker date="1471606872349" expanded="true" signature="3433:3582" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471606872349" expanded="true" signature="3623:3957" ph="{...}" />
+            <marker date="1471606872349" expanded="true" signature="3677:3821" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding>
+            <marker date="1471604697696" expanded="false" signature="52:187" ph="..." />
+            <marker date="1471604697696" expanded="true" signature="239:1682" ph="{...}" />
+            <marker date="1471604697696" expanded="true" signature="321:404" ph=" GalleriesController constructor. ..." />
+            <marker date="1471604697696" expanded="true" signature="470:621" ph="{...}" />
+            <marker date="1471604697696" expanded="true" signature="552:613" ph="..." />
+            <marker date="1471604697696" expanded="true" signature="561:612" ph="..." />
+            <marker date="1471604697696" expanded="true" signature="574:611" ph="..." />
+            <marker date="1471604697696" expanded="true" signature="655:805" ph="{...}" />
+            <marker date="1471604697696" expanded="true" signature="841:990" ph="{...}" />
+            <marker date="1471604697696" expanded="true" signature="1063:1263" ph="{...}" />
+            <marker date="1471604697696" expanded="true" signature="1221:1256" ph="..." />
+            <marker date="1471604697696" expanded="true" signature="1314:1462" ph="{...}" />
+            <marker date="1471604697696" expanded="true" signature="1499:1679" ph="{...}" />
+            <marker date="1471604697696" expanded="true" signature="1583:1671" ph="..." />
+            <marker date="1471604697696" expanded="true" signature="1584:1670" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="108" column="61" selection-start-line="102" selection-start-column="8" selection-end-line="108" selection-end-column="61" />
+          <folding>
+            <marker date="1471762710757" expanded="false" signature="52:227" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="282:3181" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="395:478" ph=" GalleriesController constructor. ..." />
+            <marker date="1471762710757" expanded="true" signature="583:790" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="721:782" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="730:781" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="743:780" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="824:1046" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="874:1037" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="875:1036" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1082:1258" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="1133:1250" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1134:1249" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1331:1731" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="1464:1602" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1769:1918" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="1818:1910" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1819:1909" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1960:2213" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2009:2205" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="2010:2204" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="2290:2672" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2352:2500" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2681:2810" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471762710757" expanded="true" signature="2845:3179" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2899:3043" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/VehiclesGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="71" column="54" selection-start-line="67" selection-start-column="11" selection-end-line="71" selection-end-column="54" />
+          <folding>
+            <marker date="1471771147647" expanded="true" signature="52:220" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="272:4046" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="379:493" ph=" GalleriesController constructor. ..." />
+            <marker date="1471771147647" expanded="true" signature="593:794" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="725:786" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="734:785" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="747:784" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="803:926" ph=" Display a listing of the resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="961:1183" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="1011:1175" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1012:1174" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1192:1296" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="1332:1506" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="1384:1498" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1385:1497" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1579:1977" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="1710:1848" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1986:2136" ph=" Display the specified resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="2175:2332" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="2224:2324" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2225:2323" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2341:2514" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="2558:2810" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="2607:2802" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2608:2801" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2819:3040" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471771147647" expanded="true" signature="3117:3499" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="3179:3327" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="3508:3663" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471771147647" expanded="true" signature="3704:4044" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="3761:3901" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding>
+            <marker date="1471770812173" expanded="true" signature="52:214" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="263:3960" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="364:447" ph=" GalleriesController constructor. ..." />
+            <marker date="1471770812173" expanded="true" signature="540:735" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="666:727" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="675:726" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="688:725" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="743:839" ph=" Display a listing of the resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="874:1130" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="924:1121" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="938:1111" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1139:1280" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="1316:1492" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="1367:1484" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1368:1483" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1565:1959" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="1692:1830" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1968:2085" ph=" Display the specified resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="2123:2271" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="2280:2447" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="2490:2739" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="2539:2731" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="2540:2730" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="2748:2965" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471770812173" expanded="true" signature="3042:3412" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="3104:3240" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="3421:3577" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471770812173" expanded="true" signature="3618:3958" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="3675:3815" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding>
+            <marker date="1471771612053" expanded="false" signature="53:217" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="267:4036" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="370:453" ph=" GalleriesController constructor. ..." />
+            <marker date="1471771612053" expanded="true" signature="548:745" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="676:737" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="685:736" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="698:735" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="753:869" ph=" Display a listing of the resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="904:1159" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="990:1150" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="991:1149" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1168:1299" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="1335:1511" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="1386:1503" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1387:1502" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1587:1982" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="1715:1853" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1991:2128" ph=" Display the specified resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="2166:2317" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="2215:2309" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2216:2308" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2326:2493" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="2536:2785" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="2585:2777" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2586:2776" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2794:3010" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471771612053" expanded="true" signature="3088:3470" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="3150:3298" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="3479:3653" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471771612053" expanded="true" signature="3694:4034" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="3751:3891" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/GalleriesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1248">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
           <folding />
         </state>
       </provider>

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Contact;
 
-use App\Restaurant;
 use App\Http\Requests;
-use Illuminate\Http\Request;
 use App\Services\ContactService;
-use App\Services\RestaurantService;
 use App\Http\Controllers\Controller;
+use App\Services\RestaurantsService;
 
 class RestaurantsContactController extends Controller
 {
@@ -15,7 +13,7 @@ class RestaurantsContactController extends Controller
     protected $restaurantService;
     protected $model = 'restaurant';
 
-    public function __construct(ContactService $contactService, RestaurantService $restaurantService)
+    public function __construct(ContactService $contactService, RestaurantsService $restaurantService)
     {
         $this->contactService = $contactService;
         $this->restaurantService = $restaurantService;
@@ -26,10 +24,10 @@ class RestaurantsContactController extends Controller
 
     public function index($slug)
     {
-        return view('contacts.index',compact('slug'))->with([
+        return view('contacts.index', compact('slug'))->with([
             'model' => $this->model,
-            'contact' => $this->restaurantService->getSlugWithContact($slug)->first()
-            ]);
+            'contact' => $this->restaurantService->getSlugWithContact($slug)->first()->contacts
+        ]);
     }
 
 
@@ -37,58 +35,59 @@ class RestaurantsContactController extends Controller
     {
         return view('contacts.create')->with([
             'model' => $this->model,
-            'class' => get_class($this)
-            ]);
+            'class' => get_class($this),
+            'slug' => $slug
+        ]);
     }
 
 
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId= $this->restaurantService->getIdBySlug($slug);
-        if($this->contactService->make($this->model,$vehicleId,$request)){
-            
-            session()->flash('sucMsg','Restaurant\'s contact created sucessfully');
-            return redirect("restaurants/".$slug);
+        $vehicleId = $this->restaurantService->getIdBySlug($slug);
+        if ($this->contactService->make($this->model, $vehicleId, $request)) {
+
+            session()->flash('sucMsg', 'Restaurant\'s contact created sucessfully');
+            return redirect("restaurants/" . $slug);
         }
-        session()->flash('errMsg','Contact Information couldn\'t be created' );
-        return redirect("restaurants/".$slug);
-        
+        session()->flash('errMsg', 'Contact Information couldn\'t be created');
+        return redirect("restaurants/" . $slug);
+
     }
 
 
-    public function show($slug,$id)
+    public function show($slug, $id)
     {
-        $galleries = Restaurant::where('slug',$slug)->with('galleries')->first();
-        dd($galleries);
-        return view('contact.show',compact('galleries'));
+        $contact = $this->restaurantService->getSlugAndContactId($slug, $id)->first()->contacts;
+
+        return view('contacts.show', compact('contact','slug','id'));
     }
 
-    public function edit($slug,$contact)
+    public function edit($slug, $contact)
     {
-        $model = $this->model;
-        $id = $contact;
-        $contact = Restaurant::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
-            return $query->findOrFail($id);
-        }])->first();
-        
-        return view('contacts.edit',compact('contact','slug','model','id'));
+        $restaurant = $this->restaurantService->getSlugAndContactId($slug, $contact)->first();
+        return view('contacts.edit', compact('contact', 'slug', 'model', 'id'))->with([
+            'contact' => $restaurant,
+            'slug' => $slug,
+            'id' => $contact
+        ]);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Requests\PostContactRequest $request, $id)
     {
-        if($this->contactService->update($id,$request)){
-            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+        if ($this->contactService->update($id, $request)) {
+            session()->flash('sucMsg', 'Contact information Updated Sucessfuly');
             return back();
         }
-        session()->flash('errMsg','Contact information couldn\'t be updated');
+        session()->flash('errMsg', 'Contact information couldn\'t be updated');
         return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

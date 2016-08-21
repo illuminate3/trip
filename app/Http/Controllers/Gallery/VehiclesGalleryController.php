@@ -3,40 +3,46 @@
 namespace App\Http\Controllers\Gallery;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\Services\GalleryService;
+use App\Services\VehiclesService;
 use App\Vehicle;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class VehiclesGalleryController extends Controller
 {
     protected $galleryService;
+    protected $vehicleService;
     protected $model = 'vehicle';
 
     /**
      * GalleriesController constructor.
      *
      * @param $galleryService
+     * @param $vehiclesService
      */
-    public function __construct(GalleryService $galleryService)
+    public function __construct(GalleryService $galleryService, VehiclesService $vehiclesService)
     {
         $this->galleryService = $galleryService;
+        $this->vehicleService = $vehiclesService;
         $this->middleware('auth', ['except' => [
             'index', 'show'
         ]]);
     }
+
     /**
      * Display a listing of the resource.
      *
+     * @param string $slug
      * @return \Illuminate\Http\Response
      */
     public function index($slug)
     {
-        $galleries = Vehicle::where('slug',$slug)->with('galleries')->first();
-        $model = $this->model;
-        return view('gallery.index',compact('galleries','model','slug'));
-
+        return view('gallery.index')->with([
+            'galleries' => $this->vehicleService->getSlugWithGalleries($slug)->first(),
+            'model' => $this->model,
+            'slug' => $slug
+        ]);
     }
 
     /**
@@ -46,70 +52,93 @@ class VehiclesGalleryController extends Controller
      */
     public function create($slug)
     {
-        $class = get_class($this);
-        $model = 'vehicle';
-        return view('gallery.create',compact('class','model','slug'));
+
+        return view('gallery.create')->with([
+            'model' => 'vehicle',
+            'class' => get_class($this),
+            'slug' => $slug
+        ]);
     }
 
 
     public function store($slug, Requests\PostGalleryRequest $request)
     {
-        $vehicleId= Vehicle::select('id')->where('slug',$slug)->first()->id;
-        if($this->galleryService->make('vehicle',$vehicleId,$request)){
-            exit('done');
+        $id = $this->vehicleService->getIdBySlug($slug);
+        if($this->galleryService->make($this->model,$id,$request)){
+            session()->flash('sucMsg','Gallery information created');
+            redirect($this->model.'s/'.$slug.'/galllery');
         }
+        session()->flash('errMsg','Gallery couldn\'t be created');
+        redirect($this->model.'s/'.$slug.'/galllery');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param string $slug
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show($slug,$id)
+    public function show($slug, $id)
     {
-        $galleries = Vehicle::where('slug',$slug)->with('galleries')->first();
-        dd($galleries);
-        return views('gallery.show',compact('galleries'));
+        return view('gallery.show')->with([
+             'galleries' => $this->vehicleService->getSlugWithGalleries($slug)->first()
+         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param string $slug
+     * @param  int $gallery
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug,$gallery)
+    public function edit($slug, $gallery)
     {
-        $model = $this->model;
-        $id = $gallery;
-        $gallery = Vehicle::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
-            return $query->findOrFail($id);
-        }])->first();
-        
-        return view('gallery.edit',compact('gallery','slug','model','id'));
+        return view('gallery.edit')->with([
+            'model' => $this->model,
+            'id' => $gallery,
+            'gallery' => $this->vehicleService->getGallerybyId($slug,$gallery)->first(),
+            'slug' => $slug
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\PutGalleryRequest $request
+     * @param string $slug
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\PutGalleryRequest $request,$slug, $id)
     {
-        //
+        if($this->galleryService->update($id,$request))
+        {
+            session()->flash('sucMsg','Gallery Updated Sucessfully');
+            redirect($this->model.'s/'.$slug.'/gallery');
+        }
+        session()->flash('errMsg','Gallery couldn\'t be updated');
+        redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param string $slug
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug,$id)
     {
-        //
+        if ($this->galleryService->destroy($id)) {
+            session()->flash('sucMsg', 'Gallery Deleted');
+            return redirect($this->model . 's/' . $slug . '/gallery/');
+        }
+        session()->flash('errMsg', 'Gallery couldn\'t be deleted');
+        return redirect($this->model . 's/' . $slug . '/gallery/');
     }
 }

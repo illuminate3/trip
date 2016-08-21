@@ -12,6 +12,7 @@ use App\Http\Requests;
 class PackagesGalleryController extends Controller
 {
     protected $galleryService;
+    protected $model = 'tours.package';
 
     /**
      * GalleriesController constructor.
@@ -58,9 +59,11 @@ class PackagesGalleryController extends Controller
 
     public function edit($slug,$id)
     {
-        $class = get_class($this);
-        $model = 'restaurant';
-        return view('gallery.create',compact('class','model','slug'));
+
+        return view('gallery.create',compact('class','model','slug'))->with([
+            'class' => get_class($this),
+            'model' => $this->model
+        ]);
     }
 
 }

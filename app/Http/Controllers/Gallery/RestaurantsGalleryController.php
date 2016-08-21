@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Gallery;
 use App\Http\Controllers\Controller;
 use App\Restaurant;
 use App\Services\GalleryService;
+use App\Services\RestaurantsService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,6 +13,7 @@ use App\Http\Requests;
 class RestaurantsGalleryController extends Controller
 {
     protected $galleryService;
+    protected $restaurantService;
     protected $model = 'restaurant';
 
     /**
@@ -19,9 +21,10 @@ class RestaurantsGalleryController extends Controller
      *
      * @param $galleryService
      */
-    public function __construct(GalleryService $galleryService)
+    public function __construct(GalleryService $galleryService,RestaurantsService $restaurantsService)
     {
         $this->galleryService = $galleryService;
+        $this->restaurantService = $restaurantsService;
         $this->middleware('auth', ['except' => [
             'index', 'show'
         ]]);
@@ -29,50 +32,64 @@ class RestaurantsGalleryController extends Controller
 
     public function index($slug)
     {
-        $galleries = Restaurant::where('slug',$slug)->with('galleries')->first();
-        $model = $this->model;
-        return view('gallery.index',compact('galleries','model','slug'));
+        return view('gallery.index')->with([
+            'galleries' => $this->restaurantService->getWithGalleries($slug)->first(),
+            'model' => $this->model,
+            'slug' => $slug
+        ]);
 
     }
 
 
     public function create($slug)
     {
-        $class = get_class($this);
-        $model = $this->model;
-        return view('gallery.create',compact('class','model','slug'));
+        return view('gallery.create')->with([
+            'class' => get_class($this),
+            'model' => $this->model,
+            'slug' => $slug
+        ]);
     }
 
 
     public function store($slug, Requests\PostGalleryRequest $request)
     {
-        $vehicleId= Restaurant::select('id')->where('slug',$slug)->first()->id;
-        if($this->galleryService->make('restaurant',$vehicleId,$request)){
-            exit('done');
+        $id= $this->restaurantService->getIdBySlug($slug);
+        if($this->galleryService->make($this->model,$id,$request)){
+            session()->flash('sucMsg','Gallery information created');
+            redirect($this->model.'s/'.$slug.'/galllery');
         }
+        session()->flash('errMsg','Gallery couldn\'t be created');
+        redirect($this->model.'s/'.$slug.'/galllery');
     }
 
 
     public function show($slug,$id)
     {
-        $galleries = Restaurant::where('slug',$slug)->with('galleries')->first();
-        return view('gallery.show',compact('galleries'));
+        return view('gallery.show')->with([
+            'galleries' => $this->restaurantService->getWithGalleries()->first()
+        ]);
     }
 
     public function edit($slug,$gallery)
     {
-        $id = $gallery;
-        $gallery = Restaurant::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
-            return $query->findOrFail($id);
-        }])->first();
-        
-        return view('gallery.edit',compact('gallery','slug','id'))->with(['model'=>$this->model]);
+        return view('gallery.edit')->with([
+            'model'=>$this->model,
+            'gallery' => $this->restaurantService->getGalleryById($slug,$gallery)->first(),
+            'id' => $gallery,
+            'slug' => $slug
+        ]);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Requests\PutGalleryRequest $request,$slug, $id)
     {
-        //
+        if($this->galleryService->update($id,$request))
+        {
+            session()->flash('sucMsg','Gallery Updated Sucessfully');
+            redirect($this->model.'s/'.$slug.'/gallery');
+        }
+        session()->flash('errMsg','Gallery couldn\'t be updated');
+        redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
     }
 
     /**
@@ -83,6 +100,13 @@ class RestaurantsGalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if($this->galleryService->destroy($id))
+        {
+            session()->flash('sucMsg','Gallery Deleted');
+            return redirect($this->model.'s/'.$slug.'/gallery/');
+        }
+        session()->flash('errMsg','Gallery couldn\'t be deleted');
+        return redirect($this->model.'s/'.$slug.'/gallery/');
+
     }
 }

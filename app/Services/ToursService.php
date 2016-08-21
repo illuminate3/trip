@@ -86,4 +86,33 @@ class ToursService
             return $query->where('address','LIKE','%'.$address.'%');
         })->get();
     }
+
+    public function getSlugWithContact($slug)
+    {
+        return Tour::where('slug',$slug)->with('contacts');
+    }
+
+    public function getIdBySlug($slug)
+    {
+        return Tour::select('id')->where('slug',$slug)->first()->id;
+    }
+
+    public function getContactById($slug,$id)
+    {
+        return Tour::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
+    }
+
+    public function getGalleryById($slug,$id)
+    {
+        return Tour::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
+    }
+
+    public function getGalleriesBySlug($slug)
+    {
+        return Tour::where('slug',$slug)->with('galleries');
+    }
 }

@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers\Gallery;
 
-use App\Http\Controllers\Controller;
+use App\Services\ToursService;
 use App\Tour;
-use App\Services\GalleryService;
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Services\GalleryService;
+use App\Http\Controllers\Controller;
 
 class ToursGalleryController extends Controller
 {
     protected $galleryService;
+    protected $tourService;
+    protected $model = 'tour';
 
     /**
      * GalleriesController constructor.
      *
      * @param $galleryService
      */
-    public function __construct(GalleryService $galleryService)
+    public function __construct(GalleryService $galleryService,ToursService $toursService)
     {
         $this->galleryService = $galleryService;
+        $this->tourService = $toursService;
         $this->middleware('auth', ['except' => [
             'index', 'show'
         ]]);
@@ -31,31 +35,40 @@ class ToursGalleryController extends Controller
      */
     public function index($slug)
     {
-        $galleries = Tour::where('slug',$slug)->with('galleries')->first();
-        $model = $this->model;
-        return view('gallery.index',compact('galleries','model','slug'));
+        return view('gallery.index')->with(
+            [
+                'galleries' => $this->tourService->getGalleriesBySlug($slug)->first(),
+                'model' => $this->model,
+                'slug' => $slug
+            ]
+        );
 
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param string $slug The Slug of Tour
      * @return \Illuminate\Http\Response
      */
     public function create($slug)
     {
-        $class = get_class($this);
-        $model = 'venue';
-        return view('gallery.create',compact('class','model','slug'));
+        return view('gallery.create')->with([
+            'model' => $this->model,
+            'slug' => $slug,
+            'class' => get_class($this)
+        ]);
     }
 
 
     public function store($slug, Requests\PostGalleryRequest $request)
     {
-        $vehicleId= Tour::select('id')->where('slug',$slug)->first()->id;
-        if($this->galleryService->make('tour',$vehicleId,$request)){
-            exit('done');
+        $id= $this->tourService->getIdBySlug($slug);
+        if($this->galleryService->make($this->model,$id,$request)){
+            session()->flash('sucMsg','Gallery information created');
+            redirect($this->model.'s/'.$slug.'/galllery');
         }
+        session()->flash('errMsg','Gallery couldn\'t be created');
+        redirect($this->model.'s/'.$slug.'/galllery');
     }
 
     /**
@@ -66,7 +79,7 @@ class ToursGalleryController extends Controller
      */
     public function show($slug,$id)
     {
-        $galleries = Tour::where('slug',$slug)->with('galleries')->first();
+        $galleries = $this->tourService->getGalleriesBySlug($slug)->first();
 
         return view('gallery.show',compact('galleries'));
     }
@@ -74,40 +87,53 @@ class ToursGalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param string $slug
+     * @param  int  $gallery
      * @return \Illuminate\Http\Response
      */
     public function edit($slug,$gallery)
     {
-        $model = $this->model;
-        $id = $gallery;
-        $gallery = Tour::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
-            return $query->findOrFail($id);
-        }])->first();
-        
-        return view('gallery.edit',compact('gallery','slug','model','id'));
+        return view('gallery.edit')->with([
+            'gallery' => $this->tourService->getGalleryById($slug,$gallery)->first(),
+            'model' => $this->model,
+            'id' => $gallery,
+            'slug' => $slug
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PutGalleryRequest  $request
+     * @param  string $slug
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\PutGalleryRequest $request,$slug, $id)
     {
-        //
+        if($this->galleryService->update($id,$request))
+        {
+            session()->flash('sucMsg','Gallery Updated');
+            redirect($this->model.'s/'.$slug.'/gallery');
+        }
+        session()->flash('errMsg','Gallery couldn\'t be updated');
+        redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
     }
 
     /**
      * Remove the specified resource from storage.
      *
+     * @param string $slug
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug,$id)
     {
-        //
+        if ($this->galleryService->destroy($id)) {
+            session()->flash('sucMsg', 'Gallery Deleted');
+            return redirect($this->model . 's/' . $slug . '/gallery/');
+        }
+        session()->flash('errMsg', 'Gallery couldn\'t be deleted');
+        return redirect($this->model . 's/' . $slug . '/gallery/');
     }
 }

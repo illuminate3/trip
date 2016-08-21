@@ -3,24 +3,45 @@
 namespace App\Http\Controllers\Contact;
 
 
-use App\Http\Controllers\Controller;
-use App\Services\ContactService;
-use App\Venue;
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Services\VenuesService;
+use App\Services\ContactService;
+use App\Http\Controllers\Controller;
 
+/**
+ * Class VenuesContactController
+ * @package App\Http\Controllers\Contact
+ */
 class VenuesContactController extends Controller
 {
+    /**
+     * @var ContactService
+     */
     protected $contactService;
+    /**
+     * @var VenuesService
+     */
+    protected $venueService;
+    /**
+     * @var string
+     */
     protected $model = 'venue';
 
-    public function __construct(ContactService $contactService)
+    /**
+     * VenuesContactController constructor.
+     *
+     * @param ContactService $contactService
+     * @param VenuesService $venuesService
+     */
+    public function __construct(ContactService $contactService, VenuesService $venuesService)
     {
         $this->contactService = $contactService;
+        $this->venueService = $venuesService;
         $this->middleware('auth', ['except' => [
             'index', 'show'
         ]]);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,92 +49,101 @@ class VenuesContactController extends Controller
      */
     public function index($slug)
     {
-        $contacts = Venue::where('slug',$slug)->with('contacts')->first();
-        return view('contacts.index',compact('slug'))->with([
+        return view('contacts.index', compact('slug'))->with([
             'model' => $this->model,
-            'contact' => $contacts->contacts
-            ]);
+            'contact' => $this->venueService->getSlugWithContact($slug)->first()->contacts,
+            'slug' => $slug
+        ]);
     }
 
+
     /**
-     * Show the form for creating a new resource.
+     * @param $slug
      *
-     * @return \Illuminate\Http\Response
+     * @return $this
      */
     public function create($slug)
     {
-        
-        
-        return view('contacts.create',compact('slug'))->with([
+        return view('contacts.create')->with([
             'class' => get_class($this),
-            'model' => $this->model
-            ]);
+            'model' => $this->model,
+            'slug' => $slug
+        ]);
     }
 
 
+    /**
+     * @param $slug
+     * @param Requests\PostContactRequest $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId = $this->vehicleService->getIdBySlug($slug);
-        if($this->contactService->make($this->model,$vehicleId,$request)){
-            session()->flash('sucMsg','Hotel\'s Contact Created Sucessfully');
-            return redirect("venues/".$slug);
+
+        $id = $this->venueService->getIdBySlug($slug);
+        if ($this->contactService->make($this->model, $id, $request)) {
+            session()->flash('sucMsg', 'Hotel\'s Contact Created Sucessfully');
+            return redirect("venues/" . $slug);
         }
-        session()->flash('errMsg','Contact Information couldn\'t be created' );
-        return redirect("venues/".$slug);
+        session()->flash('errMsg', 'Contact Information couldn\'t be created');
+        return redirect("venues/" . $slug);
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show($slug,$id)
+    public function show($slug, $id)
     {
-        $contact = Venue::where('slug',$slug)->with('contact')->first();
-        return view('contacts.show',compact('contact'));
+        $contact = Venue::where('slug', $slug)->with('contact')->first();
+        return view('contacts.show', compact('contact'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  string $slug The Slug of the Venue
+     * @param  int $contact The Id of the contact
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug,$contact)
+    public function edit($slug, $contact)
     {
-        $venues = Venue::where('slug',$slug)->with(['contacts'=>function($query) use ($contact){
-            return $query->findOrFail($contact);
-        }])->first();
-        
+        $venues = $this->venueService->getSlugAndContactId($slug, $contact)->first();
         return view('contacts.edit')->with([
             'contact' => $venues,
             'id' => $contact,
             'model' => $this->model
-            ]);
+        ]);
     }
+
+
     /**
-     * Update the specified resource in storage.
+     * @param Requests\PostContactRequest $request
+     * @param $id
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Requests\PostContactRequest $request, $id)
     {
-        if($this->contactService->update($id,$request)){
-            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+        if ($this->contactService->update($id, $request)) {
+            session()->flash('sucMsg', 'Contact information Updated Sucessfuly');
             return back();
         }
-        session()->flash('errMsg','Contact information couldn\'t be updated');
+        session()->flash('errMsg', 'Contact information couldn\'t be updated');
         return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

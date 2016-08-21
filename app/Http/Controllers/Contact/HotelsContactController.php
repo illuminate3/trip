@@ -30,8 +30,11 @@ class HotelsContactController extends Controller
      */
     public function index($slug)
     {
-        $contact = $this->hotelService->getSlugContacts($slug)->first()->contacts;
-        return view('contacts.index',compact('contact','slug'))->with(['model' => $this->model]);
+        return view('contacts.index',compact('contact','slug'))->with([
+            'model' => $this->model,
+            'contact' => $this->hotelService->getSlugWithContacts($slug)->first()->contacts,
+            'slug' => $slug
+        ]);
     }
 
     /**
@@ -41,7 +44,11 @@ class HotelsContactController extends Controller
      */
     public function create($slug)
     {
-        return view('contacts.create',compact('slug'))->with(['model' => $this->model, 'class' => get_class($this)]);
+        return view('contacts.create')->with([
+            'model' => $this->model,
+            'class' => get_class($this),
+            'slug' => $slug
+        ]);
     }
 
 
@@ -59,20 +66,24 @@ class HotelsContactController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  string  $slug
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($slug,$id)
     {
-        $contact = Hotel::where('slug',$slug)->with('contacts')->first();
-        $model = $this->model;
-        return view('contacts.show',compact('contact'));
+        return view('contacts.show')->with([
+            'contact' => $this->hotelService->getContactById($slug,$id)->first(),
+            'model' => $this->model,
+            'slug' => $slug,
+        ]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the Hotels Contact.
      *
-     * @param  int  $id
+     * @param  string  $slug The slug of hotel
+     * @param  int  $contact The id of contact
      * @return \Illuminate\Http\Response
      */
     public function edit($slug,$contact)
@@ -89,7 +100,8 @@ class HotelsContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PostContactRequest  $request
+     * @param  string  $slug
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

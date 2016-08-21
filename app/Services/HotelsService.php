@@ -106,7 +106,7 @@ class HotelsService
         return Hotel::where('slug','=', $slug)->first();
     }
 
-    public function getSlugContacts($slug)
+    public function getSlugWithContacts($slug)
     {
         return Hotel::where('slug','=',$slug)->with('contacts');
     }
@@ -130,6 +130,21 @@ class HotelsService
                 return $query->findOrFail($contactId);
             }
         ]);
+    }
+
+    public function getGalleriesBySlug($slug)
+    {
+        return $this->bySlug($slug)->with('galleries');
+    }
+    public function getGalleryById($slug,$id)
+    {
+        return Hotel::where('slug',$slug)->with(['galleries'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
+    }
+    protected function bySlug($slug)
+    {
+        return Hotel::where('slug',$slug);
     }
 
 }
