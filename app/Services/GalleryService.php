@@ -86,7 +86,6 @@ class GalleryService
                 return $gallery->galleries()->create($data);
                 break;
             default:
-                exit('Sorry bro');
                 return back()->with(['error' => 'No correct model can be found to insert ']);
                 break;
 
