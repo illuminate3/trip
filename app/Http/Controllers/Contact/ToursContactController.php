@@ -115,7 +115,7 @@ class ToursContactController extends Controller
         return view('contacts.edit')->with([
             'model' => $this->model,
             'id' => $contact,
-            'contact' => $this->tourService->getContactById($slug, $id)->first()
+            'contact' => $this->tourService->getContactById($slug, $contact)->first()
         ]);
     }
 
