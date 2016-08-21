@@ -22,8 +22,9 @@ class AdminDashController extends Controller
 
     public function getRestaurants()
     {
-        $restaurants = Restaurant::all();
-        return view('dashboard.restaurant', compact("restaurants"));
+        return view('dashboard.restaurant')->with([
+            'restaurants' => Restaurant::all()
+        ]);
     }
 
     public function getRestaurantsCreate()

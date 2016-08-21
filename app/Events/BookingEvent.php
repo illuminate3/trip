@@ -12,19 +12,22 @@ class BookingEvent extends Event
     public $name;
     public $bookingId;
     public $userId;
+    public $type;
 
     /**
      * BookingEvent constructor.
      *
-     * @param $name
-     * @param $bookingId
-     * @param $userId
+     * @param string $name "The message for the booking"
+     * @param string $bookingId "The id of the saved Booking"
+     * @param string $userId "The id of the user "
+     * @param string $type "Type of message"
      */
-    public function __construct($name, $bookingId, $userId)
+    public function __construct($name, $bookingId, $userId, $type)
     {
         $this->name = $name;
         $this->bookingId = $bookingId;
         $this->userId = $userId;
+        $this->type = $type;
     }
 
 

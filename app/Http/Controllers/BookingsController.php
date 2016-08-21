@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\BookingEvent;
+use App\Events\Event;
 use App\Services\BookingService;
 use Auth;
 use Illuminate\Http\Request;
@@ -50,18 +52,11 @@ class BookingsController extends Controller
      */
     public function store(Request $request)
     {
-    if($this->bookingService->make($request)){
-        $pusher = Illuminate\Support\Facades\App::make('pusher');
-        $date = new DateTime();
-        $pusher->trigger('notification',
-            'get-booking-notification',
-            array(
-                'text' => 'A new Booking has been made',
-                'userId' => '1',
-                'type' => 'success',
-                'created_at' => $date->format('d M Y')
-            ));
-    }
+        //TODO : Set booking Id to the event
+        if($this->bookingService->make($request)){
+            Event::fire(new BookingEvent("Booking sucessfully made wait for response", 0, Auth::user()->id, 'sucess'));
+        }
+        Event::fire(new BookingEvent("Booking was not made", 0, Auth::user()->id, 'error'));
 
     }
 
@@ -78,30 +73,7 @@ class BookingsController extends Controller
         return view('booking.show',compact('booking'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -112,6 +84,14 @@ class BookingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+        if($booking->delete())
+        {
+            session()->flash('sucMsg','Booking Deleted');
+            redirect()->back();
+        }
+        session()->flash('errMsg','Booking couldn\'t be deleted');
+        redirect()->back();
+
     }
 }
