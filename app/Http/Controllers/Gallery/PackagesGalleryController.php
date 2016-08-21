@@ -42,16 +42,19 @@ class PackagesGalleryController extends Controller
     }
 
 
-    public function store($slug, Requests\PostGalleryRequest $request)
+    public function store($slug, Requests\PostGalleryRequest $request,$packageId)
     {
         $vehicleId= Package::select('id')->where('slug',$slug)->first()->id;
         if($this->galleryService->make('restaurant',$vehicleId,$request)){
-            exit('done');
+            session()->flash('sucMsg','Gallery created sucessfully');
+            return redirect('tours/'.$slug.'/package/'.$packageId);
         }
+        session()->flash('errMsg','Gallery couldn\'t be created');
+        return redirect('tours/'.$slug.'/package/create')->withInput($request->toArray());
     }
 
 
-    public function show($slug,$packageSlug,$id)
+    public function show($slug,$id)
     {
         $galleries = Package::where('slug',$slug)->with('packages')->first();
         return view('gallery.show',compact('galleries'));
