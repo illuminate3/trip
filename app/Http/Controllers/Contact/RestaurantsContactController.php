@@ -24,9 +24,10 @@ class RestaurantsContactController extends Controller
 
     public function index($slug)
     {
-        return view('contacts.index', compact('slug'))->with([
+        return view('contacts.index')->with([
             'model' => $this->model,
-            'contact' => $this->restaurantService->getSlugWithContact($slug)->first()->contacts
+            'contact' => $this->restaurantService->getSlugWithContact($slug)->first()->contacts,
+            'slug' => $slug
         ]);
     }
 
@@ -43,8 +44,8 @@ class RestaurantsContactController extends Controller
 
     public function store($slug, Requests\PostContactRequest $request)
     {
-        $vehicleId = $this->restaurantService->getIdBySlug($slug);
-        if ($this->contactService->make($this->model, $vehicleId, $request)) {
+        $restaurantId = $this->restaurantService->getIdBySlug($slug);
+        if ($this->contactService->make($this->model, $restaurantId, $request)) {
 
             session()->flash('sucMsg', 'Restaurant\'s contact created sucessfully');
             return redirect("restaurants/" . $slug);
@@ -57,16 +58,17 @@ class RestaurantsContactController extends Controller
 
     public function show($slug, $id)
     {
-        $contact = $this->restaurantService->getSlugAndContactId($slug, $id)->first()->contacts;
-
-        return view('contacts.show', compact('contact','slug','id'));
+        return view('contacts.show')->with([
+            'contact' => $this->restaurantService->getSlugAndContactId($slug, $id)->first()->contacts,
+            'slug' => $slug,
+            'id' => $id
+        ]);
     }
 
     public function edit($slug, $contact)
     {
-        $restaurant = $this->restaurantService->getSlugAndContactId($slug, $contact)->first();
-        return view('contacts.edit', compact('contact', 'slug', 'model', 'id'))->with([
-            'contact' => $restaurant,
+        return view('contacts.edit')->with([
+            'contact' => $this->restaurantService->getSlugAndContactId($slug, $contact)->first(),
             'slug' => $slug,
             'id' => $contact
         ]);
