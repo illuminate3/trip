@@ -8,7 +8,7 @@
     <div class="body-wrap inside">
         <div class="content-wrap row">
             <div class="img-wrap small-12 large-6 columns">
-                <img src="{{asset("uploads/images/tour".$tour->logo)}}" alt="">
+                <img src="{{asset("uploads/images/tour/".$tour->logo)}}" alt="">
             </div>
             <div class="small-12 large-6 columns">
                 <div class="section-title row">
