@@ -50,3 +50,60 @@
 
 </script>
 @stop
+
+@extends('layouts.homepage')
+
+@section('title')
+    Restaurant | {{ $restaurant->name }}
+@stop
+
+@section('content')
+    <div class="body-wrap inside">
+        <div class="content-wrap row">
+            <div class="img-wrap small-12 large-6 columns">
+                @include('restaurants._gallery')
+            </div>
+            <div class="small-12 large-6 columns">
+                <div class="section-title row">
+                    {{-- <img src="{{asset("uploads/images/hotel/".$hotel->logo)}}" alt=""> --}}
+                    <div class="float-left">
+                        <h3>{{ $restaurant->name }}</h3>
+                        <p>{{ $restaurant->contacts['address']}}</p>
+                    </div>
+                    <div class="float-right">
+                        <div class="rateYo"></div>
+                    </div>
+                </div>
+                <p>{{ $restaurant->description }}</p>
+                @include('restaurants._contact')
+            </div>
+        </div>
+        <div class="inside-gallery">
+
+        </div>
+        <div class="row">
+            @include('restaurants._room')
+        </div>
+        <div class="row">
+            <div class="more-items">
+                @include('restaurants._similar')
+            </div>
+        </div>
+        <div class="row">
+            @include('restaurants._reviews')
+        </div>
+
+    </div>
+@stop
+@section('scripts')
+    <script>
+        $(".rateYo").rateYo({
+            rating: {{ $restaurant->rating }},
+            halfStar: true,
+            readOnly: true,
+            starWidth: "20px",
+            starHeight: "20px"
+        });
+
+    </script>
+@stop

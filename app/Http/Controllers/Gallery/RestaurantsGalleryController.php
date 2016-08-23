@@ -66,7 +66,8 @@ class RestaurantsGalleryController extends Controller
     public function show($slug,$id)
     {
         return view('gallery.show')->with([
-            'galleries' => $this->restaurantService->getWithGalleries()->first()
+            'galleries' => $this->restaurantService->getWithGalleries($slug)->first(),
+            'id' => $id
         ]);
     }
 
@@ -95,10 +96,11 @@ class RestaurantsGalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param string $slug
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug, $id)
     {
         if($this->galleryService->destroy($id))
         {
