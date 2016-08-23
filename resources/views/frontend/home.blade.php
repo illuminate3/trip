@@ -117,7 +117,7 @@ Homepage
                                             </div>
                                             <div class="long-desc">
                                                 <div class="row">
-                                                    <h4 class="float-left">{{ $hotel->title }} hotel title</h4>
+                                                    <h4 class="float-left">{{ $hotel->name }}</h4>
                                                     <div class="star float-right"><div class="rateYo"></div></div>
                                                 </div>
                                                 @if($hotel->contacts)
@@ -131,7 +131,7 @@ Homepage
                                                         <p>Price from</p>
                                                     </div>
                                                     <div class="float-right rate">
-                                                        <p> {{ $hotel->price_from }} $323.99</p>
+                                                        <p> {{ $hotel->price_from }}</p>
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -151,7 +151,7 @@ Homepage
                                 
                             </ul>
                         </div>
-                        <a href="{{ url('/hotels/'.$hotel->slug) }}" class="view-more">View More >>></a>
+                        <a href="{{ url('/hotels/') }}" class="view-more">View More >>></a>
                     </div>                   
                 </section>
                 <!-- accomodation -->
@@ -205,7 +205,7 @@ Homepage
                                                 </div>
                                                 <div class="booking-div">
                                                     <hr class="darker">
-                                                    <a href="{{ url('hotels/'.$hotel->slug)}}" class="button">Book Now</a>
+                                                    <a href="{{ url('tours/'.$tour->slug)}}" class="button">Book Now</a>
                                                 </div>
                                             </div>              
                                         </div>
@@ -215,7 +215,7 @@ Homepage
                                 
                             </ul>
                         </div>
-                        <a href="/tours/" class="view-more">View More >>></a>
+                        <a href="{{ url('/tours/') }}" class="view-more">View More >>></a>
                     </div>
                 </section>
                 <!-- Tours -->
@@ -233,16 +233,16 @@ Homepage
                         <div class="section-content">
                             <ul class="three-col-slider">
                                 
-                                @foreach ($rooms as $room)
+                                @foreach ($vehicles as $vehicle)
 
                                     <li>
                                         <div class="wrap">
                                             <div class="img-wrap">
-                                                <img src="{{ asset('/uploads/images/hotel/rooms/'.$room->image ) }}" alt="">
+                                                <img src="{{ asset('/uploads/images/vehicle/'.$vehicle->image ) }}" alt="">
                                             </div>
                                             <div class="long-desc">
                                                 <div class="row">
-                                                    <h4 class="float-left">We offer Premium Hotels</h4>
+                                                    <h4 class="float-left">{{ $vehicle->name }}</h4>
                                                     <div class="star float-right"><div class="rateYo"></div></div>
                                                 </div>
                                                 {{--@if($hotel->contacts)
@@ -256,17 +256,17 @@ Homepage
                                                         <p>Price from</p>
                                                     </div>
                                                     <div class="float-right">
-                                                        <p>{{ $room->price_from }}</p>
+                                                        <p>{{ $vehicle->price_from }}</p>
                                                     </div>
                                                 </div>
                                                 <hr>
                                                 <div class="row">
-                                                    <p class="mb">{{ $room->description }}</p>
+                                                    <p class="mb">{{ $vehicle->description }}</p>
                                                     <a href="#" class="more-info">More info</a>
                                                 </div>
                                                 <div class="booking-div">
                                                     <hr class="darker">
-                                                    <a href="{{ url('hotels/'.$hotel->slug)}}" class="button">Book Now</a>
+                                                    <a href="{{ url('hotels/'.$hotel->slug.'/room/'.$room->id)}}" class="button">Book Now</a>
                                                 </div>
                                             </div>              
                                         </div>
@@ -276,7 +276,7 @@ Homepage
                                 
                             </ul>
                         </div>
-                        <a href="/Vehicles/" class="view-more">View More >>></a>
+                        <a href="{{ url('/vehicles') }}" class="view-more">View More >>></a>
                     </div>
                 </section>
                 <!-- vehicles -->
@@ -314,7 +314,7 @@ Homepage
                             </ul>
                         </div>
 
-                        <a href="/blog/" class="view-more">View More >>></a>
+                        <a href="{{ url('/blog/')  }} " class="view-more">View More >>></a>
                     </div>
                 </section>
                 <!-- blog -->
