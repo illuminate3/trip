@@ -40,8 +40,10 @@
 </div>
 <div class="form-group">
     {{--If it is /edit then show image--}}
-    @if(isset($hotel) && $hotel->logo) 
-        <img src="{{ asset('uploads/images/hotel/'.$hotel->logo )}}" alt="">
+    @if(isset($hotel) && $hotel->logo)
+        {!! Form::open([]) !!}
+            <img src="{{ asset('uploads/images/hotel/'.$hotel->logo )}}" alt="">
+        {!! Form::open() !!}
     @else
         {!! Form::label('image',"Logo", ['class' => 'button']) !!}
         {!! Form::file('image',['class' => 'show-for-sr']) !!}

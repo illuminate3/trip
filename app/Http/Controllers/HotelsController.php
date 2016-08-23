@@ -132,4 +132,15 @@ class HotelsController extends Controller
         session()->flash('sucMsg', 'Hotel Deleted Sucessfully :)');
         return redirect('profile/business');
     }
+
+    public function deleteResource($id)
+    {
+        if($this->hotelsService->removeImage($id))
+        {
+            session()->flash('sucMsg', 'Image deleted');
+            return redirect()->back();
+        }
+        session()->flash('errMsg', 'Image couldn\'t be deleted');
+        return redirect()->back();
+    }
 }

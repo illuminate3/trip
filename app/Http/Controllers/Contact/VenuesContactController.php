@@ -120,6 +120,7 @@ class VenuesContactController extends Controller
         return view('contacts.edit')->with([
             'contact' => $venues,
             'id' => $contact,
+            'slug' => $slug,
             'model' => $this->model
         ]);
     }
@@ -135,10 +136,10 @@ class VenuesContactController extends Controller
     {
         if ($this->contactService->update($id, $request)) {
             session()->flash('sucMsg', 'Contact information Updated Sucessfuly');
-            return back();
+            return redirect()->back();
         }
         session()->flash('errMsg', 'Contact information couldn\'t be updated');
-        return back();
+        return redirect()->back();
     }
 
 }

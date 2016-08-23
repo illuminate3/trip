@@ -66,6 +66,16 @@ class HotelsService
         return $hotel->save();
     }
 
+    public function removeImage($id)
+    {
+        $hotel = Hotel::findOrFail($id)->first();
+        if(strlen($hotel->image) > 3 && File::delete($hotel->image)){
+            $hotel->image = null;
+            return $hotel->save();
+        }
+        return false;
+
+    }
     /**
      * @param PostHotelRequest $request
      *
