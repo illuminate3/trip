@@ -9,13 +9,32 @@ use App\Services\HotelsService;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+/**
+ * Class HotelsContactController
+ * @package App\Http\Controllers\Contact
+ */
 class HotelsContactController extends Controller
 {
-     protected $contactService;
-     protected $hotelService;
-     protected $model = 'hotel';
+    /**
+     * @var ContactService
+     */
+    protected $contactService;
+    /**
+     * @var HotelsService
+     */
+    protected $hotelService;
+    /**
+     * @var string
+     */
+    protected $model = 'hotel';
 
-    public function __construct(ContactService $contactService,HotelsService $hotelService)
+    /**
+     * HotelsContactController constructor.
+     *
+     * @param ContactService $contactService
+     * @param HotelsService $hotelService
+     */
+    public function __construct(ContactService $contactService, HotelsService $hotelService)
     {
         $this->hotelService = $hotelService;
         $this->contactService = $contactService;
@@ -54,6 +73,12 @@ class HotelsContactController extends Controller
     }
 
 
+    /**
+     * @param $slug
+     * @param Requests\PostContactRequest $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store($slug, Requests\PostContactRequest $request)
     {
         $id= $this->hotelService->getIdBySlug($slug);
@@ -91,10 +116,11 @@ class HotelsContactController extends Controller
     public function edit($slug,$contact)
     {
         $contacts = $this->hotelService->getContactById($slug,$contact)->first();
-        return view('contacts.edit',compact('slug'))->with([
+        return view('contacts.edit')->with([
             'model' => $this->model,
             'contact' => $contacts,
-            'id'=>$contact
+            'id'=>$contact,
+            'slug' => $slug
             ]);
     }
 
@@ -110,7 +136,7 @@ class HotelsContactController extends Controller
     public function update(Requests\PostContactRequest $request, $slug, $id)
     {
         if($this->contactService->update($id,$request)){
-            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+            session()->flash('sucMsg','Contact information Updated');
             return redirect($this->model.'s/'.$slug.'/contact');
         }
         session()->flash('errMsg','Contact information couldn\'t be updated');

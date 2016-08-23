@@ -128,10 +128,11 @@ class VenuesContactController extends Controller
 
     /**
      * @param Requests\PostContactRequest $request
+     * @param string $slug
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Requests\PostContactRequest $request, $id)
+    public function update(Requests\PostContactRequest $request,$slug, $id)
     {
         if($this->contactService->update($id,$request)){
             session()->flash('sucMsg','Contact information Updated Sucessfuly');

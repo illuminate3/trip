@@ -115,7 +115,8 @@ class ToursContactController extends Controller
         return view('contacts.edit')->with([
             'model' => $this->model,
             'id' => $contact,
-            'contact' => $this->tourService->getContactById($slug, $contact)->first()
+            'contact' => $this->tourService->getContactById($slug, $contact)->first(),
+            'slug' => $slug,
         ]);
     }
 
@@ -127,14 +128,14 @@ class ToursContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\PostContactRequest $request, $id)
+    public function update(Requests\PostContactRequest $request,$slug, $id)
     {
-        if ($this->contactService->update($id, $request)) {
-            session()->flash('sucMsg', 'Contact information Updated Sucessfuly');
-            return back();
+        if($this->contactService->update($id,$request)){
+            session()->flash('sucMsg','Contact information Updated');
+            return redirect($this->model.'s/'.$slug.'/contact');
         }
-        session()->flash('errMsg', 'Contact information couldn\'t be updated');
-        return back();
+        session()->flash('errMsg','Contact information couldn\'t be updated');
+        return redirect($this->model.'s/'.$slug.'/contact/'.$id.'/edit')->withInput($request->toArray());
     }
 
 

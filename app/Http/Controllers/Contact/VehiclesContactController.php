@@ -131,15 +131,14 @@ class VehiclesContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\PostContactRequest $request, $id)
+    public function update(Requests\PostContactRequest $request,$slug, $id)
     {
-
-        if ($this->contactService->update($id, $request)) {
-            session()->flash('sucMsg', 'Contact information Updated Sucessfuly');
-            return redirect()->back();
+        if($this->contactService->update($id,$request)){
+            session()->flash('sucMsg','Contact information Updated');
+            return redirect($this->model.'s/'.$slug.'/contact');
         }
-        session()->flash('errMsg', 'Contact information couldn\'t be updated');
-        return redirect()->back();
+        session()->flash('errMsg','Contact information couldn\'t be updated');
+        return redirect($this->model.'s/'.$slug.'/contact/'.$id.'/edit')->withInput($request->toArray());
     }
 
 
