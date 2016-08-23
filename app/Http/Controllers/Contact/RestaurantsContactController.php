@@ -46,7 +46,7 @@ class RestaurantsContactController extends Controller
     {
         $restaurantId = $this->restaurantService->getIdBySlug($slug);
         if ($this->contactService->make($this->model, $restaurantId, $request)) {
-            session()->flash('sucMsg', 'Restaurant\'s contact created sucessfully');
+            session()->flash('sucMsg', 'Restaurant\'s contact created');
             return redirect()
                 ->route($this->model.'s.{slug}.contact.index',[$slug]);
         }

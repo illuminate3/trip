@@ -81,7 +81,7 @@ class ToursContactController extends Controller
     {
         $id = $this->tourService->getIdBySlug($slug);
         if ($this->contactService->make($this->model, $id, $request)) {
-            session()->flash('sucMsg', 'Tour\'s contact created sucessfully');
+            session()->flash('sucMsg', 'Tour\'s contact created');
             return redirect()->route($this->model.'s.{slug}.contact.index',[$slug]);
         }
         session()->flash('errMsg', 'Contact Information couldn\'t be created');

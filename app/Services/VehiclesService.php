@@ -163,9 +163,14 @@ class VehiclesService
     public function makeDescription(Request $request, $id)
     {
         $vehicle = Vehicle::findOrFail($id);
-        return $vehicle->descriptions()->create([$this->descriptionData($request,$id)]);
+        return $vehicle->descriptions()->create($this->descriptionData($request,$id));
     }
 
+    public function destroyDescription($slug,$id)
+    {
+        $vehicle = Vehicle::where('slug',$slug)->with('descriptions');
+        return $vehicle->descriptions()->where('id',$id)->delete();
+    }
     /**
      * @param Request $request
      * @param $id

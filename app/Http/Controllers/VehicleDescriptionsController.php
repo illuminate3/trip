@@ -29,8 +29,10 @@ class VehicleDescriptionsController extends Controller
      */
     public function index($slug)
     {
-        $vehicles = $this->vehicleService->getTransportsFromVehicles($slug);
-        return view('profile.transport',compact('vehicles','slug'));
+        return view('profile.transport')->with([
+            'vehicles' => $this->vehicleService->getTransportsFromVehicles($slug),
+            'slug' => $slug
+        ]);
     }
 
     /**
@@ -40,7 +42,7 @@ class VehicleDescriptionsController extends Controller
      */
     public function create($slug)
     {
-        return view('vehicleDescription.create', compact('slug'));
+        return view('vehicleDescription.create')->with(['slug' => $slug]);
     }
 
 
@@ -48,43 +50,48 @@ class VehicleDescriptionsController extends Controller
     {
         $id = $this->vehicleService->getIdFromSlug($slug);
         if ($this->vehicleService->makeDescription($request, $id)) {
-            session()->flash('sucMsg','New transport created sucessfully');
-            redirect('vehicles/'.$slug.'/list');
+            session()->flash('sucMsg','New transport created');
+            return redirect('vehicles/'.$slug.'/list');
         }
         session()->flash('errMsg','New transport couldn\'t be created sucessfully');
-        redirect('vehicles/'.$slug.'/list/create')->withInput($request->toArray());
+        return redirect('vehicles/'.$slug.'/list/create')->withInput($request->toArray());
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int $id
-     *
+     * @param $slug
      * @return \Illuminate\Http\Response
      */
     public function show($slug, $id)
     {
-        $vehicle = $this->vehicleService->getBySlugVehicle($slug, $id);
-        return view('vehicleDescription.show', compact('vehicle'));
+        return view('vehicleDescription.show')->with([
+            'vehicle' => $this->vehicleService->getBySlugVehicle($slug, $id),
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
-     *
+     * @param $slug
      * @return \Illuminate\Http\Response
      */
     public function edit($slug, $id)
     {
-        $vehicle = $this->vehicleService->getFirstDescription($slug, $id);
-        return view('vehicleDescription.edit', compact('slug', 'id', 'vehicle'));
+        return view('vehicleDescription.edit')->with([
+            'vehicle' => $this->vehicleService->getFirstDescription($slug, $id),
+            'slug' => $slug,
+            'id' => $id
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
+     * @param  int $slug
      * @param  int $id
      *
      * @return \Illuminate\Http\Response
@@ -93,11 +100,11 @@ class VehicleDescriptionsController extends Controller
     {
         $vehicleId = $this->vehicleService->getIdFromSlug($slug);
         if($this->vehicleService->updateDescription($request, $vehicleId, $id)){
-            session()->flash('sucMsg','Transport Updated Sucessfully');
-            return route('vehicles.{slug}.list.show',[$slug,$id]);
+            session()->flash('sucMsg','Transport Updated');
+            return redirect()->route('vehicles.{slug}.list.show',[$slug,$id]);
         }
-        session()->flash('errMsg','Sorry error occured while updating the transport');
-        return route('vehicles.{slug}.list.edit',[$slug,$id])->withInput($request->toArray());
+        session()->flash('errMsg','Transport couldn\'t be updated');
+        return redirect()->route('vehicles.{slug}.list.edit',[$slug,$id])->withInput($request->toArray());
     }
 
     /**
@@ -107,8 +114,15 @@ class VehicleDescriptionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug,$id)
     {
-        //
+
+        if($this->vehicleService->destroyDescription($id))
+        {
+            session()->flash('sucMsg','Transport deleted');
+            return redirect()->route('vehicles.{slug}.list.index');
+        }
+        session()->flash('errMsg','Transport couldn\'t be deleted');
+        return redirect()->route('vehicles.{slug}.list.index');
     }
 }

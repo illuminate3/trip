@@ -83,11 +83,11 @@ class VenuesContactController extends Controller
 
         $id = $this->venueService->getIdBySlug($slug);
         if ($this->contactService->make($this->model, $id, $request)) {
-            session()->flash('sucMsg', 'Hotel\'s Contact Created Sucessfully');
-            return redirect("venues/" . $slug);
+            session()->flash('sucMsg', 'Venue\'s contact Created');
+            return redirect()->route($this->model.'s.{slug}.contact.index',[$slug]);
         }
-        session()->flash('errMsg', 'Contact Information couldn\'t be created');
-        return redirect("venues/" . $slug);
+        session()->flash('errMsg', 'Contact information couldn\'t be created');
+        return redirect()->route($this->model.'s.{slug}.contact.index',[$slug]);
 
     }
 

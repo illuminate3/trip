@@ -85,7 +85,7 @@ class VehiclesContactController extends Controller
     {
         $vehicleId = $this->vehicleService->getIdBySlug($slug);
         if ($this->contactService->make($this->model, $vehicleId, $request)) {
-            session()->flash('sucMsg', 'Vehicle\'s contact created sucessfully');
+            session()->flash('sucMsg', 'Vehicle\'s contact created');
             return redirect()->route($this->model.'s.{slug}.contact.index',[$slug]);
         }
         session()->flash('errMsg', 'Contact Information couldn\'t be created');

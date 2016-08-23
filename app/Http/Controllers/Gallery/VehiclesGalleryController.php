@@ -82,10 +82,13 @@ class VehiclesGalleryController extends Controller
         $id = $this->vehicleService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
             session()->flash('sucMsg','Gallery information created');
-            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+            return redirect()
+                ->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        return redirect()->route($this->model.'s.{slug}.gallery.create',[$slug])->withInput($request->toArray());
+        return redirect()
+            ->route($this->model.'s.{slug}.gallery.create',[$slug])
+            ->withInput($request->toArray());
     }
 
     /**
@@ -132,11 +135,14 @@ class VehiclesGalleryController extends Controller
     {
         if($this->galleryService->update($id,$request))
         {
-            session()->flash('sucMsg','Gallery Updated Sucessfully');
-            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+            session()->flash('sucMsg','Vehicle\'s gallery Updated');
+            return redirect()
+                ->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be updated');
-        return redirect()->route($this->model.'s.{slug}.gallery.edit',[$slug,$id])->withInput($request->toArray());
+        return redirect()
+            ->route($this->model.'s.{slug}.gallery.edit',[$slug,$id])
+            ->withInput($request->toArray());
     }
 
     /**

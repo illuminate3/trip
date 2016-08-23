@@ -56,17 +56,21 @@ class RestaurantsGalleryController extends Controller
         $id= $this->restaurantService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
             session()->flash('sucMsg','Gallery information created');
-            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+            return redirect()
+                ->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        return redirect()->route($this->model.'s.{slug}.gallery.create',[$slug])
+        return redirect()
+            ->route($this->model.'s.{slug}.gallery.create',[$slug])
             ->withInput($request->toArray());
     }
 
 
     public function show($slug,$id)
     {
-        return redirect()->route($this->model.'s.{slug}.gallery.index')->with(['slug' => $slug, 'id' =>$id]);
+        return redirect()
+            ->route($this->model.'s.{slug}.gallery.index')
+            ->with(['slug' => $slug, 'id' =>$id]);
     }
 
     public function edit($slug,$gallery)
@@ -85,10 +89,12 @@ class RestaurantsGalleryController extends Controller
         if($this->galleryService->update($id,$request))
         {
             session()->flash('sucMsg','Gallery Updated');
-            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+            return redirect()
+                ->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be updated');
-        return redirect()->route($this->model.'s.{slug}.gallery.edit',[$slug,$id])
+        return redirect()
+            ->route($this->model.'s.{slug}.gallery.edit',[$slug,$id])
             ->withInput($request->toArray());
     }
 
@@ -104,10 +110,12 @@ class RestaurantsGalleryController extends Controller
         if($this->galleryService->destroy($id))
         {
             session()->flash('sucMsg','Gallery Deleted');
-            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+            return redirect()
+                ->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be deleted');
-        return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+        return redirect()
+            ->route($this->model.'s.{slug}.gallery.index',[$slug]);
 
     }
 }

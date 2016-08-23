@@ -12,7 +12,7 @@ use App\Http\Requests;
 class PackagesGalleryController extends Controller
 {
     protected $galleryService;
-    protected $model = 'tours.package';
+    protected $model = 'tours.{slug}.package';
 
     /**
      * GalleriesController constructor.
@@ -46,8 +46,8 @@ class PackagesGalleryController extends Controller
     {
         $vehicleId= Package::select('id')->where('slug',$slug)->first()->id;
         if($this->galleryService->make('restaurant',$vehicleId,$request)){
-            session()->flash('sucMsg','Gallery created sucessfully');
-            return redirect('tours/'.$slug.'/package/'.$packageId);
+            session()->flash('sucMsg','Package\'s gallery created');
+            return redirect()->route($this->model.'s.{slug}.contact.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
         return redirect('tours/'.$slug.'/package/create')->withInput($request->toArray());

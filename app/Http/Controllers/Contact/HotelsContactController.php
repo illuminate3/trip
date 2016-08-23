@@ -83,7 +83,7 @@ class HotelsContactController extends Controller
     {
         $id= $this->hotelService->getIdBySlug($slug);
         if($this->contactService->make($this->model,$id,$request)){
-            session()->flash('sucMsg','Hotel\'s Contact Created Sucessfully');
+            session()->flash('sucMsg','Hotel\'s contact created');
             return redirect()->route($this->model.'s.{slug}.contact',[$slug]);
         }
         session()->flash('errMsg','Contact Information couldn\'t be created' );
