@@ -65,10 +65,10 @@ class VenuesGalleryController extends Controller
         $id =$this->venueService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
             session()->flash('sucMsg','Gallery information created');
-            return redirect($this->model.'s/'.$slug.'/gallery');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        return redirect($this->model.'s/'.$slug.'/galllery');
+        return redirect()->route($this->model.'s.{slug}.gallery.create',[$slug])->withInput($request->toArray());
     }
 
     /**
@@ -115,10 +115,10 @@ class VenuesGalleryController extends Controller
         if($this->galleryService->update($id,$request))
         {
             session()->flash('sucMsg','Gallery Updated Sucessfully');
-            return redirect($this->model.'s/'.$slug.'/gallery');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be updated');
-        return redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
+        return redirect()->route($this->model.'s.{slug}.gallery.edit',[$slug,$id])->withInput($request->toArray());
     }
 
     /**
@@ -132,9 +132,9 @@ class VenuesGalleryController extends Controller
     {
         if ($this->galleryService->destroy($id)) {
             session()->flash('sucMsg', 'Gallery Deleted');
-            return redirect($this->model . 's/' . $slug . '/gallery/');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg', 'Gallery couldn\'t be deleted');
-        return redirect($this->model . 's/' . $slug . '/gallery/');
+        return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
     }
 }

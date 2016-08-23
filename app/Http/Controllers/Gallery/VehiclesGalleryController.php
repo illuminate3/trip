@@ -9,10 +9,23 @@ use App\Services\VehiclesService;
 use App\Vehicle;
 use Illuminate\Http\Request;
 
+/**
+ * Class VehiclesGalleryController
+ * @package App\Http\Controllers\Gallery
+ */
 class VehiclesGalleryController extends Controller
 {
+    /**
+     * @var GalleryService
+     */
     protected $galleryService;
+    /**
+     * @var VehiclesService
+     */
     protected $vehicleService;
+    /**
+     * @var string
+     */
     protected $model = 'vehicle';
 
     /**
@@ -52,7 +65,6 @@ class VehiclesGalleryController extends Controller
      */
     public function create($slug)
     {
-
         return view('gallery.create')->with([
             'model' => 'vehicle',
             'class' => get_class($this),
@@ -61,15 +73,19 @@ class VehiclesGalleryController extends Controller
     }
 
 
+    /**
+     * @param $slug
+     * @param Requests\PostGalleryRequest $request
+     */
     public function store($slug, Requests\PostGalleryRequest $request)
     {
         $id = $this->vehicleService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
             session()->flash('sucMsg','Gallery information created');
-            redirect($this->model.'s/'.$slug.'/galllery');
+            redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        redirect($this->model.'s/'.$slug.'/galllery');
+        redirect()->route($this->model.'s.{slug}.gallery.index.create',[$slug])->withInput($request->toArray());
     }
 
     /**
@@ -120,10 +136,10 @@ class VehiclesGalleryController extends Controller
         if($this->galleryService->update($id,$request))
         {
             session()->flash('sucMsg','Gallery Updated Sucessfully');
-            return redirect($this->model.'s/'.$slug.'/gallery');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be updated');
-        return redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
+        return redirect()->route($this->model.'s.{slug}.gallery.edit',[$slug,$id])->withInput($request->toArray());
     }
 
     /**
@@ -137,9 +153,9 @@ class VehiclesGalleryController extends Controller
     {
         if ($this->galleryService->destroy($id)) {
             session()->flash('sucMsg', 'Gallery Deleted');
-            return redirect($this->model . 's/' . $slug . '/gallery/');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg', 'Gallery couldn\'t be deleted');
-        return redirect($this->model . 's/' . $slug . '/gallery/');
+        return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
     }
 }
