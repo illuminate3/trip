@@ -129,17 +129,16 @@ class VenuesContactController extends Controller
     /**
      * @param Requests\PostContactRequest $request
      * @param $id
-     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Requests\PostContactRequest $request, $id)
     {
-        if ($this->contactService->update($id, $request)) {
-            session()->flash('sucMsg', 'Contact information Updated Sucessfuly');
-            return redirect()->back();
+        if($this->contactService->update($id,$request)){
+            session()->flash('sucMsg','Contact information Updated Sucessfuly');
+            return redirect($this->model.'s/'.$slug.'/contact');
         }
-        session()->flash('errMsg', 'Contact information couldn\'t be updated');
-        return redirect()->back();
+        session()->flash('errMsg','Contact information couldn\'t be updated');
+        return redirect($this->model.'s/'.$slug.'/contact/'.$id.'/edit')->withInput($request->toArray());
     }
 
 }
