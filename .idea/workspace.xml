@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dcfa545-d94f-4088-9aa7-ba25906638f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VehiclesGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VehiclesGalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/VehicleDescriptionsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleDescriptionsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/VehiclesService.php" afterPath="$PROJECT_DIR$/app/Services/VehiclesService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/images/vehicle/.gitignore" afterPath="$PROJECT_DIR$/public/uploads/images/vehicle/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/vehicleDescription/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/vehicleDescription/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/vehicleDescription/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/vehicleDescription/show.blade.php" />
     </list>
     <ignored path="tripnep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VehiclesService.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Services/VehiclesService.php">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/vehicleDescription/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="170" column="70" selection-start-line="170" selection-start-column="70" selection-end-line="170" selection-end-column="70" />
+            <state relative-caret-position="-288">
+              <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -52,11 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Events/BookingEvent.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BookingsController.php" />
-        <option value="$PROJECT_DIR$/app/Services/PostsService.php" />
-        <option value="$PROJECT_DIR$/resources/views/gallery/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Listeners/SendNewsletterMailFired.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/RestaurantsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Services/SocialAccountService.php" />
@@ -103,6 +92,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/VehicleDescriptionsController.php" />
         <option value="$PROJECT_DIR$/app/Services/VehiclesService.php" />
+        <option value="$PROJECT_DIR$/public/uploads/images/vehicle/.gitignore" />
+        <option value="$PROJECT_DIR$/resources/views/vehicleDescription/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/vehicleDescription/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/vehicleDescription/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/vehicleDescription/show.blade.php" />
       </list>
     </option>
   </component>
@@ -183,7 +177,47 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vehicleDescription" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -198,102 +232,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Services" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gallery" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Contact" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,16 +244,16 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;VehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicle.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Vehicle.php&#10;vehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicleDes&#9;null&#9;null&#10;vehicleDesc&#9;null&#9;null&#10;RoomSer&#9;null&#9;null&#10;toursGaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;tourGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;restauranGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;hotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;hotel/_form&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_form.blade.php&#10;toursserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;hotelsSer&#9;null&#9;null&#10;restaurant&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;venueGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;putPack&#9;null&#9;null&#10;Postpac&#9;null&#9;null&#10;package_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_092915_create_packages_table.php&#10;postpack&#9;null&#9;null&#10;restaurantconta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;restaurantgal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;tourgaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;tourserv&#9;null&#9;null&#10;packageSer&#9;null&#9;null&#10;tour/galle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/_gallery.blade.php&#10;packageCon&#9;null&#9;null&#10;packageC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/PackagesGalleryController.php&#10;offers&#9;null&#9;null&#10;offersCong&#9;null&#9;null&#10;venueGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;home&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;vehicle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VehiclesGalleryController.php&#10;vehicleServ&#9;null&#9;null&#10;home.&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;venues/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/index.blade.php&#10;venues/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/show.blade.php&#10;home.bla&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;hotel/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/show.blade.php&#10;restaurant/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/_contact.blade.php&#10;hotel/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_contact.blade.php&#10;restaurant/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;restaurant.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/dashboard/restaurant.blade.php&#10;tour/gal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/_gallery.blade.php&#10;venue/_gallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/_gallery.blade.php&#10;_gal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicles/_gallery.blade.php&#10;.gitignore&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.gitignore&#10;.env&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.env&#10;_galler&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicles/_gallery.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;transport/&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/profile/transport.blade.php&#10;VehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicle.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Vehicle.php&#10;vehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicleDes&#9;null&#9;null&#10;vehicleDesc&#9;null&#9;null&#10;RoomSer&#9;null&#9;null&#10;toursGaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;tourGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;restauranGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;hotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;hotel/_form&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_form.blade.php&#10;toursserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;hotelsSer&#9;null&#9;null&#10;restaurant&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;venueGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;putPack&#9;null&#9;null&#10;Postpac&#9;null&#9;null&#10;package_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_092915_create_packages_table.php&#10;postpack&#9;null&#9;null&#10;restaurantconta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;restaurantgal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;tourgaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;tourserv&#9;null&#9;null&#10;packageSer&#9;null&#9;null&#10;tour/galle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/_gallery.blade.php&#10;packageCon&#9;null&#9;null&#10;packageC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/PackagesGalleryController.php&#10;offers&#9;null&#9;null&#10;offersCong&#9;null&#9;null&#10;venueGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;home&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;vehicle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VehiclesGalleryController.php&#10;vehicleServ&#9;null&#9;null&#10;home.&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;venues/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/index.blade.php&#10;venues/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/show.blade.php&#10;home.bla&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;hotel/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/show.blade.php&#10;restaurant/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/_contact.blade.php&#10;hotel/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_contact.blade.php&#10;restaurant/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;restaurant.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/dashboard/restaurant.blade.php&#10;tour/gal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/_gallery.blade.php&#10;venue/_gallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/_gallery.blade.php&#10;_gal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicles/_gallery.blade.php&#10;.gitignore&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.gitignore&#10;.env&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.env" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/v0.10.40/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/uploads/images/vehicle/transport" />
+      <recent name="$PROJECT_DIR$/public/uploads/images/vehicle/" />
       <recent name="$PROJECT_DIR$/public/uploads/images/vehicle" />
       <recent name="$PROJECT_DIR$/public/uploads/images/venue" />
       <recent name="$PROJECT_DIR$/public/uploads/images/tour/" />
-      <recent name="$PROJECT_DIR$/public/uploads/images/restaurant/" />
-      <recent name="$PROJECT_DIR$/public/uploads/images/hotel/rooms" />
     </key>
   </component>
   <component name="RunManager">
@@ -389,12 +327,12 @@
       <workItem from="1471761900967" duration="12385000" />
       <workItem from="1471780092823" duration="1637000" />
       <workItem from="1471846893893" duration="4368000" />
-      <workItem from="1471934799803" duration="15624000" />
+      <workItem from="1471934799803" duration="16083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64479000" />
+    <option name="totallyTimeSpent" value="64938000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -461,54 +399,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/uploads/carousel/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/gallery/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/hotel/rooms/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/hotel/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/restaurant/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/tour/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/uploads/images/venue/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -778,14 +668,6 @@
             <marker date="1471944783037" expanded="true" signature="3606:3749" ph="..." />
             <marker date="1471944783037" expanded="true" signature="3911:4148" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/images/vehicle/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1783,10 +1665,183 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/profile/transport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding>
+            <marker date="1470914899247" expanded="true" signature="45:71" ph="..." />
+            <marker date="1470914899247" expanded="true" signature="105:691" ph="..." />
+            <marker date="1470914899247" expanded="true" signature="236:672" ph="..." />
+            <marker date="1470914899247" expanded="true" signature="278:659" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/VehiclesService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="170" column="70" selection-start-line="170" selection-start-column="70" selection-end-line="170" selection-end-column="70" />
+        <state relative-caret-position="480">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+          <folding>
+            <marker date="1471951619010" expanded="false" signature="37:182" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="187:239" ph=" Class VehiclesService ..." />
+            <marker date="1471951619010" expanded="true" signature="263:6818" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="273:286" ph=" ..." />
+            <marker date="1471951619010" expanded="true" signature="358:371" ph=" ..." />
+            <marker date="1471951619010" expanded="true" signature="471:547" ph=" @param PostVehicleRequest $request ..." />
+            <marker date="1471951619010" expanded="true" signature="603:953" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="962:1055" ph=" @param PutVehicleRequest $request ..." />
+            <marker date="1471951619010" expanded="true" signature="1117:1469" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="1326:1426" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="1478:1530" ph=" @param $id ..." />
+            <marker date="1471951619010" expanded="true" signature="1565:1685" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="1694:1751" ph=" @param $request ..." />
+            <marker date="1471951619010" expanded="true" signature="1794:2122" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="2132:2186" ph=" @param $name ..." />
+            <marker date="1471951619010" expanded="true" signature="2226:2311" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="2320:2374" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="2415:2499" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="2508:2579" ph=" @return \Illuminate\Database\Eloquent\Collection|static[] ..." />
+            <marker date="1471951619010" expanded="true" signature="2610:2687" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="2696:2740" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="2791:2967" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="2856:2952" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="2897:2951" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="2976:3077" ph=" @param $address ..." />
+            <marker date="1471951619010" expanded="true" signature="3123:3327" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="3181:3312" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="3227:3311" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="3336:3390" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="3430:3488" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="3497:3576" ph=" @param $vehicleSlug ..." />
+            <marker date="1471951619010" expanded="true" signature="3637:3839" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="3702:3799" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="3703:3798" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="3750:3797" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="3848:3930" ph=" @param $request ..." />
+            <marker date="1471951619010" expanded="true" signature="3993:4498" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="4016:4490" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="4507:4579" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="4628:4794" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="4686:4786" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="4687:4785" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="4731:4784" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="4803:4857" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="4907:4983" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="4992:5046" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="5089:5173" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="5182:5236" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="5291:5379" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="5388:5442" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="5491:5566" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="5575:5647" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="5700:5860" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="5757:5852" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="5758:5851" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="5797:5850" ph="..." />
+            <marker date="1471951619010" expanded="true" signature="5869:5952" ph=" @param Request $request ..." />
+            <marker date="1471951619010" expanded="true" signature="6013:6157" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="6166:6238" ph=" @param $slug ..." />
+            <marker date="1471951619010" expanded="true" signature="6291:6442" ph="{...}" />
+            <marker date="1471951619010" expanded="true" signature="6450:6562" ph=" @param Request $request ..." />
+            <marker date="1471951619010" expanded="true" signature="6641:6815" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/vehicle/transport/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/vehicle/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vehicleDescription/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="26" />
+          <folding>
+            <marker date="1470908412288" expanded="true" signature="47:61" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="87:4683" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="122:4681" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="159:1642" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="197:1627" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="281:1608" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="376:1585" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="421:526" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="571:673" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="718:821" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="866:969" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1014:1114" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1159:1261" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1306:1405" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1450:1557" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1670:4669" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1748:4654" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1795:4631" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1842:2171" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="1949:2144" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="2221:4608" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="2271:4581" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="2383:4509" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="2438:4471" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="2501:2679" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="2743:4428" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="2805:3042" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="3104:3251" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="3362:3827" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="3435:3560" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="3634:3776" ph="..." />
+            <marker date="1470908412288" expanded="true" signature="3938:4179" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vehicleDescription/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <marker date="1471951746175" expanded="true" signature="46:57" ph="..." />
+            <marker date="1471951746175" expanded="true" signature="91:749" ph="..." />
+            <marker date="1471951746175" expanded="true" signature="112:735" ph="..." />
+            <marker date="1471951746175" expanded="true" signature="190:720" ph="..." />
+            <marker date="1471951746175" expanded="true" signature="237:697" ph="..." />
+            <marker date="1471951746175" expanded="true" signature="284:373" ph="..." />
+            <marker date="1471951746175" expanded="true" signature="423:674" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vehicleDescription/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <marker date="1471951754795" expanded="true" signature="46:57" ph="..." />
+            <marker date="1471951754795" expanded="true" signature="91:704" ph="..." />
+            <marker date="1471951754795" expanded="true" signature="112:690" ph="..." />
+            <marker date="1471951754795" expanded="true" signature="186:679" ph="..." />
+            <marker date="1471951754795" expanded="true" signature="229:660" ph="..." />
+            <marker date="1471951754795" expanded="true" signature="272:339" ph="..." />
+            <marker date="1471951754795" expanded="true" signature="385:641" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vehicleDescription/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
           <folding />
         </state>
       </provider>

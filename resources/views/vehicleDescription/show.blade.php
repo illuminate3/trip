@@ -54,7 +54,7 @@
                     <div class="section-content">
                         <ul class="archive-list">
 
-                            @foreach ($vehicle->rooms as $description)
+                            @foreach ($vehicle->descriptions as $description)
 
                             <li>
                                     <div class="wrap">

@@ -10,13 +10,20 @@ use App\Vehicle;
 use Auth;
 use Image;
 
+/**
+ * Class VehiclesService
+ * @package App\Services
+ */
 class VehiclesService
 {
     /**
      *
      */
     const IMAGE_LOCATION = '/public/uploads/images/vehicle/';
-    const DESCRIPTION_IMAGE_LOCATION = '/public/uploads/images/vehicle/';
+    /**
+     *
+     */
+    const DESCRIPTION_IMAGE_LOCATION = '/public/uploads/images/vehicle/transport/';
 
     
     /**
@@ -37,6 +44,12 @@ class VehiclesService
 
     }
 
+    /**
+     * @param PutVehicleRequest $request
+     * @param $id
+     *
+     * @return mixed
+     */
     public function update(PutVehicleRequest $request, $id)
     {
         $restaurant = Vehicle::findOrFail($id);
@@ -61,6 +74,11 @@ class VehiclesService
         return $vehicle->save();
     }
 
+    /**
+     * @param $request
+     *
+     * @return mixed
+     */
     public function fileUpload($request)
     {
         $file = $request->file('image');
@@ -71,22 +89,40 @@ class VehiclesService
         $img->save(base_path() . self::IMAGE_LOCATION . $fileName, 80);
         return $fileName;
     }
-  
 
+
+    /**
+     * @param $name
+     *
+     * @return mixed
+     */
     public function findByName($name)
     {
         return Vehicle::where('name', 'LIKE', '%' . $name . '%')->get();
     }
 
+    /**
+     * @param $slug
+     *
+     * @return mixed
+     */
     public function getIdBySlug($slug)
     {
         return Vehicle::select('id')->where('slug',$slug)->first()->id;
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
     public function getAll()
     {
         return Vehicle::with('descriptions', 'contacts')->get();
     }
 
+    /**
+     * @param $slug
+     * @param $id
+     */
     public function getBySlugVehicle($slug, $id)
     {
         $this->getSlug($slug)->with('contacts')->whereHas('contacts', function ($query) use ($id) {
@@ -94,6 +130,11 @@ class VehiclesService
         })->get();
     }
 
+    /**
+     * @param $address
+     *
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
     public function findByAddress($address)
     {
         return Vehicle::with('contacts')->whereHas('contacts', function ($query) use ($address) {
@@ -101,11 +142,22 @@ class VehiclesService
         })->get();
     }
 
+    /**
+     * @param $slug
+     *
+     * @return mixed
+     */
     protected function getSlug($slug)
     {
         return Vehicle::where('slug', $slug);
     }
 
+    /**
+     * @param $vehicleSlug
+     * @param $id
+     *
+     * @return mixed
+     */
     public function getFirstDescription($vehicleSlug, $id)
     {
         return Vehicle::where('slug', $vehicleSlug)->with(['descriptions' => function ($query) use ($id) {
@@ -113,7 +165,13 @@ class VehiclesService
         }])->first()->descriptions->first();
     }
 
-    protected function descriptionData($request,$vehicleId)
+    /**
+     * @param $request
+     * @param $vehicleId
+     *
+     * @return array
+     */
+    protected function descriptionData($request, $vehicleId)
     {
         return [
             'type'=> $request->get('type'),
@@ -128,45 +186,91 @@ class VehiclesService
         ];
     }
 
-    public function getGallerybyId($slug,$id)
+    /**
+     * @param $slug
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function getGallerybyId($slug, $id)
     {
         return Vehicle::where('slug', $slug)->with(['galleries' => function ($query) use ($id) {
             return $query->findOrFail($id);
         }]);
     }
+
+    /**
+     * @param $slug
+     *
+     * @return mixed
+     */
     public function getSlugWithGalleries($slug)
     {
         return Vehicle::where('slug',$slug)->with('galleries');
     }
+
+    /**
+     * @param $slug
+     *
+     * @return mixed
+     */
     public function getIdFromSlug($slug)
     {
         return Vehicle::select('id')->where('slug',$slug)->first()->id;
     }
 
+    /**
+     * @param $slug
+     *
+     * @return mixed
+     */
     public function getTransportsFromVehicles($slug)
     {
         return Vehicle::where('slug',$slug)->with('descriptions')->first();
     }
 
+    /**
+     * @param $slug
+     *
+     * @return mixed
+     */
     public function getSlugWithContacts($slug)
     {
         return Vehicle::where('slug',$slug)->with('contacts');
     }
 
-    public function getContactBySlugId($slug,$id)
+    /**
+     * @param $slug
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function getContactBySlugId($slug, $id)
     {
         return Vehicle::where('slug',$slug)->with(['contacts'=>function($query) use ($id){
             return $query->findOrFail($id);
         }]);
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     *
+     * @return mixed
+     */
     public function makeDescription(Request $request, $id)
     {
         $vehicle = Vehicle::findOrFail($id);
         return $vehicle->descriptions()->create($this->descriptionData($request,$id));
     }
 
-    public function destroyDescription($slug,$id)
+    /**
+     * @param $slug
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function destroyDescription($slug, $id)
     {
         $vehicle = Vehicle::where('slug',$slug)->with('descriptions');
         return $vehicle->descriptions()->where('id',$id)->delete();
