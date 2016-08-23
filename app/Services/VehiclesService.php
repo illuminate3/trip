@@ -41,7 +41,6 @@ class VehiclesService
     {
         $restaurant = Vehicle::findOrFail($id);
         $restaurant->name = $request->get('name');
-        $restaurant->slug = str_slug($request->get('slug'));
         $restaurant->description = $request->get('description');
         if ($request->file('image')) {
             $file1 = $this->fileUpload($request);

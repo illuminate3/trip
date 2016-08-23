@@ -60,21 +60,11 @@ class ToursGalleryController extends Controller
     }
 
 
-    public function store($slug, Requests\PostGalleryRequest $request)
-    {
-        $id= $this->tourService->getIdBySlug($slug);
-        if($this->galleryService->make($this->model,$id,$request)){
-            session()->flash('sucMsg','Gallery information created');
-            return redirect($this->model.'s/'.$slug.'/galllery');
-        }
-        session()->flash('errMsg','Gallery couldn\'t be created');
-        return redirect($this->model.'s/'.$slug.'/galllery');
-    }
-
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int
+     * @param $slug
      * @return \Illuminate\Http\Response
      */
     public function show($slug,$id)
@@ -82,6 +72,17 @@ class ToursGalleryController extends Controller
         $galleries = $this->tourService->getGalleriesBySlug($slug)->first();
 
         return view('gallery.show',compact('galleries'));
+    }
+
+    public function store($slug, Requests\PostGalleryRequest $request)
+    {
+        $id= $this->tourService->getIdBySlug($slug);
+        if($this->galleryService->make($this->model,$id,$request)){
+            session()->flash('sucMsg','Gallery information created');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+        }
+        session()->flash('errMsg','Gallery couldn\'t be created');
+        return redirect()->route($this->model.'s.{slug}.gallery.create',[$slug])->withInput($request->toArray());
     }
 
     /**
@@ -114,10 +115,10 @@ class ToursGalleryController extends Controller
         if($this->galleryService->update($id,$request))
         {
             session()->flash('sucMsg','Gallery Updated');
-            return redirect($this->model.'s/'.$slug.'/gallery');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be updated');
-        return redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
+        return redirect()->route($this->model.'s.{slug}.gallery.edit',[$slug,$id])->withInput($request->toArray());
     }
 
     /**
@@ -131,9 +132,9 @@ class ToursGalleryController extends Controller
     {
         if ($this->galleryService->destroy($id)) {
             session()->flash('sucMsg', 'Gallery Deleted');
-            return redirect($this->model . 's/' . $slug . '/gallery/');
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg', 'Gallery couldn\'t be deleted');
-        return redirect($this->model . 's/' . $slug . '/gallery/');
+        return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
     }
 }

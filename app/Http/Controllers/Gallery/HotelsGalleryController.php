@@ -62,11 +62,11 @@ class HotelsGalleryController extends Controller
     {
         $id= $this->hotelService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
-            session()->flash('sucMsg', 'Hotel Gallery created sucessfully');
-            return redirect('hotels/'.$slug);
+            session()->flash('sucMsg', 'Hotel gallery created');
+            return redirect('hotels/'.$slug.'/gallery');
         }
-        session()->flash('errMsg','Sorry Hotel Couldn\'t be created');
-        return redirect('hotels/'.$slug);
+        session()->flash('errMsg','Gallery for hotel couldn\'t be created');
+        return redirect('hotels/'.$slug.'/gallery');
     }
 
     /**

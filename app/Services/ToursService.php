@@ -56,7 +56,6 @@ class ToursService
     {
         $tour = Tour::findOrFail($id);
         $tour->name = $request->get('name');
-        $tour->slug = str_slug($request->get('slug'));
         $tour->description = $request->get('description');
         if($request->file('image')){
             $file = $this->fileUpload($request);

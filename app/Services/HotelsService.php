@@ -45,7 +45,6 @@ class HotelsService
     {
         $hotel = Hotel::findOrFail($id);
         $hotel->name = $request->get('name');
-        $hotel->slug = str_slug($request->get('slug'));
         $hotel->description = $request->get('description');
         if($request->file('image')){
             $file = $this->fileUpload($request);
