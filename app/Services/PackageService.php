@@ -4,6 +4,8 @@
 namespace App\Services;
 
 use App\Http\Requests\PostPackageRequest;
+use App\Http\Requests\PutPackageRequest;
+use App\Package;
 use App\Tour;
 use Image;
 
@@ -40,18 +42,17 @@ class PackageService
      *
      * @return mixed
      */
-    public function update($id, PostPackageRequest $request)
+    public function update($id, PutPackageRequest $request)
     {
-        $restaurant = Tour::findOrFail($id);
-        $restaurant->packages->update($id, $this->data($request));
+        $package = Package::findOrFail($id);
+        $packages->update($id, $this->data($request));
         return $restaurant->save();
-
 
     }
 
 
     /**
-     * @param PostPackageRequest $request
+     * @param $request
      *
      * @return null|string
      */
@@ -73,7 +74,7 @@ class PackageService
      *
      * @return array
      */
-    protected function data(PostPackageRequest $request)
+    protected function data($request)
     {
         return [
             'name' => $request->get('name'),

@@ -65,10 +65,10 @@ class ToursGalleryController extends Controller
         $id= $this->tourService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
             session()->flash('sucMsg','Gallery information created');
-            redirect($this->model.'s/'.$slug.'/galllery');
+            return redirect($this->model.'s/'.$slug.'/galllery');
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        redirect($this->model.'s/'.$slug.'/galllery');
+        return redirect($this->model.'s/'.$slug.'/galllery');
     }
 
     /**
@@ -114,10 +114,10 @@ class ToursGalleryController extends Controller
         if($this->galleryService->update($id,$request))
         {
             session()->flash('sucMsg','Gallery Updated');
-            redirect($this->model.'s/'.$slug.'/gallery');
+            return redirect($this->model.'s/'.$slug.'/gallery');
         }
         session()->flash('errMsg','Gallery couldn\'t be updated');
-        redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
+        return redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
     }
 
     /**

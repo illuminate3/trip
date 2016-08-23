@@ -74,7 +74,7 @@ class RestaurantsGalleryController extends Controller
     public function edit($slug,$gallery)
     {
         return view('gallery.edit')->with([
-            'model'=>$this->model,
+            'model' => $this->model,
             'gallery' => $this->restaurantService->getGalleryById($slug,$gallery)->first(),
             'id' => $gallery,
             'slug' => $slug

@@ -31,6 +31,7 @@ class ToursService
         $tour->slug = str_slug($request->get('slug'));
         $tour->description = $request->get('description');
         $file = $this->fileUpload($request);
+        $tour->user_id = Auth::user()->id;
         $tour->logo = $file;
         return $tour->save();
     }
@@ -48,14 +49,14 @@ class ToursService
 
     /**
      * @param $id
-     * @param PostTourRequest $request
+     * @param PutTourRequest $request
      * @return mixed
      */
     public function update( PutTourRequest $request,$id)
     {
         $tour = Tour::findOrFail($id);
         $tour->name = $request->get('name');
-        $tour->slug = str_replace(" ", "-", strtolower($request->get('slug')));
+        $tour->slug = str_slug($request->get('slug'));
         $tour->description = $request->get('description');
         if($request->file('image')){
             $file = $this->fileUpload($request);

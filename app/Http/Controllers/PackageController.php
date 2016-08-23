@@ -6,7 +6,6 @@ use App\Http\Requests;
 use App\Package;
 use App\Services\PackageService;
 use App\Tour;
-use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
@@ -82,14 +81,20 @@ class PackageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  $request
+     * @param $slug
      * @param  int $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\PutPackageRequest $request, $slug, $id)
     {
-        //
+        if ($this->package->update($id, $request)) {
+            session()->flash('sucMsg', 'Package Updated');
+            return redirect();
+        }
+        session()->flash('sucMsg', 'Package Updated');
+        return redirect();
     }
 
     /**

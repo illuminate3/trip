@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 use Auth;
-class PostNewsletterRequest extends Request
+class PutPackageRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,13 @@ class PostNewsletterRequest extends Request
     public function rules()
     {
         return [
-
+            'name' => 'required',
+            'type' => 'required',
+            'price' => 'required|integer',
+            'description' => 'required',
+            'duration' => 'required',
+            'difficulty' => 'required',
+            'best_season' => 'required',
         ];
     }
 }

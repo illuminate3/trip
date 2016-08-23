@@ -61,6 +61,7 @@ class RestaurantsContactController extends Controller
         return view('contacts.show')->with([
             'contact' => $this->restaurantService->getSlugAndContactId($slug, $id)->first()->contacts,
             'slug' => $slug,
+            'model' => $this->model,
             'id' => $id
         ]);
     }
@@ -68,6 +69,7 @@ class RestaurantsContactController extends Controller
     public function edit($slug, $contact)
     {
         return view('contacts.edit')->with([
+            'model' => $this->model,
             'contact' => $this->restaurantService->getSlugAndContactId($slug, $contact)->first(),
             'slug' => $slug,
             'id' => $contact
