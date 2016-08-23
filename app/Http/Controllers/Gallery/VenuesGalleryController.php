@@ -36,7 +36,7 @@ class VenuesGalleryController extends Controller
      */
     public function index($slug)
     {
-        return view('gallery.index',compact('galleries','model','slug'))->with([
+        return view('gallery.index')->with([
             'galleries' => $this->venueService->getGalleriesBySlug($slug)->first(),
             'model' => $this->model,
             'slug' => $slug
@@ -80,7 +80,8 @@ class VenuesGalleryController extends Controller
     public function show($slug,$id)
     {
         return view('gallery.show')->with([
-            'galleries' => $this->venueService->getGalleriesBySlug($slug)->first()
+            'galleries' => $this->venueService->getGalleriesBySlug($slug)->first(),
+            'id' => $id
         ]);
     }
 

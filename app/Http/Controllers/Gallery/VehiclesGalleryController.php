@@ -47,7 +47,7 @@ class VehiclesGalleryController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param $slug
      * @return \Illuminate\Http\Response
      */
     public function create($slug)
@@ -83,7 +83,8 @@ class VehiclesGalleryController extends Controller
     public function show($slug, $id)
     {
         return view('gallery.show')->with([
-             'galleries' => $this->vehicleService->getSlugWithGalleries($slug)->first()
+             'galleries' => $this->vehicleService->getSlugWithGalleries($slug)->first(),
+             'id' => $id
          ]);
     }
 

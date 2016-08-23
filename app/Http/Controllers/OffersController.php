@@ -11,13 +11,17 @@ class OffersController extends Controller
 
     public function show($d)
     {
-        return view('offers.show');
+        return view('offers.show')->with([
+            'id' => $id
+        ]);
 
     }
 
     public function edit($id)
     {
-        return view('offers.edit');
+        return view('offers.edit')->with([
+            'id' => $id
+        ]);
 
     }
 

@@ -238,7 +238,7 @@ Homepage
                                     <li>
                                         <div class="wrap">
                                             <div class="img-wrap">
-                                                <img src="{{ asset('/uploads/images/vehicle/'.$vehicle->image ) }}" alt="">
+                                                <img src="{{ asset('/uploads/images/vehicle/'.$vehicle->logo ) }}" alt="">
                                             </div>
                                             <div class="long-desc">
                                                 <div class="row">
