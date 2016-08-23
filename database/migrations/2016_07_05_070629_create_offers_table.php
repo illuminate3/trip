@@ -20,7 +20,7 @@ class CreateOffersTable extends Migration
             $table->string('price_after');
             $table->date('from');
             $table->date('to');
-            $table->morphable('offer');
+            $table->morphs('offer');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class SocialAccountService
 
         if ($account) {
             return $account->user;
-        } else {
+        }
 
             $account = new SocialAccount([
                 'provider_user_id' => $providerUser->getId(),
@@ -36,8 +36,6 @@ class SocialAccountService
             $account->save();
 
             return $user;
-
-        }
 
     }
 

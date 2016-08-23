@@ -21,7 +21,7 @@ class CreateBookingsTable extends Migration
             $table->date('to');
             $table->boolean('read'); // Is the booking read by the business
             $table->boolean('confirm'); // Is it confirmed
-            $table->morphable('bookee'); // Which type of business has been booked
+            $table->morphs('bookee'); // Which type of business has been booked
             $table->unsignedInteger('user_id');
             $table->timestamps();
         });

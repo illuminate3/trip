@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         //factory(App\Room::class, 250)->create();
         // factory(App\Review::class, 250)->create();
         // $this->call(ContactsTableSeeder::class);
-        // $this->call(WatchtowerTableSeeder::class);
+         $this->call(WatchtowerTableSeeder::class);
         Model::reguard();
     }
 }
