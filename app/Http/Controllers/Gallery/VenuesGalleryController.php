@@ -60,7 +60,7 @@ class VenuesGalleryController extends Controller
     }
 
 
-    public function store(Requests\PostGalleryRequest $request,$slug,$id)
+    public function store(Requests\PostGalleryRequest $request,$slug)
     {
         $id =$this->venueService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
