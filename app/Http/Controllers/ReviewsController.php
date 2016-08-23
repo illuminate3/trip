@@ -29,58 +29,27 @@ class ReviewsController extends Controller
         dd($reviews);
     }
 
-
-    public function create()
-    {
-        //
-    }
-
-
     public function store(Requests\PostReviewRequest $request)
     {
         if ($this->createReviews->make($request)) {
-            return back()->with(['success' => 'Congratulations!']);
+            session()->flash('sucMsg', 'Review made!');
+            return redirect()->back();
         }
+        session()->flash('errMsg', 'Error while posting review!');
+        return redirect()->back();
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public
-    function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public
-    function edit($id)
+    public function update(Request $request, $id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public
-    function update(Request $request, $id)
-    {
-        //
+        if($this->createReviews->update($request,$id))
+        {
+            session()->flash('sucMsg','Review Updated');
+            return redirect()->back();
+        }
+        session()->flash('errMsg','Error while updating your review');
+        return redirect()->back();
     }
 
     /**
@@ -90,9 +59,14 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public
-    function destroy($id)
+    public function destroy($id)
     {
-        //
+        if($this->createReviews->destroy($id))
+        {
+            session()->flash('sucMsg','Review deleted');
+            return redirect()->back();
+        }
+        session()->flash('errMsg','Review couldn\'t be deleted');
+        return redirect()->back();
     }
 }

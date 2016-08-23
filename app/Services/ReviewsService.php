@@ -6,6 +6,7 @@ namespace App\Services;
 use App\Hotel;
 use App\Http\Requests\PostReviewRequest;
 use App\Restaurant;
+use App\Review;
 use App\Tour;
 use App\Vehicle;
 use App\Venue;
@@ -89,5 +90,11 @@ class ReviewsService
                 break;
 
         }
+    }
+
+    public function destroy($id)
+    {
+        $review = Review::findOrFail($id);
+        return $review->delete();
     }
 }
