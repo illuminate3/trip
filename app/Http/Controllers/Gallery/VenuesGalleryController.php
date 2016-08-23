@@ -65,10 +65,10 @@ class VenuesGalleryController extends Controller
         $id =$this->venueService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
             session()->flash('sucMsg','Gallery information created');
-            redirect($this->model.'s/'.$slug.'/galllery');
+            return redirect($this->model.'s/'.$slug.'/gallery');
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        redirect($this->model.'s/'.$slug.'/galllery');
+        return redirect($this->model.'s/'.$slug.'/galllery');
     }
 
     /**
