@@ -109,7 +109,7 @@ class HotelsGalleryController extends Controller
      */
     public function update(Requests\PutGalleryRequest $request,$slug, $id)
     {
-        if($this->hotelService->update($request,$id)){
+        if($this->galleryService->update($id,$request)){
             session()->flash('sucMsg','Gallery information updated');
             return redirect('hotels/'.$slug.'/gallery/'.$id);
         }

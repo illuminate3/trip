@@ -38,11 +38,11 @@ class GalleryService
     }
 
     /**
-     * @param \App\Http\Requests\PostGalleryRequest $request
+     * @param  $request
      * @param int $file Check if the file exists
      * @return array
      */
-    protected function data(PostGalleryRequest $request,$file = 0)
+    protected function data( $request,$file = 0)
     {
         if($file == 1)
         {
