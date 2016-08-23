@@ -120,10 +120,10 @@ class VehiclesGalleryController extends Controller
         if($this->galleryService->update($id,$request))
         {
             session()->flash('sucMsg','Gallery Updated Sucessfully');
-            redirect($this->model.'s/'.$slug.'/gallery');
+            return redirect($this->model.'s/'.$slug.'/gallery');
         }
         session()->flash('errMsg','Gallery couldn\'t be updated');
-        redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
+        return redirect($this->model.'s/'.$slug.'/gallery/'.$id.'/edit')->withInput($request->toArray());
     }
 
     /**
