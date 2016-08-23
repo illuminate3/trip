@@ -81,9 +81,7 @@
         <div class="inside-gallery">
 
         </div>
-        <div class="row">
-            @include('restaurants._room')
-        </div>
+
         <div class="row">
             <div class="more-items">
                 @include('restaurants._similar')
