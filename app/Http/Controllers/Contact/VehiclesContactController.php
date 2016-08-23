@@ -104,7 +104,7 @@ class VehiclesContactController extends Controller
     public function show($slug, $id)
     {
 
-        return redirect()->route('vehicles.{slug}.contact.index', [$slug])->with(['id' => $id]);
+        return redirect()->route($this->model.'s.{slug}.contact.index')->with(['slug' => $slug, 'id' =>$id]);
     }
 
     /**

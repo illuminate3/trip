@@ -69,9 +69,7 @@ class ToursGalleryController extends Controller
      */
     public function show($slug,$id)
     {
-        $galleries = $this->tourService->getGalleriesBySlug($slug)->first();
-
-        return view('gallery.show',compact('galleries'));
+     return redirect()->route($this->model.'s.{slug}.gallery.index')->with(['slug' => $slug, 'id' =>$id]);
     }
 
     public function store($slug, Requests\PostGalleryRequest $request)

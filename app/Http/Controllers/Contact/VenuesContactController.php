@@ -101,11 +101,7 @@ class VenuesContactController extends Controller
      */
     public function show($slug, $id)
     {
-        return view('contacts.show')->with([
-            'contact' => $this->venueService->getSlugWithContact($slug)->first(),
-            'id' => $id,
-            'slug' => $slug
-        ]);
+        return redirect()->route($this->model.'s.{slug}.contact.index')->with(['slug' => $slug, 'id' =>$id]);
     }
 
     /**

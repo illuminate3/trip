@@ -99,11 +99,7 @@ class HotelsContactController extends Controller
      */
     public function show($slug,$id)
     {
-        return view('contacts.show')->with([
-            'contact' => $this->hotelService->getContactById($slug,$id)->first(),
-            'model' => $this->model,
-            'slug' => $slug,
-        ]);
+        return redirect()->route($this->model.'s.{slug}.contact.index')->with(['slug' => $slug, 'id' =>$id]);
     }
 
     /**

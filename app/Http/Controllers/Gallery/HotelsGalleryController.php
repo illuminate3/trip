@@ -81,9 +81,7 @@ class HotelsGalleryController extends Controller
      */
     public function show($slug,$id)
     {
-        return view('gallery.show')->with([
-            'galleries' => $this->hotelService->getGalleryById($slug,$id)->first()
-        ]);
+        return redirect()->route($this->model.'s.{slug}.gallery.index')->with(['slug' => $slug, 'id' =>$id]);
     }
 
     /**

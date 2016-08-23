@@ -100,11 +100,7 @@ class ToursContactController extends Controller
      */
     public function show($slug, $id)
     {
-        return view('contacts.show')->with([
-            'contact' => $this->tourService->getContactById($slug,$id)->first(),
-            'slug' => $slug,
-            'id' => $id
-        ]);
+        return redirect()->route($this->model.'s.{slug}.contact.index')->with(['slug' => $slug, 'id' =>$id]);
     }
 
     /**

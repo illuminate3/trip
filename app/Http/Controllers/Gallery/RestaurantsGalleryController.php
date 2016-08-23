@@ -66,10 +66,7 @@ class RestaurantsGalleryController extends Controller
 
     public function show($slug,$id)
     {
-        return view('gallery.show')->with([
-            'galleries' => $this->restaurantService->getWithGalleries($slug)->first(),
-            'id' => $id
-        ]);
+        return redirect()->route($this->model.'s.{slug}.gallery.index')->with(['slug' => $slug, 'id' =>$id]);
     }
 
     public function edit($slug,$gallery)
