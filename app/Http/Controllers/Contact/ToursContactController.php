@@ -91,6 +91,7 @@ class ToursContactController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param string $slug
      * @param  int $id
      *
      * @return \Illuminate\Http\Response
@@ -98,7 +99,9 @@ class ToursContactController extends Controller
     public function show($slug, $id)
     {
         return view('contacts.show')->with([
-            'contact' => $this->tourService->getContactById($slug,$id)->first()
+            'contact' => $this->tourService->getContactById($slug,$id)->first(),
+            'slug' => $slug,
+            'id' => $id
         ]);
     }
 

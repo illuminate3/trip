@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dcfa545-d94f-4088-9aa7-ba25906638f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" />
@@ -27,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VenuesContactController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php">
+      <file leaf-file-name="ToursContactController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+            <state relative-caret-position="643">
+              <caret line="102" column="23" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -92,10 +90,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" />
         <option value="$PROJECT_DIR$/app/Services/ContactService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/HotelsContactController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" />
       </list>
     </option>
   </component>
@@ -407,12 +405,12 @@
       <workItem from="1471761900967" duration="12385000" />
       <workItem from="1471780092823" duration="1637000" />
       <workItem from="1471846893893" duration="4368000" />
-      <workItem from="1471934799803" duration="6115000" />
+      <workItem from="1471934799803" duration="6302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54970000" />
+    <option name="totallyTimeSpent" value="55157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -1205,90 +1203,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="136" column="66" selection-start-line="136" selection-start-column="66" selection-end-line="136" selection-end-column="66" />
+        <state relative-caret-position="1843">
+          <caret line="96" column="26" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
           <folding>
-            <marker date="1471941760988" expanded="false" signature="52:174" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="179:257" ph=" Class VehiclesContactController ..." />
-            <marker date="1471941760988" expanded="true" signature="310:3913" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="320:353" ph=" @var ContactService ..." />
-            <marker date="1471941760988" expanded="true" signature="394:428" ph=" @var VehiclesService ..." />
-            <marker date="1471941760988" expanded="true" signature="469:494" ph=" @var string ..." />
-            <marker date="1471941760988" expanded="true" signature="539:689" ph=" VehiclesContactController constructor. ..." />
-            <marker date="1471941760988" expanded="true" signature="788:988" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="919:980" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="928:979" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="941:978" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="997:1127" ph=" Display a listing of the resource. ..." />
-            <marker date="1471941760988" expanded="true" signature="1162:1393" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="1214:1385" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="1215:1384" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="1402:1571" ph=" Show the form for creating a new resource. ..." />
-            <marker date="1471941760988" expanded="true" signature="1607:1738" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="1748:1918" ph=" @param $slug ..." />
-            <marker date="1471941760988" expanded="true" signature="1991:2466" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="2140:2281" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="2475:2598" ph=" Display the specified resource. ..." />
-            <marker date="1471941760988" expanded="true" signature="2637:2747" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="2756:2833" ph=" @param $slug ..." />
-            <marker date="1471941760988" expanded="true" signature="2877:3228" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="2998:3220" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="3047:3209" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="3048:3208" ph="..." />
-            <marker date="1471941760988" expanded="true" signature="3237:3432" ph=" Update the specified resource in storage. ..." />
-            <marker date="1471941760988" expanded="true" signature="3510:3909" ph="{...}" />
-            <marker date="1471941760988" expanded="true" signature="3573:3717" ph="..." />
+            <marker date="1471941905337" expanded="false" signature="53:173" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="178:254" ph=" Class VenuesContactController ..." />
+            <marker date="1471941905337" expanded="true" signature="305:3886" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="315:348" ph=" @var ContactService ..." />
+            <marker date="1471941905337" expanded="true" signature="389:421" ph=" @var VenuesService ..." />
+            <marker date="1471941905337" expanded="true" signature="460:485" ph=" @var string ..." />
+            <marker date="1471941905337" expanded="true" signature="528:673" ph=" VenuesContactController constructor. ..." />
+            <marker date="1471941905337" expanded="true" signature="769:966" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="897:958" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="906:957" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="919:956" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="975:1071" ph=" Display a listing of the resource. ..." />
+            <marker date="1471941905337" expanded="true" signature="1106:1350" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="1174:1342" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="1175:1341" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="1360:1414" ph=" @param $slug ..." />
+            <marker date="1471941905337" expanded="true" signature="1450:1627" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="1502:1619" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="1503:1618" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="1637:1801" ph=" @param $slug ..." />
+            <marker date="1471941905337" expanded="true" signature="1874:2277" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="2008:2145" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="2286:2436" ph=" Display the specified resource. ..." />
+            <marker date="1471941905337" expanded="true" signature="2475:2679" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="2525:2671" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="2526:2670" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="2688:2906" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471941905337" expanded="true" signature="2950:3234" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="3086:3226" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="3087:3225" ph="..." />
+            <marker date="1471941905337" expanded="true" signature="3244:3395" ph=" @param Requests\PostContactRequest $request ..." />
+            <marker date="1471941905337" expanded="true" signature="3473:3883" ph="{...}" />
+            <marker date="1471941905337" expanded="true" signature="3536:3691" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/VehiclesContactController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="133" column="66" selection-start-line="133" selection-start-column="66" selection-end-line="133" selection-end-column="66" />
+        <state relative-caret-position="250">
+          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
           <folding>
-            <marker date="1471941766792" expanded="false" signature="52:171" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="177:252" ph=" Class ToursContactController ..." />
-            <marker date="1471941766792" expanded="true" signature="302:3829" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="312:345" ph=" @var ContactService ..." />
-            <marker date="1471941766792" expanded="true" signature="386:417" ph=" @var ToursService ..." />
-            <marker date="1471941766792" expanded="true" signature="455:480" ph=" @var string ..." />
-            <marker date="1471941766792" expanded="true" signature="522:664" ph=" ToursContactController constructor. ..." />
-            <marker date="1471941766792" expanded="true" signature="758:953" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="884:945" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="893:944" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="906:943" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="962:1078" ph=" Display a listing of the resource. ..." />
-            <marker date="1471941766792" expanded="true" signature="1113:1339" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="1164:1331" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="1165:1330" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="1348:1472" ph=" Show the form for creating a new resource. ..." />
-            <marker date="1471941766792" expanded="true" signature="1508:1685" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="1560:1677" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="1561:1676" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="1695:1859" ph=" @param $slug ..." />
-            <marker date="1471941766792" expanded="true" signature="1932:2329" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="2064:2199" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="2338:2461" ph=" Display the specified resource. ..." />
-            <marker date="1471941766792" expanded="true" signature="2500:2649" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="2550:2641" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="2551:2640" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="2658:2848" ph=" Show the form for editing the specified resource. ..." />
-            <marker date="1471941766792" expanded="true" signature="2892:3144" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="2942:3136" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="2943:3135" ph="..." />
-            <marker date="1471941766792" expanded="true" signature="3153:3348" ph=" Update the specified resource in storage. ..." />
-            <marker date="1471941766792" expanded="true" signature="3426:3825" ph="{...}" />
-            <marker date="1471941766792" expanded="true" signature="3489:3633" ph="..." />
+            <marker date="1471941926314" expanded="false" signature="52:174" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="179:257" ph=" Class VehiclesContactController ..." />
+            <marker date="1471941926314" expanded="true" signature="310:3976" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="320:353" ph=" @var ContactService ..." />
+            <marker date="1471941926314" expanded="true" signature="394:428" ph=" @var VehiclesService ..." />
+            <marker date="1471941926314" expanded="true" signature="469:494" ph=" @var string ..." />
+            <marker date="1471941926314" expanded="true" signature="539:689" ph=" VehiclesContactController constructor. ..." />
+            <marker date="1471941926314" expanded="true" signature="788:988" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="919:980" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="928:979" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="941:978" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="997:1127" ph=" Display a listing of the resource. ..." />
+            <marker date="1471941926314" expanded="true" signature="1162:1393" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="1214:1385" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="1215:1384" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="1402:1571" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471941926314" expanded="true" signature="1607:1801" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="1676:1793" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="1677:1792" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="1811:1981" ph=" @param $slug ..." />
+            <marker date="1471941926314" expanded="true" signature="2054:2529" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="2203:2344" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="2538:2661" ph=" Display the specified resource. ..." />
+            <marker date="1471941926314" expanded="true" signature="2700:2810" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="2819:2896" ph=" @param $slug ..." />
+            <marker date="1471941926314" expanded="true" signature="2940:3291" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="3061:3283" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="3110:3272" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="3111:3271" ph="..." />
+            <marker date="1471941926314" expanded="true" signature="3300:3495" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471941926314" expanded="true" signature="3573:3972" ph="{...}" />
+            <marker date="1471941926314" expanded="true" signature="3636:3780" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/RestaurantsContactController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="816">
           <caret line="80" column="66" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
           <folding>
             <marker date="1471941718720" expanded="false" signature="52:177" ph="..." />
@@ -1317,10 +1317,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/VenuesContactController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+        <state relative-caret-position="643">
+          <caret line="102" column="23" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
           <folding />
         </state>
       </provider>

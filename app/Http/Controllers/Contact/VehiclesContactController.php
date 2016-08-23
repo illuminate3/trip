@@ -67,7 +67,11 @@ class VehiclesContactController extends Controller
      */
     public function create($slug)
     {
-        return view('contacts.create', compact('slug'))->with(['model' => $this->model, 'class' => get_class($this)]);
+        return view('contacts.create', compact('slug'))->with([
+            'model' => $this->model,
+            'class' => get_class($this),
+            'slug' => $slug
+        ]);
     }
 
 

@@ -94,6 +94,7 @@ class VenuesContactController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param string $slug
      * @param  int $id
      *
      * @return \Illuminate\Http\Response
@@ -102,7 +103,8 @@ class VenuesContactController extends Controller
     {
         return view('contacts.show')->with([
             'contact' => $this->venueService->getSlugWithContact($slug)->first(),
-            'id' => $id
+            'id' => $id,
+            'slug' => $slug
         ]);
     }
 
