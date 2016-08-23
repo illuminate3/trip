@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dcfa545-d94f-4088-9aa7-ba25906638f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/restaurants/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/restaurants/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/restaurants/_gallery.blade.php" afterPath="$PROJECT_DIR$/resources/views/restaurants/_gallery.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tours/_gallery.blade.php" afterPath="$PROJECT_DIR$/resources/views/tours/_gallery.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/vehicles/_gallery.blade.php" afterPath="$PROJECT_DIR$/resources/views/vehicles/_gallery.blade.php" />
     </list>
     <ignored path="tripnep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/restaurants/show.blade.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+            <state relative-caret-position="144">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,10 +45,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/contacts/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/PutGalleryRequest.php" />
-        <option value="$PROJECT_DIR$/app/Services/RestaurantsService.php" />
         <option value="$PROJECT_DIR$/app/Services/ToursService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php" />
         <option value="$PROJECT_DIR$/app/Services/VehiclesService.php" />
@@ -71,7 +71,6 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Services/SocialAccountService.php" />
         <option value="$PROJECT_DIR$/public/neptrip/sass/screen.scss" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_05_070629_create_offers_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_18_104942_create_bookings_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
@@ -81,7 +80,6 @@
         <option value="$PROJECT_DIR$/resources/views/hotels/_form.blade.php" />
         <option value="$PROJECT_DIR$/app/Services/HotelsService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HotelsController.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Services/RoomService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php" />
         <option value="$PROJECT_DIR$/app/Services/ContactService.php" />
@@ -92,6 +90,12 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Contact/ToursContactController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php" />
         <option value="$PROJECT_DIR$/resources/views/restaurants/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/restaurants/_gallery.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tours/_gallery.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/vehicles/_gallery.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/public/uploads/images/hotel/.gitignore" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -159,6 +163,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tripnep" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -248,72 +306,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripnep" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gallery" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -323,13 +315,16 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="restaurant/s&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;RestaurantGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;restaurant/gal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/_gallery.blade.php&#10;restaurant/sho&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;hotel/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/show.blade.php&#10;restaurac&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;venueC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;hotel&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;Venue&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;hotelContact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;contactServ&#9;null&#9;null&#10;venueCo&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;galleryService&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;venue&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;venuecontact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;roomservic&#9;null&#9;null&#10;gitig&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.gitignore&#10;routes&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;HotelController&#9;null&#9;null&#10;HotelService&#9;null&#9;null&#10;HotelGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;hotel/_form&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_form.blade.php&#10;galleryserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;GalleryServ&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;HotelGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;alter_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_08_23_070403_alter_room_table.php&#10;room_ta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_082352_create_rooms_table.php&#10;contact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;databaseSee&#9;null&#9;null&#10;contact_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;.env&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.env&#10;screen.s&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/public/neptrip/sass/screen.scss&#10;SocialAuthC&#9;null&#9;null&#10;SocialAuthCon&#9;null&#9;null&#10;services.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/config/services.php&#10;socialAccoun&#9;null&#9;null&#10;Authenticate.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Middleware/Authenticate.php&#10;Api\Res&#9;null&#9;null&#10;NewsletterMail&#9;null&#9;null&#10;Newsletter.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;newsle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/NewslettersController.php&#10;Mail&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;gallery/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/gallery/index.blade.php&#10;HotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;home.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;VenueCon&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;icle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VehiclesContactController.php&#10;toursC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/ToursContactController.php&#10;PostServ&#9;null&#9;null&#10;HotelCon&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php" />
+    <property name="SearchEverywhereHistoryKey" value=".gitignore&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.gitignore&#10;.env&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.env&#10;_galler&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/vehicles/_gallery.blade.php&#10;_gallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/_gallery.blade.php&#10;restaurant/ga&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/_gallery.blade.php&#10;hotels/_ga&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_gallery.blade.php&#10;restaurant/s&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;RestaurantGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;restaurant/gal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/_gallery.blade.php&#10;restaurant/sho&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;hotel/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/show.blade.php&#10;restaurac&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;venueC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;hotel&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;Venue&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;hotelContact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;contactServ&#9;null&#9;null&#10;venueCo&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;galleryService&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;venue&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;venuecontact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;roomservic&#9;null&#9;null&#10;gitig&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.gitignore&#10;routes&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;HotelController&#9;null&#9;null&#10;HotelService&#9;null&#9;null&#10;HotelGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;hotel/_form&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_form.blade.php&#10;galleryserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;GalleryServ&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;HotelGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;alter_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_08_23_070403_alter_room_table.php&#10;room_ta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_082352_create_rooms_table.php&#10;contact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;databaseSee&#9;null&#9;null&#10;contact_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;screen.s&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/public/neptrip/sass/screen.scss&#10;SocialAuthC&#9;null&#9;null&#10;SocialAuthCon&#9;null&#9;null&#10;services.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/config/services.php&#10;socialAccoun&#9;null&#9;null&#10;Authenticate.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Middleware/Authenticate.php&#10;Api\Res&#9;null&#9;null&#10;NewsletterMail&#9;null&#9;null&#10;Newsletter.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;newsle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/NewslettersController.php&#10;Mail&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;gallery/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/gallery/index.blade.php&#10;HotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;home.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/v0.10.40/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/newsletter" />
-      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/public/uploads/images/venue" />
+      <recent name="$PROJECT_DIR$/public/uploads/images/tour/" />
+      <recent name="$PROJECT_DIR$/public/uploads/images/restaurant/" />
+      <recent name="$PROJECT_DIR$/public/uploads/images/hotel/rooms" />
+      <recent name="$PROJECT_DIR$/public/uploads/images/hotel" />
     </key>
   </component>
   <component name="RunManager">
@@ -403,12 +398,12 @@
       <workItem from="1471761900967" duration="12385000" />
       <workItem from="1471780092823" duration="1637000" />
       <workItem from="1471846893893" duration="4368000" />
-      <workItem from="1471934799803" duration="6935000" />
+      <workItem from="1471934799803" duration="8328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55790000" />
+    <option name="totallyTimeSpent" value="57183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -466,102 +461,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/newsletter/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/newsletter/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/newsletter/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/newsletter/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/newsletter/_form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_18_104105_create_notifications_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="35" />
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="33" />
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_27_061120_create_newsletters_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="34" />
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="32" />
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="33" />
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminDashController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/BookingEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="24" column="65" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/PostsService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="226" column="59" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/gallery/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewslettersController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
@@ -622,13 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -847,14 +739,6 @@
             <marker date="1471345217678" expanded="true" signature="7035:7469" ph="..." />
             <marker date="1471345217678" expanded="true" signature="7097:7468" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1162,18 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/restaurants/_gallery.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="112" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="112" />
-          <folding>
-            <marker date="1470128251175" expanded="true" signature="17:407" ph="..." />
-            <marker date="1470128251175" expanded="true" signature="49:91" ph="..." />
-            <marker date="1470128251175" expanded="true" signature="123:400" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-77">
@@ -1393,8 +1265,187 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/restaurants/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+        <state relative-caret-position="144">
+          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+          <folding>
+            <marker date="1471942625822" expanded="true" signature="47:63" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="89:1260" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="123:1258" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="162:919" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="222:338" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="389:904" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="437:782" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="482:635" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="681:759" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="956:1014" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1041:1160" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1078:1145" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1186:1246" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1285:1464" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1293:1462" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1320:1450" ph="{...}" />
+            <marker date="1471942625822" expanded="true" signature="1518:1560" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1586:2765" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1620:2763" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1659:2465" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1719:1787" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1838:2450" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="1886:2328" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2028:2181" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2227:2305" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2502:2518" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2545:2665" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2582:2650" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2691:2751" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2790:3026" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2802:3024" ph="..." />
+            <marker date="1471942625822" expanded="true" signature="2832:3008" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotels/_gallery.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <marker date="1470389073832" expanded="true" signature="17:632" ph="..." />
+            <marker date="1470389073832" expanded="true" signature="46:321" ph="..." />
+            <marker date="1470389073832" expanded="true" signature="350:625" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/restaurants/_gallery.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <marker date="1471942800182" expanded="true" signature="16:659" ph="..." />
+            <marker date="1471942800182" expanded="true" signature="45:334" ph="..." />
+            <marker date="1471942800182" expanded="true" signature="363:652" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tours/_gallery.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <marker date="1471942821687" expanded="true" signature="16:649" ph="..." />
+            <marker date="1471942821687" expanded="true" signature="45:329" ph="..." />
+            <marker date="1471942821687" expanded="true" signature="358:642" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vehicles/_gallery.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <marker date="1471942838231" expanded="true" signature="16:653" ph="..." />
+            <marker date="1471942838231" expanded="true" signature="45:331" ph="..." />
+            <marker date="1471942838231" expanded="true" signature="360:646" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/carousel/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/carousel/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/gallery/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/hotel/rooms/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/hotel/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/restaurant/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/tour/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/images/venue/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
