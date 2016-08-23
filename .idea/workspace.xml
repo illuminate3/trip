@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dcfa545-d94f-4088-9aa7-ba25906638f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/GalleryService.php" afterPath="$PROJECT_DIR$/app/Services/GalleryService.php" />
     </list>
     <ignored path="tripnep.iws" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="GalleryService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/GalleryService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4">
-              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+            <state relative-caret-position="312">
+              <caret line="28" column="96" selection-start-line="28" selection-start-column="96" selection-end-line="28" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -115,6 +113,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1366" />
     <option name="y" value="24" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
@@ -188,7 +187,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -202,15 +201,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -224,19 +219,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotel" />
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -250,11 +241,19 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gallery" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -267,7 +266,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="GalleryServ&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;HotelGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;alter_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_08_23_070403_alter_room_table.php&#10;room_ta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_082352_create_rooms_table.php&#10;contact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;databaseSee&#9;null&#9;null&#10;contact_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;.env&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.env&#10;screen.s&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/public/neptrip/sass/screen.scss&#10;SocialAuthC&#9;null&#9;null&#10;SocialAuthCon&#9;null&#9;null&#10;services.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/config/services.php&#10;socialAccoun&#9;null&#9;null&#10;Authenticate.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Middleware/Authenticate.php&#10;Api\Res&#9;null&#9;null&#10;NewsletterMail&#9;null&#9;null&#10;Newsletter.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;newsle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/NewslettersController.php&#10;Mail&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;gallery/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/gallery/index.blade.php&#10;HotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;home.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;VenueCon&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;icle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VehiclesContactController.php&#10;toursC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/ToursContactController.php&#10;PostServ&#9;null&#9;null&#10;HotelCon&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;Restaurant&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;bookingEv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Events/BookingEvent.php&#10;BookingsCont&#9;null&#9;null&#10;AdminDa&#9;null&#9;null&#10;newsletter_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_061120_create_newsletters_table.php&#10;notifications_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_07_18_104105_create_notifications_table.php&#10;newsletterc&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/NewslettersController.php&#10;new&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;Newslettercon&#9;null&#9;null&#10;VenueContactC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;HotelsCOntac&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;route&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;BookingEv&#9;null&#9;null&#10;ToursController&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/ToursController.php&#10;rout&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;package&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/PackagesGalleryController.php&#10;GallerySer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;venueS&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VenuesService.php&#10;venues&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VenuesService.php&#10;vehi&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicl&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;tour&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;tourSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;galleryserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;GalleryServ&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;HotelGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;alter_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_08_23_070403_alter_room_table.php&#10;room_ta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_082352_create_rooms_table.php&#10;contact&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;databaseSee&#9;null&#9;null&#10;contact_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_16_075643_create_contacts_table.php&#10;.env&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/.env&#10;screen.s&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/public/neptrip/sass/screen.scss&#10;SocialAuthC&#9;null&#9;null&#10;SocialAuthCon&#9;null&#9;null&#10;services.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/config/services.php&#10;socialAccoun&#9;null&#9;null&#10;Authenticate.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Middleware/Authenticate.php&#10;Api\Res&#9;null&#9;null&#10;NewsletterMail&#9;null&#9;null&#10;Newsletter.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;newsle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/NewslettersController.php&#10;Mail&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;gallery/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/gallery/index.blade.php&#10;HotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;home.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;VenueCon&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;icle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VehiclesContactController.php&#10;toursC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/ToursContactController.php&#10;PostServ&#9;null&#9;null&#10;HotelCon&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;Restaurant&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;bookingEv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Events/BookingEvent.php&#10;BookingsCont&#9;null&#9;null&#10;AdminDa&#9;null&#9;null&#10;newsletter_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_061120_create_newsletters_table.php&#10;notifications_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_07_18_104105_create_notifications_table.php&#10;newsletterc&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/NewslettersController.php&#10;new&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Listeners/SendNewsletterMailFired.php&#10;Newslettercon&#9;null&#9;null&#10;VenueContactC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/VenuesContactController.php&#10;HotelsCOntac&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/HotelsContactController.php&#10;route&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;BookingEv&#9;null&#9;null&#10;ToursController&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/ToursController.php&#10;rout&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;package&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/PackagesGalleryController.php&#10;GallerySer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/GalleryService.php&#10;venueS&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VenuesService.php&#10;venues&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VenuesService.php&#10;vehi&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicl&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/v0.10.40/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -347,15 +346,15 @@
       <workItem from="1471761900967" duration="12385000" />
       <workItem from="1471780092823" duration="1637000" />
       <workItem from="1471846893893" duration="4368000" />
-      <workItem from="1471934799803" duration="1516000" />
+      <workItem from="1471934799803" duration="1974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50371000" />
+    <option name="totallyTimeSpent" value="50829000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="1366" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -405,28 +404,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/GalleriesController.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/PackagesGalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="52" column="90" selection-start-line="52" selection-start-column="90" selection-end-line="52" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ToursController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -787,9 +764,162 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/RestaurantsGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1440">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1471762710757" expanded="false" signature="52:227" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="282:3181" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="395:478" ph=" GalleriesController constructor. ..." />
+            <marker date="1471762710757" expanded="true" signature="583:790" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="721:782" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="730:781" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="743:780" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="824:1046" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="874:1037" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="875:1036" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1082:1258" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="1133:1250" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1134:1249" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1331:1731" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="1464:1602" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1769:1918" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="1818:1910" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1819:1909" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="1960:2213" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2009:2205" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="2010:2204" ph="..." />
+            <marker date="1471762710757" expanded="true" signature="2290:2672" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2352:2500" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2681:2810" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471762710757" expanded="true" signature="2845:3179" ph="{...}" />
+            <marker date="1471762710757" expanded="true" signature="2899:3043" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/ToursGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="104" column="18" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
+          <folding>
+            <marker date="1471770812173" expanded="false" signature="52:214" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="263:3960" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="364:447" ph=" GalleriesController constructor. ..." />
+            <marker date="1471770812173" expanded="true" signature="540:735" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="666:727" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="675:726" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="688:725" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="743:839" ph=" Display a listing of the resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="874:1130" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="924:1121" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="938:1111" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1139:1280" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="1316:1492" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="1367:1484" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1368:1483" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1565:1959" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="1692:1830" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="1968:2085" ph=" Display the specified resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="2123:2271" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="2280:2447" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471770812173" expanded="true" signature="2490:2739" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="2539:2731" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="2540:2730" ph="..." />
+            <marker date="1471770812173" expanded="true" signature="2748:2965" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471770812173" expanded="true" signature="3042:3412" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="3104:3240" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="3421:3577" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471770812173" expanded="true" signature="3618:3958" ph="{...}" />
+            <marker date="1471770812173" expanded="true" signature="3675:3815" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/VehiclesGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1152">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1471771147647" expanded="false" signature="52:220" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="272:4046" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="379:493" ph=" GalleriesController constructor. ..." />
+            <marker date="1471771147647" expanded="true" signature="593:794" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="725:786" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="734:785" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="747:784" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="803:926" ph=" Display a listing of the resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="961:1183" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="1011:1175" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1012:1174" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1192:1296" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="1332:1506" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="1384:1498" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1385:1497" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1579:1977" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="1710:1848" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="1986:2136" ph=" Display the specified resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="2175:2332" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="2224:2324" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2225:2323" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2341:2514" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471771147647" expanded="true" signature="2558:2810" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="2607:2802" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2608:2801" ph="..." />
+            <marker date="1471771147647" expanded="true" signature="2819:3040" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471771147647" expanded="true" signature="3117:3499" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="3179:3327" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="3508:3663" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471771147647" expanded="true" signature="3704:4044" ph="{...}" />
+            <marker date="1471771147647" expanded="true" signature="3761:3901" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/VenuesGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <marker date="1471771612053" expanded="false" signature="53:217" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="267:4036" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="370:453" ph=" GalleriesController constructor. ..." />
+            <marker date="1471771612053" expanded="true" signature="548:745" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="676:737" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="685:736" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="698:735" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="753:869" ph=" Display a listing of the resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="904:1159" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="990:1150" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="991:1149" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1168:1299" ph=" Show the form for creating a new resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="1335:1511" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="1386:1503" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1387:1502" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1587:1982" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="1715:1853" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="1991:2128" ph=" Display the specified resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="2166:2317" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="2215:2309" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2216:2308" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2326:2493" ph=" Show the form for editing the specified resource. ..." />
+            <marker date="1471771612053" expanded="true" signature="2536:2785" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="2585:2777" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2586:2776" ph="..." />
+            <marker date="1471771612053" expanded="true" signature="2794:3010" ph=" Update the specified resource in storage. ..." />
+            <marker date="1471771612053" expanded="true" signature="3088:3470" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="3150:3298" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="3479:3653" ph=" Remove the specified resource from storage. ..." />
+            <marker date="1471771612053" expanded="true" signature="3694:4034" ph="{...}" />
+            <marker date="1471771612053" expanded="true" signature="3751:3891" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Gallery/HotelsGalleryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
+        <state relative-caret-position="1320">
           <caret line="111" column="53" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
           <folding>
             <marker date="1471937170013" expanded="false" signature="52:217" ph="..." />
@@ -829,8 +959,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/GalleryService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        <state relative-caret-position="312">
+          <caret line="28" column="96" selection-start-line="28" selection-start-column="96" selection-end-line="28" selection-end-column="96" />
           <folding />
         </state>
       </provider>

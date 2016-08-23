@@ -26,7 +26,7 @@ class GalleryService
     }
     public function make($model, $id, PostGalleryRequest $request)
     {
-        return $this->createGallery($model, $id, $this->data($request),$this->fileCheck($request));
+        return $this->createGallery($model, $id, $this->data($request, $this->fileCheck($request)));
     }
 
     public function update($id, PutGalleryRequest $request)
