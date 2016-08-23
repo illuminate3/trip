@@ -82,10 +82,10 @@ class VehiclesGalleryController extends Controller
         $id = $this->vehicleService->getIdBySlug($slug);
         if($this->galleryService->make($this->model,$id,$request)){
             session()->flash('sucMsg','Gallery information created');
-            redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
+            return redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        redirect()->route($this->model.'s.{slug}.gallery.create',[$slug])->withInput($request->toArray());
+        return redirect()->route($this->model.'s.{slug}.gallery.create',[$slug])->withInput($request->toArray());
     }
 
     /**
