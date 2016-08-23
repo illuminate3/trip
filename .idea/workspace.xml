@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1dcfa545-d94f-4088-9aa7-ba25906638f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/ReviewsService.php" afterPath="$PROJECT_DIR$/app/Services/ReviewsService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
     </list>
     <ignored path="tripnep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReviewsService.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Services/ReviewsService.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+            <state relative-caret-position="250">
+              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -43,7 +42,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_23_070403_alter_room_table.php" />
         <option value="$PROJECT_DIR$/app/Services/GalleryService.php" />
         <option value="$PROJECT_DIR$/resources/views/hotels/_form.blade.php" />
@@ -94,6 +92,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php" />
         <option value="$PROJECT_DIR$/app/Services/ReviewsService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
       </list>
     </option>
   </component>
@@ -115,7 +114,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="x" value="1366" />
+    <option name="y" value="-744" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
@@ -227,7 +227,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="ReviewSer&#9;null&#9;null&#10;ReviewsCont&#9;null&#9;null&#10;setting&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/SettingsController.php&#10;vehicleDes&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;sitecont&#9;null&#9;null&#10;homepage&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/layouts/homepage.blade.php&#10;tour/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/show.blade.php&#10;transport/&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/profile/transport.blade.php&#10;VehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicle.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Vehicle.php&#10;vehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicleDesc&#9;null&#9;null&#10;RoomSer&#9;null&#9;null&#10;toursGaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;tourGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;restauranGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;hotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;hotel/_form&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_form.blade.php&#10;toursserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;hotelsSer&#9;null&#9;null&#10;restaurant&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;venueGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;putPack&#9;null&#9;null&#10;Postpac&#9;null&#9;null&#10;package_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_092915_create_packages_table.php&#10;postpack&#9;null&#9;null&#10;restaurantconta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;restaurantgal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;tourgaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;tourserv&#9;null&#9;null&#10;packageSer&#9;null&#9;null&#10;tour/galle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/_gallery.blade.php&#10;packageCon&#9;null&#9;null&#10;packageC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/PackagesGalleryController.php&#10;offers&#9;null&#9;null&#10;offersCong&#9;null&#9;null&#10;venueGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;home&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;vehicle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VehiclesGalleryController.php&#10;vehicleServ&#9;null&#9;null&#10;home.&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;venues/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/index.blade.php&#10;venues/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/show.blade.php&#10;home.bla&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;hotel/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/show.blade.php&#10;restaurant/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/_contact.blade.php&#10;hotel/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_contact.blade.php&#10;restaurant/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/show.blade.php&#10;restaurant.blad&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/dashboard/restaurant.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="routes.p&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/routes.php&#10;PostContro&#9;null&#9;null&#10;ReviewSer&#9;null&#9;null&#10;ReviewsCont&#9;null&#9;null&#10;setting&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/SettingsController.php&#10;vehicleDes&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/VehicleDescriptionsController.php&#10;sitecont&#9;null&#9;null&#10;homepage&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/layouts/homepage.blade.php&#10;tour/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/show.blade.php&#10;transport/&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/profile/transport.blade.php&#10;VehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicle.php&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Vehicle.php&#10;vehicleSer&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/VehiclesService.php&#10;vehicleDesc&#9;null&#9;null&#10;RoomSer&#9;null&#9;null&#10;toursGaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;tourGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;restauranGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;hotelGallery&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/HotelsGalleryController.php&#10;hotel/_form&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_form.blade.php&#10;toursserv&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Services/ToursService.php&#10;hotelsSer&#9;null&#9;null&#10;restaurant&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;venueGal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;putPack&#9;null&#9;null&#10;Postpac&#9;null&#9;null&#10;package_&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/database/migrations/2016_06_27_092915_create_packages_table.php&#10;postpack&#9;null&#9;null&#10;restaurantconta&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Contact/RestaurantsContactController.php&#10;restaurantgal&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/RestaurantsGalleryController.php&#10;tourgaller&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/ToursGalleryController.php&#10;tourserv&#9;null&#9;null&#10;packageSer&#9;null&#9;null&#10;tour/galle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/tours/_gallery.blade.php&#10;packageCon&#9;null&#9;null&#10;packageC&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/PackagesGalleryController.php&#10;offers&#9;null&#9;null&#10;offersCong&#9;null&#9;null&#10;venueGa&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VenuesGalleryController.php&#10;home&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;vehicle&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/app/Http/Controllers/Gallery/VehiclesGalleryController.php&#10;vehicleServ&#9;null&#9;null&#10;home.&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;venues/ind&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/index.blade.php&#10;venues/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/venues/show.blade.php&#10;home.bla&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/frontend/home.blade.php&#10;hotel/show&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/show.blade.php&#10;restaurant/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/restaurants/_contact.blade.php&#10;hotel/_co&#9;FILE&#9;file:///home/ramesh/mysites/Infinite/tripnep/resources/views/hotels/_contact.blade.php" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/v0.10.40/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -310,12 +310,12 @@
       <workItem from="1471761900967" duration="12385000" />
       <workItem from="1471780092823" duration="1637000" />
       <workItem from="1471846893893" duration="4368000" />
-      <workItem from="1471934799803" duration="17703000" />
+      <workItem from="1471934799803" duration="18006000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66558000" />
+    <option name="totallyTimeSpent" value="66861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,7 +327,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="1366" y="-744" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -382,72 +382,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/venues/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1470205045473" expanded="true" signature="47:59" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="85:1215" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="119:1213" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="158:881" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="218:320" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="371:866" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="419:754" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="464:607" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="653:731" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="918:971" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="998:1112" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="1035:1097" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="1138:1193" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="1239:1445" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="1247:1439" ph="..." />
-            <marker date="1470205045473" expanded="true" signature="1278:1423" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/venues/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
-          <folding>
-            <marker date="1471944783037" expanded="true" signature="47:59" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="85:4632" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="120:4630" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="157:1637" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="195:1622" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="277:1603" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="372:1580" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="417:521" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="566:668" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="713:816" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="861:964" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1009:1109" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1154:1256" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1301:1400" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1445:1552" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1664:4618" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1742:4603" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1789:4580" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1836:2165" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="1943:2138" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="2215:4557" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="2265:4530" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="2363:4458" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="2418:4420" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="2481:2643" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="2707:4377" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="2769:3002" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="3064:3222" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="3334:3800" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="3407:3532" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="3606:3749" ph="..." />
-            <marker date="1471944783037" expanded="true" signature="3911:4148" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1817,6 +1751,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/ReviewsService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+          <folding>
+            <marker date="1471953394583" expanded="false" signature="37:180" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="185:242" ph=" Class CreateReviewsService ..." />
+            <marker date="1471953394583" expanded="true" signature="265:2739" ph="{...}" />
+            <marker date="1471953394583" expanded="true" signature="275:350" ph=" @param PostReviewRequest $request ..." />
+            <marker date="1471953394583" expanded="true" signature="405:772" ph="{...}" />
+            <marker date="1471953394583" expanded="true" signature="432:709" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="781:856" ph=" @param PostReviewRequest $request ..." />
+            <marker date="1471953394583" expanded="true" signature="913:1323" ph="{...}" />
+            <marker date="1471953394583" expanded="true" signature="997:1260" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="1332:1436" ph=" @param PostReviewRequest $request ..." />
+            <marker date="1471953394583" expanded="true" signature="1507:2614" ph="{...}" />
+            <marker date="1471953394583" expanded="true" signature="1562:2607" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="1593:1749" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="1775:1926" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="1952:2103" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="2128:2278" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="2306:2459" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="2480:2597" ph="..." />
+            <marker date="1471953394583" expanded="true" signature="2648:2737" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReviewsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="499">
@@ -1838,10 +1800,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/ReviewsService.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1471953610829" expanded="false" signature="44:113" ph="..." />
+            <marker date="1471953610829" expanded="true" signature="155:1956" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="194:270" ph=" PostsController constructor. ..." />
+            <marker date="1471953610829" expanded="true" signature="331:448" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="487:583" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="614:662" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="708:966" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="756:872" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="998:1120" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="1152:1265" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="1317:1625" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="1380:1502" ph="..." />
+            <marker date="1471953610829" expanded="true" signature="1660:1954" ph="{...}" />
+            <marker date="1471953610829" expanded="true" signature="1744:1860" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding />
         </state>
       </provider>

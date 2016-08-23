@@ -36,7 +36,13 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-        //
+        if(Post::create($request->all()))
+        {
+            session()->flash('sucMsg','Post Created');
+            return redirect()->action();
+        }
+        session()->flash('sucMsg','Post Created');
+        return redirect()->action();
     }
 
 
@@ -70,7 +76,13 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
-        Post::destroy($id);
-        return session()->with('success', 'Post Deleted Sucessfully');
+        $post = Post::findOrFail($id);
+        if($post->delete())
+        {
+            session()->with('sucMsg', 'Post Deleted');
+            return redirect()->action();
+        }
+        session()->with('errMsg', 'Post Deleted');
+        return redirect()->action();
     }
 }
