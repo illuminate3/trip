@@ -24,7 +24,7 @@ class VenuesService
      *
      * @return mixed
      */
-    public function make(PostVenueRequest $request, $user_id = 0)
+    public function make(PostVenueRequest $request)
     {
         $hotel = new Venue();
         $hotel->name = $request->get('name');

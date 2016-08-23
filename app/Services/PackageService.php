@@ -38,15 +38,15 @@ class PackageService
 
     /**
      * @param $id
-     * @param PostPackageRequest $request
+     * @param PutPackageRequest $request
      *
      * @return mixed
      */
     public function update($id, PutPackageRequest $request)
     {
-        $package = Package::findOrFail($id);
-        $packages->update($id, $this->data($request));
-        return $restaurant->save();
+        $packages = Package::findOrFail($id);
+        return $packages->update($this->data($request));
+
 
     }
 
