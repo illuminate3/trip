@@ -5,19 +5,22 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Package;
 use App\Services\PackageService;
+use App\Services\ToursService;
 use App\Tour;
 
 class PackageController extends Controller
 {
     protected $package;
+    protected $tourService;
 
     /**
      * PackageController constructor.
      *
      * @param $package
      */
-    public function __construct(PackageService $package)
+    public function __construct(ToursService $toursService, PackageService $package)
     {
+        $this->tourService = $toursService;
         $this->package = $package;
     }
 
@@ -25,7 +28,7 @@ class PackageController extends Controller
     public function index($slug)
     {
         $tour = Tour::where('slug', $slug)->with('packages')->first();
-        dd($tour->packages);
+
         return view('packages.index', compact('tour', 'slug'));
     }
 
@@ -44,38 +47,40 @@ class PackageController extends Controller
     public function store($slug, Requests\PostPackageRequest $request)
     {
         if ($this->package->make($request->get('tour_id'), $request)) {
-            return redirect('/tours/' . $slug)->with(['success' => 'Package Created Sucessfully']);
+            session()->flash('sucMsg','Package created');
+            return redirect('/tours/' . $slug);
         }
-        return redirect('/tours/' . $slug)->with(['error' => 'Error While Creating Package']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $package = Package::find($id)->first();
-        return view('packages.show', compact('package'));
-
+        session()->flash('error','Package couldn\'t be created');
+        return redirect('/tours/' . $slug);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
-     *
+     * @param $slug
      * @return \Illuminate\Http\Response
      */
     public function edit($slug, $id)
     {
-        $tour = Tour::where('slug', $slug)->with(['packages' => function ($query) {
-            $query->packages();
-        }])->first();
-        return view('packages.create', compact('tour'));
+        return view('packages.create')->with([
+            'package' => $this->tourService->getPackageById($slug,$id)->first()
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @param $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function show($slug,$id)
+    {
+        return view('packages.show')->with([
+            'package' => $this->tourService->getPackageById($slug,$id)->first
+        ]);
+
     }
 
     /**

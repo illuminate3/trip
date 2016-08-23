@@ -9,7 +9,7 @@ class OffersController extends Controller
         return view('offers.index');
     }
 
-    public function show($d)
+    public function show($id)
     {
         return view('offers.show')->with([
             'id' => $id

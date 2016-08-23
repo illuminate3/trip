@@ -103,6 +103,12 @@ class ToursService
             return $query->findOrFail($id);
         }]);
     }
+    public function getPackageById($slug,$id)
+    {
+        return Tour::where('slug',$slug)->with(['packages'=>function($query) use ($id){
+            return $query->findOrFail($id);
+        }]);
+    }
 
     public function getGalleryById($slug,$id)
     {
