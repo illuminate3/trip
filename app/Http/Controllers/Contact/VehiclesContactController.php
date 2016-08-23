@@ -86,10 +86,12 @@ class VehiclesContactController extends Controller
         $vehicleId = $this->vehicleService->getIdBySlug($slug);
         if ($this->contactService->make($this->model, $vehicleId, $request)) {
             session()->flash('sucMsg', 'Vehicle\'s contact created sucessfully');
-            return redirect("vehicles/" . $slug);
+            return redirect()->route($this->model.'s.{slug}.contact.index',[$slug]);
         }
         session()->flash('errMsg', 'Contact Information couldn\'t be created');
-        return redirect("vehicles/" . $slug . "/contact/create")->withInput($request->toArray());
+        return redirect()
+            ->route($this->model.'s.{slug}.contact.create',[$slug])
+            ->withInput($request->toArray());
     }
 
     /**
@@ -139,10 +141,10 @@ class VehiclesContactController extends Controller
     {
         if($this->contactService->update($id,$request)){
             session()->flash('sucMsg','Contact information Updated');
-            return redirect($this->model.'s/'.$slug.'/contact');
+            return redirect()->route($this->model.'s.{slug}.contact.index',[$slug]);
         }
         session()->flash('errMsg','Contact information couldn\'t be updated');
-        return redirect($this->model.'s/'.$slug.'/contact/'.$id.'/edit')->withInput($request->toArray());
+        return redirect()->route($this->model.'s.{slug}.contact.edit',[$slug,$id])->withInput($request->toArray());
     }
 
 

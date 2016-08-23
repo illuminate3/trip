@@ -85,7 +85,7 @@ class VehiclesGalleryController extends Controller
             redirect()->route($this->model.'s.{slug}.gallery.index',[$slug]);
         }
         session()->flash('errMsg','Gallery couldn\'t be created');
-        redirect()->route($this->model.'s.{slug}.gallery.index.create',[$slug])->withInput($request->toArray());
+        redirect()->route($this->model.'s.{slug}.gallery.create',[$slug])->withInput($request->toArray());
     }
 
     /**
