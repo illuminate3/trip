@@ -149,9 +149,9 @@
             <div class="wrap">
                 <h5>Customer Support</h5>
                 <ul class="customer-support">
-                    <li><a href="/faq/">Faq</a></li>
-                    <li><a href="/payment-options/" class="">Payment Options</a></li>
-                    <li><a href="/booking-tips/" class="">booking tips</a></li>
+                    <li><a href="{{ url('/faq/') }}">Faq</a></li>
+                    <li><a href="{{ url('/payment-options/') }}" class="">Payment Options</a></li>
+                    <li><a href="{{ url('/booking-tips/') }}" class="">booking tips</a></li>
                 </ul>
             </div>
         </div>
@@ -181,16 +181,15 @@
     <div class="row bottom-footer">
         <p class="float-left">©neptrip.com. All rights reserved</p>
         <ul class="float-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About us</a></li>
-            <li><a href="/hotels/">Hotel</a></li>
-            <li><a href="/venues/">Venue</a></li>
-            <li><a href="/restaurants/">Restaurant</a></li>
-            <li><a href="/tours/">Tour</a></li>
-            <li><a href="/vehicles/">Vehicle</a></li>
-            <li><a href="/contact/">Contact Us</a></li>
-            <li><a href="/blog/">Blogs</a></li>
-            <li><a class="search-btn"><i class="ti-search"></i></a></li>
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('/about') }}">About us</a></li>
+            <li><a href="{{ url('/hotels') }}">Hotel</a></li>
+            <li><a href="{{ url('/venues/') }}">Venue</a></li>
+            <li><a href="{{ url('/restaurants/') }}">Restaurant</a></li>
+            <li><a href="{{ url('/tours/') }}">Tour</a></li>
+            <li><a href="{{ url('/vehicles/') }}">Vehicle</a></li>
+            <li><a href="{{ url('/contact/') }}">Contact Us</a></li>
+            <li><a href="{{ url('/blog/') }}">Blogs</a></li>
         </ul>
     </div>
 </footer>

@@ -30,7 +30,7 @@ class SiteController extends Controller
     public function getHome()
     {
         
-        return view('frontend.home', compact('hotels', 'tours', 'vehicles', 'rooms'))->with([
+        return view('frontend.home')->with([
                 'hotels' => Hotel::orderBy('updated_at', 'DES')->with('contacts')->take(5)->get(),
                 'tours' => Tour::orderBy('updated_at', 'DES')->with('contacts')->take(5)->get(),
                 'vehicles' => Vehicle::orderBy('updated_at', 'DES')->with('contacts')->take(5)->get(),

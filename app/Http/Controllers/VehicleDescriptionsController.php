@@ -117,7 +117,7 @@ class VehicleDescriptionsController extends Controller
     public function destroy($slug,$id)
     {
 
-        if($this->vehicleService->destroyDescription($id))
+        if($this->vehicleService->destroyDescription($slug,$id))
         {
             session()->flash('sucMsg','Transport deleted');
             return redirect()->route('vehicles.{slug}.list.index');

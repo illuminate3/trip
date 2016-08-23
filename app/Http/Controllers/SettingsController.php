@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Settings;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,7 @@ class SettingsController extends Controller
      */
     public function index()
     {
-
+        return view('settings.index');
     }
 
     /**
@@ -25,7 +26,7 @@ class SettingsController extends Controller
      */
     public function create()
     {
-        //
+        return view('settings.create');
     }
 
     /**
@@ -36,7 +37,10 @@ class SettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request)
+        {
+            return 'settings';
+        }
     }
 
     /**
@@ -47,7 +51,7 @@ class SettingsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('settings.show')->with(['id'=>$id]);
     }
 
     /**
@@ -58,29 +62,18 @@ class SettingsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('settings.edit')->with(['id'=>$id]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        if($request)
+        {
+            Settings::findOrFail($id);
+            return 1;
+        }
+        return 0;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
 }
