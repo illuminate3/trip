@@ -62,13 +62,14 @@
                                         </div>
                                         <div class="long-desc">
                                             <div class="row">
-                                                <h4 class="float-left">{{ $vehicle->title }}</h4>
+                                                <h4 class="float-left">{{ $vehicle->name }}</h4>
                                                 <div class="star float-right"></div>
                                             </div>
                                             <div class="row">
                                                 <p class="address">{{ $vehicle->contacts['address'] }}</p>
                                             </div>
                                             <hr>
+
                                             <div class="row">
                                                 <div class="float-left">
                                                     <p>Price from</p>

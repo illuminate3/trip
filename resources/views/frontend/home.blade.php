@@ -266,7 +266,7 @@ Homepage
                                                 </div>
                                                 <div class="booking-div">
                                                     <hr class="darker">
-                                                    <a href="{{ url('hotels/'.$hotel->slug.'/room/'.$room->id)}}" class="button">Book Now</a>
+                                                    <a href="{{ url('vehicles/'.$vehicle->slug)}}" class="button">Book Now</a>
                                                 </div>
                                             </div>              
                                         </div>
